@@ -1,7 +1,7 @@
 import './App.scss';
 
 import Header from '../Header/Header';
-// import ChooseTour from './components/ChooseTourSection/ChooseTour/ChooseTour';
+import ChooseTourSection from '../ChooseTourSection/ChooseTourSection';
 // import Form from './components/FormSection/Form';
 // import Reviews from './components/ReviewsSection/Reviews/Reviews';
 // import TravelPhoto from './components/TravelPhotoSection/TravelPhoto';
@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="wrapper">
       <Header />
-      {/* <ChooseTour /> */}
+      <ChooseTourSection />
       {/* <Form /> */}
       {/* <Reviews /> */}
       {/* <TravelPhoto /> */}
