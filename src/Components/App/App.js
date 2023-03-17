@@ -1,6 +1,6 @@
 import './App.scss';
 
-// import Header from './components/Header/Header';
+import Header from '../Header/Header';
 // import ChooseTour from './components/ChooseTourSection/ChooseTour/ChooseTour';
 // import Form from './components/FormSection/Form';
 // import Reviews from './components/ReviewsSection/Reviews/Reviews';
@@ -12,7 +12,7 @@ import './App.scss';
 function App() {
   return (
     <div className="wrapper">
-      {/* <Header /> */}
+      <Header />
       {/* <ChooseTour /> */}
       {/* <Form /> */}
       {/* <Reviews /> */}
