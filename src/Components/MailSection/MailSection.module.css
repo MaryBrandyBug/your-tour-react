@@ -1,0 +1,108 @@
+.mail-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 771px;
+  padding: 0px;
+  gap: 30px;
+}
+.mail-section .mail-section__photo {
+  max-width: 370px;
+  border-radius: 50px;
+}
+.mail-section .mail-section__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+}
+.mail-section .mail-section__content .mail-section__content__header {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 122%;
+  color: #1B1F2B;
+}
+.mail-section .mail-section__content .mail-section__content__text {
+  color: #A6A6A6;
+}
+.mail-section .mail-section__content .mail-section__content__text .mail-section__content__mail {
+  color: #1B1F2B;
+  text-decoration: none;
+}
+.mail-section .mail-section__content .mail-section__content__text .mail-section__content__mail:hover {
+  text-decoration: underline;
+}
+.mail-section .mail-section__content .mail-section__content__text .mail-section__content__mail:active {
+  color: #286562;
+}
+
+@media (max-width: 780px) {
+  .mail-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .mail-section .mail-section__photo {
+    max-width: 250px;
+    border-radius: 20px;
+  }
+  .mail-section .mail-section__content {
+    max-width: 291px;
+    gap: 24px;
+  }
+  .mail-section .mail-section__content .mail-section__content__header {
+    font-size: 25px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.045em;
+  }
+  .mail-section .mail-section__content .mail-section__content__text {
+    text-align: center;
+  }
+}
+@media (max-width: 360px) {
+  .mail-section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    max-width: 360px;
+    margin-left: -2.5px;
+    margin-top: 1px;
+  }
+  .mail-section .mail-section__photo {
+    max-width: 130px;
+    border-radius: 20px;
+  }
+  .mail-section .mail-section__content {
+    max-width: 291px;
+    gap: 24px;
+  }
+  .mail-section .mail-section__content .mail-section__content__header {
+    font-size: 23px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.045em;
+  }
+  .mail-section .mail-section__content .mail-section__content__text {
+    text-align: center;
+  }
+}
