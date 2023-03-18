@@ -7,7 +7,7 @@ import ReviewsSection from '../ReviewsSection/ReviewsSection';
 import TravelPhotoSection from '../TravelPhotoSection/TravelPhotoSection';
 import TravelStoriesSection from '../TravelStoriesSection/TravelStoriesSection';
 import MailSection from '../MailSection/MailSection';
-// import Footer from './components/Footer/Footer';
+import Footer from '../Footer/Footer';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
       <TravelPhotoSection />
       <TravelStoriesSection />
       <MailSection />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
