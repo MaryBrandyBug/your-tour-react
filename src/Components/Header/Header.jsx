@@ -7,7 +7,7 @@ export default function Header() {
   const menuItems = [{ item: 'Туры', id: 'chooseTour' }, { item: 'Создать тур', id: 'createTour' }, { item: 'Отзывы', id: 'reviews' }, { item: 'Истории', id: 'travelStories' }];
   const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} style={{ textDecoration: 'none' }}><p className={styles.menu__item + ' main-font-style'}>{i.item}</p></HashLink>);
   return (
-    <header className={styles.header} style={{ background: "url('/images/header.png')", 'background-size': 'cover', 'background-position': 'center' }}>
+    <header className={styles.header}>
       <div className={styles.header__navbar}>
         <div className={styles.navbar}>
           <div className={styles.navbar__logo}>
