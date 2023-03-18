@@ -6,7 +6,7 @@ import Form from '../Form/Form';
 import ReviewsSection from '../ReviewsSection/ReviewsSection';
 import TravelPhotoSection from '../TravelPhotoSection/TravelPhotoSection';
 import TravelStoriesSection from '../TravelStoriesSection/TravelStoriesSection';
-// import MailSection from './components/MailSection/MailSection';
+import MailSection from '../MailSection/MailSection';
 // import Footer from './components/Footer/Footer';
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
       <ReviewsSection />
       <TravelPhotoSection />
       <TravelStoriesSection />
-      {/* <MailSection /> */}
+      <MailSection />
       {/* <Footer /> */}
     </div>
   );
