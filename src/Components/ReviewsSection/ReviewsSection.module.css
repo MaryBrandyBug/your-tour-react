@@ -1,0 +1,121 @@
+.review-section {
+  max-width: 1170px;
+  min-height: 1005px;
+  gap: 100px;
+}
+.review-section .review-section__header {
+  gap: 30px;
+}
+.review-section .review-section__header .review-section__header__title {
+  max-width: 529px;
+}
+.review-section .review-section__header .review-section__header__subtitle {
+  max-width: 418px;
+  max-height: 56px;
+}
+.review-section .review-section__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  gap: 30px;
+}
+
+@media (max-width: 1175px) {
+  .review-section .review-section__content {
+    max-width: 100%;
+  }
+}
+@media (max-width: 1024px) {
+  .review-section {
+    max-width: 1024px;
+    min-height: 1173px;
+  }
+  .review-section .review-section__content {
+    max-width: 1024px;
+    padding: 0px 52px;
+    gap: 18px;
+  }
+}
+@media (max-width: 992px) {
+  .review-section {
+    max-width: 100%;
+    min-height: auto;
+    max-height: auto;
+    gap: 50px;
+  }
+  .review-section .review-section__header {
+    gap: 20px;
+  }
+  .review-section .review-section__header .review-section__header__title {
+    letter-spacing: 0.7px;
+  }
+  .review-section .review-section__header .review-section__header__subtitle {
+    max-width: 400px;
+  }
+  .review-section .review-section__content {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    min-width: 100%;
+  }
+}
+@media (max-width: 576px) {
+  .review-section {
+    max-width: 360px;
+    gap: 50px;
+  }
+  .review-section .review-section__header {
+    gap: 20px;
+  }
+  .review-section .review-section__header .review-section__header__subtitle {
+    max-width: 318px;
+  }
+  .review-section .review-section__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+@media (max-width: 360px) {
+  .review-section {
+    max-width: 360px;
+    min-height: 1210px;
+    max-height: 1210px;
+    margin-left: -3.5px;
+    gap: 50px;
+  }
+  .review-section .review-section__header {
+    gap: 20px;
+  }
+  .review-section .review-section__header .review-section__header__title {
+    letter-spacing: 0.7px;
+  }
+  .review-section .review-section__header .review-section__header__subtitle {
+    max-width: 318px;
+  }
+  .review-section .review-section__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    max-width: 360px;
+    padding: 0px 21px;
+  }
+}
