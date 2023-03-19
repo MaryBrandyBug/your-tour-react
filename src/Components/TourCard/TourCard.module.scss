@@ -20,7 +20,7 @@
         border-radius: 50px;
         object-fit: cover;
 
-        transition: all 0.3s;
+        transition: all 0.4s;
     }
 
     .choose-tour__card-content {
@@ -39,7 +39,7 @@
         border-radius: 50px;
 
         .info-link__container {
-            transition: 0.7s;
+            transition: 0.5s;
         }
 
         .choose-tour__text-container {
@@ -57,9 +57,11 @@
         }
 
         .choose-tour__link {
-            position: absolute;
-            top: 453px;
-            left: 50px;
+            width: 199px;
+            height: 42px;
+
+            transition: background 1s ease, color 1s ease, transform 0.7s linear;
+            transform: translate(-23px, 5px);
         }
     }
 }
@@ -76,25 +78,15 @@
         .choose-tour__card-content {
 
             .choose-tour__link {
-                position: absolute;
-                top: 446px;
-                left: 30px;
-
                 width: 199px;
                 height: 42px;
+
                 background: $darkGreen;
 
-                transition: 0.6s;
+                transform: translate(-23px, 5px);
             }
 
             .choose-tour__link:active {
-                position: absolute;
-                top: 446px;
-                left: 30px;
-
-                width: 199px;
-                height: 42px;
-
                 background: $orangeColor;
 
                 transition: 0.3s;
