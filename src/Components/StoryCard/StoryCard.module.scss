@@ -38,15 +38,18 @@
         padding: 0px 60px 60px;
 
         .travel-stories-section__footer-details-link {
-            position: absolute;
-            left: 60px;
+            width: 199px;
+            height: 42px;
 
+            transform: translate(-21px, -11px);
+            transition: background 1s ease, color 1s ease, transform 0.7s linear;
             transition: 0.7s;
         }
 
         .travel-stories-section__footer-social-networks {
             position: absolute;
             left: 788px;
+            top: -26px;
 
             display: flex;
             flex-direction: row;
@@ -120,26 +123,16 @@
         .travel-stories-section__content-block__footer {
 
             .travel-stories-section__footer-details-link {
-                position: absolute;
-                left: 38px;
-
-                width: 199px;
-                height: 42px;
-
                 background: $darkGreen;
                 border-radius: 50px;
 
-                transition: 0.6s;
+                transform: translate(-21px, -11px);
             }
 
             .travel-stories-section__footer-details-link:active {
-                position: absolute;
-
-                width: 199px;
-                height: 42px;
-
                 background: $orangeColor;
-                border-radius: 50px;
+
+                transition: 0.3s;
             }
         }
     }
