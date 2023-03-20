@@ -25,12 +25,12 @@ export default function ChooseTour() {
       </div>
 
       <div className={styles['choose-tour-section__content']}>
-        <TourCard img="/images/cardTourPh-1.png" />
-        <TourCard img="/images/cardTourPh-2.png" />
-        <TourCard img="/images/cardTourPh-3.png" />
-        <TourCard img="/images/cardTourPh-4.png" />
-        <TourCard img="/images/cardTourPh-5.png" />
-        <TourCard img="/images/cardTourPh-6.png" />
+        <TourCard img='/your-tour-react/images/cardTourPh-1.png' />
+        <TourCard img="/your-tour-react/images/cardTourPh-2.png" />
+        <TourCard img="/your-tour-react/images/cardTourPh-3.png" />
+        <TourCard img="/your-tour-react/images/cardTourPh-4.png" />
+        <TourCard img="/your-tour-react/images/cardTourPh-5.png" />
+        <TourCard img="/your-tour-react/images/cardTourPh-6.png" />
       </div>
     </div>
   );

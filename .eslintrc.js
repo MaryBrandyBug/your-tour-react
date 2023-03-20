@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'airbnb',
+    // 'airbnb',
   ],
   overrides: [
   ],
@@ -23,5 +23,6 @@ module.exports = {
     'max-len': 0,
     'prefer-template': 'off',
     'import/extensions': 'off',
+    'react/jsx-key': 'off',
   },
 };
