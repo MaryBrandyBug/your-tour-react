@@ -1,0 +1,15 @@
+// миксин для min-width TourCard
+@mixin minWidthСalculation($maxw, $w) {
+    min-width: calc($maxw - 10 * (100vw / $w));
+}
+
+// миксин для width StoryCard
+@mixin widthCalculation($maxw, $w) {
+    max-width: calc($maxw + 102 * (100vw / $w));
+    max-width: calc($maxw + 102 * (100vw / $w));
+}
+
+// миксин для gap Header
+@mixin gapCalculation($maxg, $g) {
+    gap: calc($maxg + $g * (100vw / 1024));
+}

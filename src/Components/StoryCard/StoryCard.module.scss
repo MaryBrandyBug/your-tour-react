@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .travel-stories-section__content-block {
     position: relative;
@@ -214,8 +215,7 @@
 
 @media (max-width: 780px) {
     .travel-stories-section__content-block {
-        max-width: calc(318px + 102 * (100vw / 615));
-        min-width: calc(318px + 102 * (100vw / 615));
+        @include widthCalculation(318px, 615);
         max-height: 455px;
 
         border-radius: 20px;

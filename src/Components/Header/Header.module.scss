@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .header {
     display: flex;
@@ -171,10 +172,10 @@
 
             .navbar {
                 max-width: 100%;
-                gap: calc(30px + 55 * (100vw / 1024));
+                @include gapCalculation(30px, 55);
 
                 .navbar__menu {
-                    gap: calc(10px + 20 * (100vw / 1024))
+                    @include gapCalculation(10px, 20);
                 }
             }
         }

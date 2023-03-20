@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .choose-tour__card {
     position: relative;
@@ -119,10 +120,10 @@
 @media (max-width: 992px) and (min-width: 780px) {
 
     .choose-tour__card {
-        min-width: calc(350px - 10 * (100vw / 920));
+        @include minWidthСalculation(350px, 920);
 
         .choose-tour__card__background {
-            min-width: calc(350px - 10 * (100vw / 920));
+            @include minWidthСalculation(350px, 920);
         }
     }
 };
@@ -130,13 +131,13 @@
 @media (max-width: 780px) {
     .choose-tour__card {
         min-width: 318px;
-        min-width: calc(270px - 10 * (100vw / 719));
+        @include minWidthСalculation(270px, 719);
         min-height: 318px;
 
         border-radius: 20px;
 
         .choose-tour__card__background {
-            min-width: calc(270px - 10 * (100vw / 719));
+            @include minWidthСalculation(270px, 719);
             border-radius: 20px;
         }
 
