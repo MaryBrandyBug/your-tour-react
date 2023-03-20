@@ -2,15 +2,9 @@ import React from 'react';
 import styles from './TravelStoriesSection.module.scss';
 
 import { StoryCard } from '../StoryCard';
+import data from './data';
 
 export default function TravelStories() {
-  const inst = 'instagram';
-  const facebook = 'facebook';
-  const youTube = 'YouTube';
-  const vk = 'ВКонтакте';
-  const storyHeader = 'Автостопом в Стамбул';
-  const storyText = 'Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании новых предложений';
-  const advantagesList = ['вкусная еда', 'дешевый транспорт', 'красивый город'];
   return (
     <div className={styles['travel-stories-section'] + ' section'} id="travelStories">
       <div className={styles['travel-stories-section__header'] + ' section__header__flex'}>
@@ -23,9 +17,9 @@ export default function TravelStories() {
         </p>
       </div>
       <div className={styles['travel-stories-section__content'] + ' section__content__flex'}>
-        <StoryCard networks={[inst, facebook, youTube]} header={storyHeader} text={storyText} img="/images/story1.png" list={advantagesList} additionalClassCards="first-story-card" />
-        <StoryCard networks={[inst, vk]} header={storyHeader} text={storyText} img="/images/story2.png" additionalClassCards="second-story-card" />
-        <StoryCard networks={[inst, facebook, vk]} header={storyHeader} text={storyText} img="/images/story3.png" additionalClassCards="third-story-card" />
+        <StoryCard networks={[data.inst, data.facebook, data.youTube]} header={data.storyHeader} text={data.storyText} img="/images/story1.png" list={data.advantagesList} />
+        <StoryCard networks={[data.inst, data.vk]} header={data.storyHeader} text={data.storyText} img="/images/story2.png" />
+        <StoryCard networks={[data.inst, data.facebook, data.vk]} header={data.storyHeader} text={data.storyText} img="/images/story3.png" />
       </div>
     </div>
   );
