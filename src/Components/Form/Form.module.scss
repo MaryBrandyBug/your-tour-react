@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .form-section {
     min-width: percentage(1170 / 1920);
@@ -54,7 +55,6 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                // max-width: 500px;
                 min-width: inherit;
                 max-height: 104px;
                 gap: 8px;
@@ -88,8 +88,6 @@
 
                 .form-section__select-field {
                     min-width: 500px;
-                    // min-width: inherit;
-                    // max-width: 500px;
                     min-height: 68px;
                     padding: 20px;
                     gap: 10px;
@@ -125,8 +123,6 @@
                     box-sizing: border-box;
                     padding: 20px;
                     min-width: 500px;
-                    // max-width: 500px;
-                    // min-width: inherit;
                     min-height: 68px;
                     gap: 10px;
                     
@@ -178,10 +174,8 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
-            // max-width: 1030px;
             min-width: 100%;
             max-height: 188px;
-            // margin-left: 70px;
             gap: 8px;
 
             .form-section__input-name {
@@ -209,8 +203,6 @@
                 display: flex;
                 flex-direction: row;
                 align-items: center;
-                // max-width: 1030px;
-                // min-width: 1030px;
                 min-height: 152px;
                 box-sizing: border-box;
                 padding: 20px;
@@ -231,15 +223,12 @@
             flex-direction: row;
             align-items: flex-start;
             min-width: 100%;
-            // margin-top: 6px;
-            // margin-left: 70px;
             gap: 30px;
 
             .form-section__age-check__input-container {
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                // margin-top: 0px;
                 gap: 12px;
 
                 .form-section__input-name {
@@ -411,7 +400,6 @@
             flex-direction: row;
             align-items: flex-start;
             min-width: 100%;
-            // margin-left: 70px;
             gap: 30px;
 
             .form-section__submit-button {
@@ -505,8 +493,6 @@
         min-width: percentage(918 / 1300);
 
         .form-section__content-form {
-            // max-width: 95%;
-            // min-width: 95%;
 
             .form-cont {
 
@@ -515,10 +501,8 @@
                 .form-section__input-fields-container {
 
                     .form-section__input-field-container {
-                        // max-width: 410px;
 
                         .form-section__select-field {
-                            // max-width: 410px;
                             min-width: 400px;
                         }
     
@@ -530,60 +514,27 @@
             }
             }
 
-            .form-section__input-comment-container {
-                // margin-left: 0;
-
-                .form-section__input-field-comment {
-                    // max-width: 870px;
-                    // min-width: 860px;
-                }
-            }
-
-            .form-section__age-check {
-                // min-width: 90%;
-
-                // justify-content: center;
-                // margin-right: 767px;
-            }
-
             .form-section__agreement-container {
-                // display: flex;
-                // justify-content: center;
-                // min-width: 90%;
-                // margin-right: 376px;
 
                 .form-section__accept {
                     justify-content: flex-start;
                 }
-            }
-
-            .form-section__buttons-container {
-                // justify-content: center;
-                // min-width: 90%;
-                // margin-right: 430px;
             }
         }
     }
 }
 
 
-@media (max-width: 1024px) {
+@include _1024 {
     .form-section {
         min-width: percentage(918 / 1024);
-        // margin: 0 auto;
         gap: 100px;
         
         .form-section__content-form {
-            // min-width: 90%;
-            // max-width: 90%;
-            // min-height: 844px;
-            // padding-top: 60px;
-            // padding-bottom: 54px;
             padding: 60px;
             gap: 33px;
 
             .form-cont {
-                // margin-top: 0px;
                 gap: 28px;
 
                 .side-form-cont {
@@ -610,49 +561,24 @@
 
 
             .form-section__input-comment-container {
-                // max-width: 798px;
                 max-height: 183.4px;
-                // margin-left: 0px;
-
-                .form-section__input-field-comment {
-                    // max-width: 798px;
-                    // min-width: 798px;
-                }
-            }
-
-            .form-section__age-check {
-                // margin-right: 700px;
             }
 
             .form-section__agreement-container {
-                // margin-right: 316px;
 
                 .form-section__accept {
                     gap: 12px;
-
-                    .agreement-text {
-
-                        .form-section__agreement-text-link {
-                            // margin-top: 0px;
-                        }
-                    }
                 }
-            }
-
-            .form-section__buttons-container  {
-                // margin-right: 364px;
             }
         }
     }
 }
 
-@media (max-width: 992px) {
+@include _992 {
     .form-section {
         gap: 50px;
 
         .form-section__content-form {
-            // max-width: 85%;
-            // min-width: 85%;
 
             .form-cont {
 
@@ -663,50 +589,25 @@
                     min-width: 100%;
 
                     .form-section__input-field-container {
-                        // max-width: 300px;
                         min-width: inherit;
 
                         .form-section__select-field {
-                            // max-width: 300px;
-                            // min-width: 300px;
                             min-width: inherit;
                         }
 
                         .form-section__input-field {
-                            // min-width: 300px;
                             min-width: inherit;
                         }
                     }
                 }
             }
         }
-
-            .form-section__input-comment-container {
-
-                .form-section__input-field-comment {
-                    // max-width: 630px;
-                    // min-width: 630px;
-                }
-            }
-
-            .form-section__age-check {
-                // margin-right: 540px;
-            }
-
-            .form-section__agreement-container {
-                // margin-right: 156px;
-            }
-
-            .form-section__buttons-container {
-                // margin-right: 200px;
-            }
         }
     }
 }
 
-@media (max-width: 780px) {
+@include _780 {
     .form-section  {
-        // max-width: 360px;
         gap: 40px;
 
         .form-section__header {
@@ -725,15 +626,10 @@
             gap: 30px;
 
             border-radius: 30px;
-            // max-width: 318px;
-            // min-height: 1110px;
-            border-radius: 20px;
-            // padding: 0px;
 
             .form-cont {
                 flex-direction: column;
-                // margin-top: 16px;
-                // margin-right: 31px;
+
                 gap: 32px;
 
                 .side-form-cont {
@@ -795,26 +691,17 @@
         }
 
             .form-section__input-comment-container {
-                // max-width: 278px;
-                // max-height: 163px;
 
                 .form-section__input-name {
                     font-size: 16px;
-                    // margin-top: 0px;
                 }
 
                 .form-section__input-field-comment {
-                    // max-width: 278px;
-                    // min-width: 278px;
-                    // min-height: 132px;
                     font-size: 16px;
                 }
             }
 
             .form-section__age-check {
-                // margin-left: 0;
-                // margin-right: 140px;
-
                 .form-section__age-check__input-container {
                     gap: 8px;
 
@@ -843,15 +730,12 @@
             }
 
             .form-section__agreement-container {
-                // margin-left: 0;
-                // margin-right: 0px;
 
                 .form-section__accept {
                     font-size: 16px;
                     gap: 0;
 
                     .checkbox__border {
-                        // margin-bottom: 45px;
                         min-width: 21px;
                         min-height: 21px;
                     }
@@ -863,7 +747,6 @@
                         font-size: 16px;
 
                         .form-section__agreement-text-link {
-                            // margin-left: 1px;
                             font-size: 16px;
                         }
                     }
@@ -960,36 +843,4 @@
     }
 }
 
-@media (max-width: 360px) {
-    .form-section {
-        min-width: percentage(318 / 360);
-        max-width: percentage(318 / 360);
-
-        .form-section__content-form {
-            min-width: 100%;
-            padding: 20px 20px 40px 20px;
-            gap: 30px;
-
-            .form-cont {
-
-                .side-form-cont {
-                    gap: 31px;
-
-                    .form-section__input-fields-container {
-                        
-        
-                        .form-section__input-field-container {
-        
-                            .form-section__select-field {
-                                
-                            }
-        
-                            .form-section__input-field {
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+@include mobile;

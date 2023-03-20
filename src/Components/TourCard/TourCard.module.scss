@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .choose-tour__card {
     position: relative;
@@ -92,14 +93,13 @@
     }
 }
 
-@media (max-width: 1175px) {
+@include _1175 {
     .choose-tour__card {
         min-width: 332px;
     }
 }
 
-@media (max-width: 1024px) {
-
+@include _1024 {
     .choose-tour__card {
         min-width: 450px;
     
@@ -119,24 +119,24 @@
 @media (max-width: 992px) and (min-width: 780px) {
 
     .choose-tour__card {
-        min-width: calc(350px - 10 * (100vw / 920));
+        @include minWidthСalculation(350px, 920);
 
         .choose-tour__card__background {
-            min-width: calc(350px - 10 * (100vw / 920));
+            @include minWidthСalculation(350px, 920);
         }
     }
 };
 
-@media (max-width: 780px) {
+@include _780 {
     .choose-tour__card {
         min-width: 318px;
-        min-width: calc(270px - 10 * (100vw / 719));
+        @include minWidthСalculation(270px, 719);
         min-height: 318px;
 
         border-radius: 20px;
 
         .choose-tour__card__background {
-            min-width: calc(270px - 10 * (100vw / 719));
+            @include minWidthСalculation(270px, 719);
             border-radius: 20px;
         }
 
@@ -163,43 +163,7 @@
     }
 }
 
-@media (max-width: 576px) {
-    .choose-tour__card {
-        min-width: 318px;
-        min-height: 318px;
-
-        border-radius: 20px;
-
-        .choose-tour__card__background {
-            min-width: 318px;
-
-            border-radius: 20px;
-        }
-
-        .choose-tour__card-content {
-            left: -2px;
-            top: 2px;
-
-            padding: 25px;
-
-            .choose-tour__text-container {
-                max-width: 268px;
-                gap: 13px;
-
-                .choose-tour__card__subtitle {
-                    font-size: 16px;
-                }
-            }
-
-            .choose-tour__link {
-                top: 269px;
-                left: 26px;
-            }
-        }
-    }
-}
-
-@media (max-width: 360px) {
+@include _576 {
     .choose-tour__card {
         min-width: 318px;
         min-height: 318px;
@@ -234,3 +198,5 @@
         }
     }
 }
+
+@include mobile;

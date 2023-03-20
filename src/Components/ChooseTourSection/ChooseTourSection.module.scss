@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .choose-tour-section {
     gap: 100px;
@@ -69,17 +70,7 @@
     }
 }
 
-@media (max-width: 1175px) {
-    .choose-tour-section {
-
-        .choose-tour-section__content {
-            justify-content: center;
-            gap: 11px;
-        }
-    }
-}
-
-@media (max-width: 1024px) {
+@include _1024 {
     .choose-tour-section {
         min-height: 1871px;
 
@@ -100,7 +91,7 @@
     }
 };
 
-@media (max-width: 780px) {
+@include _780 {
     .choose-tour-section {
         min-height: auto;
 
@@ -142,7 +133,17 @@
     }
 }
 
-@media (max-width: 576px) {
+@include _1175 {
+    .choose-tour-section {
+
+        .choose-tour-section__content {
+            justify-content: center;
+            gap: 11px;
+        }
+    }
+}
+
+@include _576 {
     .choose-tour-section {
         min-height: auto;
         min-height: 2172px;
@@ -181,47 +182,4 @@
     }
 }
 
-@media (max-width: 360px) {
-    .choose-tour-section {
-        min-height: 2172px;
-        min-height: auto;
-        gap: 35px;
-
-        .choose-tour-section__content {
-            max-width: 318px;
-            gap: 18px;
-
-            letter-spacing: 0.04em;
-        }
-
-        .choose-tour-section__header {
-            max-width: 360px;
-            min-width: 360px;
-            gap: 30px;
-
-            .choose-tour-section__header__title {
-                letter-spacing: 0.65px;
-            }
-
-            .choose-tour-section__header__menu {
-                flex-wrap: wrap;
-                justify-content: center;
-                max-width: 300px;
-                gap: 10px;
-
-                .choose-tour-section_menu__item {
-
-                    .choose-tour-section_menu__item-name {
-                        font-size: 16px;
-                        line-height: 142%;
-                    }
-
-                    .choose-tour-section_menu__active-item {
-                        font-size: 16px;
-                        line-height: 142%;
-                    }
-                }
-            }
-        }
-    }
-}
+@include mobile;
