@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .info-link__container {
     display: flex;
@@ -38,7 +39,7 @@
 
 }
 
-@media (max-width: 780px) {
+@include _780 {
     .info-link__container {
         
         .info-link__text {
@@ -47,22 +48,4 @@
     }
 }
 
-@media (max-width: 360px) {
-    .info-link__container {
-        .info-link__text {
-            max-width: 84px;
-            max-height: 23px;
-            
-            font-size: 15px;
-            line-height: 142%;
-        }
-
-        .info-link__arrow {
-
-            img {
-                left: 1px;
-                top: -8px;
-            }
-        }
-    }
-}
+@include mobile;

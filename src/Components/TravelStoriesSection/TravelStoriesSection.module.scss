@@ -1,4 +1,5 @@
 @import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
 
 .travel-stories-section {
     gap: 100px;
@@ -13,7 +14,7 @@
     }
 }
 
-@media (max-width: 1175px) {
+@include _1175 {
     .travel-stories-section {
 
         .travel-stories-section__content {
@@ -23,7 +24,7 @@
     }
 }
 
-@media (max-width: 1024px) {
+@include _1024 {
     .travel-stories-section {
         max-width: 1024px;
 
@@ -37,13 +38,13 @@
     }
 }
 
-@media (max-width: 992px) {
+@include _992 {
     .travel-stories-section {
         gap: 50px;
     }
 }
 
-@media (max-width: 780px) {
+@include _780 {
     .travel-stories-section {
         max-width: 360px;
 
