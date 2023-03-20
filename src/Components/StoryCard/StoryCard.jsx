@@ -1,6 +1,6 @@
 import React from 'react';
-import DetailsBtn from '../DetailsBtn/DetailsBtn';
 import styles from './StoryCard.module.scss';
+import { DetailsBtn } from '../DetailsBtn';
 
 export default function StoryCard({
   header, text, networks, img, list, additionalClassCards,

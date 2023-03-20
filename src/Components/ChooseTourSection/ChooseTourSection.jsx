@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ChooseTourSection.module.scss';
 
-import TourCard from '../TourCard/TourCard';
+import { TourCard } from '../TourCard';
 
 export default function ChooseTour() {
   const menuItems = ['Авторские', 'Походы', 'Сплавы', 'Велопрогулки'];
