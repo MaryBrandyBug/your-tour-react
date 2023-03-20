@@ -1,8 +1,7 @@
 import React from 'react';
 import styles from './ReviewsSection.module.scss';
 
-import ReviewCard from '../ReviewCard/ReviewCard';
-
+import { ReviewCard } from '../ReviewCard';
 import { data } from './data';
 
 export default function Reviews() {

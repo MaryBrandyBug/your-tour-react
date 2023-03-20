@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TravelStoriesSection.module.scss';
 
-import StoryCard from '../StoryCard/StoryCard';
+import { StoryCard } from '../StoryCard';
 
 export default function TravelStories() {
   const inst = 'instagram';

@@ -1,13 +1,13 @@
 import './App.scss';
 
-import Header from '../Header/Header';
-import ChooseTourSection from '../ChooseTourSection/ChooseTourSection';
-import Form from '../Form/Form';
-import ReviewsSection from '../ReviewsSection/ReviewsSection';
-import TravelPhotoSection from '../TravelPhotoSection/TravelPhotoSection';
-import TravelStoriesSection from '../TravelStoriesSection/TravelStoriesSection';
-import MailSection from '../MailSection/MailSection';
-import Footer from '../Footer/Footer';
+import { Header } from '../Header';
+import { ChooseTourSection } from '../ChooseTourSection';
+import { Form } from '../Form';
+import { ReviewsSection } from '../ReviewsSection';
+import { TravelPhotoSection } from '../TravelPhotoSection';
+import { TravelStoriesSection } from '../TravelStoriesSection';
+import { MailSection } from '../MailSection';
+import { Footer } from '../Footer';
 
 function App() {
   return (
