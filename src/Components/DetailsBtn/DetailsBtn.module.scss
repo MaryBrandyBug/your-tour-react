@@ -1,0 +1,51 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.info-link__container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    border-radius: 50px;
+
+    cursor: pointer;
+
+    .info-link__text {
+        max-width: 120px;
+        max-height: 28px;
+
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 122%;
+        color: $whiteColor;
+    }
+
+    .info-link__arrow {
+        max-width: 24px;
+        max-height: 26px;
+        
+        img {
+            z-index: 0;
+
+            margin-top: 21%;
+
+            color: $whiteColor;
+        }
+    }
+
+}
+
+@include _780 {
+    .info-link__container {
+        
+        .info-link__text {
+            font-size: 20px;
+        }
+    }
+}
+
+@include mobile;

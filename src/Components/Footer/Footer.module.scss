@@ -1,0 +1,135 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+    min-height: 88px;
+    padding: 0px;
+    gap: 214px;
+    
+    background: $lightBeigeColor;
+
+    .footer__content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-width: 1168px;
+        min-height: 28px;
+        padding: 0px;
+        gap: 214px;
+
+        .footer__content__text {
+            color: $greyColor;
+        }
+
+        .footer__content__social-networks-links {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            max-width: 419px;
+            min-height: 28px;
+            padding: 0px;
+            gap: 25px;
+
+            .footer__link-block {
+                max-width: 126px;
+                min-height: 28px;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                padding: 0px;
+                gap: 10px;
+
+                .inst-icon {
+                    max-width: 26h;
+                    max-height: 26px;
+                }
+
+                .footer__social-network {
+                    color: $blackColor;
+
+                    cursor: pointer;
+                }
+
+                @media (min-width: 361px) {
+
+                    .footer__social-network:hover {
+                        text-decoration-line: underline;
+                        text-underline-offset: 7px;
+                        text-decoration-thickness: 1px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include _1024 {
+    .footer {
+        max-width: 100%;
+
+        .footer__content {
+            min-width: 0px;
+            gap: 280px;
+        }
+    }
+}
+
+@include _992 {
+    .footer {
+
+        .footer__content {
+            gap: 25px;
+        }
+    }
+}
+
+@include _780 {
+    .footer {
+        max-width: 100%;
+        min-height: 95px;
+
+        .footer__content {
+            flex-direction: column;
+            gap: 7px;
+
+            .footer__content__social-networks-links {
+                gap: 20px;
+
+                .footer__link-block {
+                    gap: 1px;
+
+                    .footer__link-icon {
+                        max-width: 20px;
+                    }
+
+                    .img-logo {
+                        max-width: 20px;
+                    }
+                    .inst-icon {
+                        max-width: 20px;
+                        max-height: 20px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include _1175 {
+    .footer {
+        max-width: 100%;
+
+        .footer__content {
+            min-width: 90%;
+        }
+    }
+}
+
+@include mobile;

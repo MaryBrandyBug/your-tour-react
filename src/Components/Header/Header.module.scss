@@ -1,0 +1,267 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.header {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    
+    background: linear-gradient(180deg, rgba($blackColor, 0.4) 0%, rgba($blackColor, 0) 39.9%), linear-gradient(0deg, rgba($blackColor, 0.3), rgba(rgba($blackColor, 0.3), 0.3)), url('../../../public/images/header.png');
+    background-size: cover;
+    background-position: center;
+
+    .header__navbar {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 0px;
+        min-height: 88px;
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 180px;
+            min-height: 30.24px;
+
+            .navbar__logo {
+                min-width: 181.84px;
+                max-width: 181.84;
+                min-height: 30.24px;
+
+                .YourTourLogo {
+                    left: 376px;
+                    top: 28.88px;
+                }
+            }
+
+            .navbar__menu {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                gap: 50px;
+                min-height: 28px;
+
+                .menu__item {
+                    min-height: 28px;
+
+                    color: $whiteColor;
+                    white-space: nowrap;
+
+                    cursor: pointer;
+                }
+
+                .menu__item:hover {
+                    text-decoration-line: underline;
+                    text-decoration-thickness: 1px;
+                    text-underline-offset: 7px;
+                }
+            }
+
+            .telephone {
+                max-width: 155px;
+                min-height: 28px;
+                
+                color: $whiteColor;
+                white-space: nowrap;
+            }
+        }
+    }
+
+    .header__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding: 50px 0 50px 0;
+
+        .header__content__title {
+            max-width: 768px;
+
+            font-style: normal;
+            font-weight: 700;
+            font-size: 96px;
+            line-height: 109%;
+            text-align: center;
+            letter-spacing: 0.02em;
+            color: $whiteColor;
+        }
+
+        .header__content__subtitle {
+            max-width: 562px;
+
+            text-align: center;
+            color: $whiteColor;
+        }
+
+        @media (min-width: 361px) {
+
+            .header__content__button:hover {
+                background: $orangeColor;
+
+                transition: all 0.5s ease-out;
+
+                .find-tour-btn {
+                    color: $whiteColor;
+                }
+            }
+    
+            .header__content__button:active {
+                background: $lightOrange;
+
+                .find-tour-btn {
+                    color: $blackColor;
+                }
+            }
+        }
+
+        .header__content__button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding: 5px 20px;
+            gap: 10px;
+
+            background: $whiteColor;
+            border-radius: 10px;
+
+            transition: 0.7s;
+
+            cursor: pointer;
+
+            .find-tour-btn {
+                max-width: 78px;
+                min-height: 24px;
+
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 17px;
+                line-height: 142%;
+                letter-spacing: -0.01em;
+                color: $blackColor;
+            }
+        }
+    }
+}
+
+@include _1175 {
+    .header {
+
+        .header__navbar {
+
+            .navbar {
+                gap: 60px;
+            }
+        }
+    }
+}
+
+@include _1024 {
+    .header {
+        
+        .header__navbar {
+            max-width: 100%;
+
+            .navbar {
+                max-width: 100%;
+                @include gapCalculation(30px, 55);
+
+                .navbar__menu {
+                    @include gapCalculation(10px, 20);
+                }
+            }
+        }
+
+        .header__content {
+            
+            .header__content__subtitle {
+                max-width: 442px;
+            }
+        }
+    }
+}
+
+@media (max-width: 990px) and (min-width: 781px) {
+    .header {
+
+        .header__navbar {
+            
+            .navbar {
+                gap: calc(-22px + 5.37109375vw);
+            }
+        }
+    }
+}
+
+@include _780 {
+    .header {
+
+        .header__navbar {
+            
+            .navbar {
+                min-width: 90%;
+
+                .navbar__menu {
+                    display: none;
+                }
+            }
+        }
+
+        .header__content {
+
+            .header__content__title {
+                max-width: 540px;
+
+                font-size: 80px;
+                text-align: center;
+            }
+        }
+    }
+}
+
+@include _576 {
+    .header {
+
+        .header__navbar {
+
+            .navbar {
+                justify-content: space-around;
+
+                .telephone {
+                    max-width: 124px;
+                    min-height: 23px;
+
+                    font-size: 16px;
+                }
+
+                .navbar__logo {
+                    min-width: 124px;
+                    max-width: 124px;
+                }
+            }
+        }
+
+        .header__content {
+
+            .header__content__title {
+                min-height: 190px;
+
+                font-size: 50px;
+            }
+
+            .header__content__subtitle {
+                max-width: 350px;
+
+                font-size: 18px;
+            }
+        }
+    }
+}
+
+@include mobile;

@@ -1,0 +1,162 @@
+@import './colors.scss';
+
+*{
+  font-family: 'Roboto';
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+html, body{
+  max-height: 100%;
+  max-width: 100%;
+  font-size: 100%;
+}
+
+body {
+  background: $beigeColor;
+}
+
+@media (max-width: 1920px) {
+  body {
+      max-width: 1920px;
+  }
+}
+
+@media (max-width: 1024px) {
+  body {
+      max-width: 1024px;
+  }        
+}
+
+// ПАРАМЕТРЫ ШРИФТОВ
+
+.main-font-style {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 142%;
+}
+
+@media (max-width: 576px) {
+  .main-font-style {
+      font-size: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .main-font-style {
+      font-size: 16px;
+  }
+}
+
+// ПАРАМЕТРЫ СЕКЦИЙ
+
+.section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .section__header__flex {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0px;
+
+      .section__header__title {
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 59px;
+          line-height: 124%;
+          text-align: center;
+          color: $blackColor;
+      }
+
+      .section__header__subtitle {
+          font-family: 'Roboto';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 20px;
+          line-height: 142%;
+          text-align: center;
+          color: $greyColor;
+      }
+  }
+
+  .section__content__flex {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+
+}
+.info-cards__header {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 35px;
+  line-height: 122%;
+  color: $whiteColor;
+}
+
+@media (max-width: 1175px) {
+  .section {
+
+      .section__content__flex {
+          align-items: center;
+      }
+  }
+}
+
+@media (max-width: 780px) {
+  .section {
+
+  }
+  .info-cards__header {
+      font-size: 23px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+
+      .section__header__flex {
+
+          .section__header__title {
+              font-size: 34px;
+              line-height: 112%;
+          }
+
+          .section__header__subtitle {
+              font-size: 16px;
+          }
+      }
+  }
+}
+
+@media (max-width: 360px) {
+  .section {
+      
+      .section__header__flex {
+
+          .section__header__title {
+              font-size: 34px;
+              line-height: 112%;
+          }
+
+          .section__header__subtitle {
+              font-size: 16px;
+          }
+      }
+ 
+  }
+  .info-cards__header {
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 120%;
+      letter-spacing: 0.04em;
+  }
+}

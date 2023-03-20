@@ -1,0 +1,178 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.review-section__review-card {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+            min-height: 590px;
+            padding: 40px;
+            box-sizing: content-box;
+
+            background: $lightBeigeColor;
+            border-radius: 50px;
+
+            .review-section__review-card-text {
+                font-family: 'Roboto';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 23px;
+                line-height: 122%;
+                color: $blackColor
+            }
+
+            .review-section__review-card__footer {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+                padding: 70px 0px 0px;
+
+                .review-section__footer-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    min-width: 415px;
+                    gap: 8px;
+
+                    .review-section__reviewer-name {
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 500;
+                        font-size: 35px;
+                        line-height: 122%;
+                        color: $blackColor;
+                    }
+
+                    .review-section__reviewer-tour {
+                        font-family: 'Roboto';
+                        font-style: normal;
+                        font-weight: 400;
+                        font-size: 17px;
+                        line-height: 142%;
+                        letter-spacing: -0.01em;
+                        color: $greyColor;
+                    }
+                }
+
+                .footer-content__reviewer {
+                    border-radius: 100px;
+                }
+            }
+}
+
+@include _1175 {
+    .review-section__review-card {
+
+        .review-section__review-card__footer {
+            min-width: 100%;
+            padding: 0;
+
+            .review-section__footer-content {
+                min-width: 70%;
+            }
+        }
+    }
+}
+
+@include _1024 {
+    .review-section__review-card {
+        max-width: 370px;
+        min-height: 767px;
+
+        .review-section__review-card__footer {
+
+            .review-section__footer-content {
+                min-width: 295px;
+                gap: 6px;
+
+                .review-section__reviewer-tour {
+                    margin-bottom: 6px;
+                }
+            }
+        }
+    }
+}
+
+@include _992 {
+    .review-section__review-card {
+        border-radius: 20px;
+        align-items: flex-start;
+        max-width: calc(300px + 70 * (100vw / 940));
+        min-height: 290px;
+
+        .review-section__review-card-text {
+            font-size: 18px;
+            line-height: 143%;
+        }
+
+        .review-section__review-card__footer {
+
+            .review-section__footer-content {
+                min-width: 270px;
+                gap: 8px;
+
+                .review-section__reviewer-name {
+                    font-weight: 700;
+                    font-size: 23px;
+                    line-height: 120%;
+                    letter-spacing: 0.04em;
+                }
+
+                .review-section__reviewer-tour {
+                    margin-bottom: 1px;
+
+                    font-size: 16px;
+                    letter-spacing: -0.01em;
+                }
+            }
+
+            .footer-content__reviewer {
+                max-width: 75px;
+                max-height: 75px;
+            }
+        }
+    }
+}
+
+@include _576 {
+    .review-section__review-card {
+        align-items: flex-start;
+        max-width: 318px;
+        min-height: auto;
+        padding: 20px;
+
+        border-radius: 20px;
+
+        .review-section__review-card-text {
+            font-size: 16px;
+            line-height: 143%;
+        }
+
+        .review-section__review-card__footer {
+            padding: 43px 0px 0px;
+
+            .review-section__footer-content {
+                min-width: 203px;
+                gap: 8px;
+
+                .review-section__reviewer-name {
+                    font-weight: 700;
+                    font-size: 23px;
+                    line-height: 120%;
+                }
+
+                .review-section__reviewer-tour {
+                    font-size: 16px;
+                }
+            }
+
+            .footer-content__reviewer {
+                max-width: 75px;
+                max-height: 75px;
+            }
+        }
+    }
+}
+
+@include mobile;
