@@ -11,7 +11,7 @@ export default function Header() {
       <div className={styles.header__navbar}>
         <div className={styles.navbar}>
           <div className={styles.navbar__logo}>
-            <img src="/images/YourTour.png" alt="logo" className={styles.YourTourLogo} />
+            <img src="/your-tour-react/images/YourTour.png" alt="logo" className={styles.YourTourLogo} />
 
           </div>
           <div className={styles.navbar__menu}>

@@ -1,6 +1,6 @@
 import React from 'react';
 import style from './TourCard.module.scss';
-import { DetailsBtn } from '../DetailsBtn';
+import DetailsBtn from '../DetailsBtn';
 
 export default function TourCard({ img }) {
   return (

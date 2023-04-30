@@ -6,7 +6,7 @@ export default function DetailsBtn({ additionalClass }) {
     <div className={styles['info-link__container'] + ` ${additionalClass}`}>
       <p className={styles['info-link__text']}>Подробнее</p>
       <div className={styles['info-link__arrow']}>
-        <img src="/images/Vector.png" alt="arrow" />
+        <img src="/your-tour-react/images/Vector.png" alt="arrow" />
       </div>
     </div>
   );

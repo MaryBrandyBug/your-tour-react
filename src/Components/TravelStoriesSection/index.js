@@ -1,2 +1,1 @@
-// eslint-disable-next-line import/prefer-default-export
-export { default as TravelStoriesSection } from './TravelStoriesSection';
+export { default } from './TravelStoriesSection';

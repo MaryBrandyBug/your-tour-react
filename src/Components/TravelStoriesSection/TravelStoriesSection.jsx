@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TravelStoriesSection.module.scss';
 
-import { StoryCard } from '../StoryCard';
+import StoryCard from '../StoryCard';
 import data from './data';
 
 export default function TravelStories() {
@@ -17,9 +17,9 @@ export default function TravelStories() {
         </p>
       </div>
       <div className={styles['travel-stories-section__content'] + ' section__content__flex'}>
-        <StoryCard networks={[data.inst, data.facebook, data.youTube]} header={data.storyHeader} text={data.storyText} img="/images/story1.png" list={data.advantagesList} />
-        <StoryCard networks={[data.inst, data.vk]} header={data.storyHeader} text={data.storyText} img="/images/story2.png" />
-        <StoryCard networks={[data.inst, data.facebook, data.vk]} header={data.storyHeader} text={data.storyText} img="/images/story3.png" />
+        <StoryCard networks={[data.inst, data.facebook, data.youTube]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story1.png" list={data.advantagesList} />
+        <StoryCard networks={[data.inst, data.vk]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story2.png" />
+        <StoryCard networks={[data.inst, data.facebook, data.vk]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story3.png" />
       </div>
     </div>
   );
