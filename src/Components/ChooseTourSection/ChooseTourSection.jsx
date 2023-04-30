@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './ChooseTourSection.module.scss';
 
 import TourCard from '../TourCard';
+import data from './data';
 
 export default function ChooseTour() {
   const menuItems = ['Авторские', 'Походы', 'Сплавы', 'Велопрогулки'];
@@ -11,6 +12,7 @@ export default function ChooseTour() {
       <div className={styles['choose-tour-section_menu__item-line']} />
     </div>
   ));
+  const tourCards = data.map((item) => <TourCard img={item} />)
   return (
     <div className={styles['choose-tour-section'] + ' section'} id="chooseTour">
       <div className={styles['choose-tour-section__header'] + ' section__header__flex'}>
@@ -25,12 +27,7 @@ export default function ChooseTour() {
       </div>
 
       <div className={styles['choose-tour-section__content']}>
-        <TourCard img='/your-tour-react/images/cardTourPh-1.png' />
-        <TourCard img="/your-tour-react/images/cardTourPh-2.png" />
-        <TourCard img="/your-tour-react/images/cardTourPh-3.png" />
-        <TourCard img="/your-tour-react/images/cardTourPh-4.png" />
-        <TourCard img="/your-tour-react/images/cardTourPh-5.png" />
-        <TourCard img="/your-tour-react/images/cardTourPh-6.png" />
+        {tourCards}
       </div>
     </div>
   );
