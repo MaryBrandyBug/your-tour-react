@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Form.module.scss';
 
 export default function Form() {
@@ -7,6 +7,7 @@ export default function Form() {
   const [yourTourForm, setYourTourForm] = useState({
     name: '', direction: '', email: '', phoneNumber: '', dateSince: '', dateUntil: '', comment: '',
   });
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   function chengeRadio(e) {
     setRadio(e.target.value);
@@ -23,6 +24,17 @@ export default function Form() {
     // дальше методом POST передаем данные из стейтов на бэк
   };
 
+  useEffect(() => {
+    const resizeWindow = () => {
+      setWindowSize(window.innerWidth);
+    };
+    window.addEventListener('resize', resizeWindow);
+
+    return () => {
+      window.removeEventListener('resize', resizeWindow);
+    };
+  });
+
   return (
     <div className={styles['form-section'] + ' section'} id="createTour">
       <div className={styles['form-section__header'] + ' section__header__flex'}>
@@ -37,7 +49,7 @@ export default function Form() {
 
       <form onSubmit={handleSubmit} className={styles['form-section__content-form'] + ' section__content__flex'}>
         <div className={styles['form-cont']}>
-          {window.innerWidth > 780
+          {windowSize > 780
             ? (
               <>
                 <div className={styles['side-form-cont']}>

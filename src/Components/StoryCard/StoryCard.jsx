@@ -1,11 +1,12 @@
 import React from 'react';
 import styles from './StoryCard.module.scss';
 import DetailsBtn from '../DetailsBtn';
+import { Link } from 'react-router-dom';
 
 export default function StoryCard({
   header, text, networks, img, list, additionalClassCards,
 }) {
-  const networksList = networks?.map((network) => <p className={styles['travel-stories-section__social-network'] + ' main-font-style'}>{network}</p>);
+  const networksList = networks?.map((network) => <Link className={styles['travel-stories-section__social-network'] + ' main-font-style'}>{network}</Link>);
   const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={styles['travel-stories-section__content-block__list-item']} key={new Date().getTime()}>{item}</li> : (
     <li className={styles['travel-stories-section__content-block__list-item']} key={new Date().getTime()}>
       {item}
