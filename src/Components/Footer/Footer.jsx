@@ -8,15 +8,15 @@ export default function Footer() {
         <p className={styles.footer__content__text + ' main-font-style'}>Наши социальные сети</p>
         <div className={styles['footer__content__social-networks-links']}>
           <div className={styles['footer__link-block']}>
-            <div className={styles['footer__link-icon'] + ' ' + styles['inst-icon']}><img src="/your-tour-react/images/inst.png" alt="" /></div>
+            <div className={styles['footer__link-icon'] + ' ' + styles['inst-icon']}><img src="/your-tour-react/images/inst.png" alt="instagram icon" /></div>
             <p className={styles['footer__social-network'] + ' main-font-style'}>instagram</p>
           </div>
           <div className={styles['footer__link-block']}>
-            <div className={styles['footer__link-icon']}><img src="/your-tour-react/images/fb.png" alt="" /></div>
+            <div className={styles['footer__link-icon']}><img src="/your-tour-react/images/fb.png" alt="facebook icon" /></div>
             <p className={styles['footer__social-network'] + ' main-font-style'}>facebook</p>
           </div>
           <div className={styles['footer__link-block']}>
-            <div className={styles['footer__link-icon']}><img src="/your-tour-react/images/vk.png" alt="" /></div>
+            <div className={styles['footer__link-icon']}><img src="/your-tour-react/images/vk.png" alt="vkontakte icon" /></div>
             <p className={styles['footer__social-network'] + ' main-font-style'}>vkontakte</p>
           </div>
         </div>

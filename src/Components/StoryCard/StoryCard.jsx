@@ -27,7 +27,7 @@ export default function StoryCard({
           {advantagesList}
         </ul>
       </div>
-      <img src={img} alt="" className={styles['travel-stories-section__card__background']} />
+      <img src={img} alt="travel photo" className={styles['travel-stories-section__card__background']} />
     </div>
   );
 }
