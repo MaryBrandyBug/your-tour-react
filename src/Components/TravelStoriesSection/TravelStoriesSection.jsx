@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './TravelStoriesSection.module.scss';
 
-import { StoryCard } from '../StoryCard';
+import StoryCard from '../StoryCard';
 import data from './data';
 
 export default function TravelStories() {

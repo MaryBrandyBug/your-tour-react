@@ -1,1 +1,1 @@
-export { default as TravelPhotoSection } from './TravelPhotoSection';
+export { default } from './TravelPhotoSection';

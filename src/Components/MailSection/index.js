@@ -1,1 +1,1 @@
-export { default as MailSection } from './MailSection';
+export { default } from './MailSection';
