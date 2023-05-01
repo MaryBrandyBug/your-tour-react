@@ -5,7 +5,7 @@ import styles from './Header.module.scss';
 
 export default function Header() {
   const menuItems = [{ item: 'Туры', id: 'chooseTour' }, { item: 'Создать тур', id: 'createTour' }, { item: 'Отзывы', id: 'reviews' }, { item: 'Истории', id: 'travelStories' }];
-  const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} className={styles.menu__item + ' main-font-style'} style={{ textDecoration: 'none' }}>{i.item}</HashLink>);
+  const menu = menuItems.map((i, index) => <HashLink to={`#${i.id}`} key={index} className={styles.menu__item + ' main-font-style'} style={{ textDecoration: 'none' }}>{i.item}</HashLink>);
   return (
     <header className={styles.header}>
       <div className={styles.header__navbar}>

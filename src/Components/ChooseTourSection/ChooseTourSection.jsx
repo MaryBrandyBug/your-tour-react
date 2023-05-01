@@ -6,13 +6,13 @@ import data from './data';
 
 export default function ChooseTour() {
   const menuItems = ['Авторские', 'Походы', 'Сплавы', 'Велопрогулки'];
-  const menu = menuItems.map((item) => (
-    <div className={styles['choose-tour-section_menu__item']}>
+  const menu = menuItems.map((item, i) => (
+    <div className={styles['choose-tour-section_menu__item']} key={i}>
       <p className={styles['choose-tour-section_menu__item-name']}>{item}</p>
       <div className={styles['choose-tour-section_menu__item-line']} />
     </div>
   ));
-  const tourCards = data.map((item) => <TourCard img={item} />)
+  const tourCards = data.map((item, i) => <TourCard img={item} key={i} />)
   return (
     <div className={styles['choose-tour-section'] + ' section'} id="chooseTour">
       <div className={styles['choose-tour-section__header'] + ' section__header__flex'}>

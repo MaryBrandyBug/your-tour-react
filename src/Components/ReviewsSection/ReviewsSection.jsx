@@ -12,7 +12,7 @@ export default function Reviews() {
         <p className={styles['review-section__header__subtitle'] + ' section__header__subtitle'}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
       </div>
       <div className={styles['review-section__content']}>
-        {data.map((item) => <ReviewCard text={item.text[0]} textSecondPart={item.text[1]} name={item.name} tour={item.tour} img={item.img} />)}
+        {data.map((item, i) => <ReviewCard text={item.text[0]} textSecondPart={item.text[1]} name={item.name} tour={item.tour} img={item.img} key={i} />)}
       </div>
     </div>
   );
