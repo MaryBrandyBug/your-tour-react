@@ -10,6 +10,8 @@
     background-size: cover;
     background-position: center;
 
+    composes: main-font-style from '../../styles/global.scss';
+
     .header__navbar {
         display: flex;
         flex-direction: row;

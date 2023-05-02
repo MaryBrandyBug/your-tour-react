@@ -5,6 +5,8 @@
     min-width: percentage(1170 / 1920);
     gap: 100px;
 
+    composes: main-font-style from '../../styles/global.scss';
+
     .form-section__header {
         gap: 30px;
 

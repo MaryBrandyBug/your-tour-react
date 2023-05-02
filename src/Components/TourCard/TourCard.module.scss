@@ -11,6 +11,8 @@
     border-radius: 50px;
     overflow: hidden;
 
+    composes: main-font-style from '../../styles/global.scss';
+
     .choose-tour__card__background {
         position: absolute;
         z-index: -1;
