@@ -9,6 +9,8 @@
     padding: 0px;
     gap: 30px;
 
+    composes: main-font-style from '../../styles/global.scss';
+
     .mail-section__photo {
         max-width: 370px;
 

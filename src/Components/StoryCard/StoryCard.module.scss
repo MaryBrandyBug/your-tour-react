@@ -12,6 +12,8 @@
     border-radius: 50px;
     background: linear-gradient(270deg, rgba($blackColor, 0) 0.01%, rgba($blackColor, 0.2) 100%);
 
+    composes: main-font-style from '../../styles/global.scss';
+
     .travel-stories-section__card__background {
         position: absolute;
         z-index: -1;

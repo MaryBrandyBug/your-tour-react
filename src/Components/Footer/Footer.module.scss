@@ -12,6 +12,7 @@
     gap: 214px;
     
     background: $lightBeigeColor;
+    composes: main-font-style from '../../styles/global.scss';
 
     .footer__content {
         display: flex;
@@ -22,6 +23,7 @@
         min-height: 28px;
         padding: 0px;
         gap: 214px;
+
 
         .footer__content__text {
             color: $greyColor;
