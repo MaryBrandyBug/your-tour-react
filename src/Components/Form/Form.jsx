@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Form.module.scss';
+
+import Button from '../Button';
 
 export default function Form() {
   const cx = classNames.bind(styles);
@@ -189,16 +192,16 @@ export default function Form() {
             <div className={cx('agreement-text')}>
               Нажимая кнопку, я принимаю условия
               {' '}
-              <button type="button" className={cx('form-section__agreement-text-link')}>Лицензионного договора</button>
+              <Link className={cx('form-section__agreement-text-link')} to="/">Лицензионного договора</Link>
             </div>
           </label>
         </div>
         <div className={cx('form-section__buttons-container')}>
           <div className={cx('form-section__submit-button')}>
-            <button type="submit" className={cx('form-section__submit-button-text')}>Найти тур</button>
+            <Button text="Найти тур" btnClass={cx('form-section__submit-button-text')} type="submit" />
           </div>
           <div className={cx('form-section__reset-button')}>
-            <button type="button" className={cx('form-section__reset-button-text')}>Сбросить</button>
+            <Button text="Сбросить" btnClass={cx('form-section__reset-button-text')} />
           </div>
         </div>
       </form>

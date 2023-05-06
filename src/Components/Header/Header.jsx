@@ -4,6 +4,8 @@ import { HashLink } from 'react-router-hash-link';
 import classNames from 'classnames/bind';
 import styles from './Header.module.scss';
 
+import Button from '../Button';
+
 export default function Header() {
   const cx = classNames.bind(styles);
 
@@ -27,7 +29,7 @@ export default function Header() {
         <h1 className={cx('header__content__title')}>Идеальные путешествия существуют</h1>
         <p className={cx('header__content__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
         <div className={cx('header__content__button')}>
-          <button className={cx('find-tour-btn')} type="button">Найти тур</button>
+          <Button text="Найти тур" btnClass={cx('find-tour-btn')} />
         </div>
       </div>
     </header>
