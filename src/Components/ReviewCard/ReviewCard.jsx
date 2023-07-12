@@ -3,20 +3,20 @@ import classNames from 'classnames/bind';
 import styles from './ReviewCard.module.scss';
 
 export default function ReviewCard({
-  text, name, tour, textSecondPart, img,
+  text, name, tour, img,
 }) {
   const cx = classNames.bind(styles);
 
   return (
     <div className={cx('review-section__review-card')}>
       <p className={cx('review-section__review-card-text')}>
-        {text}
-        {textSecondPart
+        {text[0]}
+        {text.length > 1
           ? (
             <>
               <br />
               <br />
-              {textSecondPart}
+              {text[1]}
             </>
           )
           : ''}

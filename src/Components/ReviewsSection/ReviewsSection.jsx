@@ -15,7 +15,7 @@ export default function Reviews() {
         <p className={cx('review-section__header__subtitle', 'section__header__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
       </div>
       <div className={cx('review-section__content')}>
-        {data.map((item, i) => <ReviewCard text={item.text[0]} textSecondPart={item.text[1]} name={item.name} tour={item.tour} img={item.img} key={i} />)}
+        {data.map((item, i) => <ReviewCard text={item.text} name={item.name} tour={item.tour} img={item.img} key={i} />)}
       </div>
     </div>
   );
