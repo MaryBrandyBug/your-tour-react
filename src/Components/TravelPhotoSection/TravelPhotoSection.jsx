@@ -2,8 +2,14 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './TravelPhotoSection.module.scss';
 
+import { data1, data2, data3 } from './data';
+
 export default function TravelPhoto() {
   const cx = classNames.bind(styles);
+
+  const firstLine = data1.map((el) => <img src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
+  const secondLine = data2.map((el) => <img src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
+  const thirdLine = data3.map((el) => <img src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
 
   return (
     <div className={cx('travel-photo-section', 'section')}>
@@ -13,23 +19,13 @@ export default function TravelPhoto() {
       </div>
       <div className={cx('travel-photo-section__content', 'section__content__flex')}>
         <div className={cx('travel-photo-section__photo-container', 'big')}>
-          <img src="/your-tour-react/images/travelphoto-1.png" alt="travel memories" className={cx('travel-photo-section__big-photo')} />
-          <img src="/your-tour-react/images/travelphoto-2.png" alt="travel memories" className={cx('travel-photo-section__big-photo', 'max-size')} />
-          <img src="/your-tour-react/images/travelphoto-3.png" alt="travel memories" className={cx('travel-photo-section__big-photo', 'max-middle-size')} />
-          <img src="/your-tour-react/images/travelphoto-4.png" alt="travel memories" className={cx('travel-photo-section__big-photo')} />
+          {firstLine}
         </div>
         <div className={cx('travel-photo-section__photo-container', 'small')}>
-          <img src="/your-tour-react/images/travelphoto-5.png" alt="travel memories" className={cx('travel-photo-section__small-photo')} />
-          <img src="/your-tour-react/images/travelphoto-6.png" alt="travel memories" className={cx('travel-photo-section__small-photo', 'max-middle-size')} />
-          <img src="/your-tour-react/images/travelphoto-7.png" alt="travel memories" className={cx('travel-photo-section__small-photo', 'max-size')} />
-          <img src="/your-tour-react/images/travelphoto-8.png" alt="travel memories" className={cx('travel-photo-section__small-photo')} />
-          <img src="/your-tour-react/images/travelphoto-13.png" alt="travel memories" className={cx('travel-photo-section__small-photo')} />
+          {secondLine}
         </div>
         <div className={cx('travel-photo-section__photo-container', 'big')}>
-          <img src="/your-tour-react/images/travelphoto-9.png" alt="travel memories" className={cx('travel-photo-section__big-photo')} />
-          <img src="/your-tour-react/images/travelphoto-10.png" alt="travel memories" className={cx('travel-photo-section__big-photo')} />
-          <img src="/your-tour-react/images/travelphoto-11.png" alt="travel memories" className={cx('travel-photo-section__big-photo', 'max-middle-size')} />
-          <img src="/your-tour-react/images/travelphoto-12.png" alt="travel memories" className={cx('travel-photo-section__big-photo', 'max-size')} />
+          {thirdLine}
         </div>
       </div>
     </div>

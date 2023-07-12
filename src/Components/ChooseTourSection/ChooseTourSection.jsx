@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './ChooseTourSection.module.scss';
 
@@ -11,11 +12,11 @@ export default function ChooseTour() {
   const menuItems = ['Авторские', 'Походы', 'Сплавы', 'Велопрогулки'];
   const menu = menuItems.map((item, i) => (
     <div className={cx('choose-tour-section_menu__item')} key={i}>
-      <p className={cx('choose-tour-section_menu__item-name')}>{item}</p>
+      <Link to="/" className={cx('choose-tour-section_menu__item-name')}>{item}</Link>
       <div className={cx('choose-tour-section_menu__item-line')} />
     </div>
   ));
-  const tourCards = data.map((item, i) => <TourCard img={item} key={i} />);
+  const tourCards = data.map((item, i) => <TourCard img={item} key={i} alt="Tour cover" />);
   return (
     <div className={cx('choose-tour-section', 'section')} id="chooseTour">
       <div className={cx('choose-tour-section__header', 'section__header__flex')}>

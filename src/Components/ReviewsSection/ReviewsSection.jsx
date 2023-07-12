@@ -3,7 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './ReviewsSection.module.scss';
 
 import ReviewCard from '../ReviewCard';
-import { data } from './data';
+import data from './data';
 
 export default function Reviews() {
   const cx = classNames.bind(styles);
