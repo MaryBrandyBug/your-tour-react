@@ -5,6 +5,7 @@ import styles from './Form.module.scss';
 
 import Button from '../Button';
 import InputField from '../InputField/InputField';
+import TextAreaField from '../TextAreaField/TextAreaField';
 
 export default function Form() {
   const cx = classNames.bind(styles);
@@ -115,10 +116,8 @@ export default function Form() {
             )}
         </div>
 
-        <div className={cx('form-section__input-comment-container')}>
-          <p className={cx('form-section__input-name')}>Комментарий</p>
-          <textarea name="comment" className={cx('form-section__input-field-comment', 'input-comment')} onChange={handleChange} />
-        </div>
+        <TextAreaField fieldName="Комментарий" name="comment" onChange={handleChange} />
+
         <div className={cx('form-section__age-check')}>
           <div className={cx('form-section__age-check__input-container')}>
             <p className={cx('form-section__input-name')}>Вам есть 18 лет?</p>
