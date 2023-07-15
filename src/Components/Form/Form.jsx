@@ -4,6 +4,7 @@ import classNames from 'classnames/bind';
 import styles from './Form.module.scss';
 
 import Button from '../Button';
+import InputField from '../InputField/InputField';
 
 export default function Form() {
   const cx = classNames.bind(styles);
@@ -15,14 +16,14 @@ export default function Form() {
   });
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
-  function chengeRadio(e) {
+  function changeRadio(e) {
     setRadio(e.target.value);
   }
-  function chengeCheckbox() {
+  function changeCheckbox() {
     setChecked(!checked);
   }
 
-  const handleInput = (e) => {
+  const handleChange = (e) => {
     setYourTourForm({ ...yourTourForm, [e.target.name]: e.target.value });
   };
   const handleSubmit = (e) => {
@@ -60,26 +61,11 @@ export default function Form() {
               <>
                 <div className={cx('side-form-cont')}>
 
-                  <div className={cx('form-section__input-fields-container')}>
-                    <div className={cx('form-section__input-field-container')}>
-                      <p className={cx('form-section__input-name')}>Имя</p>
-                      <input type="text" name="name" className={cx('form-section__input-field')} placeholder="Введите Ваше имя" onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
 
-                  <div className={cx('form-section__input-fields-container')}>
-                    <div className={cx('form-section__input-field-container')}>
-                      <p className={cx('form-section__input-name')}>Email</p>
-                      <input type="email" name="email" className={cx('form-section__input-field')} placeholder="example@mail.com" onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
 
-                  <div className={cx('form-section__input-fields-container')}>
-                    <div className={cx('form-section__input-field-container')}>
-                      <p className={cx('form-section__input-name')}>Дата от</p>
-                      <input type="date" name="dateSince" className={cx('form-section__input-field')} onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
                 </div>
 
                 <div className={cx('side-form-cont')}>
@@ -88,7 +74,7 @@ export default function Form() {
                     <div className={cx('form-section__input-field-container')}>
                       <p className={cx('form-section__input-name')}>Направление</p>
                       <div className={cx('select-wrapper')}>
-                        <select className={cx('form-section__select-field')} name="direction" onChange={handleInput}>
+                        <select className={cx('form-section__select-field')} name="direction" onChange={handleChange}>
                           <option value="default">Куда хотите ехать</option>
                           <option value="place">Едем сюда!</option>
                         </select>
@@ -96,36 +82,21 @@ export default function Form() {
                     </div>
                   </div>
 
-                  <div className={cx('form-section__input-fields-container')}>
-                    <div className={cx('form-section__input-field-container')}>
-                      <p className={cx('form-section__input-name')}>Телефон</p>
-                      <input type="tel" name="phoneNumber" className={cx('form-section__input-field')} maxLength="11" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
 
-                  <div className={cx('form-section__input-fields-container')}>
-                    <div className={cx('form-section__input-field-container')}>
-                      <p className={cx('form-section__input-name')}>Дата до</p>
-                      <input type="date" name="dateUntil" className={cx('form-section__input-field')} onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
                 </div>
               </>
             )
             : (
               <div className={cx('side-form-cont')}>
-                <div className={cx('form-section__input-fields-container')}>
-                  <div className={cx('form-section__input-field-container')}>
-                    <p className={cx('form-section__input-name')}>Имя</p>
-                    <input type="text" name="name" className={cx('form-section__input-field')} placeholder="Введите Ваше имя" onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
 
                 <div className={cx('form-section__input-fields-container')}>
                   <div className={cx('form-section__input-field-container')}>
                     <p className={cx('form-section__input-name')}>Направление</p>
                     <div className={cx('select-wrapper')}>
-                      <select className={cx('form-section__select-field')} name="direction" onChange={handleInput}>
+                      <select className={cx('form-section__select-field')} name="direction" onChange={handleChange}>
                         <option value="default">Куда хотите ехать</option>
                         <option value="place">Едем сюда!</option>
                       </select>
@@ -133,52 +104,32 @@ export default function Form() {
                   </div>
                 </div>
 
-                <div className={cx('form-section__input-fields-container')}>
-                  <div className={cx('form-section__input-field-container')}>
-                    <p className={cx('form-section__input-name')}>Email</p>
-                    <input type="email" name="email" className={cx('form-section__input-field')} placeholder="example@mail.com" onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
 
-                <div className={cx('form-section__input-fields-container')}>
-                  <div className={cx('form-section__input-field-container')}>
-                    <p className={cx('form-section__input-name')}>Телефон</p>
-                    <input type="tel" name="phoneNumber" className={cx('form-section__input-field')} maxLength="11" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
 
-                <div className={cx('form-section__input-fields-container')}>
-                  <div className={cx('form-section__input-field-container')}>
-                    <p className={cx('form-section__input-name')}>Дата от</p>
-                    <input type="date" name="dateSince" className={cx('form-section__input-field')} onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
 
-                <div className={cx('form-section__input-fields-container')}>
-                  <div className={cx('form-section__input-field-container')}>
-                    <p className={cx('form-section__input-name')}>Дата до</p>
-                    <input type="date" name="dateUntil" className={cx('form-section__input-field')} onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
               </div>
             )}
         </div>
 
         <div className={cx('form-section__input-comment-container')}>
           <p className={cx('form-section__input-name')}>Комментарий</p>
-          <textarea name="comment" className={cx('form-section__input-field-comment', 'input-comment')} onChange={handleInput} />
+          <textarea name="comment" className={cx('form-section__input-field-comment', 'input-comment')} onChange={handleChange} />
         </div>
         <div className={cx('form-section__age-check')}>
           <div className={cx('form-section__age-check__input-container')}>
             <p className={cx('form-section__input-name')}>Вам есть 18 лет?</p>
             <div className={cx('age-check__radio-buttons-container')}>
               <label className={cx('age-check__radio-button-container')} htmlFor="ageCheckTrue">
-                <input type="radio" name="age" value="yes" className={cx('age-check__radio-button')} id="ageCheckTrue" onChange={chengeRadio} checked={radio === 'yes'} />
+                <input type="radio" name="age" value="yes" className={cx('age-check__radio-button')} id="ageCheckTrue" onChange={changeRadio} checked={radio === 'yes'} />
                 <span className={cx('radio__border')} />
                 <p className={cx('form-section__input-name')}>Да</p>
               </label>
               <label className={cx('age-check__radio-button-container')} htmlFor="ageCheckFalse">
-                <input type="radio" name="age" value="no" className={cx('age-check__radio-button')} id="ageCheckFalse" onChange={chengeRadio} checked={radio === 'no'} />
+                <input type="radio" name="age" value="no" className={cx('age-check__radio-button')} id="ageCheckFalse" onChange={changeRadio} checked={radio === 'no'} />
                 <span className={cx('radio__border')} />
                 <p className={cx('form-section__input-name')}>Нет</p>
               </label>
@@ -187,7 +138,7 @@ export default function Form() {
         </div>
         <div className={cx('form-section__agreement-container')}>
           <label className={cx('form-section__accept')} htmlFor="accept">
-            <input type="checkbox" name="agreement" className={cx('form-section__agreement-radio-button')} id="accept" onChange={chengeCheckbox} />
+            <input type="checkbox" name="agreement" className={cx('form-section__agreement-radio-button')} id="accept" onChange={changeCheckbox} />
             <span className={cx('checkbox__border')} />
             <div className={cx('agreement-text')}>
               Нажимая кнопку, я принимаю условия
