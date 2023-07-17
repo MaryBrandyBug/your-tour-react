@@ -190,6 +190,10 @@
       max-width: 250px;
       max-height: 74px;
 
+      .form-section__input-name {
+        font-size: 16px;
+      }
+
       input[type=date]::-webkit-datetime-edit { 
         font-size: 20px;
         font-weight: 300;

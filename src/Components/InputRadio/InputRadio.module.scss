@@ -1,0 +1,61 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.age-check__radio-button-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 11px;
+
+  .age-check__radio-button {
+    display: none;
+  }
+
+  .radio__border {
+    position: relative;
+
+    min-width: 21px;
+    min-height: 21px;
+
+    border: 2px solid $blackColor;
+    border-radius: 50%;
+  }
+
+  .radio__border::before {
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    z-index: -1;
+
+    display: block;
+    min-width: 12px;
+    min-height: 12px;
+
+    background-color: $blackColor;
+    border-radius: 50%;
+
+    transform: translate(-50%, -50%);
+    transition: .2s;
+
+    content: "";
+  }
+
+  .age-check__radio-button:checked + .radio__border::before {
+    z-index: 1;
+  }
+}
+
+@include _780 {
+  .age-check__radio-button-container {
+
+    .radio__border {
+      min-width: 21px;
+      min-height: 21px;
+    }
+
+    .radio__border::before {
+      min-width: 10px;
+      min-height: 9px;
+    }
+  }
+}

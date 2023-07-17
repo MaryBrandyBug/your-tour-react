@@ -6,6 +6,7 @@ import styles from './Form.module.scss';
 import Button from '../Button';
 import InputField from '../InputField/InputField';
 import TextAreaField from '../TextAreaField/TextAreaField';
+import InputRadio from '../InputRadio/InputRadio';
 
 export default function Form() {
   const cx = classNames.bind(styles);
@@ -17,9 +18,10 @@ export default function Form() {
   });
   const [windowSize, setWindowSize] = useState(window.innerWidth);
 
-  function changeRadio(e) {
+  const changeRadio = (e) => {
     setRadio(e.target.value);
-  }
+  };
+
   function changeCheckbox() {
     setChecked(!checked);
   }
@@ -122,19 +124,12 @@ export default function Form() {
           <div className={cx('form-section__age-check__input-container')}>
             <p className={cx('form-section__input-name')}>Вам есть 18 лет?</p>
             <div className={cx('age-check__radio-buttons-container')}>
-              <label className={cx('age-check__radio-button-container')} htmlFor="ageCheckTrue">
-                <input type="radio" name="age" value="yes" className={cx('age-check__radio-button')} id="ageCheckTrue" onChange={changeRadio} checked={radio === 'yes'} />
-                <span className={cx('radio__border')} />
-                <p className={cx('form-section__input-name')}>Да</p>
-              </label>
-              <label className={cx('age-check__radio-button-container')} htmlFor="ageCheckFalse">
-                <input type="radio" name="age" value="no" className={cx('age-check__radio-button')} id="ageCheckFalse" onChange={changeRadio} checked={radio === 'no'} />
-                <span className={cx('radio__border')} />
-                <p className={cx('form-section__input-name')}>Нет</p>
-              </label>
+              <InputRadio name="age" onChange={changeRadio} value="yes" id="ageCheckTrue" text="Да" checked={radio === 'yes'} />
+              <InputRadio name="age" onChange={changeRadio} value="no" id="ageCheckFalse" text="Нет" checked={radio === 'no'} />
             </div>
           </div>
         </div>
+
         <div className={cx('form-section__agreement-container')}>
           <label className={cx('form-section__accept')} htmlFor="accept">
             <input type="checkbox" name="agreement" className={cx('form-section__agreement-radio-button')} id="accept" onChange={changeCheckbox} />
