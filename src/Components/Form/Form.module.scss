@@ -292,95 +292,86 @@
 
     .form-section__agreement-container {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       min-width: 100%;
-      // margin-left: 70px;
 
-      .form-section__accept {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 19px;
+      // .checkbox_label {
+      //   display: flex;
+      //   flex-direction: row;
+      //   justify-content: center;
+      //   align-items: center;
+      //   gap: 19px;
 
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 142%;
-        letter-spacing: -0.01em;
-        color: $greyColor;
+      //   font-family: 'Roboto';
+      //   font-style: normal;
+      //   font-weight: 400;
+      //   line-height: 142%;
+      //   letter-spacing: -0.01em;
+      //   color: $greyColor;
                 
-        .form-section__agreement-radio-button {
-          display: none;
-        }
+      //   .checkbox_button {
+      //     display: none;
+      //   }
 
-        .agreement-text {
+      //   .checkbox__border {
+      //     position: relative;
 
-          .form-section__agreement-text-link {
-            margin-left: 1px;
+      //     display: inline-block;
+      //     min-width: 20px;
+      //     min-height: 20px;
 
-            font-size: 17px;
-            text-decoration: none;
-            color: $blackColor;
+      //     border: 2px solid $blackColor;
+      //     border-radius: 20%;
+      //   }
 
-            background: inherit;
-                        
-            cursor: pointer;
-          }
-        }
+      //   .checkbox__border::before {
+      //     position: absolute;
+      //     left: -1.3px;
+      //     top: 48%;
 
-        .checkbox__border {
-          position: relative;
+      //     min-height: 29%;
+      //     min-width: 2px;
 
-          display: inline-block;
-          min-width: 20px;
-          min-height: 20px;
-
-          border: 2px solid $blackColor;
-          border-radius: 20%;
-        }
-
-        .checkbox__border::before {
-          position: absolute;
-          left: -1.3px;
-          top: 48%;
-
-          min-height: 29%;
-          min-width: 2px;
-
-          background-color: $blackColor;
-          opacity: 0;
+      //     background-color: $blackColor;
+      //     opacity: 0;
                     
-          transition: .2s;
-          transform: translateX(9.45px) rotate(-45deg);
-          transform-origin: left bottom;
+      //     transition: .2s;
+      //     transform: translateX(9.45px) rotate(-45deg);
+      //     transform-origin: left bottom;
 
-          content: '';
-        }
+      //     content: '';
+      //   }
 
-        .checkbox__border::after {
-          position: absolute;
-          left: 9%;
-          bottom: 19%;
+      //   .checkbox__border::after {
+      //     position: absolute;
+      //     left: 9%;
+      //     bottom: 19%;
 
-          min-height: 2px;
-          min-width: 68%;
+      //     min-height: 2px;
+      //     min-width: 68%;
 
-          background-color: $blackColor;
-          opacity: 0;
+      //     background-color: $blackColor;
+      //     opacity: 0;
 
-          transform: translateX(7.1px) rotate(-46deg);
-          transform-origin: left bottom;
-          transition: .2s;
+      //     transform: translateX(7.1px) rotate(-46deg);
+      //     transform-origin: left bottom;
+      //     transition: .2s;
 
-          content: "";
-        }
+      //     content: "";
+      //   }
 
-        .form-section__agreement-radio-button:checked + .checkbox__border::before,  
-        .form-section__agreement-radio-button:checked + .checkbox__border::after {
-          opacity: 1;
-        }
+      //   .checkbox_button:checked + .checkbox__border::before,  
+      //   .checkbox_button:checked + .checkbox__border::after {
+      //     opacity: 1;
+      //   }
+
+      // }
+
+      .agreement-text {
+        margin-left: 10px;
+
+        font-size: 17px;
+        color: $greyColor;
 
         @media (min-width: 361px) {
 
@@ -391,6 +382,18 @@
           .form-section__agreement-text-link:active {
             color: $darkGreen;
           }
+        }
+
+        .form-section__agreement-text-link {
+          margin-left: 1px;
+
+          font-size: 17px;
+          text-decoration: none;
+          color: $blackColor;
+
+          background: inherit;
+                      
+          cursor: pointer;
         }
       }
     }
@@ -514,12 +517,12 @@
         }
       }
 
-      .form-section__agreement-container {
+      // .form-section__agreement-container {
 
-        .form-section__accept {
-          justify-content: flex-start;
-        }
-      }
+      //   .checkbox_label {
+      //     // justify-content: flex-start;
+      //   }
+      // }
     }
   }
 }
@@ -566,9 +569,9 @@
 
         .form-section__agreement-container {
 
-          .form-section__accept {
-            gap: 12px;
-          }
+          // .checkbox_label {
+          //   gap: 12px;
+          // }
         }
       }
   }
@@ -730,24 +733,24 @@
 
       .form-section__agreement-container {
 
-        .form-section__accept {
+        // .checkbox_label {
+        //   font-size: 16px;
+        //   gap: 0;
+
+        //   .checkbox__border {
+        //     min-width: 21px;
+        //     min-height: 21px;
+        //   }
+        // }
+
+        .agreement-text {
+          margin-left: 12px;
+          max-width: 260px;
+
           font-size: 16px;
-          gap: 0;
 
-          .checkbox__border {
-            min-width: 21px;
-            min-height: 21px;
-          }
-
-          .agreement-text {
-            margin-left: 12px;
-            max-width: 260px;
-
+          .form-section__agreement-text-link {
             font-size: 16px;
-
-            .form-section__agreement-text-link {
-              font-size: 16px;
-            }
           }
         }
       }
@@ -823,18 +826,19 @@
 
       .form-section__agreement-container {
 
-        .form-section__accept {
+        // .checkbox_label {
 
-          .checkbox__border {
-            margin-bottom: 45px;
-          }
+        //   .checkbox__border {
+        //     margin-bottom: 45px;
+        //   }
 
-          .agreement-text {
-            max-width: 248px;
-            margin-left: 12px;
+        // }
+        
+        .agreement-text {
+          max-width: 248px;
+          margin-left: 12px;
 
-            font-size: 16px;
-          }
+          font-size: 16px;
         }
       }
     }

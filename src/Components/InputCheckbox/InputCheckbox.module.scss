@@ -1,0 +1,102 @@
+@import '../../styles/colors.scss';
+@import '../../styles/mixins.scss';
+
+.checkbox_label {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 19px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 142%;
+  letter-spacing: -0.01em;
+  color: $greyColor;
+          
+  .checkbox_button {
+    display: none;
+  }
+
+  .checkbox__border {
+    position: relative;
+
+    display: inline-block;
+    min-width: 20px;
+    min-height: 20px;
+
+    border: 2px solid $blackColor;
+    border-radius: 20%;
+  }
+
+  .checkbox__border::before {
+    position: absolute;
+    left: -1.3px;
+    top: 48%;
+
+    min-height: 29%;
+    min-width: 2px;
+
+    background-color: $blackColor;
+    opacity: 0;
+              
+    transition: .2s;
+    transform: translateX(9.45px) rotate(-45deg);
+    transform-origin: left bottom;
+
+    content: '';
+  }
+
+  .checkbox__border::after {
+    position: absolute;
+    left: 9%;
+    bottom: 19%;
+
+    min-height: 2px;
+    min-width: 68%;
+
+    background-color: $blackColor;
+    opacity: 0;
+
+    transform: translateX(7.1px) rotate(-46deg);
+    transform-origin: left bottom;
+    transition: .2s;
+
+    content: "";
+  }
+
+  .checkbox_button:checked + .checkbox__border::before,  
+  .checkbox_button:checked + .checkbox__border::after {
+    opacity: 1;
+  }
+
+}
+
+@include _1024 {
+  .checkbox_label {
+    gap: 12px;
+  }
+}
+
+@include _780 {
+  .checkbox_label {
+    font-size: 16px;
+    gap: 0;
+
+    .checkbox__border {
+      min-width: 21px;
+      min-height: 21px;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .checkbox_label {
+
+    .checkbox__border {
+      margin-bottom: 45px;
+    }
+
+  }
+}

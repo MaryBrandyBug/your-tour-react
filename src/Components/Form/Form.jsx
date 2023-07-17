@@ -7,6 +7,7 @@ import Button from '../Button';
 import InputField from '../InputField/InputField';
 import TextAreaField from '../TextAreaField/TextAreaField';
 import InputRadio from '../InputRadio/InputRadio';
+import InputCheckbox from '../InputCheckbox/InputCheckbox';
 
 export default function Form() {
   const cx = classNames.bind(styles);
@@ -22,9 +23,9 @@ export default function Form() {
     setRadio(e.target.value);
   };
 
-  function changeCheckbox() {
+  const changeCheckbox = () => {
     setChecked(!checked);
-  }
+  };
 
   const handleChange = (e) => {
     setYourTourForm({ ...yourTourForm, [e.target.name]: e.target.value });
@@ -131,16 +132,14 @@ export default function Form() {
         </div>
 
         <div className={cx('form-section__agreement-container')}>
-          <label className={cx('form-section__accept')} htmlFor="accept">
-            <input type="checkbox" name="agreement" className={cx('form-section__agreement-radio-button')} id="accept" onChange={changeCheckbox} />
-            <span className={cx('checkbox__border')} />
-            <div className={cx('agreement-text')}>
-              Нажимая кнопку, я принимаю условия
-              {' '}
-              <Link className={cx('form-section__agreement-text-link')} to="/">Лицензионного договора</Link>
-            </div>
-          </label>
+          <InputCheckbox name="agreement" id="accept" onChange={changeCheckbox} />
+          <div className={cx('agreement-text')}>
+            Нажимая кнопку, я принимаю условия
+            {' '}
+            <Link className={cx('form-section__agreement-text-link')} to="/">Лицензионного договора</Link>
+          </div>
         </div>
+
         <div className={cx('form-section__buttons-container')}>
           <div className={cx('form-section__submit-button')}>
             <Button text="Найти тур" btnClass={cx('form-section__submit-button-text')} type="submit" />
