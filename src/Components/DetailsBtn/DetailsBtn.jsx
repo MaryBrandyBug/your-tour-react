@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './DetailsBtn.module.scss';
@@ -18,3 +19,11 @@ export default function DetailsBtn({ additionalClass }) {
     </div>
   );
 }
+
+DetailsBtn.defaultProps = {
+  additionalClass: null,
+};
+
+DetailsBtn.propTypes = {
+  additionalClass: PropTypes.string,
+};
