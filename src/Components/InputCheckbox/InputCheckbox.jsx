@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './InputCheckbox.module.scss';
 
@@ -12,3 +13,15 @@ export default function InputCheckbox({ name, id, onChange }) {
     </label>
   );
 }
+
+InputCheckbox.defaultProps = {
+  name: null,
+  id: null,
+  onChange: null,
+};
+
+InputCheckbox.propTypes = {
+  name: PropTypes.string,
+  id: PropTypes.string,
+  onChange: PropTypes.func,
+};

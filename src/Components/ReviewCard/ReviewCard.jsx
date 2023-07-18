@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './ReviewCard.module.scss';
 
@@ -35,3 +36,17 @@ export default function ReviewCard({
     </div>
   );
 }
+
+ReviewCard.defaultProps = {
+  text: null,
+  name: null,
+  tour: null,
+  img: null,
+};
+
+ReviewCard.propTypes = {
+  text: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
+  name: PropTypes.string,
+  tour: PropTypes.string,
+  img: PropTypes.string,
+};

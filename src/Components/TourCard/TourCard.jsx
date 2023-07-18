@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './TourCard.module.scss';
 
@@ -20,3 +21,11 @@ export default function TourCard({ img }) {
     </div>
   );
 }
+
+TourCard.defaultProps = {
+  img: null,
+};
+
+TourCard.propTypes = {
+  img: PropTypes.string,
+};

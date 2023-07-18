@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './StoryCard.module.scss';
@@ -36,3 +37,21 @@ export default function StoryCard({
     </div>
   );
 }
+
+StoryCard.defaultProps = {
+  header: null,
+  text: null,
+  networks: null,
+  img: null,
+  list: null,
+  additionalClassCards: null,
+};
+
+StoryCard.propTypes = {
+  header: PropTypes.string,
+  text: PropTypes.string,
+  networks: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
+  img: PropTypes.string,
+  list: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
+  additionalClassCards: PropTypes.string,
+};
