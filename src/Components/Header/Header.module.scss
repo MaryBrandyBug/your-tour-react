@@ -1,7 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.header {
+.root {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -12,7 +12,7 @@
 
   composes: main-font-style from '../../styles/global.scss';
 
-  .header__navbar {
+  .navbar__container {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -73,7 +73,7 @@
     }
   }
 
-  .header__content {
+  .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +81,7 @@
     gap: 50px;
     padding: 50px 0 50px 0;
 
-    .header__content__title {
+    .content__title {
       max-width: 768px;
 
       font-style: normal;
@@ -93,7 +93,7 @@
       color: $whiteColor;
     }
 
-    .header__content__subtitle {
+    .content__subtitle {
       max-width: 562px;
 
       text-align: center;
@@ -102,7 +102,7 @@
 
     @media (min-width: 361px) {
 
-      .header__content__button:hover {
+      .content__button:hover {
         background: $orangeColor;
 
         transition: all 0.5s ease-out;
@@ -112,7 +112,7 @@
         }
       }
     
-      .header__content__button:active {
+      .content__button:active {
         background: $lightOrange;
 
         .find-tour-btn {
@@ -121,7 +121,7 @@
       }
     }
 
-    .header__content__button {
+    .content__button {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -153,9 +153,9 @@
 }
 
 @include _1175 {
-  .header {
+  .root {
 
-    .header__navbar {
+    .navbar__container {
 
       .navbar {
         gap: 60px;
@@ -165,9 +165,9 @@
 }
 
 @include _1024 {
-  .header {
+  .root {
         
-    .header__navbar {
+    .navbar__container {
       max-width: 100%;
 
       .navbar {
@@ -180,9 +180,9 @@
       }
     }
 
-    .header__content {
+    .content {
             
-      .header__content__subtitle {
+      .content__subtitle {
         max-width: 442px;
       }
     }
@@ -190,9 +190,9 @@
 }
 
 @media (max-width: 990px) and (min-width: 781px) {
-  .header {
+  .root {
 
-    .header__navbar {
+    .navbar__container {
             
       .navbar {
         gap: calc(-22px + 5.37109375vw);
@@ -202,9 +202,9 @@
 }
 
 @include _780 {
-  .header {
+  .root {
 
-    .header__navbar {
+    .navbar__container {
             
       .navbar {
         min-width: 90%;
@@ -215,9 +215,9 @@
       }
     }
 
-    .header__content {
+    .content {
 
-      .header__content__title {
+      .content__title {
         max-width: 540px;
 
         font-size: 80px;
@@ -228,9 +228,9 @@
 }
 
 @include _576 {
-  .header {
+  .root {
 
-    .header__navbar {
+    .navbar__container {
 
       .navbar {
         justify-content: space-around;
@@ -249,15 +249,15 @@
       }
     }
 
-    .header__content {
+    .content {
 
-      .header__content__title {
+      .content__title {
         min-height: 190px;
 
         font-size: 50px;
       }
 
-      .header__content__subtitle {
+      .content__subtitle {
         max-width: 350px;
 
         font-size: 18px;
