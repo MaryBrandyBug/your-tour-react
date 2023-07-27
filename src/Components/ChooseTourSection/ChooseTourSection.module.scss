@@ -1,26 +1,26 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.choose-tour-section {
+.root {
   gap: 100px;
 
-  .choose-tour-section__header {
+  .header {
     max-width: 700px;
     gap: 35px;
 
-    .choose-tour-section__header__menu {
+    .header__menu {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       gap: 30px;
 
-      .choose-tour-section_menu__item {
+      .menu__item {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
 
-        .choose-tour-section_menu__item-name {
+        .menu__item-name {
           font-family: 'Roboto';
           font-style: normal;
           font-weight: 700;
@@ -30,7 +30,7 @@
           cursor: pointer;
         }
 
-        .choose-tour-section_menu__active-item {
+        .menu__active-item {
           font-family: 'Roboto';
           font-style: normal;
           font-weight: 700;
@@ -45,13 +45,13 @@
           text-underline-offset: 7px;
         }
 
-        .choose-tour-section_menu__item-name:hover {
+        .menu__item-name:hover {
           text-decoration-line: underline;
           text-decoration-thickness: 2px;
           text-underline-offset: 7px;
         }
 
-        .choose-tour-section_menu__item-name:active {
+        .menu__item-name:active {
           color: $orangeColor;
 
           text-decoration-line: underline;
@@ -62,7 +62,7 @@
     }
   }
 
-  .choose-tour-section__content {
+  .content {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -72,10 +72,10 @@
 }
 
 @include _1024 {
-  .choose-tour-section {
+  .root {
     min-height: 1871px;
 
-    .choose-tour-section__content {
+    .content {
       justify-content: center;
       max-width: 920px;
       gap: 20px;
@@ -84,47 +84,47 @@
 }
 
 @media (max-width: 992px) and (min-width: 780px) {
-  .choose-tour-section {
+  .root {
 
-    .choose-tour-section__content {
+    .content {
       max-width: 100%;
     }
   }
 };
 
 @include _780 {
-  .choose-tour-section {
+  .root {
     min-height: auto;
 
-    .choose-tour-section__content {
+    .content {
       gap: 18px;
 
       letter-spacing: 0.04em;
     }
 
-    .choose-tour-section__header {
+    .header {
       max-width: 360px;
       min-width: 360px;
       gap: 30px;
 
-      .choose-tour-section__header__title {
+      .header__title {
         letter-spacing: 0.65px;
       }
 
-      .choose-tour-section__header__menu {
+      .header__menu {
         flex-wrap: wrap;
         justify-content: center;
                 
         gap: 10px;
 
-        .choose-tour-section_menu__item {
+        .menu__item {
 
-          .choose-tour-section_menu__item-name {
+          .menu__item-name {
             font-size: 20px;
             line-height: 142%;
           }
 
-          .choose-tour-section_menu__active-item {
+          .menu__active-item {
             font-size: 20px;
             line-height: 142%;
           }
@@ -135,9 +135,9 @@
 }
 
 @include _1175 {
-  .choose-tour-section {
+  .root {
 
-    .choose-tour-section__content {
+    .content {
       justify-content: center;
       gap: 11px;
     }
@@ -145,35 +145,35 @@
 }
 
 @include _576 {
-  .choose-tour-section {
+  .root {
     min-height: auto;
     min-height: 2172px;
     gap: 35px;
 
-    .choose-tour-section__content {
+    .content {
       max-width: 318px;
       gap: 18px;
 
       letter-spacing: 0.04em;
     }
 
-    .choose-tour-section__header {
+    .header {
       max-width: 360px;
       min-width: 360px;
       gap: 30px;
 
-      .choose-tour-section__header__title {
+      .header__title {
         letter-spacing: 0.65px;
       }
 
-      .choose-tour-section__header__menu {
+      .header__menu {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
 
-        .choose-tour-section_menu__item {
+        .menu__item {
 
-          .choose-tour-section_menu__item-name {
+          .menu__item-name {
             font-size: 20px;
             line-height: 142%;
           }
