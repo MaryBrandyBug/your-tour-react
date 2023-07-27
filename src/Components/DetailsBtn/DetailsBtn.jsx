@@ -10,10 +10,9 @@ export default function DetailsBtn({ additionalClass }) {
   const cx = classNames.bind(styles);
 
   return (
-    <div className={cx('info-link__container', additionalClass)}>
-      <Link className={cx('info-link__text')} to="/">Подробнее</Link>
-      <div className={cx('info-link__arrow')}>
-        {/* <img src="/your-tour-react/images/Vector.png" alt="arrow" /> */}
+    <div className={cx('root', additionalClass)}>
+      <Link className={cx('root__text')} to="/">Подробнее</Link>
+      <div className={cx('root__arrow')}>
         <Arrow />
       </div>
     </div>
