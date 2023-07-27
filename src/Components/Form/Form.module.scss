@@ -1,16 +1,16 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.form-section {
+.root {
   min-width: percentage(1170 / 1920);
   gap: 100px;
 
   composes: main-font-style from '../../styles/global.scss';
 
-  .form-section__header {
+  .header {
     gap: 30px;
 
-    .form-section__header__subtitle {
+    .header__subtitle {
       max-width: 458px;
 
       text-align: center;
@@ -18,7 +18,7 @@
     }
   }
 
-  .form-section__content-form {
+  .content {
     min-height: 986px;
     min-width: 100%;
     padding: 70px;
@@ -27,23 +27,23 @@
     background: $whiteColor;
     border-radius: 50px;
 
-    .form-cont {
+    .container {
       display: flex;
       max-width: 1170px;
       flex-wrap: wrap;
       min-width: inherit;
       gap: 30px;
 
-      .side-form-cont {
+      .side-container {
         display: flex;
         flex-direction: column;
         gap: 33px;
 
-        .form-section__input-name {
+        .input-name {
           color: $blackColor;
         }
 
-        .form-section__input-fields-container {
+        .input-fields-container {
           display: flex;
           flex-direction: row;
           align-items: flex-start;
@@ -51,7 +51,7 @@
           max-height: 104px;
           gap: 30px;
 
-          .form-section__input-field-container {
+          .input-field-container {
             position: relative;
 
             display: flex;
@@ -88,7 +88,7 @@
               pointer-events: none;
             }
 
-            .form-section__select-field {
+            .select-field {
               min-width: 500px;
               min-height: 68px;
               padding: 20px;
@@ -105,7 +105,7 @@
             }
 
             @media (min-width: 361px) {
-              .form-section__select-field:hover {
+              .select-field:hover {
                 background: $lightBeigeColor;
               }
             }
@@ -118,7 +118,7 @@
               opacity: 0;
             }
 
-            .form-section__input-field {
+            .root__input-field {
               display: flex;
               flex-direction: row;
               align-items: center;
@@ -140,7 +140,7 @@
 
             @media (min-width: 361px) {
 
-              .form-section__input-field:focus{
+              .root__input-field:focus{
                 border: 1px solid $greyColor;
                 background: $lightBeigeColor;
               }
@@ -153,12 +153,12 @@
                 color: $lightBeigeColor;
               }
     
-              .form-section__input-field:hover {
+              .root__input-field:hover {
                 background: $lightBeigeColor;
               }
             }
 
-            .form-section__input-field::placeholder {
+            .root__input-field::placeholder {
               color: $greyColor;
             }
 
@@ -172,7 +172,7 @@
       }
     }
 
-    .form-section__input-comment-container {
+    .root__input-comment-container {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -180,7 +180,7 @@
       max-height: 188px;
       gap: 8px;
 
-      .form-section__input-name {
+      .input-name {
         color: $blackColor;
       }
 
@@ -191,17 +191,17 @@
       }
 
       @media (min-width: 361px) {
-        .form-section__input-field-comment:focus {
+        .root__input-field-comment:focus {
           border: 1px solid $greyColor;
           background: $lightBeigeColor;
         }
 
-        .form-section__input-field-comment:hover {
+        .root__input-field-comment:hover {
           background: $lightBeigeColor;
         }
       }
 
-      .form-section__input-field-comment {
+      .root__input-field-comment {
         display: flex;
         flex-direction: row;
         align-items: center;
@@ -220,20 +220,20 @@
       }
     }
 
-    .form-section__age-check {
+    .age-check {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       min-width: 100%;
       gap: 30px;
 
-      .form-section__age-check__input-container {
+      .age-check__input-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
 
-        .form-section__input-name {
+        .input-name {
           color: $blackColor;
         }
 
@@ -290,12 +290,12 @@
       }
     }
 
-    .form-section__agreement-container {
+    .agreement-container {
       display: flex;
       align-items: center;
       min-width: 100%;
 
-      // .checkbox_label {
+      // .root {
       //   display: flex;
       //   flex-direction: row;
       //   justify-content: center;
@@ -375,16 +375,16 @@
 
         @media (min-width: 361px) {
 
-          .form-section__agreement-text-link:hover {
+          .agreement-text-link:hover {
             text-decoration: underline;
           }
     
-          .form-section__agreement-text-link:active {
+          .agreement-text-link:active {
             color: $darkGreen;
           }
         }
 
-        .form-section__agreement-text-link {
+        .agreement-text-link {
           margin-left: 1px;
 
           font-size: 17px;
@@ -398,14 +398,14 @@
       }
     }
 
-    .form-section__buttons-container {
+    .buttons-container {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
       min-width: 100%;
       gap: 30px;
 
-      .form-section__submit-button {
+      .submit-button {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -421,7 +421,7 @@
 
         cursor: pointer;
 
-        .form-section__submit-button-text{
+        .submit-button-text{
           min-width: 235px;
           min-height: 58px;
 
@@ -434,18 +434,18 @@
 
       @media (min-width: 361px) {
 
-        .form-section__submit-button:hover {
+        .submit-button:hover {
           background: $greenColor;
           transition: 0.4s;
         }
     
-        .form-section__submit-button:active {
+        .submit-button:active {
           background: $oliveGreenColor;
           transition: 0.3s;
         }
       }
 
-      .form-section__reset-button {
+      .reset-button {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -461,7 +461,7 @@
 
         cursor: pointer;
 
-        .form-section__reset-button-text {
+        .reset-button-text {
           min-width: 235px;
           min-height: 58px;
 
@@ -474,13 +474,13 @@
 
       @media (min-width: 361px) {
 
-        .form-section__reset-button:hover {
+        .reset-button:hover {
           background: $whiteSmoke;
 
           transition: 0.4s;
         }
     
-        .form-section__reset-button:active {
+        .reset-button:active {
           background: $gainsboro;
 
           transition: 0.3s;
@@ -492,24 +492,24 @@
 }
 
 @media (max-width: 1300px) {
-  .form-section {
+  .root {
     min-width: percentage(918 / 1300);
 
-    .form-section__content-form {
+    .content {
 
-      .form-cont {
+      .container {
 
-        .side-form-cont {
+        .side-container {
 
-          .form-section__input-fields-container {
+          .input-fields-container {
 
-            .form-section__input-field-container {
+            .input-field-container {
 
-              .form-section__select-field {
+              .select-field {
                 min-width: 400px;
               }
     
-              .form-section__input-field {
+              .root__input-field {
                 min-width: 400px;
               }
             }
@@ -517,9 +517,9 @@
         }
       }
 
-      // .form-section__agreement-container {
+      // .agreement-container {
 
-      //   .checkbox_label {
+      //   .root {
       //     // justify-content: flex-start;
       //   }
       // }
@@ -529,32 +529,32 @@
 
 
 @include _1024 {
-  .form-section {
+  .root {
       min-width: percentage(918 / 1024);
       gap: 100px;
         
-      .form-section__content-form {
+      .content {
         padding: 60px;
         gap: 33px;
 
-        .form-cont {
+        .container {
           gap: 28px;
 
-          .side-form-cont {
+          .side-container {
 
-            .form-section__input-fields-container {
+            .input-fields-container {
               max-height: 102px;
               gap: 20px;
 
-              .form-section__input-field-container {
+              .input-field-container {
                 max-width: 389px;
 
-                .form-section__select-field {
+                .select-field {
                   max-width: 389px;
                   min-width: 389px;
                 }
 
-                .form-section__input-field {
+                .root__input-field {
                   min-width: 389px;
                 }
               }
@@ -563,13 +563,13 @@
         }
 
 
-        .form-section__input-comment-container {
+        .root__input-comment-container {
           max-height: 183.4px;
         }
 
-        .form-section__agreement-container {
+        .agreement-container {
 
-          // .checkbox_label {
+          // .root {
           //   gap: 12px;
           // }
         }
@@ -578,27 +578,27 @@
 }
 
 @include _992 {
-  .form-section {
+  .root {
     gap: 50px;
 
-    .form-section__content-form {
+    .content {
 
-      .form-cont {
+      .container {
 
-        .side-form-cont {
+        .side-container {
           min-width: 47.5%;
 
-          .form-section__input-fields-container {
+          .input-fields-container {
             min-width: 100%;
 
-            .form-section__input-field-container {
+            .input-field-container {
               min-width: inherit;
 
-              .form-section__select-field {
+              .select-field {
                 min-width: inherit;
               }
 
-              .form-section__input-field {
+              .root__input-field {
                 min-width: inherit;
               }
             }
@@ -610,41 +610,41 @@
 }
 
 @include _780 {
-  .form-section  {
+  .root  {
     gap: 40px;
 
-    .form-section__header {
+    .header {
       gap: 20px;
 
-      .form-section__header__title {
+      .header__title {
         letter-spacing: 0.7px;
       }
 
-      .form-section__header__subtitle {
+      .header__subtitle {
         min-width: 400px;
       }
     }
 
-    .form-section__content-form {
+    .content {
       gap: 30px;
 
       border-radius: 30px;
 
-      .form-cont {
+      .container {
         flex-direction: column;
 
         gap: 32px;
 
-        .side-form-cont {
+        .side-container {
 
-          .form-section__input-name {
+          .input-name {
             font-size: 16px;
           }
 
-          .form-section__input-fields-container {
+          .input-fields-container {
             max-height: 74px;
 
-            .form-section__input-field-container {
+            .input-field-container {
               max-width: 250px;
               max-height: 74px;
 
@@ -666,13 +666,13 @@
                 content: url('../../../public/images/Rectangle.png');
               }
 
-              .form-section__input-field {
+              .root__input-field {
                 padding: 8px;
 
                 font-size: 16px;
               }
 
-              .form-section__select-field {
+              .select-field {
                 min-height: 60px;
                 padding: 10px;
 
@@ -680,12 +680,12 @@
                 letter-spacing: 0.4px;
               }
                     
-              .form-section__input-field {
+              .root__input-field {
                 max-width: 278px;
                 min-height: 60px;
               }
 
-              .form-section__input-field::placeholder {
+              .root__input-field::placeholder {
                 font-size: 16px;
               }
             }
@@ -693,22 +693,22 @@
         }
       }
 
-      .form-section__input-comment-container {
+      .root__input-comment-container {
 
-        .form-section__input-name {
+        .input-name {
           font-size: 16px;
         }
 
-        .form-section__input-field-comment {
+        .root__input-field-comment {
           font-size: 16px;
         }
       }
 
-      .form-section__age-check {
-        .form-section__age-check__input-container {
+      .age-check {
+        .age-check__input-container {
           gap: 8px;
 
-          .form-section__input-name {
+          .input-name {
             font-size: 16px;
           }
 
@@ -731,9 +731,9 @@
         }
       }
 
-      .form-section__agreement-container {
+      .agreement-container {
 
-        // .checkbox_label {
+        // .root {
         //   font-size: 16px;
         //   gap: 0;
 
@@ -749,22 +749,22 @@
 
           font-size: 16px;
 
-          .form-section__agreement-text-link {
+          .agreement-text-link {
             font-size: 16px;
           }
         }
       }
 
-      .form-section__buttons-container {
+      .buttons-container {
         margin-left: 0;
         margin-right: 0px;
         gap: 10px;
 
-        .form-section__submit-button {
+        .submit-button {
           min-width: 134px;
           min-height: 47px;
                     
-          .form-section__submit-button-text {
+          .submit-button-text {
             min-width: 134px;
             min-height: 47px;
 
@@ -772,11 +772,11 @@
           }
         }
 
-        .form-section__reset-button {
+        .reset-button {
           min-width: 134px;
           min-height: 47px;
 
-          .form-section__reset-button-text {
+          .reset-button-text {
             min-width: 134px;
             min-height: 47px;
 
@@ -789,26 +789,26 @@
 }
 
 @media (max-width: 500px) {
-  .form-section {
+  .root {
     min-width: 90%;
 
-    .form-section__content-form {
+    .content {
       min-width: 85%;
       padding: 20px;
 
-      .form-cont {
+      .container {
 
-        .side-form-cont {
+        .side-container {
 
-          .form-section__input-fields-container {    
+          .input-fields-container {    
         
-            .form-section__input-field-container {
+            .input-field-container {
         
-              .form-section__select-field {
+              .select-field {
                 min-height: 43px;
               }
         
-              .form-section__input-field {
+              .root__input-field {
                 min-height: 43px;
               }
 
@@ -820,13 +820,13 @@
         }
       }
 
-      .form-section__input-comment-container {
+      .root__input-comment-container {
         max-height: 163px;
       }
 
-      .form-section__agreement-container {
+      .agreement-container {
 
-        // .checkbox_label {
+        // .root {
 
         //   .checkbox__border {
         //     margin-bottom: 45px;

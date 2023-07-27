@@ -9,8 +9,8 @@ export default function ReviewCard({
   const cx = classNames.bind(styles);
 
   return (
-    <div className={cx('review-section__review-card')}>
-      <p className={cx('review-section__review-card-text')}>
+    <div className={cx('root')}>
+      <p className={cx('content')}>
         {text[0]}
         {text.length > 1
           ? (
@@ -22,16 +22,16 @@ export default function ReviewCard({
           )
           : ''}
       </p>
-      <div className={cx('review-section__review-card__footer')}>
-        <div className={cx('review-section__footer-content')}>
-          <h3 className={cx('review-section__reviewer-name')}>{name}</h3>
-          <p className={cx('review-section__reviewer-tour')}>
+      <div className={cx('root__footer')}>
+        <div className={cx('footer-content')}>
+          <h3 className={cx('reviewer-name')}>{name}</h3>
+          <p className={cx('reviewer-tour')}>
             Тур:
             {' '}
             {tour}
           </p>
         </div>
-        <img src={img} alt="reviewer" className={cx('footer-content__reviewer')} />
+        <img src={img} alt="reviewer" className={cx('root__reviewer')} />
       </div>
     </div>
   );

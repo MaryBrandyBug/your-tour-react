@@ -1,7 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.checkbox_label {
+.root {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -74,13 +74,13 @@
 }
 
 @include _1024 {
-  .checkbox_label {
+  .root {
     gap: 12px;
   }
 }
 
 @include _780 {
-  .checkbox_label {
+  .root {
     font-size: 16px;
     gap: 0;
 
@@ -92,7 +92,7 @@
 }
 
 @media (max-width: 500px) {
-  .checkbox_label {
+  .root {
 
     .checkbox__border {
       margin-bottom: 45px;

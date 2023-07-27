@@ -1,5 +1,5 @@
-const bigPhotoClass = 'travel-photo-section__big-photo';
-const smallPhotoClass = 'travel-photo-section__small-photo';
+const bigPhotoClass = 'big-photo';
+const smallPhotoClass = 'small-photo';
 const maxSize = 'max-size';
 const maxMiddleSize = 'max-middle-size';
 

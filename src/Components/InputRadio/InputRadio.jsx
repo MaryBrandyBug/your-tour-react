@@ -9,10 +9,10 @@ export default function InputRadio({
   const cx = classNames.bind(styles);
 
   return (
-    <label className={cx('age-check__radio-button-container')} htmlFor={id}>
-      <input type="radio" name={name} value={value} className={cx('age-check__radio-button')} id={id} onChange={onChange} checked={checked} />
+    <label className={cx('root')} htmlFor={id}>
+      <input type="radio" name={name} value={value} className={cx('radio-button')} id={id} onChange={onChange} checked={checked} />
       <span className={cx('radio__border')} />
-      <p className={cx('form-section__input-name')}>{text}</p>
+      <p className={cx('input-name')}>{text}</p>
     </label>
   );
 }

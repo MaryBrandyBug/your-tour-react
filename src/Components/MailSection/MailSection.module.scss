@@ -1,7 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.mail-section {
+.root {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -11,20 +11,20 @@
 
   composes: main-font-style from '../../styles/global.scss';
 
-  .mail-section__photo {
+  .photo {
     max-width: 370px;
 
     border-radius: 50px;
   }
 
-  .mail-section__content {
+  .content {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     padding: 0px;
     gap: 20px;
 
-    .mail-section__content__header {
+    .content__header {
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 500;
@@ -33,20 +33,20 @@
       color: $blackColor;
     }
 
-    .mail-section__content__text {
+    .content__text {
       color: $greyColor;
 
-      .mail-section__content__mail {
+      .content__mail {
         color: $blackColor;
 
         text-decoration: none;
       }
 
-      .mail-section__content__mail:hover {
+      .content__mail:hover {
         text-decoration: underline;
       }
 
-      .mail-section__content__mail:active {
+      .content__mail:active {
         color: $darkGreen;
       }
     }
@@ -54,27 +54,27 @@
 }
 
 @include _780 {
-  .mail-section {
+  .root {
     flex-direction: column;
 
-    .mail-section__photo {
+    .photo {
       max-width: 250px;
 
       border-radius: 20px;
     }
 
-    .mail-section__content {
+    .content {
       max-width: 291px;
       gap: 24px;
 
-      .mail-section__content__header {
+      .content__header {
         font-size: 25px;
         line-height: 120%;
         text-align: center;
         letter-spacing: 0.045em;
       }
 
-      .mail-section__content__text {
+      .content__text {
         text-align: center;
       }
     }

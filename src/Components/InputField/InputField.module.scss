@@ -1,7 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.form-section__input-fields-container {
+.root {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -9,7 +9,7 @@
   max-height: 104px;
   gap: 30px;
 
-  .form-section__input-field-container {
+  .content {
     position: relative;
 
     display: flex;
@@ -19,7 +19,7 @@
     max-height: 104px;
     gap: 8px;
 
-    .form-section__input-field {
+    .input-field {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -41,28 +41,28 @@
 
     @media (min-width: 361px) {
 
-      .form-section__input-field:focus{
+      .input-field:focus{
         border: 1px solid $greyColor;
         background: $lightBeigeColor;
       }
 
-      .form-section__input-field:hover {
+      .input-field:hover {
         background: $lightBeigeColor;
       }
     }
 
-    .form-section__input-field::placeholder {
+    .input-field::placeholder {
       color: $greyColor;
     }
   }
 }
 
 @media (max-width: 1300px) {
-  .form-section__input-fields-container {
+  .root {
 
-    .form-section__input-field-container {
+    .content {
 
-      .form-section__input-field {
+      .input-field {
         min-width: 400px;
       }
     }
@@ -70,14 +70,14 @@
 }
 
 @include _1024 {
-    .form-section__input-fields-container {
+    .root {
         max-height: 102px;
         gap: 20px;
 
-        .form-section__input-field-container {
+        .content {
           max-width: 389px;
 
-          .form-section__input-field {
+          .input-field {
             min-width: 389px;
           }
         }
@@ -85,13 +85,13 @@
 }
 
 @include _992 {
-  .form-section__input-fields-container {
+  .root {
     min-width: 100%;
 
-    .form-section__input-field-container {
+    .content {
       min-width: inherit;
 
-      .form-section__input-field {
+      .input-field {
         min-width: inherit;
       }
     }
@@ -99,29 +99,29 @@
 }
 
 @include _780 {
-  .form-section__input-fields-container {
+  .root {
     max-height: 74px;
 
-    .form-section__input-field-container {
+    .content {
       max-width: 250px;
       max-height: 74px;
 
-      .form-section__input-name {
+      .input-name {
         font-size: 16px;
       }
 
-      .form-section__input-field {
+      .input-field {
         padding: 8px;
 
         font-size: 16px;
       }
             
-      .form-section__input-field {
+      .input-field {
         max-width: 278px;
         min-height: 60px;
       }
 
-      .form-section__input-field::placeholder {
+      .input-field::placeholder {
         font-size: 16px;
       }
     }
@@ -129,11 +129,11 @@
 }
 
 @media (max-width: 500px) {
-  .form-section__input-fields-container {    
+  .root {    
         
-    .form-section__input-field-container {
+    .content {
 
-      .form-section__input-field {
+      .input-field {
         min-height: 43px;
       }
     }

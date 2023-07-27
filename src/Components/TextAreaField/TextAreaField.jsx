@@ -7,9 +7,9 @@ export default function TextAreaField({ fieldName, name, onChange }) {
   const cx = classNames.bind(styles);
 
   return (
-    <div className={cx('form-section__input-comment-container')}>
-      <p className={cx('form-section__input-name')}>{fieldName}</p>
-      <textarea name={name} className={cx('form-section__input-field-comment', 'input-comment')} onChange={onChange} />
+    <div className={cx('root')}>
+      <p className={cx('input-name')}>{fieldName}</p>
+      <textarea name={name} className={cx('input-field-comment', 'input-comment')} onChange={onChange} />
     </div>
   );
 }

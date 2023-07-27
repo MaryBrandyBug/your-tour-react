@@ -52,359 +52,359 @@
 }
 
 @mixin mobile {
-    @media (max-width: 360px) {
+    // @media (max-width: 360px) {
         // chooseTour
-        .choose-tour-section {
-            min-height: 2172px;
-            min-height: auto;
-            gap: 35px;
+        // .root {
+            // min-height: 2172px;
+            // min-height: auto;
+            // gap: 35px;
     
-            .choose-tour-section__content {
-                max-width: 318px;
-                gap: 18px;
+            // .content {
+                // max-width: 318px;
+                // gap: 18px;
     
-                letter-spacing: 0.04em;
-            }
+                // letter-spacing: 0.04em;
+            // }
     
-            .choose-tour-section__header {
-                max-width: 360px;
-                min-width: 360px;
-                gap: 30px;
+            // .header {
+                // max-width: 360px;
+                // min-width: 360px;
+                // gap: 30px;
     
-                .choose-tour-section__header__title {
-                    letter-spacing: 0.65px;
-                }
+                // .header__title {
+                    // letter-spacing: 0.65px;
+                // }
     
-                .choose-tour-section__header__menu {
-                    flex-wrap: wrap;
-                    justify-content: center;
-                    max-width: 300px;
-                    gap: 10px;
+                // .header__menu {
+                    // flex-wrap: wrap;
+                    // justify-content: center;
+                    // max-width: 300px;
+                    // gap: 10px;
     
-                    .choose-tour-section_menu__item {
+                    // .menu__item {
     
-                        .choose-tour-section_menu__item-name {
-                            font-size: 16px;
-                            line-height: 142%;
-                        }
+                        // .menu__item-name {
+                            // font-size: 16px;
+                            // line-height: 142%;
+                        // }
     
-                        .choose-tour-section_menu__active-item {
-                            font-size: 16px;
-                            line-height: 142%;
-                        }
-                    }
-                }
-            }
-        }
+                        // .menu__active-item {
+                            // font-size: 16px;
+                            // line-height: 142%;
+                        // }
+                    // }
+                // }
+            // }
+        // }
 
         // tourCard 
-        .choose-tour__card {
-            min-width: 318px;
-            min-height: 318px;
+        // .root {
+            // min-width: 318px;
+            // min-height: 318px;
     
-            border-radius: 20px;
+            // border-radius: 20px;
     
-            .choose-tour__card__background {
-                min-width: 318px;
+            // .root__background {
+                // min-width: 318px;
     
-                border-radius: 20px;
-            }
+                // border-radius: 20px;
+            // }
     
-            .choose-tour__card-content {
-                left: -2px;
-                top: 2px;
+            // .content {
+                // left: -2px;
+                // top: 2px;
     
-                padding: 25px;
+                // padding: 25px;
     
-                .choose-tour__text-container {
-                    max-width: 268px;
-                    gap: 13px;
+                // .text-container {
+                    // max-width: 268px;
+                    // gap: 13px;
     
-                    .choose-tour__card__subtitle {
-                        font-size: 16px;
-                    }
-                }
+                    // .subtitle {
+                        // font-size: 16px;
+                    // }
+                // }
     
-                .choose-tour__link {
-                    top: 269px;
-                    left: 26px;
-                }
-            }
-        }
+                // .choose-tour__link {
+                    // top: 269px;
+                    // left: 26px;
+                // }
+            // }
+        // }
 
         // detailsBtn
-        .info-link__container {
-            .info-link__text {
-                max-width: 84px;
-                max-height: 23px;
-                
-                font-size: 15px;
-                line-height: 142%;
-            }
+        // .info-link__container {
+            // .info-link__text {
+                // max-width: 84px;
+                // max-height: 23px;
+                // 
+                // font-size: 15px;
+                // line-height: 142%;
+            // }
     
-            .info-link__arrow {
+            // .info-link__arrow {
     
-                svg {
-                    left: 1px;
-                    top: -8px;
-                }
-            }
-        }
+                // svg {
+                    // left: 1px;
+                    // top: -8px;
+                // }
+            // }
+        // }
 
         // footer
-        .footer {
-            max-width: 360px;
-            min-height: 95px;
+        // .footer {
+            // max-width: 360px;
+            // min-height: 95px;
     
-            .footer__content {
-                flex-direction: column;
-                min-width: 318px;
-                gap: 7px;
+            // .footer__content {
+                // flex-direction: column;
+                // min-width: 318px;
+                // gap: 7px;
     
-                .footer__content__social-networks-links {
-                    max-width: 314px;
-                    gap: 20px;
+                // .footer__content__social-networks-links {
+                    // max-width: 314px;
+                    // gap: 20px;
     
-                    .footerLinkBlock {
-                        gap: 1px;
+                    // .footerLinkBlock {
+                        // gap: 1px;
     
-                        .footer__link-icon {
-                            max-width: 20px;
-                        }
+                        // .footer__link-icon {
+                            // max-width: 20px;
+                        // }
     
-                        .img-logo {
-                            max-width: 20px;
-                        }
-                        .inst-icon {
-                            max-width: 20px;
-                            max-height: 20px;
-                        }
-                    }
-                }
-            }
-        }
+                        // .img-logo {
+                            // max-width: 20px;
+                        // }
+                        // .inst-icon {
+                            // max-width: 20px;
+                            // max-height: 20px;
+                        // }
+                    // }
+                // }
+            // }
+        // }
 
         // form
-        .form-section {
-            min-width: percentage(318 / 360);
-            max-width: percentage(318 / 360);
+        // .form-section {
+            // min-width: percentage(318 / 360);
+            // max-width: percentage(318 / 360);
     
-            .form-section__content-form {
-                min-width: 100%;
-                padding: 20px 20px 40px 20px;
-                gap: 30px;
+            // .form-section__content-form {
+                // min-width: 100%;
+                // padding: 20px 20px 40px 20px;
+                // gap: 30px;
     
-                .form-cont {
+                // .container {
     
-                    .side-form-cont {
-                        gap: 31px;
-                    }
-                }
-            }
-        }
+                    // .side-container {
+                        // gap: 31px;
+                    // }
+                // }
+            // }
+        // }
 
         // header
-        .header {
-            max-height: 486px;
+        // .header {
+            // max-height: 486px;
     
-            .header__content {
-                min-width: 360px;
-                gap: 40px;
+            // .header__content {
+                // min-width: 360px;
+                // gap: 40px;
     
-                .header__content__title {
-                    max-width: 360px;
-                    min-height: 114px;
+                // .header__content__title {
+                    // max-width: 360px;
+                    // min-height: 114px;
     
-                    font-size: 34px;
-                    line-height: 112%;
-                }
+                    // font-size: 34px;
+                    // line-height: 112%;
+                // }
     
-                .header__content__subtitle {
-                    max-width: 314px;
+                // .header__content__subtitle {
+                    // max-width: 314px;
     
-                    font-size: 16px;
-                }
+                    // font-size: 16px;
+                // }
     
-                .header__content__button {
+                // .header__content__button {
     
-                    .find-tour-btn {
-                        min-height: 19px;
+                    // .find-tour-btn {
+                        // min-height: 19px;
     
-                        font-size: 16px;
-                    }
-                }
+                        // font-size: 16px;
+                    // }
+                // }
     
-            }
+            // }
     
-            .header__navbar {
-                max-width: 360px;
-                margin-left: 2px;
+            // .header__navbar {
+                // max-width: 360px;
+                // margin-left: 2px;
     
-                .navbar {
-                    justify-content: space-between;
-                    max-width: 320px;
-                    gap: 33px;
+                // .navbar {
+                    // justify-content: space-between;
+                    // max-width: 320px;
+                    // gap: 33px;
     
-                    .navbar__menu {
-                        display: none;
-                    }
+                    // .navbar__menu {
+                        // display: none;
+                    // }
     
-                    .navbar__logo {
-                        min-width: 124px;
+                    // .navbar__logo {
+                        // min-width: 124px;
     
-                        .YourTourLogo {
-                            max-width: 133px;
-                        }
-                    }
+                        // .YourTourLogo {
+                            // max-width: 133px;
+                        // }
+                    // }
     
-                    .telephone {
-                        max-width: 124px;
-                        min-height: 23px;
-                        
-                        font-size: 16px;
-                    }
-                }
-            }
-        }
+                    // .telephone {
+                        // max-width: 124px;
+                        // min-height: 23px;
+                        // 
+                        // font-size: 16px;
+                    // }
+                // }
+            // }
+        // }
 
         // mailSection
-        .mail-section {
-            flex-direction: column;
-            max-width: 360px;
-            margin-left: -2.5px;
-            margin-top: 1px;
+        // . {
+            // flex-direction: column;
+            // max-width: 360px;
+            // margin-left: -2.5px;
+            // margin-top: 1px;
     
-            .mail-section__photo {
-                max-width: 130px;
-                
-                border-radius: 20px;
-            }
+            // .mail-section__photo {
+                // max-width: 130px;
+                // 
+                // border-radius: 20px;
+            // }
     
-            .mail-section__content {
-                max-width: 291px;
-                gap: 24px;
+            // .mail-section__content {
+                // max-width: 291px;
+                // gap: 24px;
     
-                .mail-section__content__header {
-                    font-size: 23px;
-                    line-height: 120%;
-                    text-align: center;
-                    letter-spacing: 0.045em;
-                }
+                // .mail-section__content__header {
+                    // font-size: 23px;
+                    // line-height: 120%;
+                    // text-align: center;
+                    // letter-spacing: 0.045em;
+                // }
     
-                .mail-section__content__text {
-                    text-align: center;
-                }
-            }
-        }
+                // .mail-section__content__text {
+                    // text-align: center;
+                // }
+            // }
+        // }
 
         // reviewCard
-        .review-section__review-card {
-            align-items: flex-start;
-            justify-content: flex-start;
-            min-height: 290px;
-            max-width: 318px;
+        // .root__review-card {
+            // align-items: flex-start;
+            // justify-content: flex-start;
+            // min-height: 290px;
+            // max-width: 318px;
     
-            border-radius: 20px;
+            // border-radius: 20px;
     
-            .review-section__review-card-text {
-                max-width: 273px;
+            // .root__review-card-text {
+                // max-width: 273px;
     
-                font-size: 16px;
-                line-height: 143%;
-            }
+                // font-size: 16px;
+                // line-height: 143%;
+            // }
     
-            .review-section__review-card__footer {
-                padding: 42px 0px 0px;
+            // .root__review-card__footer {
+                // padding: 42px 0px 0px;
     
-                .review-section__footer-content {
-                    min-width: 203px;
-                    gap: 8px;
+                // .footer-content {
+                    // min-width: 203px;
+                    // gap: 8px;
     
-                    .review-section__reviewer-name {
-                        font-weight: 700;
-                        font-size: 23px;
-                        line-height: 120%;
-                        letter-spacing: 0.04em;
-                    }
+                    // .reviewer-name {
+                        // font-weight: 700;
+                        // font-size: 23px;
+                        // line-height: 120%;
+                        // letter-spacing: 0.04em;
+                    // }
     
-                    .review-section__reviewer-tour {
-                        margin-bottom: 1px;
-                        
-                        letter-spacing: -0.01em;
-                    }
-                }
+                    // .reviewer-tour {
+                        // margin-bottom: 1px;
+                        // 
+                        // letter-spacing: -0.01em;
+                    // }
+                // }
     
-                .footer-content__reviewer {
-                    max-width: 75px;
-                    max-height: 75px;
-                }
-            }
-        }
+                // .root__reviewer {
+                    // max-width: 75px;
+                    // max-height: 75px;
+                // }
+            // }
+        // }
 
         // reviewSection
-        .review-section {
-            max-width: 360px;
-            min-height: 1210px;
-            max-height: 1210px;
-            margin-left: -3.5px;
-            gap: 50px;
+        // .root {
+            // max-width: 360px;
+            // min-height: 1210px;
+            // max-height: 1210px;
+            // margin-left: -3.5px;
+            // gap: 50px;
     
-            .review-section__header {
-                gap: 20px;
+            // .header {
+                // gap: 20px;
     
-                .review-section__header__title {
-                    letter-spacing: 0.7px;
-                }
+                // .header__title {
+                    // letter-spacing: 0.7px;
+                // }
     
-                .review-section__header__subtitle {
-                    max-width: 318px;
-                }
-            }
+                // .header__subtitle {
+                    // max-width: 318px;
+                // }
+            // }
     
-            .review-section__content {
-                flex-direction: column;
-                align-items: center;
-                max-width: 360px;
-                padding: 0px 21px;
-            }
-        }
+            // .content {
+                // flex-direction: column;
+                // align-items: center;
+                // max-width: 360px;
+                // padding: 0px 21px;
+            // }
+        // }
 
         // travelPhotoSection 
-        .travel-photo-section {
-            max-width: 360px;
-            min-height: 558px;
-            gap: 50px;
-            margin-left: -2px;
+        // .root {
+            // max-width: 360px;
+            // min-height: 558px;
+            // gap: 50px;
+            // margin-left: -2px;
     
-            .travel-photo-section__header {
+            // .header {
     
-                .travel-photo-section__header__title {
-                    letter-spacing: 0.02em;
-                }
-            }
+                // .header__title {
+                    // letter-spacing: 0.02em;
+                // }
+            // }
     
-            .travel-photo-section__content {
-                gap: 18px;
+            // .content {
+                // gap: 18px;
     
-                .travel-photo-section__photo-container {
+                // .content__photo-container {
     
-                    .travel-photo-section__big-photo {
-                        min-width: 46.7%;
-                        min-height: 110px;
-                        border-radius: 20px;
-                    }
+                    // .big-photo {
+                        // min-width: 46.7%;
+                        // min-height: 110px;
+                        // border-radius: 20px;
+                    // }
     
-                    .max-middle-size {
-                        display: none;
-                    }
+                    // .max-middle-size {
+                        // display: none;
+                    // }
     
-                    .travel-photo-section__small-photo {
-                        max-width: 30%;
-                        border-radius: 20px;
-                        min-height: 110px;
-                    }
-                }
-            }
-        }
-    }
+                    // .small-photo {
+                        // max-width: 30%;
+                        // border-radius: 20px;
+                        // min-height: 110px;
+                    // }
+                // }
+            // }
+        // }
+    // }
 }

@@ -11,29 +11,29 @@ export default function StoryCard({
 }) {
   const cx = classNames.bind(styles);
 
-  const networksList = networks?.map((network, i) => <Link to="/" key={i} className={styles['travel-stories-section__social-network'] + ' main-font-style'}>{network}</Link>);
-  const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={styles['travel-stories-section__content-block__list-item']} key={i}>{item}</li> : (
-    <li className={styles['travel-stories-section__content-block__list-item']} key={i}>
+  const networksList = networks?.map((network, i) => <Link to="/" key={i} className={styles['content-item__social-network'] + ' main-font-style'}>{network}</Link>);
+  const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={styles['content__list-item']} key={i}>{item}</li> : (
+    <li className={styles['content__list-item']} key={i}>
       {item}
       .
     </li>
   )));
   return (
-    <div className={cx('travel-stories-section__content-block', additionalClassCards)}>
-      <div className={cx('travel-stories-section__content-block__footer')}>
-        <DetailsBtn additionalClass={cx('travel-stories-section__footer-details-link')} />
-        <div className={cx('travel-stories-section__footer-social-networks')}>
+    <div className={cx('root', additionalClassCards)}>
+      <div className={cx('root__footer')}>
+        <DetailsBtn additionalClass={cx('footer-details-link')} />
+        <div className={cx('footer-social-networks')}>
           {networksList}
         </div>
       </div>
-      <div className={cx('travel-stories-section__content-block__content')}>
-        <h3 className={cx('travel-stories-section__content-block__title', 'info-cards__header')}>{header}</h3>
-        <p className={cx('travel-stories-section__content-block__text')}>{list ? `${text}:` : `${text}.`}</p>
-        <ul className={cx('travel-stories-section__content-block__list')}>
+      <div className={cx('content')}>
+        <h3 className={cx('content__title', 'info-cards__header')}>{header}</h3>
+        <p className={cx('content__text')}>{list ? `${text}:` : `${text}.`}</p>
+        <ul className={cx('content__list')}>
           {advantagesList}
         </ul>
       </div>
-      <img src={img} alt="travel" className={cx('travel-stories-section__card__background')} />
+      <img src={img} alt="travel" className={cx('root__background')} />
     </div>
   );
 }

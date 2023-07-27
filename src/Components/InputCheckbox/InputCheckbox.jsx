@@ -7,7 +7,7 @@ export default function InputCheckbox({ name, id, onChange }) {
   const cx = classNames.bind(styles);
 
   return (
-    <label className={cx('checkbox_label')} htmlFor={id}>
+    <label className={cx('root')} htmlFor={id}>
       <input type="checkbox" name={name} className={cx('checkbox_button')} id={id} onChange={onChange} />
       <span className={cx('checkbox__border')} />
     </label>

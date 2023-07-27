@@ -1,13 +1,13 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.age-check__radio-button-container {
+.root {
   display: flex;
   flex-direction: row;
   align-items: center;
   gap: 11px;
 
-  .age-check__radio-button {
+  .radio-button {
     display: none;
   }
 
@@ -40,13 +40,13 @@
     content: "";
   }
 
-  .age-check__radio-button:checked + .radio__border::before {
+  .radio-button:checked + .radio__border::before {
     z-index: 1;
   }
 }
 
 @include _780 {
-  .age-check__radio-button-container {
+  .root {
 
     .radio__border {
       min-width: 21px;
