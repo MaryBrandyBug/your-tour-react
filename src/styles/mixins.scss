@@ -298,7 +298,7 @@
         // }
 
         // reviewCard
-        // .review-section__review-card {
+        // .root__review-card {
             // align-items: flex-start;
             // justify-content: flex-start;
             // min-height: 290px;
@@ -306,14 +306,14 @@
     
             // border-radius: 20px;
     
-            // .review-section__review-card-text {
+            // .root__review-card-text {
                 // max-width: 273px;
     
                 // font-size: 16px;
                 // line-height: 143%;
             // }
     
-            // .review-section__review-card__footer {
+            // .root__review-card__footer {
                 // padding: 42px 0px 0px;
     
                 // .footer-content {
@@ -342,26 +342,26 @@
         // }
 
         // reviewSection
-        // .review-section {
+        // .root {
             // max-width: 360px;
             // min-height: 1210px;
             // max-height: 1210px;
             // margin-left: -3.5px;
             // gap: 50px;
     
-            // .review-section__header {
+            // .header {
                 // gap: 20px;
     
-                // .review-section__header__title {
+                // .header__title {
                     // letter-spacing: 0.7px;
                 // }
     
-                // .review-section__header__subtitle {
+                // .header__subtitle {
                     // max-width: 318px;
                 // }
             // }
     
-            // .review-section__content {
+            // .content {
                 // flex-direction: column;
                 // align-items: center;
                 // max-width: 360px;

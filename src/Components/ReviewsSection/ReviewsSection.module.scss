@@ -1,25 +1,25 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.review-section {
+.root {
   max-width: 1170px;
   min-height: 1005px;
   gap: 100px;
 
-  .review-section__header {
+  .header {
     gap: 30px;
 
-    .review-section__header__title {
+    .header__title {
       max-width: 529px;
     }
 
-    .review-section__header__subtitle {
+    .header__subtitle {
       max-width: 418px;
       max-height: 56px;
     }
   }
 
-  .review-section__content {
+  .content {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -28,21 +28,21 @@
 }
 
 @include _1175 {
-  .review-section {
+  .root {
 
-    .review-section__content {
+    .content {
       max-width: 100%;
     }
   }
 }
 
 @include _1024 {
-  .review-section {
+  .root {
     max-width: 1024px;
     min-height: 1173px;
         
 
-    .review-section__content {
+    .content {
       max-width: 1024px;
       padding: 0px 52px;
       gap: 18px;
@@ -51,25 +51,25 @@
 }
 
 @include _992 {
-  .review-section {
+  .root {
     max-width: 100%;
     min-height: auto;
     max-height: auto;
     gap: 50px;
 
-    .review-section__header {
+    .header {
       gap: 20px;
 
-      .review-section__header__title {
+      .header__title {
         letter-spacing: 0.7px;
       }
 
-      .review-section__header__subtitle {
+      .header__subtitle {
         max-width: 400px;
       }
     }
 
-    .review-section__content {
+    .content {
       justify-content: center;
       flex-wrap: wrap;
       flex-direction: row;
@@ -80,19 +80,19 @@
 }
 
 @include _576 {
-  .review-section {
+  .root {
     max-width: 360px;
     gap: 50px;
 
-    .review-section__header {
+    .header {
       gap: 20px;
 
-      .review-section__header__subtitle {
+      .header__subtitle {
         max-width: 318px;
       }
     }
 
-    .review-section__content {
+    .content {
       flex-direction: column;
     }
 
