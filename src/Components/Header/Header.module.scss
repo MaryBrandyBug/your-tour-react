@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   display: flex;
   flex-direction: column;
@@ -11,67 +12,6 @@
   background-position: center;
 
   composes: main-font-style from '../../styles/global.scss';
-
-  .navbar__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    min-height: 88px;
-
-    .navbar {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 180px;
-      min-height: 30.24px;
-
-      &__logo {
-        min-width: 181.84px;
-        max-width: 181.84;
-        min-height: 30.24px;
-
-        .YourTourLogo {
-          left: 376px;
-          top: 28.88px;
-        }
-      }
-
-      &__menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        min-height: 28px;
-
-        .menu__item {
-          min-height: 28px;
-
-          color: $whiteColor;
-          white-space: nowrap;
-
-          cursor: pointer;
-        }
-
-        .menu__item:hover {
-          text-decoration-line: underline;
-          text-decoration-thickness: 1px;
-          text-underline-offset: 7px;
-        }
-      }
-
-      .telephone {
-        max-width: 155px;
-        min-height: 28px;
-                
-        color: $whiteColor;
-        white-space: nowrap;
-      }
-    }
-  }
 
   .content {
     display: flex;
@@ -98,27 +38,6 @@
 
       text-align: center;
       color: $whiteColor;
-    }
-
-    @media (min-width: 361px) {
-
-      .content__button:hover {
-        background: $orangeColor;
-
-        transition: all 0.5s ease-out;
-
-        .find-tour-btn {
-          color: $whiteColor;
-        }
-      }
-    
-      .content__button:active {
-        background: $lightOrange;
-
-        .find-tour-btn {
-          color: $blackColor;
-        }
-      }
     }
 
     &__button {
@@ -152,68 +71,130 @@
   }
 }
 
-@include _1175 {
-  .root {
+@media (min-width: 361px) {
 
-    .navbar__container {
+  .content__button:hover {
+    background: $orangeColor;
 
-      .navbar {
-        gap: 60px;
-      }
+    transition: all 0.5s ease-out;
+
+    .find-tour-btn {
+      color: $whiteColor;
+    }
+  }
+
+  .content__button:active {
+    background: $lightOrange;
+
+    .find-tour-btn {
+      color: $blackColor;
     }
   }
 }
 
+.navbar__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  min-height: 88px;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 180px;
+  min-height: 30.24px;
+
+  &__logo {
+    min-width: 181.84px;
+    max-width: 181.84;
+    min-height: 30.24px;
+
+    .YourTourLogo {
+      left: 376px;
+      top: 28.88px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    min-height: 28px;
+
+    .menu__item {
+      min-height: 28px;
+
+      color: $whiteColor;
+      white-space: nowrap;
+
+      cursor: pointer;
+    }
+
+    .menu__item:hover {
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 7px;
+    }
+  }
+
+  .telephone {
+    max-width: 155px;
+    min-height: 28px;
+            
+    color: $whiteColor;
+    white-space: nowrap;
+  }
+}
+
+// 1175
+@include _1175 {
+  .navbar {
+    gap: 60px;
+  }
+}
+
+// 1024
 @include _1024 {
   .root {
-        
-    .navbar__container {
-      max-width: 100%;
-
-      .navbar {
-        max-width: 100%;
-        @include gapCalculation(30px, 55);
-
-        &__menu {
-          @include gapCalculation(10px, 20);
-        }
-      }
-    }
 
     .content {
             
-      .content__subtitle {
+      &__subtitle {
         max-width: 442px;
       }
     }
   }
-}
+  .navbar__container {
+    max-width: 100%;
+  }
 
-@media (max-width: 990px) and (min-width: 781px) {
-  .root {
+  .navbar {
+    max-width: 100%;
+    @include gapCalculation(30px, 55);
 
-    .navbar__container {
-            
-      .navbar {
-        gap: calc(-22px + 5.37109375vw);
-      }
+    &__menu {
+      @include gapCalculation(10px, 20);
     }
   }
 }
 
+// 990-781
+@media (max-width: 990px) and (min-width: 781px) {
+  .navbar {
+    gap: calc(-22px + 5.37109375vw);
+  }
+}
+
+// 780
 @include _780 {
   .root {
-
-    .navbar__container {
-            
-      .navbar {
-        min-width: 90%;
-
-        &__menu {
-          display: none;
-        }
-      }
-    }
 
     .content {
 
@@ -225,29 +206,19 @@
       }
     }
   }
+
+  .navbar {
+    min-width: 90%;
+
+    &__menu {
+      display: none;
+    }
+  }
 }
 
+// 576
 @include _576 {
   .root {
-
-    .navbar__container {
-
-      .navbar {
-        justify-content: space-around;
-
-        .telephone {
-          max-width: 124px;
-          min-height: 23px;
-
-          font-size: 16px;
-        }
-
-        &__logo {
-          min-width: 124px;
-          max-width: 124px;
-        }
-      }
-    }
 
     .content {
 
@@ -262,6 +233,22 @@
 
         font-size: 18px;
       }
+    }
+  }
+
+  .navbar {
+    justify-content: space-around;
+
+    .telephone {
+      max-width: 124px;
+      min-height: 23px;
+
+      font-size: 16px;
+    }
+
+    &__logo {
+      min-width: 124px;
+      max-width: 124px;
     }
   }
 }

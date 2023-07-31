@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   position: relative;
 
@@ -25,50 +26,51 @@
 
     transition: all 0.4s;
   }
+}
 
-  .content {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
+.content {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+
+  border-radius: 50px;
+
+  .info-link__container {
+    transition: 0.5s;
+  }
+
+  .text-container {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: flex-start;
-    padding: 50px;
+    max-width: 245px;
+    gap: 16px;
 
-    border-radius: 50px;
-
-    .info-link__container {
-      transition: 0.5s;
+    .subtitle {
+      letter-spacing: -0.01em;
+      color: $whiteColor;
     }
+  }
 
-    .text-container {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      align-items: flex-start;
-      max-width: 245px;
-      gap: 16px;
+  .choose-tour__link {
+    width: 199px;
+    height: 42px;
 
-      .subtitle {
-        letter-spacing: -0.01em;
-        color: $whiteColor;
-      }
-    }
-
-    .choose-tour__link {
-      width: 199px;
-      height: 42px;
-
-      transition: background 1s ease, color 1s ease, transform 0.7s linear;
-      transform: translate(-23px, 5px);
-    }
+    transition: background 1s ease, color 1s ease, transform 0.7s linear;
+    transform: translate(-23px, 5px);
   }
 }
 
+// 780
 @media (min-width: 780px) {
   .root:hover .root__background {
     transform: scale(1.2);
@@ -77,30 +79,32 @@
 
   .root:hover {
     cursor: pointer;
+  }
 
-    .content {
+  .content {
 
-      .choose-tour__link {
-        background: $darkGreen;
+    .choose-tour__link {
+      background: $darkGreen;
 
-        transform: translate(-23px, 5px);
-      }
+      transform: translate(-23px, 5px);
+    }
 
-      .choose-tour__link:active {
-        background: $orangeColor;
+    .choose-tour__link:active {
+      background: $orangeColor;
 
-        transition: 0.3s;
-      }
+      transition: 0.3s;
     }
   }
 }
 
+// 1175
 @include _1175 {
   .root {
     min-width: 332px;
   }
 }
 
+// 1024
 @include _1024 {
   .root {
     min-width: 450px;
@@ -108,16 +112,17 @@
     &__background {
       min-width: 450px;
     }
+  }
+
+  .content {
     
-    .content {
-    
-      .text-container {
-        max-width: 350px;
-      }
+    .text-container {
+      max-width: 350px;
     }
   }
 }
 
+// 992-780
 @media (max-width: 992px) and (min-width: 780px) {
 
   .root {
@@ -129,6 +134,7 @@
   }
 };
 
+// 780
 @include _780 {
   .root {
     min-width: 318px;
@@ -141,30 +147,31 @@
         @include minWidthСalculation(270px, 719);
         border-radius: 20px;
     }
+  }
 
-    .content {
-      left: -2px;
-      top: 2px;
+  .content {
+    left: -2px;
+    top: 2px;
 
-      padding: 25px;
+    padding: 25px;
 
-      .text-container {
-        max-width: 268px;
-        gap: 13px;
+    .text-container {
+      max-width: 268px;
+      gap: 13px;
 
-        .subtitle {
-          font-size: 16px;
-        }
+      .subtitle {
+        font-size: 16px;
       }
+    }
 
-      .choose-tour__link {
-        top: 269px;
-        left: 26px;
-      }
+    .choose-tour__link {
+      top: 269px;
+      left: 26px;
     }
   }
 }
 
+// 576
 @include _576 {
   .root {
     min-width: 318px;
@@ -177,26 +184,26 @@
 
       border-radius: 20px;
     }
+  }
 
-    .content {
-      left: -2px;
-      top: 2px;
+  .content {
+    left: -2px;
+    top: 2px;
 
-      padding: 25px;
+    padding: 25px;
 
-      .text-container {
-        max-width: 268px;
-        gap: 13px;
+    .text-container {
+      max-width: 268px;
+      gap: 13px;
 
-        .subtitle {
-          font-size: 16px;
-        }
+      .subtitle {
+        font-size: 16px;
       }
+    }
 
-      .choose-tour__link {
-        top: 269px;
-        left: 26px;
-      }
+    .choose-tour__link {
+      top: 269px;
+      left: 26px;
     }
   }
 }

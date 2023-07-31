@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   gap: 100px;
 
@@ -13,53 +14,7 @@
       flex-direction: row;
       align-items: flex-start;
       gap: 30px;
-
-      .menu__item {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-
-        &-name {
-          font-family: 'Roboto';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 23px;
-          line-height: 122%;
-
-          cursor: pointer;
-        }
-
-        &-active {
-          font-family: 'Roboto';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 23px;
-          line-height: 122%;
-          color: $orangeColor;
-                    
-          cursor: pointer;
-
-          text-decoration-line: underline;
-          text-decoration-thickness: 2px;
-          text-underline-offset: 7px;
-        }
-
-        &-name:hover {
-          text-decoration-line: underline;
-          text-decoration-thickness: 2px;
-          text-underline-offset: 7px;
-        }
-
-        &-name:active {
-          color: $orangeColor;
-
-          text-decoration-line: underline;
-          text-decoration-thickness: 2px;
-          text-underline-offset: 7px;
-        }
-      }
-    }
+    }  
   }
 
   .content {
@@ -69,8 +24,55 @@
     max-width: 1170px;
     gap: 30px;
   }
+
+  .menu__item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  
+    &-name {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 122%;
+  
+      cursor: pointer;
+    }
+  
+    &-active {
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 122%;
+      color: $orangeColor;
+      
+      cursor: pointer;
+  
+      text-decoration-line: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 7px;
+    }
+  
+    &-name:hover {
+      text-decoration-line: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 7px;
+    }
+  
+    &-name:active {
+      color: $orangeColor;
+  
+      text-decoration-line: underline;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 7px;
+    }
+  }
 }
 
+// 1024
 @include _1024 {
   .root {
     min-height: 1871px;
@@ -83,6 +85,7 @@
   }
 }
 
+// 992-780
 @media (max-width: 992px) and (min-width: 780px) {
   .root {
 
@@ -92,6 +95,7 @@
   }
 };
 
+// 780
 @include _780 {
   .root {
     min-height: auto;
@@ -116,24 +120,25 @@
         justify-content: center;
                 
         gap: 10px;
-
-        .menu__item {
-
-          &-name {
-            font-size: 20px;
-            line-height: 142%;
-          }
-
-          &-active {
-            font-size: 20px;
-            line-height: 142%;
-          }
-        }
       }
+    }
+  }
+
+  .menu__item {
+
+    &-name {
+      font-size: 20px;
+      line-height: 142%;
+    }
+  
+    &-active {
+      font-size: 20px;
+      line-height: 142%;
     }
   }
 }
 
+// 1175
 @include _1175 {
   .root {
 
@@ -144,6 +149,7 @@
   }
 }
 
+// 576
 @include _576 {
   .root {
     min-height: auto;
@@ -170,15 +176,15 @@
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
-
-        .menu__item {
-
-          &-name {
-            font-size: 20px;
-            line-height: 142%;
-          }
-        }
       }
+    }
+  }
+
+  .menu__item {
+
+    &-name {
+      font-size: 20px;
+      line-height: 142%;
     }
   }
 }
