@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   display: flex;
   flex-direction: row;
@@ -28,50 +29,51 @@
     &__text {
       color: $greyColor;
     }
+  }
+}
 
-    .content__social-networks-links {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      max-width: 419px;
-      min-height: 28px;
-      padding: 0px;
-      gap: 25px;
+.content__social-networks-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 419px;
+  min-height: 28px;
+  padding: 0px;
+  gap: 25px;
 
-      .content__linkBlock {
-        max-width: 126px;
-        min-height: 28px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0px;
-        gap: 10px;
+  .content__linkBlock {
+    max-width: 126px;
+    min-height: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
 
-        .inst-icon {
-          max-width: 26h;
-          max-height: 26px;
-        }
+    .inst-icon {
+      max-width: 26h;
+      max-height: 26px;
+    }
 
-        .social-network {
-          color: $blackColor;
+    .social-network {
+      color: $blackColor;
 
-          cursor: pointer;
-        }
-
-        @media (min-width: 361px) {
-
-          .social-network:hover {
-            text-decoration-line: underline;
-            text-underline-offset: 7px;
-            text-decoration-thickness: 1px;
-          }
-        }
-      }
+      cursor: pointer;
     }
   }
 }
 
+@media (min-width: 361px) {
+
+  .social-network:hover {
+    text-decoration-line: underline;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 1px;
+  }
+}
+
+// 1024
 @include _1024 {
   .root {
     max-width: 100%;
@@ -83,6 +85,7 @@
   }
 }
 
+// 992
 @include _992 {
   .root {
 
@@ -92,6 +95,7 @@
   }
 }
 
+// 780
 @include _780 {
   .root {
     max-width: 100%;
@@ -103,27 +107,29 @@
 
       &__social-networks-links {
         gap: 20px;
-
-        .content__linkBlock {
-          gap: 1px;
-
-          .link-icon {
-            max-width: 20px;
-          }
-
-          .img-logo {
-            max-width: 20px;
-          }
-          .inst-icon {
-            max-width: 20px;
-            max-height: 20px;
-          }
-        }
       }
+    }
+  }
+
+// 
+  .content__linkBlock {
+    gap: 1px;
+
+    .link-icon {
+      max-width: 20px;
+    }
+
+    .img-logo {
+      max-width: 20px;
+    }
+    .inst-icon {
+      max-width: 20px;
+      max-height: 20px;
     }
   }
 }
 
+// 1175
 @include _1175 {
   .root {
     max-width: 100%;

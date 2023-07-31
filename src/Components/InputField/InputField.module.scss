@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   display: flex;
   flex-direction: row;
@@ -18,95 +19,92 @@
     min-width: inherit;
     max-height: 104px;
     gap: 8px;
-
-    input[type=date]::-webkit-calendar-picker-indicator {
-      opacity: 0;
-    }
-    input[type=date]::-webkit-datetime-edit { 
-      font-size: 25px;
-      font-weight: 300;
-      color: $greyColor;
-    }
-
-    .input-field {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      box-sizing: border-box;
-      padding: 20px;
-      min-width: 500px;
-      min-height: 68px;
-      gap: 10px;
-              
-      font-size: 20px;
-
-      background: $beigeColor;
-      border: 1px solid $lightBeigeColor;
-      border-radius: 10px;
-
-      cursor: pointer;
-      -webkit-appearance: none;
-    }
-
-    @media (min-width: 361px) {
-
-      .input-field:focus{
-        border: 1px solid $greyColor;
-        background: $lightBeigeColor;
-      }
-
-      .input-field:hover {
-        background: $lightBeigeColor;
-      }
-    }
-
-    .input-field::placeholder {
-      color: $greyColor;
-    }
   }
 }
 
+input[type=date]::-webkit-calendar-picker-indicator {
+  opacity: 0;
+}
+input[type=date]::-webkit-datetime-edit { 
+  font-size: 25px;
+  font-weight: 300;
+  color: $greyColor;
+}
+
+.input-field {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 20px;
+  min-width: 500px;
+  min-height: 68px;
+  gap: 10px;
+          
+  font-size: 20px;
+
+  background: $beigeColor;
+  border: 1px solid $lightBeigeColor;
+  border-radius: 10px;
+
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+
+@media (min-width: 361px) {
+
+  .input-field:focus{
+    border: 1px solid $greyColor;
+    background: $lightBeigeColor;
+  }
+
+  .input-field:hover {
+    background: $lightBeigeColor;
+  }
+}
+
+.input-field::placeholder {
+  color: $greyColor;
+}
+
+// 1300
 @media (max-width: 1300px) {
+  .input-field {
+    min-width: 400px;
+  }
+}
+
+// 1024
+@include _1024 {
   .root {
+    max-height: 102px;
+    gap: 20px;
 
     .content {
-
-      .input-field {
-        min-width: 400px;
-      }
+      max-width: 389px;
     }
+  }
+  .input-field {
+    min-width: 389px;
   }
 }
 
-@include _1024 {
-    .root {
-        max-height: 102px;
-        gap: 20px;
-
-        .content {
-          max-width: 389px;
-
-          .input-field {
-            min-width: 389px;
-          }
-        }
-      }
-}
-
+// 992
 @include _992 {
   .root {
     min-width: 100%;
 
     .content {
       min-width: inherit;
-
-      .input-field {
-        min-width: inherit;
-      }
     }
+  }
+
+  .input-field {
+    min-width: inherit;
   }
 }
 
+// 780
 @include _780 {
   .root {
     max-height: 74px;
@@ -114,43 +112,38 @@
     .content {
       max-width: 250px;
       max-height: 74px;
-
-      input[type=date]::-webkit-datetime-edit { 
-        font-size: 20px;
-        font-weight: 300;
-        color: $greyColor;
-      }
-
-      .input-name {
-        font-size: 16px;
-      }
-
-      .input-field {
-        padding: 8px;
-
-        font-size: 16px;
-      }
-            
-      .input-field {
-        max-width: 278px;
-        min-height: 60px;
-      }
-
-      .input-field::placeholder {
-        font-size: 16px;
-      }
     }
+  }
+
+  input[type=date]::-webkit-datetime-edit { 
+    font-size: 20px;
+    font-weight: 300;
+    color: $greyColor;
+  }
+
+  .input-name {
+    font-size: 16px;
+  }
+
+  .input-field {
+    padding: 8px;
+
+    font-size: 16px;
+  }
+        
+  .input-field {
+    max-width: 278px;
+    min-height: 60px;
+  }
+
+  .input-field::placeholder {
+    font-size: 16px;
   }
 }
 
+// 500
 @media (max-width: 500px) {
-  .root {    
-        
-    .content {
-
-      .input-field {
-        min-height: 43px;
-      }
-    }
+  .input-field {
+    min-height: 43px;
   }
 }

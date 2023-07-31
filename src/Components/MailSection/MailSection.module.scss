@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   display: flex;
   flex-direction: row;
@@ -10,73 +11,74 @@
   gap: 30px;
 
   composes: main-font-style from '../../styles/global.scss';
+}
 
-  .photo {
-    max-width: 370px;
+.photo {
+  max-width: 370px;
 
-    border-radius: 50px;
+  border-radius: 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+
+  &__header {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 122%;
+    color: $blackColor;
   }
 
-  .content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 20px;
+  &__text {
+    color: $greyColor;
 
-    &__header {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 35px;
-      line-height: 122%;
+    .content__mail {
       color: $blackColor;
+
+      text-decoration: none;
     }
 
-    &__text {
-      color: $greyColor;
+    .content__mail:hover {
+      text-decoration: underline;
+    }
 
-      .content__mail {
-        color: $blackColor;
-
-        text-decoration: none;
-      }
-
-      .content__mail:hover {
-        text-decoration: underline;
-      }
-
-      .content__mail:active {
-        color: $darkGreen;
-      }
+    .content__mail:active {
+      color: $darkGreen;
     }
   }
 }
 
+// 780
 @include _780 {
   .root {
     flex-direction: column;
+  }
 
-    .photo {
-      max-width: 250px;
+  .photo {
+    max-width: 250px;
 
-      border-radius: 20px;
+    border-radius: 20px;
+  }
+
+  .content {
+    max-width: 291px;
+    gap: 24px;
+
+    &__header {
+      font-size: 25px;
+      line-height: 120%;
+      text-align: center;
+      letter-spacing: 0.045em;
     }
 
-    .content {
-      max-width: 291px;
-      gap: 24px;
-
-      &__header {
-        font-size: 25px;
-        line-height: 120%;
-        text-align: center;
-        letter-spacing: 0.045em;
-      }
-
-      &__text {
-        text-align: center;
-      }
+    &__text {
+      text-align: center;
     }
   }
 }

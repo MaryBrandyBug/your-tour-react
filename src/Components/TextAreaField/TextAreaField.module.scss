@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   display: flex;
   flex-direction: column;
@@ -49,12 +50,14 @@
   }
 }
 
+// 1024
 @include _1024 {
 	.root {
 		max-height: 183.4px;
 	}
 }
 
+// 780
 @include _780 {
 	.root {
 
@@ -68,6 +71,7 @@
 	}
 }
 
+// 500
 @media (max-width: 500px) {
 	.root {
 		max-height: 163px;

@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   gap: 100px;
 
@@ -11,78 +12,75 @@
       max-width: 418px;
     }
   }
+}
 
-  .content {
+.content {
+  gap: 30px;
+
+  &__photo-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-width: 100%;
+    padding: 0px;
     gap: 30px;
 
+    .big-photo {
+      max-width: 23%;
+      object-fit: cover;
+
+      border-radius: 50px;
+    }
+
+    .small-photo {
+      max-width: 18%;
+      min-height: 301px;
+      object-fit: cover;
+
+      border-radius: 50px;
+    }
+  }
+}
+
+// 1630
+@media (max-width: 1630px) {
+  .content {
+
     &__photo-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      min-width: 100%;
-      padding: 0px;
-      gap: 30px;
 
       .big-photo {
-        max-width: 23%;
-        object-fit: cover;
-
-        border-radius: 50px;
+        min-height: 300px;
+        max-width: 26.7%;
+      }
+      .max-size {
+        display: none;
       }
 
       .small-photo {
-        max-width: 18%;
-        min-height: 301px;
-        object-fit: cover;
-
-        border-radius: 50px;
+        max-width: 22.5%;
       }
+
     }
   }
 }
 
-@media (max-width: 1630px) {
-  .root {
-
-    .content {
-
-      &__photo-container {
-
-        .big-photo {
-          min-height: 300px;
-          max-width: 26.7%;
-        }
-        .max-size {
-          display: none;
-        }
-
-        .small-photo {
-          max-width: 22.5%;
-        }
-
-      }
-    }
-  }
-}
-
+// 1175
 @include _1175 {
-  .root {
+  .content {
 
-    .content {
+    &__photo-container {
 
-      &__photo-container {
-
-        .big-photo {
-          min-height: 300px;
-        }
-        .max-size {
-          display: none;
-        }
+      .big-photo {
+        min-height: 300px;
+      }
+      .max-size {
+        display: none;
       }
     }
   }
 }
 
+// 1024
 @include _1024 {
   .root {
     max-width: 100%;
@@ -91,28 +89,29 @@
     .header {
       gap:25px;
     }
-        
-    .content {
-      max-width: 1024px;
-      max-height: 963px;
-      padding: 0px 20px;
+  }
 
-      &__photo-container {
-        max-width: 984px;
-        gap: 20px;
+  .content {
+    max-width: 1024px;
+    max-height: 963px;
+    padding: 0px 20px;
 
-        .big-photo {
-          max-width: 30%;
-          min-height: 300px;
-        }
-        .max-size {
-          display: none;
-        }
+    &__photo-container {
+      max-width: 984px;
+      gap: 20px;
+
+      .big-photo {
+        max-width: 30%;
+        min-height: 300px;
+      }
+      .max-size {
+        display: none;
       }
     }
   }
 }
 
+// 992
 @include _992 {
   .root {
     max-width: 90%;
@@ -129,45 +128,46 @@
         max-width: 400px;
       }
     }
+  }
 
-    .content {
-      gap: 18px;
+  .content {
+    gap: 18px;
 
-      .small {
-        gap: 10px;
+    .small {
+      gap: 10px;
+    }
+  
+    .big {
+      gap: 16px;
+    }
+
+    &__photo-container {
+      justify-content: center;
+      max-width: 90%;
+      max-height: auto;
+
+      .big-photo {
+        max-width: 40%;
+        max-height: 110px;
+
+        border-radius: 20px;
       }
-    
-      .big {
-        gap: 16px;
+
+      .max-middle-size {
+        display: none;
       }
 
-      &__photo-container {
-        justify-content: center;
-        max-width: 90%;
-        max-height: auto;
+      .small-photo {
+        max-width: 34.5%;
+        max-height: 110px;
 
-        .big-photo {
-          max-width: 40%;
-          max-height: 110px;
-
-          border-radius: 20px;
-        }
-
-        .max-middle-size {
-          display: none;
-        }
-
-        .small-photo {
-          max-width: 34.5%;
-          max-height: 110px;
-
-          border-radius: 20px;
-        }
+        border-radius: 20px;
       }
     }
   }
 }
 
+// 790
 @media (max-width: 790px) {
   .root {
     max-width: 90%;
@@ -180,43 +180,44 @@
         letter-spacing: 0.02em;
       }
     }
+  }
 
-    .content {
-      gap: 18px;
+  .content {
+    gap: 18px;
 
-      .small {
-        gap: 10px;
+    .small {
+      gap: 10px;
+    }
+  
+    .big {
+      gap: 16px;
+    }
+
+    &__photo-container {
+      justify-content: center;
+      max-width: 90%;
+      max-height: auto;
+
+      .big-photo {
+        max-height: 110px;
+
+        border-radius: 20px;
       }
-    
-      .big {
-        gap: 16px;
+
+      .max-middle-size {
+        display: none;
       }
 
-      &__photo-container {
-        justify-content: center;
-        max-width: 90%;
-        max-height: auto;
-
-        .big-photo {
-          max-height: 110px;
-
-          border-radius: 20px;
-        }
-
-        .max-middle-size {
-          display: none;
-        }
-
-        .small-photo {
-          max-height: 70px;
-                    
-          border-radius: 20px;
-        }
+      .small-photo {
+        max-height: 70px;
+                  
+        border-radius: 20px;
       }
     }
   }
 }
 
+// 576
 @include _576 {
   .root {
     max-width: 360px;
@@ -234,37 +235,37 @@
         max-width: 318px;
       }
     }
+  }
 
-    .content {
-      gap: 18px;
+  .content {
+    gap: 18px;
 
-      .small {
-        gap: 10px;
+    .small {
+      gap: 10px;
+    }
+  
+    .big {
+      gap: 16px;
+    }
+
+    &__photo-container {
+      max-width: 95%;
+      max-height: auto;
+
+      .big-photo {
+        max-width: 48.5%;
+        min-height: 150px;
+        max-height: 110px;
+        border-radius: 20px;
       }
-    
-      .big {
-        gap: 16px;
+
+      .max-middle-size {
+        display: none;
       }
 
-      &__photo-container {
-        max-width: 95%;
-        max-height: auto;
-
-        .big-photo {
-          max-width: 48.5%;
-          min-height: 150px;
-          max-height: 110px;
-          border-radius: 20px;
-        }
-
-        .max-middle-size {
-          display: none;
-        }
-
-        .small-photo {
-          min-height: 130px;
-          border-radius: 20px;
-        }
+      .small-photo {
+        min-height: 130px;
+        border-radius: 20px;
       }
     }
   }

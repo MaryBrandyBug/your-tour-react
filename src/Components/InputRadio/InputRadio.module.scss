@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   display: flex;
   flex-direction: row;
@@ -45,6 +46,7 @@
   }
 }
 
+// 780
 @include _780 {
   .root {
 

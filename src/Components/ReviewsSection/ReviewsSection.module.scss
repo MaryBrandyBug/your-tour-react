@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   max-width: 1170px;
   min-height: 1005px;
@@ -27,6 +28,7 @@
   }
 }
 
+// 1175
 @include _1175 {
   .root {
 
@@ -36,6 +38,7 @@
   }
 }
 
+// 1024
 @include _1024 {
   .root {
     max-width: 1024px;
@@ -50,6 +53,7 @@
   }
 }
 
+// 992
 @include _992 {
   .root {
     max-width: 100%;
@@ -79,6 +83,7 @@
   }
 }
 
+// 576
 @include _576 {
   .root {
     max-width: 360px;
