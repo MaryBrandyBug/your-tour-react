@@ -23,7 +23,7 @@ export default function ChooseTour() {
         <h2 className={cx('header__title', 'section__header__title')}>Выбери свой тур</h2>
         <div className={cx('header__menu')}>
           <div className={cx('menu__item')}>
-            <p className={cx('menu__active-item')}>Популярные</p>
+            <p className={cx('menu__item-active')}>Популярные</p>
             <div className={cx('menu__item-line')} />
           </div>
           {menu}

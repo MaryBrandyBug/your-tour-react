@@ -22,7 +22,7 @@
     color: $blackColor
   }
 
-  .root__footer {
+  &__footer {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
@@ -64,7 +64,7 @@
 @include _1175 {
   .root {
 
-    .root__footer {
+    &__footer {
       min-width: 100%;
       padding: 0;
 
@@ -80,7 +80,7 @@
     max-width: 370px;
     min-height: 767px;
 
-    .root__footer {
+    &__footer {
 
       .footer-content {
         min-width: 295px;
@@ -106,7 +106,7 @@
       line-height: 143%;
     }
 
-    .root__footer {
+    &__footer {
 
       .footer-content {
         min-width: 270px;
@@ -149,7 +149,7 @@
       line-height: 143%;
     }
 
-    .root__footer {
+    &__footer {
       padding: 43px 0px 0px;
 
       .footer-content {

@@ -10,7 +10,7 @@
   .header {
     gap: 30px;
 
-    .header__subtitle {
+    &__subtitle {
       max-width: 458px;
 
       text-align: center;
@@ -60,16 +60,6 @@
             min-width: inherit;
             max-height: 104px;
             gap: 8px;
-
-            input[type=date]::-webkit-calendar-picker-indicator {
-              opacity: 0;
-            }
-
-            input[type=date]::-webkit-datetime-edit { 
-              font-size: 25px;
-              font-weight: 300;
-              color: $greyColor;
-            }
 
             .select-wrapper {
               min-width: inherit;
@@ -227,7 +217,7 @@
       min-width: 100%;
       gap: 30px;
 
-      .age-check__input-container {
+      &__input-container {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -295,78 +285,6 @@
       align-items: center;
       min-width: 100%;
 
-      // .root {
-      //   display: flex;
-      //   flex-direction: row;
-      //   justify-content: center;
-      //   align-items: center;
-      //   gap: 19px;
-
-      //   font-family: 'Roboto';
-      //   font-style: normal;
-      //   font-weight: 400;
-      //   line-height: 142%;
-      //   letter-spacing: -0.01em;
-      //   color: $greyColor;
-                
-      //   .checkbox_button {
-      //     display: none;
-      //   }
-
-      //   .checkbox__border {
-      //     position: relative;
-
-      //     display: inline-block;
-      //     min-width: 20px;
-      //     min-height: 20px;
-
-      //     border: 2px solid $blackColor;
-      //     border-radius: 20%;
-      //   }
-
-      //   .checkbox__border::before {
-      //     position: absolute;
-      //     left: -1.3px;
-      //     top: 48%;
-
-      //     min-height: 29%;
-      //     min-width: 2px;
-
-      //     background-color: $blackColor;
-      //     opacity: 0;
-                    
-      //     transition: .2s;
-      //     transform: translateX(9.45px) rotate(-45deg);
-      //     transform-origin: left bottom;
-
-      //     content: '';
-      //   }
-
-      //   .checkbox__border::after {
-      //     position: absolute;
-      //     left: 9%;
-      //     bottom: 19%;
-
-      //     min-height: 2px;
-      //     min-width: 68%;
-
-      //     background-color: $blackColor;
-      //     opacity: 0;
-
-      //     transform: translateX(7.1px) rotate(-46deg);
-      //     transform-origin: left bottom;
-      //     transition: .2s;
-
-      //     content: "";
-      //   }
-
-      //   .checkbox_button:checked + .checkbox__border::before,  
-      //   .checkbox_button:checked + .checkbox__border::after {
-      //     opacity: 1;
-      //   }
-
-      // }
-
       .agreement-text {
         margin-left: 10px;
 
@@ -421,7 +339,7 @@
 
         cursor: pointer;
 
-        .submit-button-text{
+        &-text{
           min-width: 235px;
           min-height: 58px;
 
@@ -516,13 +434,6 @@
           }
         }
       }
-
-      // .agreement-container {
-
-      //   .root {
-      //     // justify-content: flex-start;
-      //   }
-      // }
     }
   }
 }
@@ -530,48 +441,41 @@
 
 @include _1024 {
   .root {
-      min-width: percentage(918 / 1024);
-      gap: 100px;
+    min-width: percentage(918 / 1024);
+    gap: 100px;
         
-      .content {
-        padding: 60px;
-        gap: 33px;
+    .content {
+      padding: 60px;
+      gap: 33px;
 
-        .container {
-          gap: 28px;
+      .container {
+        gap: 28px;
 
-          .side-container {
+        .side-container {
 
-            .input-fields-container {
-              max-height: 102px;
-              gap: 20px;
+          .input-fields-container {
+            max-height: 102px;
+            gap: 20px;
 
-              .input-field-container {
+            .input-field-container {
+              max-width: 389px;
+
+              .select-field {
                 max-width: 389px;
+                min-width: 389px;
+              }
 
-                .select-field {
-                  max-width: 389px;
-                  min-width: 389px;
-                }
-
-                .root__input-field {
-                  min-width: 389px;
-                }
+              .root__input-field {
+                min-width: 389px;
               }
             }
           }
         }
+      }
 
 
         .root__input-comment-container {
           max-height: 183.4px;
-        }
-
-        .agreement-container {
-
-          // .root {
-          //   gap: 12px;
-          // }
         }
       }
   }
@@ -616,11 +520,11 @@
     .header {
       gap: 20px;
 
-      .header__title {
+      &__title {
         letter-spacing: 0.7px;
       }
 
-      .header__subtitle {
+      &__subtitle {
         min-width: 400px;
       }
     }

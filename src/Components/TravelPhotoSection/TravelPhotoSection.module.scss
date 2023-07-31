@@ -7,7 +7,7 @@
   .header {
     gap: 30px;
 
-    .header__subtitle {
+    &__subtitle {
       max-width: 418px;
     }
   }
@@ -15,7 +15,7 @@
   .content {
     gap: 30px;
 
-    .content__photo-container {
+    &__photo-container {
       display: flex;
       flex-direction: row;
       justify-content: center;
@@ -46,7 +46,7 @@
 
     .content {
 
-      .content__photo-container {
+      &__photo-container {
 
         .big-photo {
           min-height: 300px;
@@ -70,7 +70,7 @@
 
     .content {
 
-      .content__photo-container {
+      &__photo-container {
 
         .big-photo {
           min-height: 300px;
@@ -97,7 +97,7 @@
       max-height: 963px;
       padding: 0px 20px;
 
-      .content__photo-container {
+      &__photo-container {
         max-width: 984px;
         gap: 20px;
 
@@ -121,11 +121,11 @@
     .header {
       gap: 20px;
 
-      .header__title {
+      &__title {
         letter-spacing: 0.02em;
       }
 
-      .header__subtitle {
+      &__subtitle {
         max-width: 400px;
       }
     }
@@ -141,7 +141,7 @@
         gap: 16px;
       }
 
-      .content__photo-container {
+      &__photo-container {
         justify-content: center;
         max-width: 90%;
         max-height: auto;
@@ -176,7 +176,7 @@
     .header {
       gap: 20px;
 
-      .header__title {
+      &__title {
         letter-spacing: 0.02em;
       }
     }
@@ -192,7 +192,7 @@
         gap: 16px;
       }
 
-      .content__photo-container {
+      &__photo-container {
         justify-content: center;
         max-width: 90%;
         max-height: auto;
@@ -226,11 +226,11 @@
     .header {
       gap: 20px;
 
-      .header__title {
+      &__title {
         letter-spacing: 0.02em;
       }
 
-      .header__subtitle {
+      &__subtitle {
         max-width: 318px;
       }
     }
@@ -246,7 +246,7 @@
         gap: 16px;
       }
 
-      .content__photo-container {
+      &__photo-container {
         max-width: 95%;
         max-height: auto;
 

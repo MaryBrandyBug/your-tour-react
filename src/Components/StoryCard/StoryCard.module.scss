@@ -14,7 +14,7 @@
 
   composes: main-font-style from '../../styles/global.scss';
 
-  .root__background {
+  &__background {
     position: absolute;
     z-index: -1;
 
@@ -26,7 +26,7 @@
     transition: all 0.4s;
   }
 
-  .root__footer {
+  &__footer {
     position: absolute;
     left: 0px;
     right: 0px;
@@ -100,13 +100,13 @@
     padding: 60px 0px 0px 60px;
     gap: 34px;  
 
-    .content__text {
+    &__text {
       max-width: 554px;
 
       color: $whiteColor;
     }
 
-    .content__list {
+    &__list {
       margin-top: -7px;
       margin-left: 4px;
 
@@ -155,7 +155,7 @@
       gap: 18px;
     }
 
-    .root__footer {
+    &__footer {
 
       .footer-social-networks {
         left: 570px;
@@ -170,7 +170,7 @@
     min-width: 918px;
     min-height: 567px;
 
-    .root__footer {
+    &__footer {
       height: 33px;
 
       .footer-social-networks {
@@ -181,13 +181,13 @@
     .content {
       gap: 37px;
 
-      .content__list {
+      &__list {
         margin-top: -12px;
         margin-left: 5px;
       }
     }
 
-    .root__background {
+    &__background {
       min-height: 100%;
     }
   }
@@ -201,12 +201,12 @@
     .content {
       padding: 50px;
 
-      .content__text {
+      &__text {
         max-width: 400px;
       }
     }
 
-    .root__footer {
+    &__footer {
 
       .footer-social-networks {
         display: none;
@@ -222,7 +222,7 @@
 
     border-radius: 20px;
 
-    .root__background {
+    &__background {
       border-radius: 20px;
     }
 
@@ -230,7 +230,7 @@
       padding: 30px;
       gap: 20px;
 
-      .content__text {
+      &__text {
         max-width: 263px;
 
         font-size: 18px;
@@ -275,20 +275,20 @@
       padding: 30px;
       gap: 20px;
 
-      .content__title {
+      &__title {
         max-width: 150px;
 
         font-size: 22.5px;
       }
 
-      .content__text {
+      &__text {
         max-width: 263px;
         margin-left: -3px;
 
         font-size: 16px;
       }
 
-      .content__list {
+      &__list {
         margin-top: 4px;
         margin-left: 0px;
                 
@@ -296,7 +296,7 @@
       }
     }
 
-    .root__footer {
+    &__footer {
 
       .footer-details-link {
         transform: translate(-72px, 10px);

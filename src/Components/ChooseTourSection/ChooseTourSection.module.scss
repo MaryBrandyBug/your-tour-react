@@ -8,7 +8,7 @@
     max-width: 700px;
     gap: 35px;
 
-    .header__menu {
+    &__menu {
       display: flex;
       flex-direction: row;
       align-items: flex-start;
@@ -20,7 +20,7 @@
         align-items: flex-start;
         gap: 6px;
 
-        .menu__item-name {
+        &-name {
           font-family: 'Roboto';
           font-style: normal;
           font-weight: 700;
@@ -30,7 +30,7 @@
           cursor: pointer;
         }
 
-        .menu__active-item {
+        &-active {
           font-family: 'Roboto';
           font-style: normal;
           font-weight: 700;
@@ -45,13 +45,13 @@
           text-underline-offset: 7px;
         }
 
-        .menu__item-name:hover {
+        &-name:hover {
           text-decoration-line: underline;
           text-decoration-thickness: 2px;
           text-underline-offset: 7px;
         }
 
-        .menu__item-name:active {
+        &-name:active {
           color: $orangeColor;
 
           text-decoration-line: underline;
@@ -107,11 +107,11 @@
       min-width: 360px;
       gap: 30px;
 
-      .header__title {
+      &__title {
         letter-spacing: 0.65px;
       }
 
-      .header__menu {
+      &__menu {
         flex-wrap: wrap;
         justify-content: center;
                 
@@ -119,12 +119,12 @@
 
         .menu__item {
 
-          .menu__item-name {
+          &-name {
             font-size: 20px;
             line-height: 142%;
           }
 
-          .menu__active-item {
+          &-active {
             font-size: 20px;
             line-height: 142%;
           }
@@ -162,18 +162,18 @@
       min-width: 360px;
       gap: 30px;
 
-      .header__title {
+      &__title {
         letter-spacing: 0.65px;
       }
 
-      .header__menu {
+      &__menu {
         flex-wrap: wrap;
         justify-content: center;
         gap: 10px;
 
         .menu__item {
 
-          .menu__item-name {
+          &-name {
             font-size: 20px;
             line-height: 142%;
           }
