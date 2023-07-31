@@ -24,7 +24,7 @@
     padding: 0px;
     gap: 20px;
 
-    .content__header {
+    &__header {
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 500;
@@ -33,7 +33,7 @@
       color: $blackColor;
     }
 
-    .content__text {
+    &__text {
       color: $greyColor;
 
       .content__mail {
@@ -67,14 +67,14 @@
       max-width: 291px;
       gap: 24px;
 
-      .content__header {
+      &__header {
         font-size: 25px;
         line-height: 120%;
         text-align: center;
         letter-spacing: 0.045em;
       }
 
-      .content__text {
+      &__text {
         text-align: center;
       }
     }

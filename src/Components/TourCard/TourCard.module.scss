@@ -13,7 +13,7 @@
 
   composes: main-font-style from '../../styles/global.scss';
 
-  .root__background {
+  &__background {
     position: absolute;
     z-index: -1;
 
@@ -105,7 +105,7 @@
   .root {
     min-width: 450px;
     
-    .root__background {
+    &__background {
       min-width: 450px;
     }
     
@@ -123,7 +123,7 @@
   .root {
     @include minWidthСalculation(350px, 920);
 
-    .root__background {
+    &__background {
       @include minWidthСalculation(350px, 920);
     }
   }
@@ -137,7 +137,7 @@
 
     border-radius: 20px;
 
-    .root__background {
+    &__background {
         @include minWidthСalculation(270px, 719);
         border-radius: 20px;
     }
@@ -172,7 +172,7 @@
 
     border-radius: 20px;
 
-    .root__background {
+    &__background {
       min-width: 318px;
 
       border-radius: 20px;

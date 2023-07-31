@@ -28,7 +28,7 @@
       gap: 180px;
       min-height: 30.24px;
 
-      .navbar__logo {
+      &__logo {
         min-width: 181.84px;
         max-width: 181.84;
         min-height: 30.24px;
@@ -39,7 +39,7 @@
         }
       }
 
-      .navbar__menu {
+      &__menu {
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -81,7 +81,7 @@
     gap: 50px;
     padding: 50px 0 50px 0;
 
-    .content__title {
+    &__title {
       max-width: 768px;
 
       font-style: normal;
@@ -93,7 +93,7 @@
       color: $whiteColor;
     }
 
-    .content__subtitle {
+    &__subtitle {
       max-width: 562px;
 
       text-align: center;
@@ -121,7 +121,7 @@
       }
     }
 
-    .content__button {
+    &__button {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -174,7 +174,7 @@
         max-width: 100%;
         @include gapCalculation(30px, 55);
 
-        .navbar__menu {
+        &__menu {
           @include gapCalculation(10px, 20);
         }
       }
@@ -209,7 +209,7 @@
       .navbar {
         min-width: 90%;
 
-        .navbar__menu {
+        &__menu {
           display: none;
         }
       }
@@ -217,7 +217,7 @@
 
     .content {
 
-      .content__title {
+      &__title {
         max-width: 540px;
 
         font-size: 80px;
@@ -242,7 +242,7 @@
           font-size: 16px;
         }
 
-        .navbar__logo {
+        &__logo {
           min-width: 124px;
           max-width: 124px;
         }
@@ -251,13 +251,13 @@
 
     .content {
 
-      .content__title {
+      &__title {
         min-height: 190px;
-
+        
         font-size: 50px;
       }
 
-      .content__subtitle {
+      &__subtitle {
         max-width: 350px;
 
         font-size: 18px;

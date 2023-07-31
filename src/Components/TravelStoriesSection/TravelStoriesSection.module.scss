@@ -50,7 +50,7 @@
 
     .header {
 
-      .header__subtitle {
+      &__subtitle {
         min-width: 440px;
       }
     }
@@ -68,13 +68,13 @@
       padding: 0px 21px;
       gap: 21px;
 
-      .header__title {
+      &__title {
         max-width: 319px;
 
         letter-spacing: 0.02em;
       }
 
-      .header__subtitle {
+      &__subtitle {
         margin-left: 7px;
       }
     }
