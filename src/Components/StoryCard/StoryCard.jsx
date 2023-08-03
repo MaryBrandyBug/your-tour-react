@@ -11,10 +11,10 @@ export default function StoryCard({
 }) {
   const cx = classNames.bind(styles);
 
-  const networksList = networks?.map((network, i) => <Link to="/" key={i} className={styles['content-item__social-network'] + ' main-font-style'}>{network}</Link>);
-  const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={styles['content__list-item']} key={i}>{item}</li> : (
-    <li className={styles['content__list-item']} key={i}>
-      {item}
+  const networksList = networks?.map((network) => <Link to="/" key={network.id} className={styles['content-item__social-network'] + ' main-font-style'}>{network.name}</Link>);
+  const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={styles['content__list-item']} key={item.id}>{item.name}</li> : (
+    <li className={styles['content__list-item']} key={item.id}>
+      {item.name}
       .
     </li>
   )));
@@ -50,8 +50,8 @@ StoryCard.defaultProps = {
 StoryCard.propTypes = {
   header: PropTypes.string,
   text: PropTypes.string,
-  networks: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
+  networks: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.object]))),
   img: PropTypes.string,
-  list: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
+  list: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.object]))),
   additionalClassCards: PropTypes.string,
 };

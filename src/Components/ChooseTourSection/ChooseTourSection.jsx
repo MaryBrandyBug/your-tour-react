@@ -9,14 +9,14 @@ import data from './data';
 export default function ChooseTour() {
   const cx = classNames.bind(styles);
 
-  const menuItems = ['Авторские', 'Походы', 'Сплавы', 'Велопрогулки'];
-  const menu = menuItems.map((item, i) => (
-    <div className={cx('menu__item')} key={i}>
-      <Link to="/" className={cx('menu__item-name')}>{item}</Link>
+  const menuItems = [{ name: 'Авторские', id: '1' }, { name: 'Походы', id: '2' }, { name: 'Сплавы', id: '3' }, { name: 'Велопрогулки', id: '4' }];
+  const menu = menuItems.map((item) => (
+    <div className={cx('menu__item')} key={item.id}>
+      <Link to="/" className={cx('menu__item-name')}>{item.name}</Link>
       <div className={cx('menu__item-line')} />
     </div>
   ));
-  const tourCards = data.map((item, i) => <TourCard img={item} key={i} alt="Tour cover" />);
+  const tourCards = data.map((item) => <TourCard img={item.path} key={item.id} alt="Tour cover" />);
   return (
     <div className={cx('root', 'section')} id="chooseTour">
       <div className={cx('header', 'section__header__flex')}>

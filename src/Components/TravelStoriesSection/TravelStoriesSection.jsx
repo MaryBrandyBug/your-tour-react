@@ -20,9 +20,9 @@ export default function TravelStories() {
         </p>
       </div>
       <div className={cx('content', 'section__content__flex')}>
-        <StoryCard networks={[data.inst, data.facebook, data.youTube]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story1.png" list={data.advantagesList} />
-        <StoryCard networks={[data.inst, data.vk]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story2.png" />
-        <StoryCard networks={[data.inst, data.facebook, data.vk]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story3.png" />
+        <StoryCard networks={[{ name: data.inst, id: '1' }, { name: data.facebook, id: '2' }, { name: data.youTube, id: '3' }]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story1.png" list={data.advantagesList} />
+        <StoryCard networks={[{ name: data.inst, id: '1' }, { name: data.vk, id: '2' }]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story2.png" />
+        <StoryCard networks={[{ name: data.inst, id: '1' }, { name: data.facebook, id: '2' }, { name: data.vk, id: '3' }]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story3.png" />
       </div>
     </div>
   );

@@ -7,9 +7,9 @@ import { data1, data2, data3 } from './data';
 export default function TravelPhoto() {
   const cx = classNames.bind(styles);
 
-  const firstLine = data1.map((el) => <img src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
-  const secondLine = data2.map((el) => <img src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
-  const thirdLine = data3.map((el) => <img src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
+  const firstLine = data1.map((el) => <img key={el.id} src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
+  const secondLine = data2.map((el) => <img key={el.id} src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
+  const thirdLine = data3.map((el) => <img key={el.id} src={el.path} alt="travel memories" className={cx(el.firstClass, el.secondClass || '')} />);
 
   return (
     <div className={cx('root', 'section')}>

@@ -10,7 +10,7 @@ export default function Header() {
   const cx = classNames.bind(styles);
 
   const menuItems = [{ item: 'Туры', id: 'chooseTour' }, { item: 'Создать тур', id: 'createTour' }, { item: 'Отзывы', id: 'reviews' }, { item: 'Истории', id: 'travelStories' }];
-  const menu = menuItems.map((i, index) => <HashLink to={`#${i.id}`} key={index} className={cx('menu__item')} style={{ textDecoration: 'none' }}>{i.item}</HashLink>);
+  const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} key={i.id} className={cx('menu__item')} style={{ textDecoration: 'none' }}>{i.item}</HashLink>);
   return (
     <header className={cx('root')}>
       <div className={cx('navbar__container')}>
