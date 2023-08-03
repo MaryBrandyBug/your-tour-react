@@ -714,4 +714,31 @@
   }
 }
 
+// mobile
+@include _360 {
+  .root {
+    max-width: 88.3333333333%;
+    min-width: 88.3333333333%;
+
+    .content {
+      min-width: 100%;
+      padding: 20px 20px 40px;
+    }
+  }
+
+  .input-fields-container {
+
+    .input-field-container {
+
+      .select-field{
+        min-height: 43px;
+      }
+
+      .select-wrapper::before {
+        top: 60%;
+      }
+    }
+  }
+}
+
 @include mobile;

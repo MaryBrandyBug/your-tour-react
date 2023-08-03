@@ -208,4 +208,14 @@
   }
 }
 
+// mobile 
+@include _360 {
+  .content {
+
+    .choose-tour__link {
+      margin-left: -11px;
+    }
+  }
+}
+
 @include mobile;

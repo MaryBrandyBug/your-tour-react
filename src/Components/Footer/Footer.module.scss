@@ -140,4 +140,14 @@
   }
 }
 
+// mobile _360
+@include _360 {
+  .content__social-networks-links {
+
+    .content__linkBlock {
+      gap: 2px;
+    }
+  }
+}
+
 @include mobile;

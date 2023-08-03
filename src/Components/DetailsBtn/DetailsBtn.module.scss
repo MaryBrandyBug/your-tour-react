@@ -1,6 +1,7 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
+// main root
 .root {
   display: flex;
   flex-direction: row;
@@ -40,11 +41,22 @@
 
 }
 
+// 780
 @include _780 {
   .root {
         
     .root__text {
       font-size: 20px;
+    }
+  }
+}
+
+// mobile
+@include _360 {
+  .root {
+
+    .root__text {
+      font-size: 16px;
     }
   }
 }

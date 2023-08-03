@@ -83,4 +83,20 @@
   }
 }
 
+// mobile
+@include _360 {
+  .photo {
+    max-width: 130px;
+
+    border-radius: 20px;
+  }
+
+  .content {
+
+     &__header {
+      font-size: 23px;
+     }
+  }
+}
+
 @include mobile;

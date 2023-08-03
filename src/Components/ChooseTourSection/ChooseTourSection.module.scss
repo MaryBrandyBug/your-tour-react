@@ -189,4 +189,50 @@
   }
 }
 
+// 360
+@include _360 {
+  .root {
+    min-height: 2172px;
+    min-height: auto;
+    gap: 35px;
+
+    .content {
+        max-width: 318px;
+        gap: 18px;
+
+        letter-spacing: 0.04em;
+    }
+
+    .header {
+        max-width: 360px;
+        min-width: 360px;
+        gap: 30px;
+
+        &__title {
+            letter-spacing: 0.65px;
+        }
+
+        &__menu {
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 300px;
+            gap: 10px;
+        }
+    }
+
+    .menu__item {
+
+      &-name {
+          font-size: 16px;
+          line-height: 142%;
+      }
+    
+      &-active {
+          font-size: 16px;
+          line-height: 142%;
+      }
+    }
+  }
+}
+
 @include mobile;
