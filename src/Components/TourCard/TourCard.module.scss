@@ -72,16 +72,16 @@
 
 // 780
 @media (min-width: 780px) {
-  .root:hover .root__background {
-    transform: scale(1.2);
-    transition: all 300ms ease;
-  }
-
   .root:hover {
     cursor: pointer;
+
+    .root__background {
+      transform: scale(1.2);
+      transition: all 300ms ease;
+    }
   }
 
-  .content {
+  .root:hover .content {
 
     .choose-tour__link {
       background: $darkGreen;

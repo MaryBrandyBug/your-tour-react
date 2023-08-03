@@ -124,21 +124,21 @@
 @media (min-width: 780px) {
   .root:hover {
     cursor: pointer;
+
+    .root__background {
+      transform: scale(1.2);
+      transition: all 300ms ease;
+    }
   }
 
-  .root:hover .root__background {
-    transform: scale(1.2);
-    transition: all 300ms ease;
-  }
-
-  .footer-details-link {
+  .root:hover .footer-details-link {
     background: $darkGreen;
     border-radius: 50px;
 
     transform: translate(-21px, -11px);
   }
 
-  .footer-details-link:active {
+  .root:hover .footer-details-link:active {
     background: $orangeColor;
 
     transition: 0.3s;
