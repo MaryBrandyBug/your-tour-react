@@ -54,21 +54,21 @@
       transition: 0.7s;
 
       cursor: pointer;
-
-      .find-tour-btn {
-        max-width: 78px;
-        min-height: 24px;
-
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 142%;
-        letter-spacing: -0.01em;
-        color: $blackColor;
-      }
     }
   }
+}
+
+.find-tour-btn {
+  max-width: 78px;
+  min-height: 24px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 142%;
+  letter-spacing: -0.01em;
+  color: $blackColor;
 }
 
 @media (min-width: 361px) {
@@ -77,18 +77,18 @@
     background: $orangeColor;
 
     transition: all 0.5s ease-out;
+  }
 
-    .find-tour-btn {
-      color: $whiteColor;
-    }
+  .content__button:hover .find-tour-btn {
+    color: $whiteColor;
   }
 
   .content__button:active {
     background: $lightOrange;
+  }
 
-    .find-tour-btn {
-      color: $blackColor;
-    }
+  .content__button:active .find-tour-btn {
+    color: $blackColor;
   }
 }
 
@@ -250,6 +250,43 @@
       min-width: 124px;
       max-width: 124px;
     }
+  }
+}
+
+// mobile
+@include _360 {
+  .root {
+    max-height: 486px;
+
+    .content {
+      gap: 40px;
+
+      &__title {
+        min-height: 114px;
+
+        font-size: 34px;
+        line-height: 112%;
+      }
+
+      &__subtitle {
+        max-width: 314px;
+
+        font-size: 16px;
+      }
+
+    }
+  }
+
+  .navbar {
+    justify-content: space-between;
+
+    &__logo {
+      min-width: 133px;
+    }
+  }
+
+  .find-tour-btn {
+    font-size: 16px;
   }
 }
 
