@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 export default function Button({ text, btnType, btnClass }) {
   return (
-    <button type={btnType ? 'submit' : 'button'} className={btnClass}>{text}</button>
+    <button type={btnType === 'submit' ? 'submit' : 'button'} className={btnClass}>{text}</button>
   );
 }
 

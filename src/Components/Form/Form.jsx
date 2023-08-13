@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
+import validationSchema from './validation';
 import styles from './Form.module.scss';
 
 import Button from '../Button';
@@ -30,9 +31,12 @@ export default function Form() {
   const handleChange = (e) => {
     setYourTourForm({ ...yourTourForm, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // дальше методом POST передаем данные из стейтов на бэк
+    const isValid = await validationSchema.isValid(yourTourForm);
+    if (isValid) {
+      // дальше методом POST передаем данные из стейтов на бэк
+    }
   };
 
   useEffect(() => {
@@ -57,7 +61,6 @@ export default function Form() {
           а также рамки и место обучения кадров
         </p>
       </div>
-
       <form onSubmit={handleSubmit} className={cx('content', 'section__content__flex')}>
         <div className={cx('container')}>
           {windowSize > 780
@@ -119,7 +122,7 @@ export default function Form() {
             )}
         </div>
 
-        <TextAreaField fieldName="Комментарий" name="comment" onChange={handleChange} />
+        <TextAreaField fieldName="Комментарий" name="comment" onChange={handleChange} maxLength="250" />
 
         <div className={cx('age-check')}>
           <div className={cx('age-check__input-container')}>
@@ -142,7 +145,7 @@ export default function Form() {
 
         <div className={cx('buttons-container')}>
           <div className={cx('submit-button')}>
-            <Button text="Найти тур" btnClass={cx('submit-button-text')} type="submit" />
+            <Button text="Найти тур" btnClass={cx('submit-button-text')} btnType="submit" />
           </div>
           <div className={cx('reset-button')}>
             <Button text="Сбросить" btnClass={cx('reset-button-text')} />
