@@ -1,51 +1,62 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.info-link__container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
+// main root
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
 
-    border-radius: 50px;
+  border-radius: 50px;
 
-    cursor: pointer;
+  color: $whiteColor;
+  
+  cursor: pointer;
 
-    .info-link__text {
-        max-width: 120px;
-        max-height: 28px;
+  &__text {
+    max-width: 120px;
+    max-height: 28px;
 
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 23px;
-        line-height: 122%;
-        color: $whiteColor;
-    }
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 122%;
+  }
 
-    .info-link__arrow {
-        max-width: 24px;
-        max-height: 26px;
+  &__arrow {
+    max-width: 24px;
+    max-height: 26px;
         
-        img {
-            z-index: 0;
+    svg {
+      z-index: 0;
 
-            margin-top: 21%;
+      margin-top: 21%;
 
-            color: $whiteColor;
-        }
+      color: $whiteColor;
     }
+  }
 
 }
 
+// 780
 @include _780 {
-    .info-link__container {
+  .root {
         
-        .info-link__text {
-            font-size: 20px;
-        }
+    .root__text {
+      font-size: 20px;
     }
+  }
 }
 
-@include mobile;
+// mobile
+@include _360 {
+  .root {
+
+    .root__text {
+      font-size: 16px;
+    }
+  }
+}

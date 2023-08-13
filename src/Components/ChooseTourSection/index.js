@@ -1,1 +1,1 @@
-export { default as ChooseTourSection } from './ChooseTourSection';
+export { default } from './ChooseTourSection';

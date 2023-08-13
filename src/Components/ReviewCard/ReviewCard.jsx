@@ -1,34 +1,52 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 import styles from './ReviewCard.module.scss';
 
 export default function ReviewCard({
-  text, name, tour, textSecondPart, img,
+  text, name, tour, img,
 }) {
+  const cx = classNames.bind(styles);
+
   return (
-    <div className={styles['review-section__review-card']}>
-      <p className={styles['review-section__review-card-text']}>
-        {text}
-        {textSecondPart
+    <div className={cx('root')}>
+      <p className={cx('content')}>
+        {text[0]}
+        {text.length > 1
           ? (
             <>
               <br />
               <br />
-              {textSecondPart}
+              {text[1]}
             </>
           )
           : ''}
       </p>
-      <div className={styles['review-section__review-card__footer']}>
-        <div className={styles['review-section__footer-content']}>
-          <h3 className={styles['review-section__reviewer-name']}>{name}</h3>
-          <p className={styles['review-section__reviewer-tour']}>
+      <div className={cx('root__footer')}>
+        <div className={cx('footer-content')}>
+          <h3 className={cx('reviewer-name')}>{name}</h3>
+          <p className={cx('reviewer-tour')}>
             Тур:
             {' '}
             {tour}
           </p>
         </div>
-        <img src={img} alt="reviewer" className={styles['footer-content__reviewer']} />
+        <img src={img} alt="reviewer" className={cx('root__reviewer')} />
       </div>
     </div>
   );
 }
+
+ReviewCard.defaultProps = {
+  text: null,
+  name: null,
+  tour: null,
+  img: null,
+};
+
+ReviewCard.propTypes = {
+  text: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
+  name: PropTypes.string,
+  tour: PropTypes.string,
+  img: PropTypes.string,
+};

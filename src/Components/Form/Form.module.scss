@@ -1,846 +1,731 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.form-section {
-    min-width: percentage(1170 / 1920);
-    gap: 100px;
+// main root
+.root {
+  min-width: percentage(1170 / 1920);
+  gap: 100px;
 
-    .form-section__header {
-        gap: 30px;
+  composes: main-font-style from '../../styles/global.scss';
 
-        .form-section__header__subtitle {
-            max-width: 458px;
+  .header {
+    gap: 30px;
 
-            text-align: center;
-            color: $greyColor;
-        }
+    &__subtitle {
+      max-width: 458px;
+
+      text-align: center;
+      color: $greyColor;
+    }
+  }
+
+  .content {
+    min-height: 986px;
+    min-width: 100%;
+    padding: 70px;
+    gap: 33px;
+
+    background: $whiteColor;
+    border-radius: 50px;
+
+    .container {
+      display: flex;
+      max-width: 1170px;
+      min-width: inherit;
+      gap: 30px;
     }
 
-    .form-section__content-form {
-        min-height: 986px;
-        min-width: 100%;
-        padding: 70px;
-        gap: 33px;
+    .root__input-comment-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      min-width: 100%;
+      max-height: 188px;
+      gap: 8px;
 
-        background: $whiteColor;
-        border-radius: 50px;
+      .input-name {
+        color: $blackColor;
+      }
 
-        .form-cont {
-            display: flex;
-            max-width: 1170px;
-            flex-wrap: wrap;
-            min-width: inherit;
-            gap: 30px;
+      .input-comment {
+        min-width: inherit;
 
-            .side-form-cont {
-                display: flex;
-                flex-direction: column;
-                gap: 33px;
+        resize: none;
+      }
 
-        .form-section__input-name {
-            color: $blackColor;
+      @media (min-width: 361px) {
+        .root__input-field-comment:focus {
+          border: 1px solid $greyColor;
+          background: $lightBeigeColor;
         }
 
-        .form-section__input-fields-container {
+        .root__input-field-comment:hover {
+          background: $lightBeigeColor;
+        }
+      }
+
+      .root__input-field-comment {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        min-height: 152px;
+        box-sizing: border-box;
+        padding: 20px;
+        gap: 10px;
+
+        font-size: 20px;
+
+        background: $beigeColor;
+        border: 1px solid $lightBeigeColor;
+        border-radius: 10px;
+
+        cursor: pointer;
+      }
+    }
+
+    .age-check {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      min-width: 100%;
+      gap: 30px;
+
+      &__input-container {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+
+        .input-name {
+          color: $blackColor;
+        }
+
+        .age-check__radio-buttons-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 31px;
+
+          .age-check__radio-button-container {
             display: flex;
             flex-direction: row;
-            align-items: flex-start;
-            min-width: 100%;
-            max-height: 104px;
-            gap: 30px;
+            align-items: center;
+            gap: 11px;
 
-            .form-section__input-field-container {
-                position: relative;
-
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                min-width: inherit;
-                max-height: 104px;
-                gap: 8px;
-
-                input[type=date]::-webkit-calendar-picker-indicator {
-                    opacity: 0;
-                }
-
-                input[type=date]::-webkit-datetime-edit { 
-                    font-size: 25px;
-                    font-weight: 300;
-                    color: $greyColor;
-                }
-
-                .select-wrapper {
-                    min-width: inherit;
-                }
-
-                .select-wrapper::before {
-                    position: absolute;
-                    top: 55%;
-                    right: 25px;
-
-                    display: block;
-                    width: 20px;
-                    height: 100%;
-
-                    content: url('../../../public/images/Rectangle.png');
-                    pointer-events: none;
-                }
-
-                .form-section__select-field {
-                    min-width: 500px;
-                    min-height: 68px;
-                    padding: 20px;
-                    gap: 10px;
-
-                    background: $beigeColor;
-                    border: 1px solid $lightBeigeColor;
-                    border-radius: 10px;
-
-                    cursor: pointer;
-
-                    -webkit-appearance: none;
-                    appearance: none;
-                }
-
-                @media (min-width: 361px) {
-                    .form-section__select-field:hover {
-                        background: $lightBeigeColor;
-                    }
-                }
-
-                .first-date-field {
-                    color: $beigeColor;
-                }
-
-                .second-date-field::-webkit-calendar-picker-indicator {
-                    opacity: 0;
-                }
-
-                .form-section__input-field {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    box-sizing: border-box;
-                    padding: 20px;
-                    min-width: 500px;
-                    min-height: 68px;
-                    gap: 10px;
-                    
-                    font-size: 20px;
-
-                    background: $beigeColor;
-                    border: 1px solid $lightBeigeColor;
-                    border-radius: 10px;
-
-                    cursor: pointer;
-                    -webkit-appearance: none;
-                }
-
-                @media (min-width: 361px) {
-
-                    .form-section__input-field:focus{
-                        border: 1px solid $greyColor;
-                        background: $lightBeigeColor;
-                    }
-
-                    .first-date-field:hover {
-                        color: $lightBeigeColor;
-                    }
-
-                    .first-date-field:focus {
-                        color: $lightBeigeColor;
-                    }
-    
-                    .form-section__input-field:hover {
-                        background: $lightBeigeColor;
-                    }
-                }
-
-                .form-section__input-field::placeholder {
-                    color: $greyColor;
-                }
-
-                input[type="date"]:not(.has-value):before{
-                    color: $greyColor;
-
-                    content: attr(placeholder);
-                }
+            .age-check__radio-button {
+              display: none;
             }
+
+            .radio__border {
+              position: relative;
+
+              min-width: 21px;
+              min-height: 21px;
+
+              border: 2px solid $blackColor;
+              border-radius: 50%;
+            }
+
+            .radio__border::before {
+              position: absolute;
+              top: 48%;
+              left: 48%;
+              z-index: -1;
+
+              display: block;
+              min-width: 12px;
+              min-height: 12px;
+
+              background-color: $blackColor;
+              border-radius: 50%;
+
+              transform: translate(-50%, -50%);
+              transition: .2s;
+
+              content: "";
+            }
+
+            .age-check__radio-button:checked + .radio__border::before {
+              z-index: 1;
+            }
+          }
         }
-    }
+      }
     }
 
-        .form-section__input-comment-container {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            min-width: 100%;
-            max-height: 188px;
-            gap: 8px;
+    .agreement-container {
+      display: flex;
+      align-items: center;
+      min-width: 100%;
 
-            .form-section__input-name {
-                color: $blackColor;
-            }
+      .agreement-text {
+        margin-left: 10px;
 
-            .input-comment {
-                min-width: inherit;
+        font-size: 17px;
+        color: $greyColor;
 
-                resize: none;
-            }
+        @media (min-width: 361px) {
 
-            @media (min-width: 361px) {
-                .form-section__input-field-comment:focus {
-                    border: 1px solid $greyColor;
-                    background: $lightBeigeColor;
-                }
-
-                .form-section__input-field-comment:hover {
-                    background: $lightBeigeColor;
-                }
-            }
-
-            .form-section__input-field-comment {
-                display: flex;
-                flex-direction: row;
-                align-items: center;
-                min-height: 152px;
-                box-sizing: border-box;
-                padding: 20px;
-                gap: 10px;
-
-                font-size: 20px;
-
-                background: $beigeColor;
-                border: 1px solid $lightBeigeColor;
-                border-radius: 10px;
-
-                cursor: pointer;
-            }
-        }
-
-        .form-section__age-check {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            min-width: 100%;
-            gap: 30px;
-
-            .form-section__age-check__input-container {
-                display: flex;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 12px;
-
-                .form-section__input-name {
-                    color: $blackColor;
-                }
-
-                .age-check__radio-buttons-container {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                    gap: 31px;
-
-                    .age-check__radio-button-container {
-                        display: flex;
-                        flex-direction: row;
-                        align-items: center;
-                        gap: 11px;
-
-                        .age-check__radio-button {
-                            display: none;
-                        }
-
-                        .radio__border {
-                            position: relative;
-
-                            min-width: 21px;
-                            min-height: 21px;
-
-                            border: 2px solid $blackColor;
-                            border-radius: 50%;
-                        }
-
-                        .radio__border::before {
-                            position: absolute;
-                            top: 48%;
-                            left: 48%;
-                            z-index: -1;
-
-                            display: block;
-                            min-width: 12px;
-                            min-height: 12px;
-
-                            background-color: $blackColor;
-                            border-radius: 50%;
-
-                            transform: translate(-50%, -50%);
-                            transition: .2s;
-
-                            content: "";
-                        }
-
-                        .age-check__radio-button:checked + .radio__border::before {
-                            z-index: 1;
-                        }
-                    }
-                }
-            }
-        }
-
-        .form-section__agreement-container {
-            display: flex;
-            align-items: flex-start;
-            min-width: 100%;
-            // margin-left: 70px;
-
-            .form-section__accept {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                gap: 19px;
-
-                font-family: 'Roboto';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 17px;
-                line-height: 142%;
-                letter-spacing: -0.01em;
-                color: $greyColor;
-                
-                .form-section__agreement-radio-button {
-                    display: none;
-                }
-
-                .agreement-text {
-
-
-                    .form-section__agreement-text-link {
-                        margin-left: 1px;
-
-                        font-size: 17px;
-                        text-decoration: none;
-                        color: $blackColor;
-
-                        background: inherit;
-                        
-                        cursor: pointer;
-
-                    }
-                }
-
-                .checkbox__border {
-                    position: relative;
-
-                    display: inline-block;
-                    min-width: 20px;
-                    min-height: 20px;
-
-                    border: 2px solid $blackColor;
-                    border-radius: 20%;
-                }
-
-                .checkbox__border::before {
-                    position: absolute;
-                    left: -1.3px;
-                    top: 48%;
-
-                    min-height: 29%;
-                    min-width: 2px;
-
-                    background-color: $blackColor;
-                    opacity: 0;
-                    
-                    transition: .2s;
-                    transform: translateX(9.45px) rotate(-45deg);
-                    transform-origin: left bottom;
-
-                    content: '';
-                }
-
-                .checkbox__border::after {
-                    position: absolute;
-                    left: 9%;
-                    bottom: 19%;
-
-                    min-height: 2px;
-                    min-width: 68%;
-
-                    background-color: $blackColor;
-                    opacity: 0;
-
-                    transform: translateX(7.1px) rotate(-46deg);
-                    transform-origin: left bottom;
-                    transition: .2s;
-
-                    content: "";
-                }
-
-                .form-section__agreement-radio-button:checked + .checkbox__border::before,  
-                .form-section__agreement-radio-button:checked + .checkbox__border::after {
-                    opacity: 1;
-                }
-
-                @media (min-width: 361px) {
-
-                    .form-section__agreement-text-link:hover {
-                        text-decoration: underline;
-                    }
+          .agreement-text-link:hover {
+            text-decoration: underline;
+          }
     
-                    .form-section__agreement-text-link:active {
-                        color: $darkGreen;
-                    }
-                }
-            }
+          .agreement-text-link:active {
+            color: $darkGreen;
+          }
         }
 
-        .form-section__buttons-container {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            min-width: 100%;
-            gap: 30px;
+        .agreement-text-link {
+          margin-left: 1px;
 
-            .form-section__submit-button {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                min-width: 235px;
-                min-height: 58px;
-                gap: 10px;
+          font-size: 17px;
+          text-decoration: none;
+          color: $blackColor;
 
-                background: $darkGreen;
-                border-radius: 10px;
-
-                transition: 0.7s;
-
-                cursor: pointer;
-
-                .form-section__submit-button-text{
-                    min-width: 235px;
-                    min-height: 58px;
-
-                    color: $whiteColor;
-
-                    background-color: inherit;
-                    border-radius: 10px;
-                }
-            }
-
-            @media (min-width: 361px) {
-
-                .form-section__submit-button:hover {
-                    background: $greenColor;
-                    transition: 0.4s;
-                }
-    
-                .form-section__submit-button:active {
-                    background: $oliveGreenColor;
-                    transition: 0.3s;
-                }
-            }
-
-            .form-section__reset-button {
-                display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;
-                min-width: 235px;
-                min-height: 58px;
-                gap: 10px;
-
-                background: $lightGreenColor;
-                border-radius: 10px;
-
-                transition: 0.7s;
-
-                cursor: pointer;
-
-                .form-section__reset-button-text {
-                    min-width: 235px;
-                    min-height: 58px;
-
-                    color: $darkGreen;
-
-                    background-color: inherit;
-                    border-radius: 10px;
-                }
-            }
-
-            @media (min-width: 361px) {
-
-                .form-section__reset-button:hover {
-                    background: $whiteSmoke;
-
-                    transition: 0.4s;
-                }
-    
-                .form-section__reset-button:active {
-                    background: $gainsboro;
-
-                    transition: 0.3s;
-                }
-            }
-
+          background: inherit;
+                      
+          cursor: pointer;
         }
+      }
     }
+
+    .buttons-container {
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      min-width: 100%;
+      gap: 30px;
+
+      .submit-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 235px;
+        min-height: 58px;
+        gap: 10px;
+
+        background: $darkGreen;
+        border-radius: 10px;
+
+        transition: 0.7s;
+
+        cursor: pointer;
+
+        &-text{
+          min-width: 235px;
+          min-height: 58px;
+
+          color: $whiteColor;
+
+          background-color: inherit;
+          border-radius: 10px;
+        }
+      }
+
+      @media (min-width: 361px) {
+
+        .submit-button:hover {
+          background: $greenColor;
+          transition: 0.4s;
+        }
+    
+        .submit-button:active {
+          background: $oliveGreenColor;
+          transition: 0.3s;
+        }
+      }
+
+      .reset-button {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        min-width: 235px;
+        min-height: 58px;
+        gap: 10px;
+
+        background: $lightGreenColor;
+        border-radius: 10px;
+
+        transition: 0.7s;
+
+        cursor: pointer;
+
+        .reset-button-text {
+          min-width: 235px;
+          min-height: 58px;
+
+          color: $darkGreen;
+
+          background-color: inherit;
+          border-radius: 10px;
+        }
+      }
+
+      @media (min-width: 361px) {
+
+        .reset-button:hover {
+          background: $whiteSmoke;
+
+          transition: 0.4s;
+        }
+    
+        .reset-button:active {
+          background: $gainsboro;
+
+          transition: 0.3s;
+        }
+      }
+
+    }
+  }
+}
+
+.side-container {
+  display: flex;
+  flex-direction: column;
+  gap: 33px;
+
+  .input-name {
+    color: $blackColor;
+  }
+}
+
+.input-fields-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-width: 100%;
+  max-height: 104px;
+  gap: 30px;
+
+  .input-field-container {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: inherit;
+    max-height: 104px;
+    gap: 8px;
+
+    .select-wrapper {
+      min-width: inherit;
+    }
+
+    .select-wrapper::before {
+      position: absolute;
+      top: 55%;
+      right: 25px;
+
+      display: block;
+      width: 20px;
+      height: 100%;
+
+      content: url('../../../public/images/Rectangle.png');
+      pointer-events: none;
+    }
+
+    .select-field {
+      min-width: 500px;
+      min-height: 68px;
+      padding: 20px;
+      gap: 10px;
+
+      background: $beigeColor;
+      border: 1px solid $lightBeigeColor;
+      border-radius: 10px;
+
+      cursor: pointer;
+
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    @media (min-width: 361px) {
+      .select-field:hover {
+        background: $lightBeigeColor;
+      }
+    }
+
+    .first-date-field {
+      color: $beigeColor;
+    }
+
+    .second-date-field::-webkit-calendar-picker-indicator {
+      opacity: 0;
+    }
+
+    .root__input-field {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      box-sizing: border-box;
+      padding: 20px;
+      min-width: 500px;
+      min-height: 68px;
+      gap: 10px;
+            
+      font-size: 20px;
+
+      background: $beigeColor;
+      border: 1px solid $lightBeigeColor;
+      border-radius: 10px;
+
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+
+    .root__input-field::placeholder {
+      color: $greyColor;
+    }
+
+    input[type="date"]:not(.has-value):before{
+      color: $greyColor;
+
+      content: attr(placeholder);
+    }
+  }
+}
+
+@media (min-width: 361px) {
+
+  .root__input-field:focus{
+    border: 1px solid $greyColor;
+    background: $lightBeigeColor;
+  }
+
+  .first-date-field:hover {
+    color: $lightBeigeColor;
+  }
+
+  .first-date-field:focus {
+    color: $lightBeigeColor;
+  }
+
+  .root__input-field:hover {
+    background: $lightBeigeColor;
+  }
 }
 
 @media (max-width: 1300px) {
-    .form-section {
-        min-width: percentage(918 / 1300);
+  .root {
+    min-width: percentage(918 / 1300);
+  }
 
-        .form-section__content-form {
+  .input-fields-container {
 
-            .form-cont {
+    .input-field-container {
 
-                .side-form-cont {
+      .select-field {
+        min-width: 400px;
+      }
 
-                .form-section__input-fields-container {
-
-                    .form-section__input-field-container {
-
-                        .form-section__select-field {
-                            min-width: 400px;
-                        }
-    
-                        .form-section__input-field {
-                            min-width: 400px;
-                        }
-                    }
-                }
-            }
-            }
-
-            .form-section__agreement-container {
-
-                .form-section__accept {
-                    justify-content: flex-start;
-                }
-            }
-        }
+      .root__input-field {
+        min-width: 400px;
+      }
     }
+  }
 }
 
-
+// 1024
 @include _1024 {
-    .form-section {
-        min-width: percentage(918 / 1024);
-        gap: 100px;
+  .root {
+    min-width: percentage(918 / 1024);
+    gap: 100px;
         
-        .form-section__content-form {
-            padding: 60px;
-            gap: 33px;
+    .content {
+      padding: 60px;
+      gap: 33px;
 
-            .form-cont {
-                gap: 28px;
+      .container {
+        gap: 28px;
+      }
 
-                .side-form-cont {
+      .root__input-comment-container {
+        max-height: 183.4px;
+      }
+      }
+  }
 
-            .form-section__input-fields-container {
-                max-height: 102px;
-                gap: 20px;
+  .input-fields-container {
+    max-height: 102px;
+    gap: 20px;
 
-                .form-section__input-field-container {
-                    max-width: 389px;
+    .input-field-container {
+      max-width: 389px;
 
-                    .form-section__select-field {
-                        max-width: 389px;
-                        min-width: 389px;
-                    }
+      .select-field {
+        max-width: 389px;
+        min-width: 389px;
+      }
 
-                    .form-section__input-field {
-                        min-width: 389px;
-                    }
-                }
-            }
-            }
-        }
-
-
-            .form-section__input-comment-container {
-                max-height: 183.4px;
-            }
-
-            .form-section__agreement-container {
-
-                .form-section__accept {
-                    gap: 12px;
-                }
-            }
-        }
+      .root__input-field {
+        min-width: 389px;
+      }
     }
+  }
 }
 
+// 992
 @include _992 {
-    .form-section {
-        gap: 50px;
+  .root {
+    gap: 50px;
+  }
 
-        .form-section__content-form {
+  .side-container {
+    min-width: 47.5%;
+  }
 
-            .form-cont {
+  .input-fields-container {
+    min-width: 100%;
 
-                .side-form-cont {
-                    min-width: 47.5%;
+    .input-field-container {
+      min-width: inherit;
 
-                .form-section__input-fields-container {
-                    min-width: 100%;
+      .select-field {
+        min-width: inherit;
+      }
 
-                    .form-section__input-field-container {
-                        min-width: inherit;
-
-                        .form-section__select-field {
-                            min-width: inherit;
-                        }
-
-                        .form-section__input-field {
-                            min-width: inherit;
-                        }
-                    }
-                }
-            }
-        }
-        }
+      .root__input-field {
+        min-width: inherit;
+      }
     }
+  }
 }
 
+// 780
 @include _780 {
-    .form-section  {
-        gap: 40px;
+  .root  {
+    gap: 40px;
 
-        .form-section__header {
-            gap: 20px;
+    .header {
+      gap: 20px;
 
-            .form-section__header__title {
-                letter-spacing: 0.7px;
-            }
+      &__title {
+        letter-spacing: 0.7px;
+      }
 
-            .form-section__header__subtitle {
-                min-width: 400px;
-            }
-        }
-
-        .form-section__content-form {
-            gap: 30px;
-
-            border-radius: 30px;
-
-            .form-cont {
-                flex-direction: column;
-
-                gap: 32px;
-
-                .side-form-cont {
-
-            .form-section__input-name {
-                font-size: 16px;
-            }
-
-            .form-section__input-fields-container {
-                max-height: 74px;
-
-                .form-section__input-field-container {
-                    max-width: 250px;
-                    max-height: 74px;
-
-                    input[type=date]::-webkit-datetime-edit { 
-                        font-size: 20px;
-                        font-weight: 300;
-                        color: $greyColor;
-                    }
-
-                    .select-wrapper::before {
-                        position: absolute;
-                        top: 70%;
-
-                        display: block;
-                        width: 10px;
-                        height: 70%;
-
-                        pointer-events: none;
-                        content: url('../../../public/images/Rectangle.png');
-                    }
-
-                    .form-section__input-field {
-                        padding: 8px;
-
-                        font-size: 16px;
-                    }
-
-                    .form-section__select-field {
-                        min-height: 60px;
-                        padding: 10px;
-
-                        font-size: 15px;
-                        letter-spacing: 0.4px;
-                    }
-                    
-                    .form-section__input-field {
-                        max-width: 278px;
-                        min-height: 60px;
-                    }
-
-                    .form-section__input-field::placeholder {
-                        font-size: 16px;
-                    }
-                }
-            }
-        }
-        }
-
-            .form-section__input-comment-container {
-
-                .form-section__input-name {
-                    font-size: 16px;
-                }
-
-                .form-section__input-field-comment {
-                    font-size: 16px;
-                }
-            }
-
-            .form-section__age-check {
-                .form-section__age-check__input-container {
-                    gap: 8px;
-
-                    .form-section__input-name {
-                        font-size: 16px;
-                    }
-
-                    .age-check__radio-buttons-container {
-                        gap: 27px;
-
-                        .age-check__radio-button-container {
-
-
-                            .radio__border {
-                                min-width: 21px;
-                                min-height: 21px;
-                            }
-
-                            .radio__border::before {
-                                min-width: 10px;
-                                min-height: 9px;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .form-section__agreement-container {
-
-                .form-section__accept {
-                    font-size: 16px;
-                    gap: 0;
-
-                    .checkbox__border {
-                        min-width: 21px;
-                        min-height: 21px;
-                    }
-
-                    .agreement-text {
-                        margin-left: 12px;
-                        max-width: 260px;
-
-                        font-size: 16px;
-
-                        .form-section__agreement-text-link {
-                            font-size: 16px;
-                        }
-                    }
-                }
-            }
-
-            .form-section__buttons-container {
-                margin-left: 0;
-                margin-right: 0px;
-                gap: 10px;
-
-                .form-section__submit-button {
-                    min-width: 134px;
-                    min-height: 47px;
-                    
-                    .form-section__submit-button-text {
-                        min-width: 134px;
-                        min-height: 47px;
-
-                        font-size: 16px;
-                    }
-                }
-
-                .form-section__reset-button {
-                    min-width: 134px;
-                    min-height: 47px;
-
-                    .form-section__reset-button-text {
-                        min-width: 134px;
-                        min-height: 47px;
-
-                        font-size: 16px;
-                    }
-                }
-            }
-        }
+      &__subtitle {
+        min-width: 400px;
+      }
     }
+
+    .content {
+      gap: 30px;
+
+      border-radius: 30px;
+
+      .container {
+        flex-direction: column;
+
+        gap: 32px;
+      }
+
+      .root__input-comment-container {
+
+        .input-name {
+          font-size: 16px;
+        }
+
+        .root__input-field-comment {
+          font-size: 16px;
+        }
+      }
+
+      .age-check {
+        .age-check__input-container {
+          gap: 8px;
+
+          .input-name {
+            font-size: 16px;
+          }
+
+          .age-check__radio-buttons-container {
+            gap: 27px;
+
+            .age-check__radio-button-container {
+
+              .radio__border {
+                min-width: 21px;
+                min-height: 21px;
+              }
+
+              .radio__border::before {
+                min-width: 10px;
+                min-height: 9px;
+              }
+            }
+          }
+        }
+      }
+
+      .agreement-container {
+
+        .agreement-text {
+          margin-left: 12px;
+          max-width: 260px;
+
+          font-size: 16px;
+
+          .agreement-text-link {
+            font-size: 16px;
+          }
+        }
+      }
+
+      .buttons-container {
+        margin-left: 0;
+        margin-right: 0px;
+        gap: 10px;
+
+        .submit-button {
+          min-width: 134px;
+          min-height: 47px;
+                    
+          .submit-button-text {
+            min-width: 134px;
+            min-height: 47px;
+
+            font-size: 16px;
+          }
+        }
+
+        .reset-button {
+          min-width: 134px;
+          min-height: 47px;
+
+          .reset-button-text {
+            min-width: 134px;
+            min-height: 47px;
+
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+
+  .side-container {
+
+    .input-name {
+      font-size: 16px;
+    }
+  }
+  
+  .input-fields-container {
+    max-height: 74px;
+
+    .input-field-container {
+      max-width: 250px;
+      max-height: 74px;
+
+      input[type=date]::-webkit-datetime-edit { 
+        font-size: 20px;
+        font-weight: 300;
+        color: $greyColor;
+      }
+
+      .select-wrapper::before {
+        position: absolute;
+        top: 70%;
+
+        display: block;
+        width: 10px;
+        height: 70%;
+
+        pointer-events: none;
+        content: url('../../../public/images/Rectangle.png');
+      }
+
+      .root__input-field {
+        padding: 8px;
+
+        font-size: 16px;
+      }
+
+      .select-field {
+        min-height: 60px;
+        padding: 10px;
+
+        font-size: 15px;
+        letter-spacing: 0.4px;
+      }
+            
+      .root__input-field {
+        max-width: 278px;
+        min-height: 60px;
+      }
+
+      .root__input-field::placeholder {
+        font-size: 16px;
+      }
+    }
+  }
 }
 
+// 500
 @media (max-width: 500px) {
-    .form-section {
-        min-width: 90%;
+  .root {
+    min-width: 90%;
 
-        .form-section__content-form {
-            min-width: 85%;
-            padding: 20px;
+    .content {
+      min-width: 85%;
+      padding: 20px;
 
-            .form-cont {
-
-                .side-form-cont {
-
-                    .form-section__input-fields-container {
-                        
-        
-                        .form-section__input-field-container {
-        
-                            .form-section__select-field {
-                                min-height: 43px;
-                            }
-        
-                            .form-section__input-field {
-                                min-height: 43px;
-                            }
-
-                            .select-wrapper::before {
-                                top: 59%;
-                            }
-                        }
-                    }
-                }
-            }
-
-            .form-section__input-comment-container {
-                max-height: 163px;
-            }
-
-            .form-section__agreement-container {
-
-                .form-section__accept {
-
-                    .checkbox__border {
-                        margin-bottom: 45px;
-                    }
-
-                    .agreement-text {
-                        max-width: 248px;
-                        margin-left: 12px;
-
-                        font-size: 16px;
-                    }
-                }
-            }
-        }
+      .root__input-comment-container {
+        max-height: 163px;
+      }
     }
+  }
+
+  .agreement-container {
+        
+    .agreement-text {
+      max-width: 248px;
+      margin-left: 12px;
+
+      font-size: 16px;
+    }
+  }
+
+  .select-field {
+    min-height: 43px;
+  }
+
+  .root__input-field {
+    min-height: 43px;
+  }
+
+  .select-wrapper::before {
+    top: 59%;
+  }
 }
 
-@include mobile;
+// mobile
+@include _360 {
+  .root {
+    max-width: 88.3333333333%;
+    min-width: 88.3333333333%;
+
+    .content {
+      min-width: 100%;
+      padding: 20px 20px 40px;
+    }
+  }
+
+  .input-fields-container {
+
+    .input-field-container {
+
+      .select-field{
+        min-height: 43px;
+      }
+
+      .select-wrapper::before {
+        top: 60%;
+      }
+    }
+  }
+}

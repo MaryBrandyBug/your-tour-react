@@ -1,82 +1,100 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.mail-section {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-width: 771px;
-    padding: 0px;
-    gap: 30px;
+// main root
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 771px;
+  padding: 0px;
+  gap: 30px;
 
-    .mail-section__photo {
-        max-width: 370px;
-
-        border-radius: 50px;
-    }
-
-    .mail-section__content {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 0px;
-        gap: 20px;
-
-        .mail-section__content__header {
-            font-family: 'Roboto';
-            font-style: normal;
-            font-weight: 500;
-            font-size: 35px;
-            line-height: 122%;
-            color: $blackColor;
-        }
-
-        .mail-section__content__text {
-            color: $greyColor;
-
-            .mail-section__content__mail {
-                color: $blackColor;
-
-                text-decoration: none;
-            }
-
-            .mail-section__content__mail:hover {
-                text-decoration: underline;
-            }
-
-            .mail-section__content__mail:active {
-                color: $darkGreen;
-            }
-        }
-    }
+  composes: main-font-style from '../../styles/global.scss';
 }
 
+.photo {
+  max-width: 370px;
+
+  border-radius: 50px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px;
+  gap: 20px;
+
+  &__header {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 122%;
+    color: $blackColor;
+  }
+
+  &__text {
+    color: $greyColor;
+
+    .content__mail {
+      color: $blackColor;
+
+      text-decoration: none;
+    }
+
+    .content__mail:hover {
+      text-decoration: underline;
+    }
+
+    .content__mail:active {
+      color: $darkGreen;
+    }
+  }
+}
+
+// 780
 @include _780 {
-    .mail-section {
-        flex-direction: column;
+  .root {
+    flex-direction: column;
+  }
 
-        .mail-section__photo {
-            max-width: 250px;
+  .photo {
+    max-width: 250px;
 
-            border-radius: 20px;
-        }
+    border-radius: 20px;
+  }
 
-        .mail-section__content {
-            max-width: 291px;
-            gap: 24px;
+  .content {
+    max-width: 291px;
+    gap: 24px;
 
-            .mail-section__content__header {
-                font-size: 25px;
-                line-height: 120%;
-                text-align: center;
-                letter-spacing: 0.045em;
-            }
-
-            .mail-section__content__text {
-                text-align: center;
-            }
-        }
+    &__header {
+      font-size: 25px;
+      line-height: 120%;
+      text-align: center;
+      letter-spacing: 0.045em;
     }
+
+    &__text {
+      text-align: center;
+    }
+  }
 }
 
-@include mobile;
+// mobile
+@include _360 {
+  .photo {
+    max-width: 130px;
+
+    border-radius: 20px;
+  }
+
+  .content {
+
+    &__header {
+      font-size: 23px;
+    }
+  }
+}

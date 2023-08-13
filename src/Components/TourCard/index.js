@@ -1,1 +1,1 @@
-export { default as TourCard } from './TourCard';
+export { default } from './TourCard';

@@ -1,76 +1,87 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import classNames from 'classnames/bind';
+import validationSchema from './validation';
 import styles from './Form.module.scss';
 
+import Button from '../Button';
+import InputField from '../InputField/InputField';
+import TextAreaField from '../TextAreaField/TextAreaField';
+import InputRadio from '../InputRadio/InputRadio';
+import InputCheckbox from '../InputCheckbox/InputCheckbox';
+
 export default function Form() {
+  const cx = classNames.bind(styles);
+
   const [checked, setChecked] = useState(false);
   const [radio, setRadio] = useState('');
   const [yourTourForm, setYourTourForm] = useState({
     name: '', direction: '', email: '', phoneNumber: '', dateSince: '', dateUntil: '', comment: '',
   });
+  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
-  function chengeRadio(e) {
+  const changeRadio = (e) => {
     setRadio(e.target.value);
-  }
-  function chengeCheckbox() {
-    setChecked(!checked);
-  }
+  };
 
-  const handleInput = (e) => {
+  const changeCheckbox = () => {
+    setChecked(!checked);
+  };
+
+  const handleChange = (e) => {
     setYourTourForm({ ...yourTourForm, [e.target.name]: e.target.value });
   };
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // дальше методом POST передаем данные из стейтов на бэк
+    const isValid = await validationSchema.isValid(yourTourForm);
+    if (isValid) {
+      // дальше методом POST передаем данные из стейтов на бэк
+    }
   };
 
+  useEffect(() => {
+    const resizeWindow = () => {
+      setWindowSize(window.innerWidth);
+    };
+    window.addEventListener('resize', resizeWindow);
+
+    return () => {
+      window.removeEventListener('resize', resizeWindow);
+    };
+  });
+
   return (
-    <div className={styles['form-section'] + ' section'} id="createTour">
-      <div className={styles['form-section__header'] + ' section__header__flex'}>
-        <h2 className={styles['form-section__header__title'] + ' section__header__title'}>Собери свой тур</h2>
-        <p className={styles['form-section__header__subtitle'] + ' section__header__subtitle main-font-style'}>
+    <div className={cx('root', 'section')} id="createTour">
+      <div className={cx('header', 'section__header__flex')}>
+        <h2 className={cx('header__title', 'section__header__title')}>Собери свой тур</h2>
+        <p className={cx('header__subtitle', 'section__header__subtitle')}>
           Идейные соображения высшего порядка,
           <br />
           {' '}
           а также рамки и место обучения кадров
         </p>
       </div>
-
-      <form onSubmit={handleSubmit} className={styles['form-section__content-form'] + ' section__content__flex'}>
-        <div className={styles['form-cont']}>
-          {window.innerWidth > 780
+      <form onSubmit={handleSubmit} className={cx('content', 'section__content__flex')}>
+        <div className={cx('container')}>
+          {windowSize > 780
             ? (
               <>
-                <div className={styles['side-form-cont']}>
+                <div className={cx('side-container')}>
 
-                  <div className={styles['form-section__input-fields-container']}>
-                    <div className={styles['form-section__input-field-container']}>
-                      <p className={styles['form-section__input-name'] + ' main-font-style'}>Имя</p>
-                      <input type="text" name="name" className={styles['form-section__input-field'] + ' main-font-style'} placeholder="Введите Ваше имя" onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
 
-                  <div className={styles['form-section__input-fields-container']}>
-                    <div className={styles['form-section__input-field-container']}>
-                      <p className={styles['form-section__input-name'] + ' main-font-style'}>Email</p>
-                      <input type="email" name="email" className={styles['form-section__input-field'] + ' main-font-style'} placeholder="example@mail.com" onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
 
-                  <div className={styles['form-section__input-fields-container']}>
-                    <div className={styles['form-section__input-field-container']}>
-                      <p className={styles['form-section__input-name'] + ' main-font-style'}>Дата от</p>
-                      <input type="date" name="dateSince" className={styles['form-section__input-field'] + ' main-font-style'} onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
                 </div>
 
-                <div className={styles['side-form-cont']}>
+                <div className={cx('side-container')}>
 
-                  <div className={styles['form-section__input-fields-container']}>
-                    <div className={styles['form-section__input-field-container']}>
-                      <p className={styles['form-section__input-name'] + ' main-font-style'}>Направление</p>
-                      <div className={styles['select-wrapper']}>
-                        <select className={styles['form-section__select-field'] + ' main-font-style'} name="direction" onChange={handleInput}>
+                  <div className={cx('input-fields-container')}>
+                    <div className={cx('input-field-container')}>
+                      <p className={cx('input-name')}>Направление</p>
+                      <div className={cx('select-wrapper')}>
+                        <select className={cx('select-field')} name="direction" onChange={handleChange}>
                           <option value="default">Куда хотите ехать</option>
                           <option value="place">Едем сюда!</option>
                         </select>
@@ -78,36 +89,21 @@ export default function Form() {
                     </div>
                   </div>
 
-                  <div className={styles['form-section__input-fields-container']}>
-                    <div className={styles['form-section__input-field-container']}>
-                      <p className={styles['form-section__input-name'] + ' main-font-style'}>Телефон</p>
-                      <input type="tel" name="phoneNumber" className={styles['form-section__input-field'] + ' main-font-style'} maxLength="11" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
 
-                  <div className={styles['form-section__input-fields-container']}>
-                    <div className={styles['form-section__input-field-container']}>
-                      <p className={styles['form-section__input-name'] + ' main-font-style'}>Дата до</p>
-                      <input type="date" name="dateUntil" className={styles['form-section__input-field'] + ' main-font-style'} onChange={handleInput} />
-                    </div>
-                  </div>
+                  <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
                 </div>
               </>
             )
             : (
-              <div className={styles['side-form-cont']}>
-                <div className={styles['form-section__input-fields-container']}>
-                  <div className={styles['form-section__input-field-container']}>
-                    <p className={styles['form-section__input-name'] + ' main-font-style'}>Имя</p>
-                    <input type="text" name="name" className={styles['form-section__input-field'] + ' main-font-style'} placeholder="Введите Ваше имя" onChange={handleInput} />
-                  </div>
-                </div>
+              <div className={cx('side-container')}>
+                <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
 
-                <div className={styles['form-section__input-fields-container']}>
-                  <div className={styles['form-section__input-field-container']}>
-                    <p className={styles['form-section__input-name'] + ' main-font-style'}>Направление</p>
-                    <div className={styles['select-wrapper']}>
-                      <select className={styles['form-section__select-field'] + ' main-font-style'} name="direction" onChange={handleInput}>
+                <div className={cx('input-fields-container')}>
+                  <div className={cx('input-field-container')}>
+                    <p className={cx('input-name')}>Направление</p>
+                    <div className={cx('select-wrapper')}>
+                      <select className={cx('select-field')} name="direction" onChange={handleChange}>
                         <option value="default">Куда хотите ехать</option>
                         <option value="place">Едем сюда!</option>
                       </select>
@@ -115,75 +111,44 @@ export default function Form() {
                   </div>
                 </div>
 
-                <div className={styles['form-section__input-fields-container']}>
-                  <div className={styles['form-section__input-field-container']}>
-                    <p className={styles['form-section__input-name'] + ' main-font-style'}>Email</p>
-                    <input type="email" name="email" className={styles['form-section__input-field'] + ' main-font-style'} placeholder="example@mail.com" onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
 
-                <div className={styles['form-section__input-fields-container']}>
-                  <div className={styles['form-section__input-field-container']}>
-                    <p className={styles['form-section__input-name'] + ' main-font-style'}>Телефон</p>
-                    <input type="tel" name="phoneNumber" className={styles['form-section__input-field'] + ' main-font-style'} maxLength="11" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
 
-                <div className={styles['form-section__input-fields-container']}>
-                  <div className={styles['form-section__input-field-container']}>
-                    <p className={styles['form-section__input-name'] + ' main-font-style'}>Дата от</p>
-                    <input type="date" name="dateSince" className={styles['form-section__input-field'] + ' main-font-style'} onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
 
-                <div className={styles['form-section__input-fields-container']}>
-                  <div className={styles['form-section__input-field-container']}>
-                    <p className={styles['form-section__input-name'] + ' main-font-style'}>Дата до</p>
-                    <input type="date" name="dateUntil" className={styles['form-section__input-field'] + ' main-font-style'} onChange={handleInput} />
-                  </div>
-                </div>
+                <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
               </div>
             )}
         </div>
 
-        <div className={styles['form-section__input-comment-container']}>
-          <p className={styles['form-section__input-name'] + ' main-font-style'}>Комментарий</p>
-          <textarea name="comment" className={styles['form-section__input-field-comment'] + ' ' + styles['input-comment']} onChange={handleInput} />
-        </div>
-        <div className={styles['form-section__age-check']}>
-          <div className={styles['form-section__age-check__input-container']}>
-            <p className={styles['form-section__input-name'] + ' main-font-style'}>Вам есть 18 лет?</p>
-            <div className={styles['age-check__radio-buttons-container']}>
-              <label className={styles['age-check__radio-button-container']} htmlFor="ageCheckTrue">
-                <input type="radio" name="age" value="yes" className={styles['age-check__radio-button']} id="ageCheckTrue" onChange={chengeRadio} checked={radio === 'yes'} />
-                <span className={styles.radio__border} />
-                <p className={styles['form-section__input-name'] + ' main-font-style'}>Да</p>
-              </label>
-              <label className={styles['age-check__radio-button-container']} htmlFor="ageCheckFalse">
-                <input type="radio" name="age" value="no" className={styles['age-check__radio-button']} id="ageCheckFalse" onChange={chengeRadio} checked={radio === 'no'} />
-                <span className={styles.radio__border} />
-                <p className={styles['form-section__input-name'] + ' main-font-style'}>Нет</p>
-              </label>
+        <TextAreaField fieldName="Комментарий" name="comment" onChange={handleChange} maxLength="250" />
+
+        <div className={cx('age-check')}>
+          <div className={cx('age-check__input-container')}>
+            <p className={cx('input-name')}>Вам есть 18 лет?</p>
+            <div className={cx('age-check__radio-buttons-container')}>
+              <InputRadio name="age" onChange={changeRadio} value="yes" id="ageCheckTrue" text="Да" checked={radio === 'yes'} />
+              <InputRadio name="age" onChange={changeRadio} value="no" id="ageCheckFalse" text="Нет" checked={radio === 'no'} />
             </div>
           </div>
         </div>
-        <div className={styles['form-section__agreement-container']}>
-          <label className={styles['form-section__accept']} htmlFor="accept">
-            <input type="checkbox" name="agreement" className={styles['form-section__agreement-radio-button']} id="accept" onChange={chengeCheckbox} />
-            <span className={styles.checkbox__border} />
-            <div className={styles['agreement-text']}>
-              Нажимая кнопку, я принимаю условия
-              {' '}
-              <button type="button" className={styles['form-section__agreement-text-link']}>Лицензионного договора</button>
-            </div>
-          </label>
-        </div>
-        <div className={styles['form-section__buttons-container']}>
-          <div className={styles['form-section__submit-button']}>
-            <button type="submit" className={styles['form-section__submit-button-text'] + ' main-font-style'}>Найти тур</button>
+
+        <div className={cx('agreement-container')}>
+          <InputCheckbox name="agreement" id="accept" onChange={changeCheckbox} />
+          <div className={cx('agreement-text')}>
+            Нажимая кнопку, я принимаю условия
+            {' '}
+            <Link className={cx('agreement-text-link')} to="/">Лицензионного договора</Link>
           </div>
-          <div className={styles['form-section__reset-button']}>
-            <button type="button" className={styles['form-section__reset-button-text'] + ' main-font-style'}>Сбросить</button>
+        </div>
+
+        <div className={cx('buttons-container')}>
+          <div className={cx('submit-button')}>
+            <Button text="Найти тур" btnClass={cx('submit-button-text')} btnType="submit" />
+          </div>
+          <div className={cx('reset-button')}>
+            <Button text="Сбросить" btnClass={cx('reset-button-text')} />
           </div>
         </div>
       </form>
