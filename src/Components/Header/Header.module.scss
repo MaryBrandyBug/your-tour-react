@@ -1,7 +1,8 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.header {
+// main root
+.root {
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -12,68 +13,7 @@
 
   composes: main-font-style from '../../styles/global.scss';
 
-  .header__navbar {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 0px;
-    min-height: 88px;
-
-    .navbar {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      gap: 180px;
-      min-height: 30.24px;
-
-      .navbar__logo {
-        min-width: 181.84px;
-        max-width: 181.84;
-        min-height: 30.24px;
-
-        .YourTourLogo {
-          left: 376px;
-          top: 28.88px;
-        }
-      }
-
-      .navbar__menu {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 50px;
-        min-height: 28px;
-
-        .menu__item {
-          min-height: 28px;
-
-          color: $whiteColor;
-          white-space: nowrap;
-
-          cursor: pointer;
-        }
-
-        .menu__item:hover {
-          text-decoration-line: underline;
-          text-decoration-thickness: 1px;
-          text-underline-offset: 7px;
-        }
-      }
-
-      .telephone {
-        max-width: 155px;
-        min-height: 28px;
-                
-        color: $whiteColor;
-        white-space: nowrap;
-      }
-    }
-  }
-
-  .header__content {
+  .content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,7 +21,7 @@
     gap: 50px;
     padding: 50px 0 50px 0;
 
-    .header__content__title {
+    &__title {
       max-width: 768px;
 
       font-style: normal;
@@ -93,35 +33,14 @@
       color: $whiteColor;
     }
 
-    .header__content__subtitle {
+    &__subtitle {
       max-width: 562px;
 
       text-align: center;
       color: $whiteColor;
     }
 
-    @media (min-width: 361px) {
-
-      .header__content__button:hover {
-        background: $orangeColor;
-
-        transition: all 0.5s ease-out;
-
-        .find-tour-btn {
-          color: $whiteColor;
-        }
-      }
-    
-      .header__content__button:active {
-        background: $lightOrange;
-
-        .find-tour-btn {
-          color: $blackColor;
-        }
-      }
-    }
-
-    .header__content__button {
+    &__button {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -135,89 +54,151 @@
       transition: 0.7s;
 
       cursor: pointer;
-
-      .find-tour-btn {
-        max-width: 78px;
-        min-height: 24px;
-
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 17px;
-        line-height: 142%;
-        letter-spacing: -0.01em;
-        color: $blackColor;
-      }
     }
   }
 }
 
-@include _1175 {
-  .header {
+.find-tour-btn {
+  max-width: 78px;
+  min-height: 24px;
 
-    .header__navbar {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 142%;
+  letter-spacing: -0.01em;
+  color: $blackColor;
+}
 
-      .navbar {
-        gap: 60px;
-      }
-    }
+@media (min-width: 361px) {
+
+  .content__button:hover {
+    background: $orangeColor;
+
+    transition: all 0.5s ease-out;
+  }
+
+  .content__button:hover .find-tour-btn {
+    color: $whiteColor;
+  }
+
+  .content__button:active {
+    background: $lightOrange;
+  }
+
+  .content__button:active .find-tour-btn {
+    color: $blackColor;
   }
 }
 
-@include _1024 {
-  .header {
-        
-    .header__navbar {
-      max-width: 100%;
+.navbar__container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 0px;
+  min-height: 88px;
+}
 
-      .navbar {
-        max-width: 100%;
-        @include gapCalculation(30px, 55);
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 180px;
+  min-height: 30.24px;
 
-        .navbar__menu {
-          @include gapCalculation(10px, 20);
-        }
-      }
+  &__logo {
+    min-width: 181.84px;
+    max-width: 181.84;
+    min-height: 30.24px;
+
+    .YourTourLogo {
+      left: 376px;
+      top: 28.88px;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    min-height: 28px;
+
+    .menu__item {
+      min-height: 28px;
+
+      color: $whiteColor;
+      white-space: nowrap;
+
+      cursor: pointer;
     }
 
-    .header__content {
+    .menu__item:hover {
+      text-decoration-line: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 7px;
+    }
+  }
+
+  .telephone {
+    max-width: 155px;
+    min-height: 28px;
             
-      .header__content__subtitle {
+    color: $whiteColor;
+    white-space: nowrap;
+  }
+}
+
+// 1175
+@include _1175 {
+  .navbar {
+    gap: 60px;
+  }
+}
+
+// 1024
+@include _1024 {
+  .root {
+
+    .content {
+            
+      &__subtitle {
         max-width: 442px;
       }
     }
   }
-}
+  .navbar__container {
+    max-width: 100%;
+  }
 
-@media (max-width: 990px) and (min-width: 781px) {
-  .header {
+  .navbar {
+    max-width: 100%;
+    @include gapCalculation(30px, 55);
 
-    .header__navbar {
-            
-      .navbar {
-        gap: calc(-22px + 5.37109375vw);
-      }
+    &__menu {
+      @include gapCalculation(10px, 20);
     }
   }
 }
 
+// 990-781
+@media (max-width: 990px) and (min-width: 781px) {
+  .navbar {
+    gap: calc(-22px + 5.37109375vw);
+  }
+}
+
+// 780
 @include _780 {
-  .header {
+  .root {
 
-    .header__navbar {
-            
-      .navbar {
-        min-width: 90%;
+    .content {
 
-        .navbar__menu {
-          display: none;
-        }
-      }
-    }
-
-    .header__content {
-
-      .header__content__title {
+      &__title {
         max-width: 540px;
 
         font-size: 80px;
@@ -225,45 +206,86 @@
       }
     }
   }
+
+  .navbar {
+    min-width: 90%;
+
+    &__menu {
+      display: none;
+    }
+  }
 }
 
+// 576
 @include _576 {
-  .header {
+  .root {
 
-    .header__navbar {
+    .content {
 
-      .navbar {
-        justify-content: space-around;
-
-        .telephone {
-          max-width: 124px;
-          min-height: 23px;
-
-          font-size: 16px;
-        }
-
-        .navbar__logo {
-          min-width: 124px;
-          max-width: 124px;
-        }
-      }
-    }
-
-    .header__content {
-
-      .header__content__title {
+      &__title {
         min-height: 190px;
-
+        
         font-size: 50px;
       }
 
-      .header__content__subtitle {
+      &__subtitle {
         max-width: 350px;
 
         font-size: 18px;
       }
     }
   }
+
+  .navbar {
+    justify-content: space-around;
+
+    .telephone {
+      max-width: 124px;
+      min-height: 23px;
+
+      font-size: 16px;
+    }
+
+    &__logo {
+      min-width: 124px;
+      max-width: 124px;
+    }
+  }
 }
 
-@include mobile;
+// mobile
+@include _360 {
+  .root {
+    max-height: 486px;
+
+    .content {
+      gap: 40px;
+
+      &__title {
+        min-height: 114px;
+
+        font-size: 34px;
+        line-height: 112%;
+      }
+
+      &__subtitle {
+        max-width: 314px;
+
+        font-size: 16px;
+      }
+
+    }
+  }
+
+  .navbar {
+    justify-content: space-between;
+
+    &__logo {
+      min-width: 133px;
+    }
+  }
+
+  .find-tour-btn {
+    font-size: 16px;
+  }
+}

@@ -1,7 +1,8 @@
 @import '../../styles/colors.scss';
 @import '../../styles/mixins.scss';
 
-.footer {
+// main root
+.root {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -14,7 +15,7 @@
   background: $lightBeigeColor;
   composes: main-font-style from '../../styles/global.scss';
 
-  .footer__content {
+  .content {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -25,113 +26,125 @@
     gap: 214px;
 
 
-    .footer__content__text {
+    &__text {
       color: $greyColor;
-    }
-
-    .footer__content__social-networks-links {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      max-width: 419px;
-      min-height: 28px;
-      padding: 0px;
-      gap: 25px;
-
-      .footer__link-block {
-        max-width: 126px;
-        min-height: 28px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 0px;
-        gap: 10px;
-
-        .inst-icon {
-          max-width: 26h;
-          max-height: 26px;
-        }
-
-        .footer__social-network {
-          color: $blackColor;
-
-          cursor: pointer;
-        }
-
-        @media (min-width: 361px) {
-
-          .footer__social-network:hover {
-            text-decoration-line: underline;
-            text-underline-offset: 7px;
-            text-decoration-thickness: 1px;
-          }
-        }
-      }
     }
   }
 }
 
+.content__social-networks-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 419px;
+  min-height: 28px;
+  padding: 0px;
+  gap: 25px;
+
+  .content__linkBlock {
+    max-width: 126px;
+    min-height: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+
+    .inst-icon {
+      max-width: 26h;
+      max-height: 26px;
+    }
+
+    .social-network {
+      color: $blackColor;
+
+      cursor: pointer;
+    }
+  }
+}
+
+@media (min-width: 361px) {
+
+  .social-network:hover {
+    text-decoration-line: underline;
+    text-underline-offset: 7px;
+    text-decoration-thickness: 1px;
+  }
+}
+
+// 1024
 @include _1024 {
-  .footer {
+  .root {
     max-width: 100%;
 
-    .footer__content {
+    .content {
       min-width: 0px;
       gap: 280px;
     }
   }
 }
 
+// 992
 @include _992 {
-  .footer {
+  .root {
 
-    .footer__content {
+    .content {
       gap: 25px;
     }
   }
 }
 
+// 780
 @include _780 {
-  .footer {
+  .root {
     max-width: 100%;
     min-height: 95px;
 
-    .footer__content {
+    .content {
       flex-direction: column;
       gap: 7px;
 
-      .footer__content__social-networks-links {
+      &__social-networks-links {
         gap: 20px;
-
-        .footer__link-block {
-          gap: 1px;
-
-          .footer__link-icon {
-            max-width: 20px;
-          }
-
-          .img-logo {
-            max-width: 20px;
-          }
-          .inst-icon {
-            max-width: 20px;
-            max-height: 20px;
-          }
-        }
       }
+    }
+  }
+
+  .content__linkBlock {
+    gap: 1px;
+
+    .link-icon {
+      max-width: 20px;
+    }
+
+    .img-logo {
+      max-width: 20px;
+    }
+    .inst-icon {
+      max-width: 20px;
+      max-height: 20px;
     }
   }
 }
 
+// 1175
 @include _1175 {
-  .footer {
+  .root {
     max-width: 100%;
 
-    .footer__content {
+    .content {
       min-width: 90%;
     }
   }
 }
 
-@include mobile;
+// mobile _360
+@include _360 {
+  .content__social-networks-links {
+
+    .content__linkBlock {
+      gap: 2px;
+    }
+  }
+}

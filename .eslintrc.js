@@ -24,5 +24,7 @@ module.exports = {
     'prefer-template': 'off',
     'import/extensions': 'off',
     'react/jsx-key': 'off',
+    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'no-restricted-exports': 'off',
   },
 };
