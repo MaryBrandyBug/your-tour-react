@@ -14,21 +14,21 @@
     
   background: $lightBeigeColor;
   composes: main-font-style from '../../styles/global.scss';
+}
 
-  .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 1168px;
-    min-height: 28px;
-    padding: 0px;
-    gap: 214px;
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 1168px;
+  min-height: 28px;
+  padding: 0px;
+  gap: 214px;
 
 
-    &__text {
-      color: $greyColor;
-    }
+  &__text {
+    color: $greyColor;
   }
 }
 
@@ -77,21 +77,18 @@
 @include _1024 {
   .root {
     max-width: 100%;
+  }
 
-    .content {
-      min-width: 0px;
-      gap: 280px;
-    }
+  .content {
+    min-width: 0px;
+    gap: 280px;
   }
 }
 
 // 992
 @include _992 {
-  .root {
-
-    .content {
-      gap: 25px;
-    }
+  .content {
+    gap: 25px;
   }
 }
 
@@ -100,14 +97,14 @@
   .root {
     max-width: 100%;
     min-height: 95px;
+  }
 
-    .content {
-      flex-direction: column;
-      gap: 7px;
+  .content {
+    flex-direction: column;
+    gap: 7px;
 
-      &__social-networks-links {
-        gap: 20px;
-      }
+    &__social-networks-links {
+      gap: 20px;
     }
   }
 
@@ -132,10 +129,10 @@
 @include _1175 {
   .root {
     max-width: 100%;
-
-    .content {
-      min-width: 90%;
-    }
+  }
+  
+  .content {
+    min-width: 90%;
   }
 }
 

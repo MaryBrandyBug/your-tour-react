@@ -4,71 +4,71 @@
 // main root
 .root {
   gap: 100px;
+}
 
-  .header {
-    max-width: 700px;
-    gap: 35px;
+.header {
+  max-width: 700px;
+  gap: 35px;
+}
 
-    &__menu {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      gap: 30px;
-    }  
+.menu {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+}  
+
+.content {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 1170px;
+  gap: 30px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+
+  &__name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 122%;
+
+    cursor: pointer;
   }
 
-  .content {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    max-width: 1170px;
-    gap: 30px;
+  &__active {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 122%;
+    color: $orangeColor;
+    
+    cursor: pointer;
+
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
   }
 
-  .item {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 6px;
-  
-    &-name {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 23px;
-      line-height: 122%;
-  
-      cursor: pointer;
-    }
-  
-    &-active {
-      font-family: 'Roboto';
-      font-style: normal;
-      font-weight: 700;
-      font-size: 23px;
-      line-height: 122%;
-      color: $orangeColor;
-      
-      cursor: pointer;
-  
-      text-decoration-line: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 7px;
-    }
-  
-    &-name:hover {
-      text-decoration-line: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 7px;
-    }
-  
-    &-name:active {
-      color: $orangeColor;
-  
-      text-decoration-line: underline;
-      text-decoration-thickness: 2px;
-      text-underline-offset: 7px;
-    }
+  &__name:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+  }
+
+  &__name:active {
+    color: $orangeColor;
+
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
   }
 }
 
@@ -76,22 +76,19 @@
 @include _1024 {
   .root {
     min-height: 1871px;
+  }
 
-    .content {
-      justify-content: center;
-      max-width: 920px;
-      gap: 20px;
-    }
+  .content {
+    justify-content: center;
+    max-width: 920px;
+    gap: 20px;
   }
 }
 
 // 992-780
 @media (max-width: 992px) and (min-width: 780px) {
-  .root {
-
-    .content {
-      max-width: 100%;
-    }
+  .content {
+    max-width: 100%;
   }
 };
 
@@ -99,39 +96,39 @@
 @include _780 {
   .root {
     min-height: auto;
+  }
 
-    .content {
-      gap: 18px;
+  .header {
+    max-width: 360px;
+    min-width: 360px;
+    gap: 30px;
+  }
+  
+  .title {
+    letter-spacing: 0.65px;
+  }
 
-      letter-spacing: 0.04em;
-    }
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+            
+    gap: 10px;
+  }
 
-    .header {
-      max-width: 360px;
-      min-width: 360px;
-      gap: 30px;
+  .content {
+    gap: 18px;
 
-      &__title {
-        letter-spacing: 0.65px;
-      }
-
-      &__menu {
-        flex-wrap: wrap;
-        justify-content: center;
-                
-        gap: 10px;
-      }
-    }
+    letter-spacing: 0.04em;
   }
 
   .item {
 
-    &-name {
+    &__name {
       font-size: 20px;
       line-height: 142%;
     }
   
-    &-active {
+    &__active {
       font-size: 20px;
       line-height: 142%;
     }
@@ -140,12 +137,9 @@
 
 // 1175
 @include _1175 {
-  .root {
-
-    .content {
-      justify-content: center;
-      gap: 11px;
-    }
+  .content {
+    justify-content: center;
+    gap: 11px;
   }
 }
 
@@ -155,29 +149,29 @@
     min-height: auto;
     min-height: 2172px;
     gap: 35px;
+  }
 
-    .content {
-      max-width: 318px;
-      gap: 18px;
+  .content {
+    max-width: 318px;
+    gap: 18px;
 
-      letter-spacing: 0.04em;
-    }
+    letter-spacing: 0.04em;
+  }
 
-    .header {
-      max-width: 360px;
-      min-width: 360px;
-      gap: 30px;
+  .header {
+    max-width: 360px;
+    min-width: 360px;
+    gap: 30px;
+  }
 
-      &__title {
-        letter-spacing: 0.65px;
-      }
+  .title {
+    letter-spacing: 0.65px;
+  }
 
-      &__menu {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-      }
-    }
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
   .item {
@@ -195,42 +189,42 @@
     min-height: 2172px;
     min-height: auto;
     gap: 35px;
+  }
 
-    .content {
-        max-width: 318px;
-        gap: 18px;
+  .content {
+    max-width: 318px;
+    gap: 18px;
 
-        letter-spacing: 0.04em;
+    letter-spacing: 0.04em;
+}
+
+  .header {
+    max-width: 360px;
+    min-width: 360px;
+    gap: 30px;
+  }
+
+  .title {
+    letter-spacing: 0.65px;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 300px;
+    gap: 10px;
+  }
+
+  .item {
+
+    &__name {
+        font-size: 16px;
+        line-height: 142%;
     }
 
-    .header {
-        max-width: 360px;
-        min-width: 360px;
-        gap: 30px;
-
-        &__title {
-            letter-spacing: 0.65px;
-        }
-
-        &__menu {
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 300px;
-            gap: 10px;
-        }
-    }
-
-    .item {
-
-      &-name {
-          font-size: 16px;
-          line-height: 142%;
-      }
-    
-      &-active {
-          font-size: 16px;
-          line-height: 142%;
-      }
+    &__active {
+        font-size: 16px;
+        line-height: 142%;
     }
   }
 }

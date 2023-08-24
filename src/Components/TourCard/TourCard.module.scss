@@ -42,32 +42,32 @@
   padding: 50px;
 
   border-radius: 50px;
+}
 
-  .info-link__container {
-    transition: 0.5s;
+.info-link__container {
+  transition: 0.5s;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  max-width: 245px;
+  gap: 16px;
+
+  .subtitle {
+    letter-spacing: -0.01em;
+    color: $whiteColor;
   }
+}
 
-  .text-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-start;
-    max-width: 245px;
-    gap: 16px;
+.choose-tour__link {
+  width: 199px;
+  height: 42px;
 
-    .subtitle {
-      letter-spacing: -0.01em;
-      color: $whiteColor;
-    }
-  }
-
-  .choose-tour__link {
-    width: 199px;
-    height: 42px;
-
-    transition: background 1s ease, color 1s ease, transform 0.7s linear;
-    transform: translate(-23px, 5px);
-  }
+  transition: background 1s ease, color 1s ease, transform 0.7s linear;
+  transform: translate(-23px, 5px);
 }
 
 // 780
@@ -114,11 +114,8 @@
     }
   }
 
-  .content {
-    
-    .text-container {
-      max-width: 350px;
-    }
+  .text-container {
+    max-width: 350px;
   }
 }
 
@@ -154,20 +151,20 @@
     top: 2px;
 
     padding: 25px;
+  }
 
-    .text-container {
-      max-width: 268px;
-      gap: 13px;
+  .text-container {
+    max-width: 268px;
+    gap: 13px;
 
-      .subtitle {
-        font-size: 16px;
-      }
+    .subtitle {
+      font-size: 16px;
     }
+  }
 
-    .choose-tour__link {
-      top: 269px;
-      left: 26px;
-    }
+  .choose-tour__link {
+    top: 269px;
+    left: 26px;
   }
 }
 
@@ -191,29 +188,26 @@
     top: 2px;
 
     padding: 25px;
+  }
 
-    .text-container {
-      max-width: 268px;
-      gap: 13px;
+  .text-container {
+    max-width: 268px;
+    gap: 13px;
 
-      .subtitle {
-        font-size: 16px;
-      }
+    .subtitle {
+      font-size: 16px;
     }
+  }
 
-    .choose-tour__link {
-      top: 269px;
-      left: 26px;
-    }
+  .choose-tour__link {
+    top: 269px;
+    left: 26px;
   }
 }
 
 // mobile 
 @include _360 {
-  .content {
-
-    .choose-tour__link {
-      margin-left: -11px;
-    }
+  .choose-tour__link {
+    margin-left: -11px;
   }
 }
