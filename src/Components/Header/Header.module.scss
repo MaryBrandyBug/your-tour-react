@@ -128,7 +128,7 @@
     gap: 50px;
     min-height: 28px;
 
-    .menu__item {
+    .item {
       min-height: 28px;
 
       color: $whiteColor;
@@ -137,7 +137,7 @@
       cursor: pointer;
     }
 
-    .menu__item:hover {
+    .item:hover {
       text-decoration-line: underline;
       text-decoration-thickness: 1px;
       text-underline-offset: 7px;

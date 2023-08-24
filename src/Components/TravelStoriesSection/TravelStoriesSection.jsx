@@ -11,8 +11,8 @@ export default function TravelStories() {
   return (
     <div className={cx('root', 'section')} id="travelStories">
       <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('header__title', 'section__header__title')}>Истории путешествий</h2>
-        <p className={cx('header__subtitle', 'section__header__subtitle')}>
+        <h2 className={cx('title', 'section__header__title')}>Истории путешествий</h2>
+        <p className={cx('subtitle', 'section__header__subtitle')}>
           Идейные соображения высшего порядка, а
           {' '}
           <br />
