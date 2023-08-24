@@ -10,7 +10,7 @@ export default function ChooseTour() {
   const cx = classNames.bind(styles);
 
   const menu = menuItems.map((item) => (
-    <div className={cx('menu__item')} key={item.id}>
+    <div className={cx('item')} key={item.id}>
       <Link to="/" className={cx('menu__item-name')}>{item.name}</Link>
     </div>
   ));
@@ -18,8 +18,8 @@ export default function ChooseTour() {
   return (
     <div className={cx('root', 'section')} id="chooseTour">
       <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('header__title', 'section__header__title')}>Выбери свой тур</h2>
-        <div className={cx('header__menu')}>
+        <h2 className={cx('title', 'section__header__title')}>Выбери свой тур</h2>
+        <div className={cx('menu')}>
           {menu}
         </div>
       </div>

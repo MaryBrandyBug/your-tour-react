@@ -14,8 +14,8 @@ export default function TravelPhoto() {
   return (
     <div className={cx('root', 'section')}>
       <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('header__title', 'section__header__title')}>Фотографии путешествий</h2>
-        <p className={cx('header__subtitle', 'section__header__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
+        <h2 className={cx('title', 'section__header__title')}>Фотографии путешествий</h2>
+        <p className={cx('subtitle', 'section__header__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
       </div>
       <div className={cx('content', 'section__content__flex')}>
         <div className={cx('content__photo-container', 'big')}>

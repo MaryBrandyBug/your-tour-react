@@ -12,8 +12,8 @@ export default function Reviews() {
   return (
     <div className={cx('root', 'section')} id="reviews">
       <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('header__title', 'section__header__title')}>Отзывы наших путешественников</h2>
-        <p className={cx('header__subtitle', 'section__header__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
+        <h2 className={cx('title', 'section__header__title')}>Отзывы наших путешественников</h2>
+        <p className={cx('subtitle', 'section__header__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
       </div>
       <div className={cx('content')}>
         {cards}
