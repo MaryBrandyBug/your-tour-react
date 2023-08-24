@@ -4,19 +4,18 @@ import classNames from 'classnames/bind';
 import styles from './ChooseTourSection.module.scss';
 
 import TourCard from '../TourCard';
-import data from './data';
+import { menuItems, cards } from './data';
 
 export default function ChooseTour() {
   const cx = classNames.bind(styles);
 
-  const menuItems = [{ name: 'Авторские', id: '1' }, { name: 'Походы', id: '2' }, { name: 'Сплавы', id: '3' }, { name: 'Велопрогулки', id: '4' }];
   const menu = menuItems.map((item) => (
     <div className={cx('menu__item')} key={item.id}>
       <Link to="/" className={cx('menu__item-name')}>{item.name}</Link>
       <div className={cx('menu__item-line')} />
     </div>
   ));
-  const tourCards = data.map((item) => <TourCard img={item.path} key={item.id} alt="Tour cover" />);
+  const tourCards = cards.map((item) => <TourCard img={item.path} key={item.id} alt="Tour cover" />);
   return (
     <div className={cx('root', 'section')} id="chooseTour">
       <div className={cx('header', 'section__header__flex')}>
