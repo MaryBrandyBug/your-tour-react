@@ -12,7 +12,6 @@ export default function ChooseTour() {
   const menu = menuItems.map((item) => (
     <div className={cx('menu__item')} key={item.id}>
       <Link to="/" className={cx('menu__item-name')}>{item.name}</Link>
-      <div className={cx('menu__item-line')} />
     </div>
   ));
   const tourCards = cards.map((item) => <TourCard img={item.path} key={item.id} alt="Tour cover" />);
@@ -21,10 +20,6 @@ export default function ChooseTour() {
       <div className={cx('header', 'section__header__flex')}>
         <h2 className={cx('header__title', 'section__header__title')}>Выбери свой тур</h2>
         <div className={cx('header__menu')}>
-          <div className={cx('menu__item')}>
-            <p className={cx('menu__item-active')}>Популярные</p>
-            <div className={cx('menu__item-line')} />
-          </div>
           {menu}
         </div>
       </div>
