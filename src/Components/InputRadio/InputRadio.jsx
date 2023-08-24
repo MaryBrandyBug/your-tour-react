@@ -17,15 +17,6 @@ export default function InputRadio({
   );
 }
 
-InputRadio.defaultProps = {
-  name: null,
-  onChange: null,
-  value: null,
-  id: null,
-  checked: null,
-  text: null,
-};
-
 InputRadio.propTypes = {
   name: PropTypes.string,
   onChange: PropTypes.func,

@@ -16,12 +16,6 @@ export default function TextAreaField({
   );
 }
 
-TextAreaField.defaultProps = {
-  fieldName: null,
-  name: null,
-  onChange: null,
-};
-
 TextAreaField.propTypes = {
   fieldName: PropTypes.string,
   name: PropTypes.string,

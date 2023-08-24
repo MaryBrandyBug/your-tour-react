@@ -14,12 +14,6 @@ export default function InputCheckbox({ name, id, onChange }) {
   );
 }
 
-InputCheckbox.defaultProps = {
-  name: null,
-  id: null,
-  onChange: null,
-};
-
 InputCheckbox.propTypes = {
   name: PropTypes.string,
   id: PropTypes.string,

@@ -18,15 +18,6 @@ export default function InputField({
   );
 }
 
-InputField.defaultProps = {
-  type: null,
-  name: null,
-  onChange: null,
-  placeholder: null,
-  inputFieldName: null,
-  maxLength: null,
-};
-
 InputField.propTypes = {
   type: PropTypes.string,
   name: PropTypes.string,

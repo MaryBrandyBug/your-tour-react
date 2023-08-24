@@ -38,15 +38,6 @@ export default function StoryCard({
   );
 }
 
-StoryCard.defaultProps = {
-  header: null,
-  text: null,
-  networks: null,
-  img: null,
-  list: null,
-  additionalClassCards: null,
-};
-
 StoryCard.propTypes = {
   header: PropTypes.string,
   text: PropTypes.string,

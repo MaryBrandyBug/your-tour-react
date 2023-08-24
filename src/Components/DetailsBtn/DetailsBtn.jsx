@@ -19,10 +19,6 @@ export default function DetailsBtn({ additionalClass }) {
   );
 }
 
-DetailsBtn.defaultProps = {
-  additionalClass: null,
-};
-
 DetailsBtn.propTypes = {
   additionalClass: PropTypes.string,
 };
