@@ -11,7 +11,7 @@ export default function ChooseTour() {
 
   const menu = menuItems.map((item) => (
     <div className={cx('item')} key={item.id}>
-      <Link to="/" className={cx('menu__item-name')}>{item.name}</Link>
+      <Link to="/" className={cx('item__name')}>{item.name}</Link>
     </div>
   ));
   const tourCards = cards.map((item) => <TourCard img={item.path} key={item.id} alt="Tour cover" />);

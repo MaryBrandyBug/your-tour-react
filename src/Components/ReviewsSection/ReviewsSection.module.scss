@@ -6,35 +6,32 @@
   max-width: 1170px;
   min-height: 1005px;
   gap: 100px;
+}
 
-  .header {
-    gap: 30px;
+.header {
+  gap: 30px;
 
-    .title {
-      max-width: 529px;
-    }
-
-    .subtitle {
-      max-width: 418px;
-      max-height: 56px;
-    }
+  .title {
+    max-width: 529px;
   }
 
-  .content {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 30px;
+  .subtitle {
+    max-width: 418px;
+    max-height: 56px;
   }
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
 }
 
 // 1175
 @include _1175 {
-  .root {
-
-    .content {
-      max-width: 100%;
-    }
+  .content {
+    max-width: 100%;
   }
 }
 
@@ -43,13 +40,12 @@
   .root {
     max-width: 1024px;
     min-height: 1173px;
-        
+  }
 
-    .content {
-      max-width: 1024px;
-      padding: 0px 52px;
-      gap: 18px;
-    }
+  .content {
+    max-width: 1024px;
+    padding: 0px 52px;
+    gap: 18px;
   }
 }
 
@@ -60,26 +56,25 @@
     min-height: auto;
     max-height: auto;
     gap: 50px;
+  }
 
-    .header {
-      gap: 20px;
+  .header {
+    gap: 20px;
 
-      &__title {
-        letter-spacing: 0.7px;
-      }
-
-      &__subtitle {
-        max-width: 400px;
-      }
+    &__title {
+      letter-spacing: 0.7px;
     }
 
-    .content {
-      justify-content: center;
-      flex-wrap: wrap;
-      flex-direction: row;
-      min-width: 100%;
+    &__subtitle {
+      max-width: 400px;
     }
+  }
 
+  .content {
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    min-width: 100%;
   }
 }
 
@@ -88,18 +83,17 @@
   .root {
     max-width: 360px;
     gap: 50px;
+  }
 
-    .header {
-      gap: 20px;
+  .header {
+    gap: 20px;
 
-      &__subtitle {
-        max-width: 318px;
-      }
+    &__subtitle {
+      max-width: 318px;
     }
+  }
 
-    .content {
-      flex-direction: column;
-    }
-
+  .content {
+    flex-direction: column;
   }
 }

@@ -4,13 +4,13 @@
 // main root
 .root {
   gap: 100px;
+}
 
-  .header {
-    gap: 30px;
+.header {
+  gap: 30px;
 
-    &__subtitle {
-      max-width: 418px;
-    }
+  &__subtitle {
+    max-width: 418px;
   }
 }
 
@@ -24,59 +24,47 @@
     min-width: 100%;
     padding: 0px;
     gap: 30px;
-
-    .big-photo {
-      max-width: 23%;
-      object-fit: cover;
-
-      border-radius: 50px;
-    }
-
-    .small-photo {
-      max-width: 18%;
-      min-height: 301px;
-      object-fit: cover;
-
-      border-radius: 50px;
-    }
   }
+}
+
+.big-photo {
+  max-width: 23%;
+  object-fit: cover;
+
+  border-radius: 50px;
+}
+
+.small-photo {
+  max-width: 18%;
+  min-height: 301px;
+  object-fit: cover;
+
+  border-radius: 50px;
 }
 
 // 1630
 @media (max-width: 1630px) {
-  .content {
+  .big-photo {
+    min-height: 300px;
+    max-width: 26.7%;
+  }
+  
+  .max-size {
+    display: none;
+  }
 
-    &__photo-container {
-
-      .big-photo {
-        min-height: 300px;
-        max-width: 26.7%;
-      }
-      .max-size {
-        display: none;
-      }
-
-      .small-photo {
-        max-width: 22.5%;
-      }
-
-    }
+  .small-photo {
+    max-width: 22.5%;
   }
 }
 
 // 1175
 @include _1175 {
-  .content {
-
-    &__photo-container {
-
-      .big-photo {
-        min-height: 300px;
-      }
-      .max-size {
-        display: none;
-      }
-    }
+  .big-photo {
+    min-height: 300px;
+  }
+  .max-size {
+    display: none;
   }
 }
 
@@ -85,10 +73,10 @@
   .root {
     max-width: 100%;
     margin: 0 auto;
+  }
 
-    .header {
-      gap:25px;
-    }
+  .header {
+    gap:25px;
   }
 
   .content {
@@ -99,15 +87,16 @@
     &__photo-container {
       max-width: 984px;
       gap: 20px;
-
-      .big-photo {
-        max-width: 30%;
-        min-height: 300px;
-      }
-      .max-size {
-        display: none;
-      }
     }
+  }
+
+  .big-photo {
+    max-width: 30%;
+    min-height: 300px;
+  }
+
+  .max-size {
+    display: none;
   }
 }
 
@@ -116,17 +105,17 @@
   .root {
     max-width: 90%;
     gap: 50px;
+  }
 
-    .header {
-      gap: 20px;
+  .header {
+    gap: 20px;
 
-      &__title {
-        letter-spacing: 0.02em;
-      }
+    &__title {
+      letter-spacing: 0.02em;
+    }
 
-      &__subtitle {
-        max-width: 400px;
-      }
+    &__subtitle {
+      max-width: 400px;
     }
   }
 
@@ -145,25 +134,25 @@
       justify-content: center;
       max-width: 90%;
       max-height: auto;
-
-      .big-photo {
-        max-width: 40%;
-        max-height: 110px;
-
-        border-radius: 20px;
-      }
-
-      .max-middle-size {
-        display: none;
-      }
-
-      .small-photo {
-        max-width: 34.5%;
-        max-height: 110px;
-
-        border-radius: 20px;
-      }
     }
+  }
+
+  .big-photo {
+    max-width: 40%;
+    max-height: 110px;
+
+    border-radius: 20px;
+  }
+
+  .max-middle-size {
+    display: none;
+  }
+
+  .small-photo {
+    max-width: 34.5%;
+    max-height: 110px;
+
+    border-radius: 20px;
   }
 }
 
@@ -172,13 +161,13 @@
   .root {
     max-width: 90%;
     gap: 50px;
+  }
 
-    .header {
-      gap: 20px;
+  .header {
+    gap: 20px;
 
-      &__title {
-        letter-spacing: 0.02em;
-      }
+    &__title {
+      letter-spacing: 0.02em;
     }
   }
 
@@ -197,23 +186,23 @@
       justify-content: center;
       max-width: 90%;
       max-height: auto;
-
-      .big-photo {
-        max-height: 110px;
-
-        border-radius: 20px;
-      }
-
-      .max-middle-size {
-        display: none;
-      }
-
-      .small-photo {
-        max-height: 70px;
-                  
-        border-radius: 20px;
-      }
     }
+  }
+
+  .big-photo {
+    max-height: 110px;
+
+    border-radius: 20px;
+  }
+
+  .max-middle-size {
+    display: none;
+  }
+
+  .small-photo {
+    max-height: 70px;
+              
+    border-radius: 20px;
   }
 }
 
@@ -223,17 +212,17 @@
     max-width: 360px;
     min-height: auto;
     gap: 50px;
+  }
 
-    .header {
-      gap: 20px;
+  .header {
+    gap: 20px;
 
-      &__title {
-        letter-spacing: 0.02em;
-      }
+    &__title {
+      letter-spacing: 0.02em;
+    }
 
-      &__subtitle {
-        max-width: 318px;
-      }
+    &__subtitle {
+      max-width: 318px;
     }
   }
 
@@ -251,22 +240,22 @@
     &__photo-container {
       max-width: 95%;
       max-height: auto;
-
-      .big-photo {
-        max-width: 48.5%;
-        min-height: 150px;
-        max-height: 110px;
-        border-radius: 20px;
-      }
-
-      .max-middle-size {
-        display: none;
-      }
-
-      .small-photo {
-        min-height: 130px;
-        border-radius: 20px;
-      }
     }
+  }
+
+  .big-photo {
+    max-width: 48.5%;
+    min-height: 150px;
+    max-height: 110px;
+    border-radius: 20px;
+  }
+
+  .max-middle-size {
+    display: none;
+  }
+
+  .small-photo {
+    min-height: 130px;
+    border-radius: 20px;
   }
 }

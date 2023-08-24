@@ -12,49 +12,49 @@
   background-position: center;
 
   composes: main-font-style from '../../styles/global.scss';
+}
 
-  .content {
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 50px 0 50px 0;
+
+  &__title {
+    max-width: 768px;
+
+    font-style: normal;
+    font-weight: 700;
+    font-size: 96px;
+    line-height: 109%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: $whiteColor;
+  }
+
+  &__subtitle {
+    max-width: 562px;
+
+    text-align: center;
+    color: $whiteColor;
+  }
+
+  &__button {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
     align-items: center;
-    gap: 50px;
-    padding: 50px 0 50px 0;
+    justify-content: center;
+    padding: 5px 20px;
+    gap: 10px;
 
-    &__title {
-      max-width: 768px;
+    background: $whiteColor;
+    border-radius: 10px;
 
-      font-style: normal;
-      font-weight: 700;
-      font-size: 96px;
-      line-height: 109%;
-      text-align: center;
-      letter-spacing: 0.02em;
-      color: $whiteColor;
-    }
+    transition: 0.7s;
 
-    &__subtitle {
-      max-width: 562px;
-
-      text-align: center;
-      color: $whiteColor;
-    }
-
-    &__button {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      justify-content: center;
-      padding: 5px 20px;
-      gap: 10px;
-
-      background: $whiteColor;
-      border-radius: 10px;
-
-      transition: 0.7s;
-
-      cursor: pointer;
-    }
+    cursor: pointer;
   }
 }
 
@@ -162,15 +162,13 @@
 
 // 1024
 @include _1024 {
-  .root {
-
-    .content {
+  .content {
             
-      &__subtitle {
-        max-width: 442px;
-      }
+    &__subtitle {
+      max-width: 442px;
     }
   }
+
   .navbar__container {
     max-width: 100%;
   }
@@ -194,16 +192,13 @@
 
 // 780
 @include _780 {
-  .root {
+  .content {
 
-    .content {
+    &__title {
+      max-width: 540px;
 
-      &__title {
-        max-width: 540px;
-
-        font-size: 80px;
-        text-align: center;
-      }
+      font-size: 80px;
+      text-align: center;
     }
   }
 
@@ -218,21 +213,18 @@
 
 // 576
 @include _576 {
-  .root {
+  .content {
 
-    .content {
+    &__title {
+      min-height: 190px;
+      
+      font-size: 50px;
+    }
 
-      &__title {
-        min-height: 190px;
-        
-        font-size: 50px;
-      }
+    &__subtitle {
+      max-width: 350px;
 
-      &__subtitle {
-        max-width: 350px;
-
-        font-size: 18px;
-      }
+      font-size: 18px;
     }
   }
 
@@ -257,23 +249,22 @@
 @include _360 {
   .root {
     max-height: 486px;
+  }
 
-    .content {
-      gap: 40px;
+  .content {
+    gap: 40px;
 
-      &__title {
-        min-height: 114px;
+    &__title {
+      min-height: 114px;
 
-        font-size: 34px;
-        line-height: 112%;
-      }
+      font-size: 34px;
+      line-height: 112%;
+    }
 
-      &__subtitle {
-        max-width: 314px;
+    &__subtitle {
+      max-width: 314px;
 
-        font-size: 16px;
-      }
-
+      font-size: 16px;
     }
   }
 
