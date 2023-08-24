@@ -22,10 +22,6 @@ export default function TourCard({ img }) {
   );
 }
 
-TourCard.defaultProps = {
-  img: null,
-};
-
 TourCard.propTypes = {
   img: PropTypes.string,
 };

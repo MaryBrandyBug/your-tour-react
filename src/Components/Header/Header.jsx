@@ -29,7 +29,7 @@ export default function Header() {
         <h1 className={cx('content__title')}>Идеальные путешествия существуют</h1>
         <p className={cx('content__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
         <div className={cx('content__button')}>
-          <Button text="Найти тур" btnClass={cx('find-tour-btn')} />
+          <Button text="Найти тур" className={cx('find-tour-btn')} />
         </div>
       </div>
     </header>

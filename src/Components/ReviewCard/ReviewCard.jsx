@@ -37,13 +37,6 @@ export default function ReviewCard({
   );
 }
 
-ReviewCard.defaultProps = {
-  text: null,
-  name: null,
-  tour: null,
-  img: null,
-};
-
 ReviewCard.propTypes = {
   text: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
   name: PropTypes.string,

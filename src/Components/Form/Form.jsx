@@ -142,10 +142,10 @@ export default function Form() {
 
         <div className={cx('buttons-container')}>
           <div className={cx('submit-button')}>
-            <Button text="Найти тур" btnClass={cx('submit-button-text')} type="submit" />
+            <Button text="Найти тур" className={cx('submit-button-text')} type="submit" />
           </div>
           <div className={cx('reset-button')}>
-            <Button text="Сбросить" btnClass={cx('reset-button-text')} />
+            <Button text="Сбросить" className={cx('reset-button-text')} />
           </div>
         </div>
       </form>

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function Arrow({ additionalClass }) {
   return (
     <svg width="22" height="16" className={additionalClass} viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
