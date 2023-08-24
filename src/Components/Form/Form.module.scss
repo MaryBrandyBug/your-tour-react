@@ -31,7 +31,6 @@
     .container {
       display: flex;
       max-width: 1170px;
-      // flex-wrap: wrap;
       min-width: inherit;
       gap: 30px;
     }
@@ -563,16 +562,6 @@
       }
 
       .agreement-container {
-
-        // .root {
-        //   font-size: 16px;
-        //   gap: 0;
-
-        //   .checkbox__border {
-        //     min-width: 21px;
-        //     min-height: 21px;
-        //   }
-        // }
 
         .agreement-text {
           margin-left: 12px;
