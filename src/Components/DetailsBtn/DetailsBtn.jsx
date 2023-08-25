@@ -6,12 +6,12 @@ import styles from './DetailsBtn.module.scss';
 
 import Arrow from '../Arrow';
 
-export default function DetailsBtn({ additionalClass }) {
+export default function DetailsBtn({ additionalClass, link }) {
   const cx = classNames.bind(styles);
 
   return (
     <div className={cx('root', additionalClass)}>
-      <Link className={cx('root__text')} to="/">Подробнее</Link>
+      <Link className={cx('root__text')} to={link}>Подробнее</Link>
       <div className={cx('root__arrow')}>
         <Arrow />
       </div>
@@ -21,4 +21,5 @@ export default function DetailsBtn({ additionalClass }) {
 
 DetailsBtn.propTypes = {
   additionalClass: PropTypes.string,
+  link: PropTypes.string,
 };

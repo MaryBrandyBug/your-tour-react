@@ -8,6 +8,7 @@ import data from './data';
 export default function TravelStories() {
   const cx = classNames.bind(styles);
 
+  const cards = data.map((item) => <StoryCard networks={item.media} header={item.header} text={item.text} list={item.advantagesList} img={item.img} link={item.link} />);
   return (
     <div className={cx('root', 'section')} id="travelStories">
       <div className={cx('header', 'section__header__flex')}>
@@ -20,9 +21,7 @@ export default function TravelStories() {
         </p>
       </div>
       <div className={cx('content', 'section__content__flex')}>
-        <StoryCard networks={[{ name: data.inst, id: '1' }, { name: data.facebook, id: '2' }, { name: data.youTube, id: '3' }]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story1.png" list={data.advantagesList} />
-        <StoryCard networks={[{ name: data.inst, id: '1' }, { name: data.vk, id: '2' }]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story2.png" />
-        <StoryCard networks={[{ name: data.inst, id: '1' }, { name: data.facebook, id: '2' }, { name: data.vk, id: '3' }]} header={data.storyHeader} text={data.storyText} img="/your-tour-react/images/story3.png" />
+        {cards}
       </div>
     </div>
   );

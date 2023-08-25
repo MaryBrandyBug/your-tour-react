@@ -12,6 +12,7 @@ import Footer from '../Footer';
 
 function App() {
   const cx = classNames.bind(styles);
+
   return (
     <div className={cx('wrapper')}>
       <Header />
