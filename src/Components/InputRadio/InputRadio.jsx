@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, bool, func } from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './InputRadio.module.scss';
 
@@ -18,10 +18,10 @@ export default function InputRadio({
 }
 
 InputRadio.propTypes = {
-  name: PropTypes.string,
-  onChange: PropTypes.func,
-  value: PropTypes.string,
-  id: PropTypes.string,
-  checked: PropTypes.bool,
-  text: PropTypes.string,
+  name: string,
+  onChange: func,
+  value: string,
+  id: string,
+  checked: bool,
+  text: string,
 };

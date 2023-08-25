@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string } from 'prop-types';
 
 export default function Button({ text, type, className }) {
   return (
@@ -12,7 +12,7 @@ Button.defaultProps = {
 };
 
 Button.propTypes = {
-  text: PropTypes.string,
-  type: PropTypes.string,
-  className: PropTypes.string,
+  text: string,
+  type: string,
+  className: string,
 };

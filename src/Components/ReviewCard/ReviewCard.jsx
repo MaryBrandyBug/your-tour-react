@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, arrayOf, oneOfType } from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './ReviewCard.module.scss';
 
@@ -38,8 +38,8 @@ export default function ReviewCard({
 }
 
 ReviewCard.propTypes = {
-  text: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
-  name: PropTypes.string,
-  tour: PropTypes.string,
-  img: PropTypes.string,
+  text: arrayOf((oneOfType([string]))),
+  name: string,
+  tour: string,
+  img: string,
 };
