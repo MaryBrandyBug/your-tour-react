@@ -1,6 +1,5 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './DetailsBtn.module.scss';
 
@@ -9,13 +8,17 @@ import Arrow from '../Arrow';
 export default function DetailsBtn({ additionalClass, link }) {
   const cx = classNames.bind(styles);
 
+  function redirect() {
+    window.location.href = link;
+  }
+
   return (
-    <div className={cx('root', additionalClass)}>
-      <Link className={cx('root__text')} to={link}>Подробнее</Link>
-      <div className={cx('root__arrow')}>
+    <button type="button" className={cx('root', additionalClass)} onClick={redirect}>
+      <p className={cx('text')}>Подробнее</p>
+      <div className={cx('arrow')}>
         <Arrow />
       </div>
-    </div>
+    </button>
   );
 }
 

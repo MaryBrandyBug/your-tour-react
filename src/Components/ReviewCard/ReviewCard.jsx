@@ -8,14 +8,15 @@ export default function ReviewCard({
 }) {
   const cx = classNames.bind(styles);
 
-  const cardText = text.map((item, i) => (i === 0 ? item : (
-    <>
-      <br />
-      <br />
-      {' '}
-      {item}
-    </>
-  )));
+  const cardText = text.map((item, i) => (i === 0
+    ? <span key={new Date().getTime() * Math.random()}>{item}</span> : (
+      <span key={new Date().getTime() * Math.random()}>
+        <br />
+        <br />
+        {' '}
+        {item}
+      </span>
+    )));
 
   return (
     <div className={cx('root')}>
