@@ -1,5 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import {
+  string, arrayOf, oneOfType, object,
+} from 'prop-types';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './StoryCard.module.scss';
@@ -40,10 +42,10 @@ export default function StoryCard({
 }
 
 StoryCard.propTypes = {
-  header: PropTypes.string,
-  text: PropTypes.string,
-  networks: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.object]))),
-  img: PropTypes.string,
-  list: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.object]))),
-  additionalClassCards: PropTypes.string,
+  header: string,
+  text: string,
+  networks: arrayOf((oneOfType([object]))),
+  img: string,
+  list: arrayOf((oneOfType([object]))),
+  additionalClassCards: string,
 };

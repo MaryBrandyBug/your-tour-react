@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, func } from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './TextAreaField.module.scss';
 
@@ -17,7 +17,7 @@ export default function TextAreaField({
 }
 
 TextAreaField.propTypes = {
-  fieldName: PropTypes.string,
-  name: PropTypes.string,
-  onChange: PropTypes.func,
+  fieldName: string,
+  name: string,
+  onChange: func,
 };
