@@ -8,19 +8,19 @@ export default function ReviewCard({
 }) {
   const cx = classNames.bind(styles);
 
+  const cardText = text.map((item, i) => (i === 0 ? item : (
+    <>
+      <br />
+      <br />
+      {' '}
+      {item}
+    </>
+  )));
+
   return (
     <div className={cx('root')}>
       <p className={cx('content')}>
-        {text[0]}
-        {text.length > 1
-          ? (
-            <>
-              <br />
-              <br />
-              {text[1]}
-            </>
-          )
-          : ''}
+        {cardText}
       </p>
       <div className={cx('root__footer')}>
         <div className={cx('footer-content')}>
