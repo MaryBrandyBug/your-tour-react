@@ -11,9 +11,9 @@ export default function StoryCard({
 }) {
   const cx = classNames.bind(styles);
 
-  const networksList = networks?.map((network) => <Link to={network.link} key={network.id} className={styles['content-item__social-network'] + ' main-font-style'}>{network.platform}</Link>);
-  const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={styles['content__list-item']} key={item.id}>{item.name}</li> : (
-    <li className={styles['content__list-item']} key={item.id}>
+  const networksList = networks?.map((network) => <Link to={network.link} key={network.id} className={cx('content-item__social-network', 'main-font-style')}>{network.platform}</Link>);
+  const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={cx('content__list-item')} key={item.id}>{item.name}</li> : (
+    <li className={cx('content__list-item')} key={item.id}>
       {item.name}
       .
     </li>
