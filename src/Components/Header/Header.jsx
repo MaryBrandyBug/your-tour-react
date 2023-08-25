@@ -11,6 +11,7 @@ export default function Header() {
 
   const menuItems = [{ item: 'Туры', id: 'chooseTour' }, { item: 'Создать тур', id: 'createTour' }, { item: 'Отзывы', id: 'reviews' }, { item: 'Истории', id: 'travelStories' }];
   const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} key={i.id} className={cx('item')} style={{ textDecoration: 'none' }}>{i.item}</HashLink>);
+
   return (
     <header className={cx('root')}>
       <div className={cx('navbar__container')}>

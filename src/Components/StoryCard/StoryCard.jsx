@@ -7,21 +7,22 @@ import styles from './StoryCard.module.scss';
 import DetailsBtn from '../DetailsBtn';
 
 export default function StoryCard({
-  header, text, networks, img, list, additionalClassCards,
+  header, text, networks, img, list, additionalClassCards, link,
 }) {
   const cx = classNames.bind(styles);
 
-  const networksList = networks?.map((network) => <Link to="/" key={network.id} className={styles['content-item__social-network'] + ' main-font-style'}>{network.name}</Link>);
+  const networksList = networks?.map((network) => <Link to={network.link} key={network.id} className={styles['content-item__social-network'] + ' main-font-style'}>{network.platform}</Link>);
   const advantagesList = list?.map((item, i) => (i !== list.length - 1 ? <li className={styles['content__list-item']} key={item.id}>{item.name}</li> : (
     <li className={styles['content__list-item']} key={item.id}>
       {item.name}
       .
     </li>
   )));
+
   return (
     <div className={cx('root', additionalClassCards)}>
       <div className={cx('root__footer')}>
-        <DetailsBtn additionalClass={cx('footer-details-link')} />
+        <DetailsBtn additionalClass={cx('footer-details-link')} link={link} />
         <div className={cx('footer-social-networks')}>
           {networksList}
         </div>
