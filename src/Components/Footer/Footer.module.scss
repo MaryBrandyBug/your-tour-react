@@ -5,7 +5,7 @@
 .root {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-width: 100%;
   min-height: 88px;
@@ -16,23 +16,11 @@
   composes: main-font-style from '../../styles/global.scss';
 }
 
-.content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  min-width: 1168px;
-  min-height: 28px;
-  padding: 0px;
-  gap: 214px;
-
-
-  &__text {
-    color: $greyColor;
-  }
+.text {
+  color: $greyColor;
 }
 
-.content__social-networks-links {
+.social-networks-links {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,7 +30,7 @@
   padding: 0px;
   gap: 25px;
 
-  .content__linkBlock {
+  .linkBlock {
     max-width: 126px;
     min-height: 28px;
     display: flex;
@@ -72,17 +60,13 @@
 @include _1024 {
   .root {
     max-width: 100%;
-  }
-
-  .content {
-    min-width: 0px;
     gap: 280px;
   }
 }
 
 // 992
 @include _992 {
-  .content {
+  .root {
     gap: 25px;
   }
 }
@@ -92,18 +76,16 @@
   .root {
     max-width: 100%;
     min-height: 95px;
-  }
-
-  .content {
     flex-direction: column;
+    justify-content: center;
     gap: 7px;
-
-    &__social-networks-links {
-      gap: 20px;
-    }
   }
 
-  .content__linkBlock {
+  .social-networks-links {
+    gap: 20px;
+  }
+
+  .linkBlock {
     gap: 1px;
 
     .link-icon {
@@ -125,17 +107,13 @@
   .root {
     max-width: 100%;
   }
-  
-  .content {
-    min-width: 90%;
-  }
 }
 
 // mobile _360
 @include _360 {
-  .content__social-networks-links {
+  .social-networks-links {
 
-    .content__linkBlock {
+    .linkBlock {
       gap: 2px;
     }
   }
