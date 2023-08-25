@@ -8,7 +8,7 @@ export default function Footer() {
   const cx = classNames.bind(styles);
 
   const networks = data.map((item) => (
-    <div key={item.id} className={cx('content__linkBlock')}>
+    <div key={item.id} className={cx('linkBlock')}>
       <div className={cx('link-icon')}><img src={item.img} alt={item.alt} /></div>
       <Link className={cx('social-network')} to={item.link}>{item.text}</Link>
     </div>
@@ -16,12 +16,12 @@ export default function Footer() {
 
   return (
     <div className={cx('root')}>
-      <div className={cx('content')}>
-        <p className={cx('content__text')}>Наши социальные сети</p>
-        <div className={cx('content__social-networks-links')}>
-          {networks}
-        </div>
+      {/* <div className={cx('content')}> */}
+      <p className={cx('text')}>Наши социальные сети</p>
+      <div className={cx('social-networks-links')}>
+        {networks}
       </div>
+      {/* </div> */}
     </div>
   );
 }

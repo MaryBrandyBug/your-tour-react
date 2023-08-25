@@ -9,6 +9,7 @@ export default function TravelStories() {
   const cx = classNames.bind(styles);
 
   const cards = data.map((item) => <StoryCard key={item.id} networks={item.media} header={item.header} text={item.text} list={item.advantagesList} img={item.img} link={item.link} />);
+
   return (
     <div className={cx('root', 'section')} id="travelStories">
       <div className={cx('header', 'section__header__flex')}>
