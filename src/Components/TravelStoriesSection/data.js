@@ -6,6 +6,7 @@ export default
   media: [{ platform: 'instagram', id: '1', link: '/' }, { platform: 'facebook', id: '2', link: '/' }, { platform: 'YouTube', id: '3', link: '/' }],
   img: '/your-tour-react/images/story1.png',
   link: '/',
+  id: '1',
 },
 {
   header: 'Автостопом в Стамбул',
@@ -13,6 +14,7 @@ export default
   media: [{ platform: 'instagram', id: '1', link: '/' }, { platform: 'ВКонтакте', id: '2', link: '/' }],
   img: '/your-tour-react/images/story2.png',
   link: '/',
+  id: '2',
 },
 {
   header: 'Автостопом в Стамбул',
@@ -20,4 +22,5 @@ export default
   media: [{ platform: 'instagram', id: '1', link: '/' }, { platform: 'facebook', id: '2', link: '/' }, { platform: 'ВКонтакте', id: '3', link: '/' }],
   img: '/your-tour-react/images/story3.png',
   link: '/',
+  id: '3',
 }];
