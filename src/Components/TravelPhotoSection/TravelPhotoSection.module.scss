@@ -43,7 +43,7 @@
 }
 
 // 1630
-@media (max-width: 1630px) {
+@include _1630 {
   .big-photo {
     min-height: 300px;
     max-width: 26.7%;
@@ -157,7 +157,7 @@
 }
 
 // 790
-@media (max-width: 790px) {
+@include _790 {
   .root {
     max-width: 90%;
     gap: 50px;

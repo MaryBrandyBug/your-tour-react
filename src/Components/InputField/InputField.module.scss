@@ -51,7 +51,8 @@ input[type=date]::-webkit-datetime-edit {
   -webkit-appearance: none;
 }
 
-@media (min-width: 361px) {
+// min-width 361
+@include minWidth361 {
 
   .input-field:focus{
     border: 1px solid $greyColor;
@@ -68,7 +69,7 @@ input[type=date]::-webkit-datetime-edit {
 }
 
 // 1300
-@media (max-width: 1300px) {
+@include _1300 {
   .input-field {
     min-width: 400px;
   }
@@ -142,7 +143,7 @@ input[type=date]::-webkit-datetime-edit {
 }
 
 // 500
-@media (max-width: 500px) {
+@include _500 {
   .input-field {
     min-height: 43px;
   }

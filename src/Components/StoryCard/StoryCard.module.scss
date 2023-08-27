@@ -120,8 +120,8 @@
   list-style: inside;
 }
 
-// 780
-@media (min-width: 780px) {
+// min-width 780
+@include minWidth780 {
   .root:hover {
     cursor: pointer;
 
@@ -245,7 +245,7 @@
 }
 
 // 435
-@media (max-width: 435px) {
+@include _435 {
   .root {
     max-width: 318px;
     min-width: 318px;

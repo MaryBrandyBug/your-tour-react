@@ -71,7 +71,7 @@
   color: $blackColor;
 }
 
-@media (min-width: 361px) {
+@include minWidth361 {
 
   .content__button:hover {
     background: $orangeColor;
@@ -185,7 +185,7 @@
 }
 
 // 990-781
-@media (max-width: 990px) and (min-width: 781px) {
+@include customMediaQuery(990px, 781px) {
   .navbar {
     gap: calc(-22px + 5.37109375vw);
   }

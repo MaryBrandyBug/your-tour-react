@@ -46,7 +46,8 @@
   }
 }
 
-@media (min-width: 361px) {
+// min-width 361
+@include minWidth361 {
 
   .social-network:hover {
     text-decoration-line: underline;
