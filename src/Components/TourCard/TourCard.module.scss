@@ -70,8 +70,8 @@
   transform: translate(-23px, 5px);
 }
 
-// 780
-@media (min-width: 780px) {
+// min-width 780
+@include minWidth780 {
   .root:hover {
     cursor: pointer;
 
@@ -120,7 +120,7 @@
 }
 
 // 992-780
-@media (max-width: 992px) and (min-width: 780px) {
+@include customMediaQuery(992px, 780px) {
 
   .root {
     @include minWidthСalculation(350px, 920);

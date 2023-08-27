@@ -60,7 +60,7 @@
 }
 
 // 435
-@media (max-width: 435px) {
+@include _435 {
   .root {
     max-width: 360px;
     min-height: 1597px;

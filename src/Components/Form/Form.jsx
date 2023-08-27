@@ -105,7 +105,7 @@ export default function Form() {
             )
             : (
               <div className={cx('side-container')}>
-                <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
+                <InputField type="text" name="name" value={yourTourForm.name} placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
 
                 <div className={cx('input-fields-container')}>
                   <div className={cx('input-field-container')}>

@@ -73,12 +73,14 @@
 
 }
 
+// 1024
 @include _1024 {
   .root {
     gap: 12px;
   }
 }
 
+// 780
 @include _780 {
   .root {
     font-size: 16px;
@@ -91,7 +93,8 @@
   }
 }
 
-@media (max-width: 500px) {
+// 500
+@include _500 {
   .root {
 
     .checkbox__border {

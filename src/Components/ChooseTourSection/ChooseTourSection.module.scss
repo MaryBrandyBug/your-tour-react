@@ -86,7 +86,7 @@
 }
 
 // 992-780
-@media (max-width: 992px) and (min-width: 780px) {
+@include customMediaQuery(992px,780px) {
   .content {
     max-width: 100%;
   }

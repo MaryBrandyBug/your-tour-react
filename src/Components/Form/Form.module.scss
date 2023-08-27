@@ -55,7 +55,7 @@
     resize: none;
   }
 
-  @media (min-width: 361px) {
+  @include minWidth361 {
     .root__input-field-comment:focus {
       border: 1px solid $greyColor;
       background: $lightBeigeColor;
@@ -225,7 +225,7 @@
     }
   }
 
-  @media (min-width: 361px) {
+  @include minWidth361 {
 
     .submit-button:hover {
       background: $greenColor;
@@ -343,7 +343,7 @@
       appearance: none;
     }
 
-    @media (min-width: 361px) {
+    @include minWidth361 {
       .select-field:hover {
         background: $lightBeigeColor;
       }
@@ -389,7 +389,8 @@
   }
 }
 
-@media (min-width: 361px) {
+// min-width 361
+@include minWidth361 {
 
   .root__input-field:focus{
     border: 1px solid $greyColor;
@@ -409,7 +410,8 @@
   }
 }
 
-@media (max-width: 1300px) {
+// 1300
+@include _1300 {
   .root {
     min-width: percentage(918 / 1300);
   }
@@ -666,7 +668,7 @@
 }
 
 // 500
-@media (max-width: 500px) {
+@include _500 {
   .root {
     min-width: 90%;
   }
