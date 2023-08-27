@@ -1,9 +1,11 @@
 import React from 'react';
-import { string } from 'prop-types';
+import { string, func } from 'prop-types';
 
-export default function Button({ text, type, className }) {
+export default function Button({
+  text, type, className, onClick,
+}) {
   return (
-    <button type={type} className={className}>{text}</button>
+    <button type={type} className={className} onClick={onClick}>{text}</button>
   );
 }
 
@@ -15,4 +17,5 @@ Button.propTypes = {
   text: string,
   type: string,
   className: string,
+  onClick: func,
 };
