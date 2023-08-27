@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import validationSchema from './validation';
@@ -50,6 +50,14 @@ export default function Form() {
     };
   });
 
+  const clear = useCallback(() => {
+    setYourTourForm({
+      name: '', direction: '', email: '', phoneNumber: '', dateSince: '', dateUntil: '', comment: '',
+    });
+    setChecked(false);
+    setRadio('');
+  }, []);
+
   return (
     <div className={cx('root', 'section')} id="createTour">
       <div className={cx('header', 'section__header__flex')}>
@@ -68,11 +76,11 @@ export default function Form() {
               <>
                 <div className={cx('side-container')}>
 
-                  <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
+                  <InputField type="text" name="name" value={yourTourForm.name} placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
 
-                  <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
+                  <InputField type="email" name="email" value={yourTourForm.email} placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
 
-                  <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
+                  <InputField type="date" name="dateSince" value={yourTourForm.dateSince} placeholder="" onChange={handleChange} inputFieldName="Дата от" />
                 </div>
 
                 <div className={cx('side-container')}>
@@ -81,17 +89,17 @@ export default function Form() {
                     <div className={cx('input-field-container')}>
                       <p className={cx('input-name')}>Направление</p>
                       <div className={cx('select-wrapper')}>
-                        <select className={cx('select-field')} name="direction" onChange={handleChange}>
-                          <option value="default">Куда хотите ехать</option>
+                        <select className={cx('select-field')} value={yourTourForm.direction} name="direction" onChange={handleChange}>
+                          <option value="">Куда хотите ехать</option>
                           <option value="place">Едем сюда!</option>
                         </select>
                       </div>
                     </div>
                   </div>
 
-                  <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
+                  <InputField type="tel" name="phoneNumber" value={yourTourForm.phoneNumber} placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
 
-                  <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
+                  <InputField type="date" name="dateUntil" value={yourTourForm.dateUntil} placeholder="" onChange={handleChange} inputFieldName="Дата до" />
                 </div>
               </>
             )
@@ -103,26 +111,26 @@ export default function Form() {
                   <div className={cx('input-field-container')}>
                     <p className={cx('input-name')}>Направление</p>
                     <div className={cx('select-wrapper')}>
-                      <select className={cx('select-field')} name="direction" onChange={handleChange}>
-                        <option value="default">Куда хотите ехать</option>
+                      <select className={cx('select-field')} value={yourTourForm.direction} name="direction" onChange={handleChange}>
+                        <option value="">Куда хотите ехать</option>
                         <option value="place">Едем сюда!</option>
                       </select>
                     </div>
                   </div>
                 </div>
 
-                <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
+                <InputField type="email" name="email" value={yourTourForm.email} placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
 
-                <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
+                <InputField type="tel" name="phoneNumber" value={yourTourForm.phoneNumber} placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
 
-                <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
+                <InputField type="date" name="dateSince" value={yourTourForm.dateSince} placeholder="" onChange={handleChange} inputFieldName="Дата от" />
 
-                <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
+                <InputField type="date" name="dateUntil" value={yourTourForm.dateUntil} placeholder="" onChange={handleChange} inputFieldName="Дата до" />
               </div>
             )}
         </div>
 
-        <TextAreaField fieldName="Комментарий" name="comment" onChange={handleChange} maxLength="250" />
+        <TextAreaField fieldName="Комментарий" value={yourTourForm.comment} name="comment" onChange={handleChange} maxLength="250" />
 
         <div className={cx('age-check')}>
           <div className={cx('age-check__input-container')}>
@@ -135,7 +143,7 @@ export default function Form() {
         </div>
 
         <div className={cx('agreement-container')}>
-          <InputCheckbox name="agreement" id="accept" onChange={changeCheckbox} />
+          <InputCheckbox name="agreement" id="accept" checked={checked} onChange={changeCheckbox} />
           <div className={cx('agreement-text')}>
             Нажимая кнопку, я принимаю условия
             {' '}
@@ -148,7 +156,7 @@ export default function Form() {
             <Button text="Найти тур" className={cx('submit-button-text')} type="submit" />
           </div>
           <div className={cx('reset-button')}>
-            <Button text="Сбросить" className={cx('reset-button-text')} />
+            <Button text="Сбросить" className={cx('reset-button-text')} onClick={clear} />
           </div>
         </div>
       </form>
