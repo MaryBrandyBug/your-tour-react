@@ -32,17 +32,7 @@
   align-items: flex-start;
   gap: 6px;
 
-  &__name {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 23px;
-    line-height: 122%;
-
-    cursor: pointer;
-  }
-
-  &__active {
+  .active {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
@@ -55,6 +45,16 @@
     text-decoration-line: underline;
     text-decoration-thickness: 2px;
     text-underline-offset: 7px;
+  }
+
+  &__name {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 122%;
+
+    cursor: pointer;
   }
 
   &__name:hover {
@@ -128,7 +128,7 @@
       line-height: 142%;
     }
   
-    &__active {
+    .active {
       font-size: 20px;
       line-height: 142%;
     }
@@ -222,7 +222,7 @@
         line-height: 142%;
     }
 
-    &__active {
+    .active {
         font-size: 16px;
         line-height: 142%;
     }
