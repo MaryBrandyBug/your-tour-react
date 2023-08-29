@@ -12,7 +12,7 @@ export default function Reviews() {
   const cards = data.map((item) => <ReviewCard text={item.text} name={item.name} tour={item.tour} img={item.img} key={item.id} />);
 
   return (
-    <div className={cx('root', 'section')} id="reviews">
+    <div className={cx('root')} id="reviews">
       <Title
         title="Отзывы наших путешественников"
         subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров"

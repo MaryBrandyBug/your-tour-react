@@ -11,7 +11,7 @@ export default function TravelPhoto() {
   const photos = data.map((el) => <img key={el.id} src={el.path} alt="travel memories" className={cx(el.size === 'big' ? 'big-photo' : 'small-photo', !el.width1630 && !el.width992 ? 'max-size' : '', el.width1630 && !el.width992 ? 'max-middle-size' : '')} />);
 
   return (
-    <div className={cx('root', 'section')}>
+    <div className={cx('root')}>
       <Title title="Фотографии путешествий" subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров" headerClassName={cx('sectionHeader')} subtitleClassName={cx('sectionSubtitle')} />
       <div className={cx('content')}>
         {photos}

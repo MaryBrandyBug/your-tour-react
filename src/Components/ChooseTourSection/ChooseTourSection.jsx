@@ -18,7 +18,7 @@ export default function ChooseTour() {
   const tourCards = cards.map((item) => <TourCard img={item.path} key={item.id} title={item.title} price={item.price} link={item.link} alt="Tour cover" />);
 
   return (
-    <div className={cx('root', 'section')} id="chooseTour">
+    <div className={cx('root')} id="chooseTour">
       <Title menu={<Menu items={menuItems} activeItem={activeItem} changeActiveItem={changeActiveItem} />} title="Выбери свой тур" headerClassName={cx('sectionHeader')} titleClassName={cx('sectionTitle')} />
       <div className={cx('content')}>
         {tourCards}

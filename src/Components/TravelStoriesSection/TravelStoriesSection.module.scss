@@ -3,6 +3,9 @@
 
 // main root
 .root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 100px;
 }
 
@@ -11,6 +14,9 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 0px;
   gap: 50px;
 }
@@ -20,6 +26,7 @@
   .content {
     max-width: 100%;
     margin: 0 auto;
+    align-items: center;
   }
 }
 
