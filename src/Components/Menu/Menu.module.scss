@@ -1,0 +1,111 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+
+  font-size: 23px;
+
+  .active {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 122%;
+    color: $orangeColor;
+
+    cursor: pointer;
+
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+  }
+
+  &__name {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    line-height: 122%;
+
+    cursor: pointer;
+  }
+
+  &__name:hover {
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+  }
+
+  &__name:active {
+    color: $orangeColor;
+
+    text-decoration-line: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 7px;
+  }
+}
+
+@include _780 {
+  .root {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 10px;
+  }
+
+  .item {
+    &__name {
+      line-height: 142%;
+    }
+
+    .active {
+      line-height: 142%;
+    }
+  }
+}
+
+@include _576 {
+  .root {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .item {
+    font-size: 20px;
+
+    &__name {
+      line-height: 142%;
+    }
+  }
+}
+
+@include _360 {
+  .root {
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 300px;
+    gap: 10px;
+  }
+
+  .item {
+    font-size: 16px;
+
+    &__name {
+      line-height: 142%;
+    }
+
+    .active {
+      line-height: 142%;
+    }
+  }
+}

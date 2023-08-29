@@ -60,6 +60,15 @@
     letter-spacing: -0.01em;
     color: $whiteColor;
   }
+
+  .info-cards__header {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 35px;
+    line-height: 122%;
+    color: $whiteColor;
+  }
 }
 
 .choose-tour__link {
@@ -160,6 +169,10 @@
     .subtitle {
       font-size: 16px;
     }
+
+    .info-cards__header {
+      font-size: 23px;
+    }
   }
 
   .choose-tour__link {
@@ -209,5 +222,14 @@
 @include _360 {
   .choose-tour__link {
     margin-left: -11px;
+  }
+
+  .text-container {
+    .info-cards__header {
+      font-weight: 700;
+      font-size: 23px;
+      line-height: 120%;
+      letter-spacing: 0.04em;
+    }
   }
 }

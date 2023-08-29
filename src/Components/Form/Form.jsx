@@ -5,10 +5,11 @@ import validationSchema from './validation';
 import styles from './Form.module.scss';
 
 import Button from '../Button';
-import InputField from '../InputField/InputField';
-import TextAreaField from '../TextAreaField/TextAreaField';
-import InputRadio from '../InputRadio/InputRadio';
-import InputCheckbox from '../InputCheckbox/InputCheckbox';
+import InputField from '../InputField';
+import TextAreaField from '../TextAreaField';
+import InputRadio from '../InputRadio';
+import InputCheckbox from '../InputCheckbox';
+import Title from '../Title';
 
 export default function Form() {
   const cx = classNames.bind(styles);
@@ -59,17 +60,22 @@ export default function Form() {
   }, []);
 
   return (
-    <div className={cx('root', 'section')} id="createTour">
-      <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('title', 'section__header__title')}>Собери свой тур</h2>
-        <p className={cx('subtitle', 'section__header__subtitle')}>
-          Идейные соображения высшего порядка,
-          <br />
-          {' '}
-          а также рамки и место обучения кадров
-        </p>
-      </div>
-      <form onSubmit={handleSubmit} className={cx('content', 'section__content__flex')}>
+    <div className={cx('root')} id="createTour">
+      <Title
+        title="Собери свой тур"
+        subtitle={(
+          <>
+            Идейные соображения высшего порядка,
+            {' '}
+            <br />
+            {' '}
+            а также рамки и место обучения кадров
+          </>
+)}
+        subtitleClassName={cx('sectionSubtitle')}
+        headerClassName={cx('sectionHeader')}
+      />
+      <form onSubmit={handleSubmit} className={cx('content')}>
         <div className={cx('container')}>
           {windowSize > 780
             ? (

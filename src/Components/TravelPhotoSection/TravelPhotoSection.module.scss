@@ -6,10 +6,10 @@
   gap: 100px;
 }
 
-.header {
+.sectionHeader {
   gap: 30px;
 
-  &__subtitle {
+  .sectionSubtitle {
     max-width: 418px;
   }
 }
@@ -75,7 +75,7 @@
     margin: 0 auto;
   }
 
-  .header {
+  .sectionHeader {
     gap:25px;
   }
 
@@ -107,14 +107,14 @@
     gap: 50px;
   }
 
-  .header {
+  .sectionHeader {
     gap: 20px;
 
     &__title {
       letter-spacing: 0.02em;
     }
 
-    &__subtitle {
+    .sectionSubtitle {
       max-width: 400px;
     }
   }
@@ -163,12 +163,8 @@
     gap: 50px;
   }
 
-  .header {
+  .sectionHeader {
     gap: 20px;
-
-    &__title {
-      letter-spacing: 0.02em;
-    }
   }
 
   .content {
@@ -214,14 +210,10 @@
     gap: 50px;
   }
 
-  .header {
+  .sectionHeader {
     gap: 20px;
 
-    &__title {
-      letter-spacing: 0.02em;
-    }
-
-    &__subtitle {
+    .sectionSubtitle {
       max-width: 318px;
     }
   }
