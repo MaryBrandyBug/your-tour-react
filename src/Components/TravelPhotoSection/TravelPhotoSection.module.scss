@@ -1,5 +1,5 @@
-@import '../../styles/colors.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
 
 // main root
 .root {
@@ -15,16 +15,13 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+  min-width: 100%;
+  padding: 0px;
   gap: 30px;
-
-  &__photo-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    min-width: 100%;
-    padding: 0px;
-    gap: 30px;
-  }
 }
 
 .big-photo {
@@ -48,7 +45,7 @@
     min-height: 300px;
     max-width: 26.7%;
   }
-  
+
   .max-size {
     display: none;
   }
@@ -76,18 +73,13 @@
   }
 
   .sectionHeader {
-    gap:25px;
+    gap: 25px;
   }
 
   .content {
     max-width: 1024px;
     max-height: 963px;
     padding: 0px 20px;
-
-    &__photo-container {
-      max-width: 984px;
-      gap: 20px;
-    }
   }
 
   .big-photo {
@@ -110,31 +102,16 @@
   .sectionHeader {
     gap: 20px;
 
-    &__title {
-      letter-spacing: 0.02em;
-    }
-
     .sectionSubtitle {
       max-width: 400px;
     }
   }
 
   .content {
-    gap: 18px;
-
-    .small {
-      gap: 10px;
-    }
-  
-    .big {
-      gap: 16px;
-    }
-
-    &__photo-container {
-      justify-content: center;
-      max-width: 90%;
-      max-height: auto;
-    }
+    gap: 13px;
+    justify-content: center;
+    max-width: 90%;
+    max-height: auto;
   }
 
   .big-photo {
@@ -149,8 +126,9 @@
   }
 
   .small-photo {
-    max-width: 34.5%;
+    max-width: 33%;
     max-height: 110px;
+    margin-left: -8px;
 
     border-radius: 20px;
   }
@@ -168,21 +146,7 @@
   }
 
   .content {
-    gap: 18px;
-
-    .small {
-      gap: 10px;
-    }
-  
-    .big {
-      gap: 16px;
-    }
-
-    &__photo-container {
-      justify-content: center;
-      max-width: 90%;
-      max-height: auto;
-    }
+    gap: 11px;
   }
 
   .big-photo {
@@ -197,7 +161,7 @@
 
   .small-photo {
     max-height: 70px;
-              
+
     border-radius: 20px;
   }
 }
@@ -219,24 +183,11 @@
   }
 
   .content {
-    gap: 18px;
-
-    .small {
-      gap: 10px;
-    }
-  
-    .big {
-      gap: 16px;
-    }
-
-    &__photo-container {
-      max-width: 95%;
-      max-height: auto;
-    }
+    gap: 12px;
   }
 
   .big-photo {
-    max-width: 48.5%;
+    max-width: 43%;
     min-height: 150px;
     max-height: 110px;
     border-radius: 20px;
