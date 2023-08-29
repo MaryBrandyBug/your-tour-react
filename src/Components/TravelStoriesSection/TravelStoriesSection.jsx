@@ -12,7 +12,7 @@ export default function TravelStories() {
   const cards = data.map((item) => <StoryCard key={item.id} networks={item.media} header={item.header} text={item.text} list={item.advantagesList} img={item.img} link={item.link} />);
 
   return (
-    <div className={cx('root', 'section')} id="travelStories">
+    <div className={cx('root')} id="travelStories">
       <Title
         title="Истории путешествий"
         subtitle={(
@@ -27,7 +27,7 @@ export default function TravelStories() {
         titleClassName={cx('sectionTitle')}
         subtitleClassName={cx('sectionSubtitle')}
       />
-      <div className={cx('content', 'section__content__flex')}>
+      <div className={cx('content')}>
         {cards}
       </div>
     </div>
