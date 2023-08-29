@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './ReviewsSection.module.scss';
 
 import ReviewCard from '../ReviewCard';
+import Title from '../Title';
 import data from './data';
 
 export default function Reviews() {
@@ -12,10 +13,13 @@ export default function Reviews() {
 
   return (
     <div className={cx('root', 'section')} id="reviews">
-      <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('title', 'section__header__title')}>Отзывы наших путешественников</h2>
-        <p className={cx('subtitle', 'section__header__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
-      </div>
+      <Title
+        title="Отзывы наших путешественников"
+        subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров"
+        headerClassName={cx('sectionHeader')}
+        titleClassName={cx('sectionTitle')}
+        subtitleClassName={cx('sectionSubtitle')}
+      />
       <div className={cx('content')}>
         {cards}
       </div>

@@ -1,26 +1,25 @@
-@import '../../styles/colors.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
 
 // main root
 .root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: percentage(1170 / 1920);
   gap: 100px;
 
-  composes: main-font-style from '../../styles/global.scss';
+  composes: main-font-style from "../../styles/global.scss";
 }
 
-.header {
+.sectionHeader {
   gap: 30px;
-
-  &__subtitle {
-    max-width: 458px;
-
-    text-align: center;
-    color: $greyColor;
-  }
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   min-height: 986px;
   min-width: 100%;
   padding: 70px;
@@ -142,7 +141,7 @@
           border-radius: 50%;
 
           transform: translate(-50%, -50%);
-          transition: .2s;
+          transition: 0.2s;
 
           content: "";
         }
@@ -167,7 +166,6 @@
     color: $greyColor;
 
     @media (min-width: 361px) {
-
       .agreement-text-link:hover {
         text-decoration: underline;
       }
@@ -185,7 +183,7 @@
       color: $blackColor;
 
       background: inherit;
-                  
+
       cursor: pointer;
     }
   }
@@ -214,7 +212,7 @@
 
     cursor: pointer;
 
-    &-text{
+    &-text {
       min-width: 235px;
       min-height: 58px;
 
@@ -226,7 +224,6 @@
   }
 
   @include minWidth361 {
-
     .submit-button:hover {
       background: $greenColor;
       transition: 0.4s;
@@ -266,7 +263,6 @@
   }
 
   @media (min-width: 361px) {
-
     .reset-button:hover {
       background: $whiteSmoke;
 
@@ -279,7 +275,6 @@
       transition: 0.3s;
     }
   }
-
 }
 
 .side-container {
@@ -323,7 +318,7 @@
       width: 20px;
       height: 100%;
 
-      content: url('../../../public/images/Rectangle.png');
+      content: url("../../../public/images/Rectangle.png");
       pointer-events: none;
     }
 
@@ -366,7 +361,7 @@
       min-width: 500px;
       min-height: 68px;
       gap: 10px;
-            
+
       font-size: 20px;
 
       background: $beigeColor;
@@ -381,7 +376,7 @@
       color: $greyColor;
     }
 
-    input[type="date"]:not(.has-value):before{
+    input[type="date"]:not(.has-value):before {
       color: $greyColor;
 
       content: attr(placeholder);
@@ -391,8 +386,7 @@
 
 // min-width 361
 @include minWidth361 {
-
-  .root__input-field:focus{
+  .root__input-field:focus {
     border: 1px solid $greyColor;
     background: $lightBeigeColor;
   }
@@ -417,9 +411,7 @@
   }
 
   .input-fields-container {
-
     .input-field-container {
-
       .select-field {
         min-width: 400px;
       }
@@ -499,20 +491,11 @@
 
 // 780
 @include _780 {
-  .root  {
+  .root {
     gap: 40px;
   }
-
-  .header {
+  .sectionHeader {
     gap: 20px;
-
-    &__title {
-      letter-spacing: 0.7px;
-    }
-
-    &__subtitle {
-      min-width: 400px;
-    }
   }
 
   .content {
@@ -528,7 +511,6 @@
   }
 
   .root__input-comment-container {
-
     .input-name {
       font-size: 16px;
     }
@@ -550,7 +532,6 @@
         gap: 27px;
 
         .age-check__radio-button-container {
-
           .radio__border {
             min-width: 21px;
             min-height: 21px;
@@ -566,7 +547,6 @@
   }
 
   .agreement-container {
-
     .agreement-text {
       margin-left: 12px;
       max-width: 260px;
@@ -587,7 +567,7 @@
     .submit-button {
       min-width: 134px;
       min-height: 47px;
-                
+
       .submit-button-text {
         min-width: 134px;
         min-height: 47px;
@@ -610,12 +590,11 @@
   }
 
   .side-container {
-
     .input-name {
       font-size: 16px;
     }
   }
-  
+
   .input-fields-container {
     max-height: 74px;
 
@@ -623,7 +602,7 @@
       max-width: 250px;
       max-height: 74px;
 
-      input[type=date]::-webkit-datetime-edit { 
+      input[type="date"]::-webkit-datetime-edit {
         font-size: 20px;
         font-weight: 300;
         color: $greyColor;
@@ -638,7 +617,7 @@
         height: 70%;
 
         pointer-events: none;
-        content: url('../../../public/images/Rectangle.png');
+        content: url("../../../public/images/Rectangle.png");
       }
 
       .root__input-field {
@@ -654,7 +633,7 @@
         font-size: 15px;
         letter-spacing: 0.4px;
       }
-            
+
       .root__input-field {
         max-width: 278px;
         min-height: 60px;
@@ -683,7 +662,6 @@
   }
 
   .agreement-container {
-        
     .agreement-text {
       max-width: 248px;
       margin-left: 12px;
@@ -712,16 +690,18 @@
     min-width: 88.3333333333%;
   }
 
+  .sectionSubtitle {
+    white-space: nowrap;
+  }
+  
   .content {
     min-width: 100%;
     padding: 20px 20px 40px;
   }
-  
+
   .input-fields-container {
-
     .input-field-container {
-
-      .select-field{
+      .select-field {
         min-height: 43px;
       }
 

@@ -30,7 +30,7 @@ export default function StoryCard({
         </div>
       </div>
       <div className={cx('content')}>
-        <h3 className={cx('content__title', 'info-cards__header')}>{header}</h3>
+        <h3 className={cx('content__title')}>{header}</h3>
         <p className={cx('content__text')}>{list ? `${text}:` : `${text}.`}</p>
         <ul className={cx('content__list')}>
           {advantagesList}

@@ -2,6 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './TravelPhotoSection.module.scss';
 
+import Title from '../Title';
 import { data1, data2, data3 } from './data';
 
 export default function TravelPhoto() {
@@ -13,10 +14,7 @@ export default function TravelPhoto() {
 
   return (
     <div className={cx('root', 'section')}>
-      <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('title', 'section__header__title')}>Фотографии путешествий</h2>
-        <p className={cx('subtitle', 'section__header__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
-      </div>
+      <Title title="Фотографии путешествий" subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров" headerClassName={cx('sectionHeader')} subtitleClassName={cx('sectionSubtitle')} />
       <div className={cx('content', 'section__content__flex')}>
         <div className={cx('content__photo-container', 'big')}>
           {firstLine}

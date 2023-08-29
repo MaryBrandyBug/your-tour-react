@@ -1,0 +1,56 @@
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
+
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0px;
+
+  .title {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 59px;
+    line-height: 124%;
+    text-align: center;
+    color: $blackColor;
+  }
+
+  .subtitle {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 142%;
+    text-align: center;
+    color: $greyColor;
+  }
+}
+
+@include _576 {
+  .root {
+    .title {
+      font-size: 34px;
+      line-height: 112%;
+    }
+
+    .subtitle {
+      font-size: 16px;
+    }
+  }
+}
+
+@include _360 {
+  .root {
+    .title {
+      font-size: 34px;
+      line-height: 112%;
+    }
+
+    .subtitle {
+      font-size: 16px;
+    }
+  }
+}

@@ -58,47 +58,11 @@ body {
   flex-direction: column;
   align-items: center;
 
-  .section__header__flex {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 0px;
-
-    .section__header__title {
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 59px;
-      line-height: 124%;
-      text-align: center;
-      color: $blackColor;
-    }
-
-    .section__header__subtitle {
-      font-family: "Roboto";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 20px;
-      line-height: 142%;
-      text-align: center;
-      color: $greyColor;
-    }
-  }
-
   .section__content__flex {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
   }
-}
-.info-cards__header {
-  font-family: "Roboto";
-  font-style: normal;
-  font-weight: 500;
-  font-size: 35px;
-  line-height: 122%;
-  color: $whiteColor;
 }
 
 @media (max-width: 1175px) {
@@ -109,42 +73,7 @@ body {
   }
 }
 
-@media (max-width: 780px) {
-  .section {
-  }
-  .info-cards__header {
-    font-size: 23px;
-  }
-}
-
-@media (max-width: 576px) {
-  .section {
-    .section__header__flex {
-      .section__header__title {
-        font-size: 34px;
-        line-height: 112%;
-      }
-
-      .section__header__subtitle {
-        font-size: 16px;
-      }
-    }
-  }
-}
-
 @media (max-width: 360px) {
-  .section {
-    .section__header__flex {
-      .section__header__title {
-        font-size: 34px;
-        line-height: 112%;
-      }
-
-      .section__header__subtitle {
-        font-size: 16px;
-      }
-    }
-  }
   .info-cards__header {
     font-weight: 700;
     font-size: 23px;

@@ -8,14 +8,14 @@
   gap: 100px;
 }
 
-.header {
+.sectionHeader {
   gap: 30px;
 
-  .title {
+  .sectionTitle {
     max-width: 529px;
   }
 
-  .subtitle {
+  .sectionSubtitle {
     max-width: 418px;
     max-height: 56px;
   }
@@ -58,14 +58,14 @@
     gap: 50px;
   }
 
-  .header {
+  .sectionHeader {
     gap: 20px;
 
-    &__title {
+    .sectionTitle {
       letter-spacing: 0.7px;
     }
 
-    &__subtitle {
+    .sectionSubtitle {
       max-width: 400px;
     }
   }
@@ -85,10 +85,10 @@
     gap: 50px;
   }
 
-  .header {
+  .sectionHeader {
     gap: 20px;
 
-    &__subtitle {
+    .sectionSubtitle {
       max-width: 318px;
     }
   }
