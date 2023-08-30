@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/your-tour-react/static/css/main.9bda264b.css",
-    "main.js": "/your-tour-react/static/js/main.39fc9a19.js",
+    "main.css": "/your-tour-react/static/css/main.64d28fdb.css",
+    "main.js": "/your-tour-react/static/js/main.d1e338d5.js",
     "static/media/header.png": "/your-tour-react/static/media/header.355977f76eb8b2ce528c.png",
     "index.html": "/your-tour-react/index.html",
-    "main.9bda264b.css.map": "/your-tour-react/static/css/main.9bda264b.css.map",
-    "main.39fc9a19.js.map": "/your-tour-react/static/js/main.39fc9a19.js.map"
+    "main.64d28fdb.css.map": "/your-tour-react/static/css/main.64d28fdb.css.map",
+    "main.d1e338d5.js.map": "/your-tour-react/static/js/main.d1e338d5.js.map"
   },
   "entrypoints": [
-    "static/css/main.9bda264b.css",
-    "static/js/main.39fc9a19.js"
+    "static/css/main.64d28fdb.css",
+    "static/js/main.d1e338d5.js"
   ]
 }
