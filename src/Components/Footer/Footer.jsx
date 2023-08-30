@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <div className={cx('root')}>
       <p className={cx('text')}>Наши социальные сети</p>
-      <div className={cx('social-networks-links')}>
+      <div className={cx('networks')}>
         {networks}
       </div>
     </div>

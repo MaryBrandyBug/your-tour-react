@@ -10,8 +10,8 @@ export default function InputCheckbox({
 
   return (
     <label className={cx('root')} htmlFor={id}>
-      <input type="checkbox" name={name} checked={checked} className={cx('checkbox_button')} id={id} onChange={onChange} />
-      <span className={cx('checkbox__border')} />
+      <input type="checkbox" name={name} checked={checked} className={cx('button')} id={id} onChange={onChange} />
+      <span className={cx('border')} />
     </label>
   );
 }
