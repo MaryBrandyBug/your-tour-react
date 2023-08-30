@@ -1,5 +1,5 @@
-@import '../../styles/colors.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
 
 // main root
 .root {
@@ -11,9 +11,13 @@
   overflow: hidden;
 
   border-radius: 50px;
-  background: linear-gradient(270deg, rgba($blackColor, 0) 0.01%, rgba($blackColor, 0.2) 100%);
+  background: linear-gradient(
+    270deg,
+    rgba($blackColor, 0) 0.01%,
+    rgba($blackColor, 0.2) 100%
+  );
 
-  composes: main-font-style from '../../styles/global.scss';
+  composes: main-font-style from "../../styles/global.scss";
 
   &__background {
     position: absolute;
@@ -53,7 +57,7 @@
     flex-direction: column;
     align-items: flex-start;
     padding: 60px 0px 0px 60px;
-    gap: 34px;  
+    gap: 34px;
 
     &__text {
       max-width: 554px;
@@ -65,6 +69,15 @@
       margin-top: -7px;
       margin-left: 4px;
 
+      color: $whiteColor;
+    }
+
+    &__title {
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 500;
+      font-size: 35px;
+      line-height: 122%;
       color: $whiteColor;
     }
   }
@@ -99,7 +112,6 @@
   }
 
   @media (min-width: 992px) {
-
     .content-item__social-network:hover {
       text-decoration-line: underline;
       text-decoration-thickness: 1px;
@@ -120,8 +132,8 @@
   list-style: inside;
 }
 
-// 780
-@media (min-width: 780px) {
+// min-width 780
+@include minWidth780 {
   .root:hover {
     cursor: pointer;
 
@@ -232,6 +244,10 @@
 
         font-size: 18px;
       }
+
+      &__title {
+        font-size: 23px;
+      }
     }
   }
 
@@ -245,7 +261,7 @@
 }
 
 // 435
-@media (max-width: 435px) {
+@include _435 {
   .root {
     max-width: 318px;
     min-width: 318px;
@@ -273,14 +289,13 @@
       &__list {
         margin-top: 4px;
         margin-left: 0px;
-                
+
         font-size: 16px;
       }
     }
   }
 
   .stories__img-cont {
-
     .stories__img {
       max-width: 318px;
       max-height: 455px;
@@ -294,16 +309,28 @@
 
   .footer-details-link {
     transform: translate(-72px, 10px);
-            
+
     p {
       font-size: 16px;
     }
   }
 
   .footer-social-networks {
-
     .mobile-ver {
       display: none;
+    }
+  }
+}
+
+@include _360 {
+  .root {
+    .content {
+      &__title {
+        font-weight: 700;
+        font-size: 23px;
+        line-height: 120%;
+        letter-spacing: 0.04em;
+      }
     }
   }
 }

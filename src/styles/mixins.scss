@@ -14,7 +14,32 @@
   gap: calc($maxg + $g * (100vw / 1024));
 }
 
-// миксины для медиа-запросов
+// миксины для медиа-запросов с min-width
+@mixin minWidth361 {
+  @media (min-width: 361px) {
+    @content;
+  }
+}
+
+@mixin minWidth780 {
+  @media (min-width: 780px) {
+    @content;
+  }
+}
+
+// миксины для медиа-запросов с max-width
+@mixin _1630 {
+  @media (max-width: 1630px) {
+    @content;
+  }
+}
+
+@mixin _1300 {
+  @media (max-width: 1300px) {
+    @content;
+  }
+}
+
 @mixin _1175 {
   @media (max-width: 1175px) {
     @content;
@@ -33,6 +58,12 @@
   }
 }
 
+@mixin _790 {
+  @media (max-width: 790px) {
+    @content;
+  }
+}
+
 @mixin _780 {
   @media (max-width: 780px) {
     @content;
@@ -45,8 +76,27 @@
   }
 }
 
+@mixin _500 {
+  @media (max-width: 500px) {
+    @content;
+  }
+}
+
+@mixin _435 {
+  @media (max-width: 435px) {
+    @content;
+  }
+}
+
 @mixin _360 {
     @media (max-width: 360px) {
         @content;
     }
+}
+
+// кастомный миксин для диапазона
+@mixin customMediaQuery($maxWidth, $minWidth) {
+  @media (max-width: #{$maxWidth}) and (min-width: #{$minWidth}) {
+    @content;
+  }
 }

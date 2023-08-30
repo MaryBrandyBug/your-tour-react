@@ -26,5 +26,7 @@ module.exports = {
     'react/jsx-key': 'off',
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'no-restricted-exports': 'off',
+    'react/require-default-props': 'off',
+    'react/button-has-type': 'off',
   },
 };

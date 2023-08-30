@@ -1,20 +1,21 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, func } from 'prop-types';
 
-export default function Button({ text, btnType, btnClass }) {
+export default function Button({
+  text, type, className, onClick,
+}) {
   return (
-    <button type={btnType === 'submit' ? 'submit' : 'button'} className={btnClass}>{text}</button>
+    <button type={type} className={className} onClick={onClick}>{text}</button>
   );
 }
 
 Button.defaultProps = {
-  text: null,
-  btnType: null,
-  btnClass: null,
+  type: 'button',
 };
 
 Button.propTypes = {
-  text: PropTypes.string,
-  btnType: PropTypes.string,
-  btnClass: PropTypes.string,
+  text: string,
+  type: string,
+  className: string,
+  onClick: func,
 };

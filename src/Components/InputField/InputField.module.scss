@@ -6,7 +6,7 @@
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  min-width: 100%;
+  min-width: 47%;
   max-height: 104px;
   gap: 30px;
 
@@ -51,7 +51,8 @@ input[type=date]::-webkit-datetime-edit {
   -webkit-appearance: none;
 }
 
-@media (min-width: 361px) {
+// min-width 361
+@include minWidth361 {
 
   .input-field:focus{
     border: 1px solid $greyColor;
@@ -68,7 +69,7 @@ input[type=date]::-webkit-datetime-edit {
 }
 
 // 1300
-@media (max-width: 1300px) {
+@include _1300 {
   .input-field {
     min-width: 400px;
   }
@@ -82,25 +83,16 @@ input[type=date]::-webkit-datetime-edit {
 
     .content {
       max-width: 389px;
+      min-width: 100%;
     }
-  }
-  .input-field {
-    min-width: 389px;
   }
 }
 
 // 992
 @include _992 {
-  .root {
-    min-width: 100%;
-
-    .content {
-      min-width: inherit;
-    }
-  }
 
   .input-field {
-    min-width: inherit;
+    min-width: 100%;
   }
 }
 
@@ -142,7 +134,7 @@ input[type=date]::-webkit-datetime-edit {
 }
 
 // 500
-@media (max-width: 500px) {
+@include _500 {
   .input-field {
     min-height: 43px;
   }

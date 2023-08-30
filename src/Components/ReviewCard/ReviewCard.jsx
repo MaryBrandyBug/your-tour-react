@@ -1,5 +1,5 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { string, arrayOf, oneOfType } from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './ReviewCard.module.scss';
 
@@ -8,19 +8,22 @@ export default function ReviewCard({
 }) {
   const cx = classNames.bind(styles);
 
+  const cardText = text.map((item, i) => (i === 0
+    ? <span key={new Date().getTime() * Math.random()}>{item}</span>
+    : (
+      <span key={new Date().getTime() * Math.random()}>
+        <br />
+        <br />
+        {' '}
+        {item}
+      </span>
+    )
+  ));
+
   return (
     <div className={cx('root')}>
       <p className={cx('content')}>
-        {text[0]}
-        {text.length > 1
-          ? (
-            <>
-              <br />
-              <br />
-              {text[1]}
-            </>
-          )
-          : ''}
+        {cardText}
       </p>
       <div className={cx('root__footer')}>
         <div className={cx('footer-content')}>
@@ -37,16 +40,9 @@ export default function ReviewCard({
   );
 }
 
-ReviewCard.defaultProps = {
-  text: null,
-  name: null,
-  tour: null,
-  img: null,
-};
-
 ReviewCard.propTypes = {
-  text: PropTypes.arrayOf((PropTypes.oneOfType([PropTypes.string]))),
-  name: PropTypes.string,
-  tour: PropTypes.string,
-  img: PropTypes.string,
+  text: arrayOf((oneOfType([string]))),
+  name: string,
+  tour: string,
+  img: string,
 };

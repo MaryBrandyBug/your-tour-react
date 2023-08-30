@@ -5,34 +5,21 @@
 .root {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   min-width: 100%;
   min-height: 88px;
   padding: 0px;
-  gap: 214px;
     
   background: $lightBeigeColor;
   composes: main-font-style from '../../styles/global.scss';
-
-  .content {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    min-width: 1168px;
-    min-height: 28px;
-    padding: 0px;
-    gap: 214px;
-
-
-    &__text {
-      color: $greyColor;
-    }
-  }
 }
 
-.content__social-networks-links {
+.text {
+  color: $greyColor;
+}
+
+.networks {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -42,7 +29,7 @@
   padding: 0px;
   gap: 25px;
 
-  .content__linkBlock {
+  .linkBlock {
     max-width: 126px;
     min-height: 28px;
     display: flex;
@@ -50,11 +37,6 @@
     align-items: center;
     padding: 0px;
     gap: 10px;
-
-    .inst-icon {
-      max-width: 26h;
-      max-height: 26px;
-    }
 
     .social-network {
       color: $blackColor;
@@ -64,7 +46,8 @@
   }
 }
 
-@media (min-width: 361px) {
+// min-width 361
+@include minWidth361 {
 
   .social-network:hover {
     text-decoration-line: underline;
@@ -77,21 +60,6 @@
 @include _1024 {
   .root {
     max-width: 100%;
-
-    .content {
-      min-width: 0px;
-      gap: 280px;
-    }
-  }
-}
-
-// 992
-@include _992 {
-  .root {
-
-    .content {
-      gap: 25px;
-    }
   }
 }
 
@@ -100,18 +68,16 @@
   .root {
     max-width: 100%;
     min-height: 95px;
-
-    .content {
-      flex-direction: column;
-      gap: 7px;
-
-      &__social-networks-links {
-        gap: 20px;
-      }
-    }
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
   }
 
-  .content__linkBlock {
+  .networks {
+    gap: 20px;
+  }
+
+  .linkBlock {
     gap: 1px;
 
     .link-icon {
@@ -132,18 +98,14 @@
 @include _1175 {
   .root {
     max-width: 100%;
-
-    .content {
-      min-width: 90%;
-    }
   }
 }
 
 // mobile _360
 @include _360 {
-  .content__social-networks-links {
+  .networks {
 
-    .content__linkBlock {
+    .linkBlock {
       gap: 2px;
     }
   }

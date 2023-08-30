@@ -20,7 +20,7 @@
     resize: none;
   }
 
-  @media (min-width: 361px) {
+  @include minWidth361 {
     .input-field-comment:focus {
       border: 1px solid $greyColor;
       background: $lightBeigeColor;
@@ -72,7 +72,7 @@
 }
 
 // 500
-@media (max-width: 500px) {
+@include _500 {
 	.root {
 		max-height: 163px;
 	}
