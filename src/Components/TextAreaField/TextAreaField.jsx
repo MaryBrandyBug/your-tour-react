@@ -20,4 +20,6 @@ TextAreaField.propTypes = {
   fieldName: string,
   name: string,
   onChange: func,
+  maxLength: string,
+  value: string,
 };

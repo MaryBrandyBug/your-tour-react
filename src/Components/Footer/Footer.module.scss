@@ -19,7 +19,7 @@
   color: $greyColor;
 }
 
-.social-networks-links {
+.networks {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -73,7 +73,7 @@
     gap: 7px;
   }
 
-  .social-networks-links {
+  .networks {
     gap: 20px;
   }
 
@@ -103,7 +103,7 @@
 
 // mobile _360
 @include _360 {
-  .social-networks-links {
+  .networks {
 
     .linkBlock {
       gap: 2px;
