@@ -1,14 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import validationSchema from './validation';
 import styles from './Form.module.scss';
 
 import Button from '../Button';
-import InputField from '../InputField/InputField';
-import TextAreaField from '../TextAreaField/TextAreaField';
-import InputRadio from '../InputRadio/InputRadio';
-import InputCheckbox from '../InputCheckbox/InputCheckbox';
+import InputField from '../InputField';
+import TextAreaField from '../TextAreaField';
+import InputRadio from '../InputRadio';
+import InputCheckbox from '../InputCheckbox';
+import Title from '../Title';
 
 export default function Form() {
   const cx = classNames.bind(styles);
@@ -18,7 +19,6 @@ export default function Form() {
   const [yourTourForm, setYourTourForm] = useState({
     name: '', direction: '', email: '', phoneNumber: '', dateSince: '', dateUntil: '', comment: '',
   });
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
 
   const changeRadio = (e) => {
     setRadio(e.target.value);
@@ -39,91 +39,53 @@ export default function Form() {
     }
   };
 
-  useEffect(() => {
-    const resizeWindow = () => {
-      setWindowSize(window.innerWidth);
-    };
-    window.addEventListener('resize', resizeWindow);
-
-    return () => {
-      window.removeEventListener('resize', resizeWindow);
-    };
-  });
+  const clear = useCallback(() => {
+    setYourTourForm({
+      name: '', direction: '', email: '', phoneNumber: '', dateSince: '', dateUntil: '', comment: '',
+    });
+    setChecked(false);
+    setRadio('');
+  }, []);
 
   return (
-    <div className={cx('root', 'section')} id="createTour">
-      <div className={cx('header', 'section__header__flex')}>
-        <h2 className={cx('header__title', 'section__header__title')}>Собери свой тур</h2>
-        <p className={cx('header__subtitle', 'section__header__subtitle')}>
-          Идейные соображения высшего порядка,
-          <br />
-          {' '}
-          а также рамки и место обучения кадров
-        </p>
-      </div>
-      <form onSubmit={handleSubmit} className={cx('content', 'section__content__flex')}>
+    <div className={cx('root')} id="createTour">
+      <Title
+        title="Собери свой тур"
+        subtitle={(
+          <>
+            Идейные соображения высшего порядка,
+            {' '}
+            <br />
+            {' '}
+            а также рамки и место обучения кадров
+          </>
+)}
+        subtitleClassName={cx('sectionSubtitle')}
+        headerClassName={cx('sectionHeader')}
+      />
+      <form onSubmit={handleSubmit} className={cx('content')}>
         <div className={cx('container')}>
-          {windowSize > 780
-            ? (
-              <>
-                <div className={cx('side-container')}>
-
-                  <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
-
-                  <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
-
-                  <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
-                </div>
-
-                <div className={cx('side-container')}>
-
-                  <div className={cx('input-fields-container')}>
-                    <div className={cx('input-field-container')}>
-                      <p className={cx('input-name')}>Направление</p>
-                      <div className={cx('select-wrapper')}>
-                        <select className={cx('select-field')} name="direction" onChange={handleChange}>
-                          <option value="default">Куда хотите ехать</option>
-                          <option value="place">Едем сюда!</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>
-
-                  <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
-
-                  <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
-                </div>
-              </>
-            )
-            : (
-              <div className={cx('side-container')}>
-                <InputField type="text" name="name" placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
-
-                <div className={cx('input-fields-container')}>
-                  <div className={cx('input-field-container')}>
-                    <p className={cx('input-name')}>Направление</p>
-                    <div className={cx('select-wrapper')}>
-                      <select className={cx('select-field')} name="direction" onChange={handleChange}>
-                        <option value="default">Куда хотите ехать</option>
-                        <option value="place">Едем сюда!</option>
-                      </select>
-                    </div>
-                  </div>
-                </div>
-
-                <InputField type="email" name="email" placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
-
-                <InputField type="tel" name="phoneNumber" placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
-
-                <InputField type="date" name="dateSince" placeholder="" onChange={handleChange} inputFieldName="Дата от" />
-
-                <InputField type="date" name="dateUntil" placeholder="" onChange={handleChange} inputFieldName="Дата до" />
-              </div>
-            )}
+          <InputField type="text" name="name" value={yourTourForm.name} placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
+          <div className={cx('input-field-container')}>
+            <p className={cx('input-name')}>Направление</p>
+            <div className={cx('select-wrapper')}>
+              <select className={cx('select-field')} value={yourTourForm.direction} name="direction" onChange={handleChange}>
+                <option value="">Куда хотите ехать</option>
+                <option value="place">Едем сюда!</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div className={cx('container')}>
+          <InputField type="email" name="email" value={yourTourForm.email} placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
+          <InputField type="tel" name="phoneNumber" value={yourTourForm.phoneNumber} placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
+        </div>
+        <div className={cx('container')}>
+          <InputField type="date" name="dateSince" value={yourTourForm.dateSince} placeholder="" onChange={handleChange} inputFieldName="Дата от" />
+          <InputField type="date" name="dateUntil" value={yourTourForm.dateUntil} placeholder="" onChange={handleChange} inputFieldName="Дата до" />
         </div>
 
-        <TextAreaField fieldName="Комментарий" name="comment" onChange={handleChange} maxLength="250" />
-
+        <TextAreaField fieldName="Комментарий" value={yourTourForm.comment} name="comment" onChange={handleChange} maxLength="250" />
         <div className={cx('age-check')}>
           <div className={cx('age-check__input-container')}>
             <p className={cx('input-name')}>Вам есть 18 лет?</p>
@@ -135,7 +97,7 @@ export default function Form() {
         </div>
 
         <div className={cx('agreement-container')}>
-          <InputCheckbox name="agreement" id="accept" onChange={changeCheckbox} />
+          <InputCheckbox name="agreement" id="accept" checked={checked} onChange={changeCheckbox} />
           <div className={cx('agreement-text')}>
             Нажимая кнопку, я принимаю условия
             {' '}
@@ -145,10 +107,10 @@ export default function Form() {
 
         <div className={cx('buttons-container')}>
           <div className={cx('submit-button')}>
-            <Button text="Найти тур" btnClass={cx('submit-button-text')} btnType="submit" />
+            <Button text="Найти тур" className={cx('submit-button-text')} type="submit" />
           </div>
           <div className={cx('reset-button')}>
-            <Button text="Сбросить" btnClass={cx('reset-button-text')} />
+            <Button text="Сбросить" className={cx('reset-button-text')} onClick={clear} />
           </div>
         </div>
       </form>

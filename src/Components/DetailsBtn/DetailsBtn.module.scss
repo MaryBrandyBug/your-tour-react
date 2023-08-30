@@ -15,7 +15,7 @@
   
   cursor: pointer;
 
-  &__text {
+  .text {
     max-width: 120px;
     max-height: 28px;
 
@@ -24,28 +24,19 @@
     font-weight: 700;
     font-size: 23px;
     line-height: 122%;
-  }
 
-  &__arrow {
-    max-width: 24px;
-    max-height: 26px;
-        
-    svg {
-      z-index: 0;
-
-      margin-top: 21%;
-
-      color: $whiteColor;
+    .arrow {
+      max-width: 24px;
+      max-height: 26px;
     }
   }
-
 }
 
 // 780
 @include _780 {
   .root {
         
-    .root__text {
+    .text {
       font-size: 20px;
     }
   }
@@ -55,7 +46,7 @@
 @include _360 {
   .root {
 
-    .root__text {
+    .text {
       font-size: 16px;
     }
   }

@@ -1,430 +1,273 @@
-@import '../../styles/colors.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
 
 // main root
 .root {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   min-width: percentage(1170 / 1920);
   gap: 100px;
 
-  composes: main-font-style from '../../styles/global.scss';
-
-  .header {
-    gap: 30px;
-
-    &__subtitle {
-      max-width: 458px;
-
-      text-align: center;
-      color: $greyColor;
-    }
-  }
-
-  .content {
-    min-height: 986px;
-    min-width: 100%;
-    padding: 70px;
-    gap: 33px;
-
-    background: $whiteColor;
-    border-radius: 50px;
-
-    .container {
-      display: flex;
-      max-width: 1170px;
-      min-width: inherit;
-      gap: 30px;
-    }
-
-    .root__input-comment-container {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      min-width: 100%;
-      max-height: 188px;
-      gap: 8px;
-
-      .input-name {
-        color: $blackColor;
-      }
-
-      .input-comment {
-        min-width: inherit;
-
-        resize: none;
-      }
-
-      @media (min-width: 361px) {
-        .root__input-field-comment:focus {
-          border: 1px solid $greyColor;
-          background: $lightBeigeColor;
-        }
-
-        .root__input-field-comment:hover {
-          background: $lightBeigeColor;
-        }
-      }
-
-      .root__input-field-comment {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        min-height: 152px;
-        box-sizing: border-box;
-        padding: 20px;
-        gap: 10px;
-
-        font-size: 20px;
-
-        background: $beigeColor;
-        border: 1px solid $lightBeigeColor;
-        border-radius: 10px;
-
-        cursor: pointer;
-      }
-    }
-
-    .age-check {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      min-width: 100%;
-      gap: 30px;
-
-      &__input-container {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-
-        .input-name {
-          color: $blackColor;
-        }
-
-        .age-check__radio-buttons-container {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          gap: 31px;
-
-          .age-check__radio-button-container {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            gap: 11px;
-
-            .age-check__radio-button {
-              display: none;
-            }
-
-            .radio__border {
-              position: relative;
-
-              min-width: 21px;
-              min-height: 21px;
-
-              border: 2px solid $blackColor;
-              border-radius: 50%;
-            }
-
-            .radio__border::before {
-              position: absolute;
-              top: 48%;
-              left: 48%;
-              z-index: -1;
-
-              display: block;
-              min-width: 12px;
-              min-height: 12px;
-
-              background-color: $blackColor;
-              border-radius: 50%;
-
-              transform: translate(-50%, -50%);
-              transition: .2s;
-
-              content: "";
-            }
-
-            .age-check__radio-button:checked + .radio__border::before {
-              z-index: 1;
-            }
-          }
-        }
-      }
-    }
-
-    .agreement-container {
-      display: flex;
-      align-items: center;
-      min-width: 100%;
-
-      .agreement-text {
-        margin-left: 10px;
-
-        font-size: 17px;
-        color: $greyColor;
-
-        @media (min-width: 361px) {
-
-          .agreement-text-link:hover {
-            text-decoration: underline;
-          }
-    
-          .agreement-text-link:active {
-            color: $darkGreen;
-          }
-        }
-
-        .agreement-text-link {
-          margin-left: 1px;
-
-          font-size: 17px;
-          text-decoration: none;
-          color: $blackColor;
-
-          background: inherit;
-                      
-          cursor: pointer;
-        }
-      }
-    }
-
-    .buttons-container {
-      display: flex;
-      flex-direction: row;
-      align-items: flex-start;
-      min-width: 100%;
-      gap: 30px;
-
-      .submit-button {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        min-width: 235px;
-        min-height: 58px;
-        gap: 10px;
-
-        background: $darkGreen;
-        border-radius: 10px;
-
-        transition: 0.7s;
-
-        cursor: pointer;
-
-        &-text{
-          min-width: 235px;
-          min-height: 58px;
-
-          color: $whiteColor;
-
-          background-color: inherit;
-          border-radius: 10px;
-        }
-      }
-
-      @media (min-width: 361px) {
-
-        .submit-button:hover {
-          background: $greenColor;
-          transition: 0.4s;
-        }
-    
-        .submit-button:active {
-          background: $oliveGreenColor;
-          transition: 0.3s;
-        }
-      }
-
-      .reset-button {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        min-width: 235px;
-        min-height: 58px;
-        gap: 10px;
-
-        background: $lightGreenColor;
-        border-radius: 10px;
-
-        transition: 0.7s;
-
-        cursor: pointer;
-
-        .reset-button-text {
-          min-width: 235px;
-          min-height: 58px;
-
-          color: $darkGreen;
-
-          background-color: inherit;
-          border-radius: 10px;
-        }
-      }
-
-      @media (min-width: 361px) {
-
-        .reset-button:hover {
-          background: $whiteSmoke;
-
-          transition: 0.4s;
-        }
-    
-        .reset-button:active {
-          background: $gainsboro;
-
-          transition: 0.3s;
-        }
-      }
-
-    }
-  }
+  composes: main-font-style from "../../styles/global.scss";
 }
 
-.side-container {
+.sectionHeader {
+  gap: 30px;
+}
+
+.content {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  min-height: 986px;
+  min-width: 100%;
+  padding: 70px;
   gap: 33px;
 
-  .input-name {
-    color: $blackColor;
-  }
+  background: $whiteColor;
+  border-radius: 50px;
 }
 
-.input-fields-container {
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  // max-width: 1170px;
+  min-width: inherit;
+  gap: 30px;
+}
+
+.age-check {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   min-width: 100%;
-  max-height: 104px;
   gap: 30px;
 
-  .input-field-container {
-    position: relative;
-
+  &__input-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    min-width: inherit;
-    max-height: 104px;
-    gap: 8px;
+    gap: 12px;
 
-    .select-wrapper {
-      min-width: inherit;
+    .input-name {
+      font-size: 20px;
+      color: $blackColor;
     }
 
-    .select-wrapper::before {
-      position: absolute;
-      top: 55%;
-      right: 25px;
-
-      display: block;
-      width: 20px;
-      height: 100%;
-
-      content: url('../../../public/images/Rectangle.png');
-      pointer-events: none;
-    }
-
-    .select-field {
-      min-width: 500px;
-      min-height: 68px;
-      padding: 20px;
-      gap: 10px;
-
-      background: $beigeColor;
-      border: 1px solid $lightBeigeColor;
-      border-radius: 10px;
-
-      cursor: pointer;
-
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    @media (min-width: 361px) {
-      .select-field:hover {
-        background: $lightBeigeColor;
-      }
-    }
-
-    .first-date-field {
-      color: $beigeColor;
-    }
-
-    .second-date-field::-webkit-calendar-picker-indicator {
-      opacity: 0;
-    }
-
-    .root__input-field {
+    .age-check__radio-buttons-container {
       display: flex;
       flex-direction: row;
       align-items: center;
-      box-sizing: border-box;
-      padding: 20px;
-      min-width: 500px;
-      min-height: 68px;
-      gap: 10px;
-            
-      font-size: 20px;
+      gap: 31px;
 
-      background: $beigeColor;
-      border: 1px solid $lightBeigeColor;
-      border-radius: 10px;
+      .age-check__radio-button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 11px;
+
+        .age-check__radio-button {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.agreement-container {
+  display: flex;
+  align-items: center;
+  min-width: 100%;
+
+  .agreement-text {
+    margin-left: 10px;
+
+    font-size: 17px;
+    color: $greyColor;
+
+    @media (min-width: 361px) {
+      .agreement-text-link:hover {
+        text-decoration: underline;
+      }
+
+      .agreement-text-link:active {
+        color: $darkGreen;
+      }
+    }
+
+    .agreement-text-link {
+      margin-left: 1px;
+
+      font-size: 17px;
+      text-decoration: none;
+      color: $blackColor;
+
+      background: inherit;
 
       cursor: pointer;
-      -webkit-appearance: none;
-    }
-
-    .root__input-field::placeholder {
-      color: $greyColor;
-    }
-
-    input[type="date"]:not(.has-value):before{
-      color: $greyColor;
-
-      content: attr(placeholder);
     }
   }
 }
 
-@media (min-width: 361px) {
+.buttons-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  min-width: 100%;
+  gap: 30px;
 
-  .root__input-field:focus{
-    border: 1px solid $greyColor;
-    background: $lightBeigeColor;
+  .submit-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 235px;
+    min-height: 58px;
+    gap: 10px;
+
+    background: $darkGreen;
+    border-radius: 10px;
+
+    transition: 0.7s;
+
+    cursor: pointer;
+
+    &-text {
+      min-width: 235px;
+      min-height: 58px;
+
+      color: $whiteColor;
+
+      background-color: inherit;
+      border-radius: 10px;
+    }
   }
 
-  .first-date-field:hover {
-    color: $lightBeigeColor;
+  @include minWidth361 {
+    .submit-button:hover {
+      background: $greenColor;
+      transition: 0.4s;
+    }
+
+    .submit-button:active {
+      background: $oliveGreenColor;
+      transition: 0.3s;
+    }
   }
 
-  .first-date-field:focus {
-    color: $lightBeigeColor;
+  .reset-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    min-width: 235px;
+    min-height: 58px;
+    gap: 10px;
+
+    background: $lightGreenColor;
+    border-radius: 10px;
+
+    transition: 0.7s;
+
+    cursor: pointer;
+
+    .reset-button-text {
+      min-width: 235px;
+      min-height: 58px;
+
+      color: $darkGreen;
+
+      background-color: inherit;
+      border-radius: 10px;
+    }
   }
 
-  .root__input-field:hover {
-    background: $lightBeigeColor;
+  @media (min-width: 361px) {
+    .reset-button:hover {
+      background: $whiteSmoke;
+
+      transition: 0.4s;
+    }
+
+    .reset-button:active {
+      background: $gainsboro;
+
+      transition: 0.3s;
+    }
   }
 }
 
-@media (max-width: 1300px) {
+.input-field-container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 47%;
+  max-height: 104px;
+  gap: 8px;
+
+  .input-name {
+    font-size: 20px;
+  }
+
+  .select-wrapper {
+    min-width: 100%;
+  }
+
+  .select-wrapper::before {
+    position: absolute;
+    top: 55%;
+    right: 25px;
+
+    display: block;
+    width: 20px;
+    height: 100%;
+
+    content: url("../../../public/images/Rectangle.png");
+    pointer-events: none;
+  }
+
+  .select-field {
+    min-width: 500px;
+    min-height: 68px;
+    padding: 20px;
+    gap: 10px;
+
+    background: $beigeColor;
+    border: 1px solid $lightBeigeColor;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  @include minWidth361 {
+    .select-field:hover {
+      background: $lightBeigeColor;
+    }
+  }
+
+  input[type="date"]:not(.has-value):before {
+    color: $greyColor;
+
+    content: attr(placeholder);
+  }
+}
+
+// 1300
+@include _1300 {
   .root {
     min-width: percentage(918 / 1300);
   }
 
-  .input-fields-container {
-
-    .input-field-container {
-
-      .select-field {
-        min-width: 400px;
-      }
-
-      .root__input-field {
-        min-width: 400px;
-      }
+  .input-field-container {
+    .select-field {
+      min-width: 400px;
     }
   }
 }
@@ -434,36 +277,28 @@
   .root {
     min-width: percentage(918 / 1024);
     gap: 100px;
-        
-    .content {
-      padding: 60px;
-      gap: 33px;
-
-      .container {
-        gap: 28px;
-      }
-
-      .root__input-comment-container {
-        max-height: 183.4px;
-      }
-      }
   }
 
-  .input-fields-container {
+  .content {
+    padding: 60px;
+    gap: 33px;
+  }
+
+  .container {
+    gap: 28px;
+  }
+
+  .root__input-comment-container {
+    max-height: 183.4px;
+  }
+
+  .input-field-container {
     max-height: 102px;
-    gap: 20px;
+    max-width: 389px;
 
-    .input-field-container {
+    .select-field {
       max-width: 389px;
-
-      .select-field {
-        max-width: 389px;
-        min-width: 389px;
-      }
-
-      .root__input-field {
-        min-width: 389px;
-      }
+      min-width: 100%;
     }
   }
 }
@@ -474,214 +309,157 @@
     gap: 50px;
   }
 
-  .side-container {
-    min-width: 47.5%;
-  }
-
-  .input-fields-container {
+  .select-field {
     min-width: 100%;
-
-    .input-field-container {
-      min-width: inherit;
-
-      .select-field {
-        min-width: inherit;
-      }
-
-      .root__input-field {
-        min-width: inherit;
-      }
-    }
   }
 }
 
 // 780
 @include _780 {
-  .root  {
+  .root {
     gap: 40px;
+  }
+  .sectionHeader {
+    gap: 20px;
+  }
 
-    .header {
-      gap: 20px;
+  .content {
+    gap: 30px;
 
-      &__title {
-        letter-spacing: 0.7px;
+    border-radius: 30px;
+  }
+
+  .container {
+    flex-direction: column;
+
+    gap: 32px;
+  }
+
+  .age-check {
+    &__input-container {
+      gap: 8px;
+
+      .input-name {
+        font-size: 16px;
       }
 
-      &__subtitle {
-        min-width: 400px;
-      }
-    }
+      .age-check__radio-buttons-container {
+        gap: 27px;
 
-    .content {
-      gap: 30px;
-
-      border-radius: 30px;
-
-      .container {
-        flex-direction: column;
-
-        gap: 32px;
-      }
-
-      .root__input-comment-container {
-
-        .input-name {
-          font-size: 16px;
-        }
-
-        .root__input-field-comment {
-          font-size: 16px;
-        }
-      }
-
-      .age-check {
-        .age-check__input-container {
-          gap: 8px;
-
-          .input-name {
-            font-size: 16px;
+        .age-check__radio-button-container {
+          .radio__border {
+            min-width: 21px;
+            min-height: 21px;
           }
 
-          .age-check__radio-buttons-container {
-            gap: 27px;
-
-            .age-check__radio-button-container {
-
-              .radio__border {
-                min-width: 21px;
-                min-height: 21px;
-              }
-
-              .radio__border::before {
-                min-width: 10px;
-                min-height: 9px;
-              }
-            }
-          }
-        }
-      }
-
-      .agreement-container {
-
-        .agreement-text {
-          margin-left: 12px;
-          max-width: 260px;
-
-          font-size: 16px;
-
-          .agreement-text-link {
-            font-size: 16px;
-          }
-        }
-      }
-
-      .buttons-container {
-        margin-left: 0;
-        margin-right: 0px;
-        gap: 10px;
-
-        .submit-button {
-          min-width: 134px;
-          min-height: 47px;
-                    
-          .submit-button-text {
-            min-width: 134px;
-            min-height: 47px;
-
-            font-size: 16px;
-          }
-        }
-
-        .reset-button {
-          min-width: 134px;
-          min-height: 47px;
-
-          .reset-button-text {
-            min-width: 134px;
-            min-height: 47px;
-
-            font-size: 16px;
+          .radio__border::before {
+            min-width: 10px;
+            min-height: 9px;
           }
         }
       }
     }
   }
+  .agreement-container {
+    .agreement-text {
+      margin-left: 12px;
+      max-width: 260px;
 
-  .side-container {
+      font-size: 16px;
+
+      .agreement-text-link {
+        font-size: 16px;
+      }
+    }
+  }
+
+  .buttons-container {
+    margin-left: 0;
+    margin-right: 0px;
+    gap: 10px;
+
+    .submit-button {
+      min-width: 134px;
+      min-height: 47px;
+
+      .submit-button-text {
+        min-width: 134px;
+        min-height: 47px;
+
+        font-size: 16px;
+      }
+    }
+
+    .reset-button {
+      min-width: 134px;
+      min-height: 47px;
+
+      .reset-button-text {
+        min-width: 134px;
+        min-height: 47px;
+
+        font-size: 16px;
+      }
+    }
+  }
+
+  .input-field-container {
+    max-width: none;
+    max-height: 74px;
+    font-size: 16px;
 
     .input-name {
       font-size: 16px;
     }
-  }
-  
-  .input-fields-container {
-    max-height: 74px;
 
-    .input-field-container {
-      max-width: 250px;
-      max-height: 74px;
+    input[type="date"]::-webkit-datetime-edit {
+      font-size: 20px;
+      font-weight: 300;
+      color: $greyColor;
+    }
 
-      input[type=date]::-webkit-datetime-edit { 
-        font-size: 20px;
-        font-weight: 300;
-        color: $greyColor;
-      }
+    .select-wrapper::before {
+      position: absolute;
+      top: 70%;
 
-      .select-wrapper::before {
-        position: absolute;
-        top: 70%;
+      display: block;
+      width: 10px;
+      height: 70%;
 
-        display: block;
-        width: 10px;
-        height: 70%;
+      pointer-events: none;
+      content: url("../../../public/images/Rectangle.png");
+    }
 
-        pointer-events: none;
-        content: url('../../../public/images/Rectangle.png');
-      }
+    .select-field {
+      min-height: 60px;
+      padding: 10px;
 
-      .root__input-field {
-        padding: 8px;
-
-        font-size: 16px;
-      }
-
-      .select-field {
-        min-height: 60px;
-        padding: 10px;
-
-        font-size: 15px;
-        letter-spacing: 0.4px;
-      }
-            
-      .root__input-field {
-        max-width: 278px;
-        min-height: 60px;
-      }
-
-      .root__input-field::placeholder {
-        font-size: 16px;
-      }
+      font-size: 15px;
+      letter-spacing: 0.4px;
     }
   }
 }
 
 // 500
-@media (max-width: 500px) {
+@include _500 {
   .root {
     min-width: 90%;
+  }
 
-    .content {
-      min-width: 85%;
-      padding: 20px;
+  .content {
+    min-width: 85%;
+    padding: 20px;
+  }
 
-      .root__input-comment-container {
-        max-height: 163px;
-      }
-    }
+  .container {
+    min-width: 100%;
+  }
+
+  .root__input-comment-container {
+    max-height: 163px;
   }
 
   .agreement-container {
-        
     .agreement-text {
       max-width: 248px;
       margin-left: 12px;
@@ -690,16 +468,14 @@
     }
   }
 
-  .select-field {
-    min-height: 43px;
-  }
+  .input-field-container {
+    .select-field {
+      min-height: 43px;
+    }
 
-  .root__input-field {
-    min-height: 43px;
-  }
-
-  .select-wrapper::before {
-    top: 59%;
+    .select-wrapper::before {
+      top: 59%;
+    }
   }
 }
 
@@ -708,24 +484,24 @@
   .root {
     max-width: 88.3333333333%;
     min-width: 88.3333333333%;
-
-    .content {
-      min-width: 100%;
-      padding: 20px 20px 40px;
-    }
   }
 
-  .input-fields-container {
+  .sectionSubtitle {
+    white-space: nowrap;
+  }
 
-    .input-field-container {
+  .content {
+    min-width: 100%;
+    padding: 20px 20px 40px;
+  }
 
-      .select-field{
-        min-height: 43px;
-      }
+  .input-field-container {
+    .select-field {
+      min-height: 43px;
+    }
 
-      .select-wrapper::before {
-        top: 60%;
-      }
+    .select-wrapper::before {
+      top: 60%;
     }
   }
 }

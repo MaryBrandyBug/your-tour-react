@@ -10,7 +10,8 @@ export default function Header() {
   const cx = classNames.bind(styles);
 
   const menuItems = [{ item: 'Туры', id: 'chooseTour' }, { item: 'Создать тур', id: 'createTour' }, { item: 'Отзывы', id: 'reviews' }, { item: 'Истории', id: 'travelStories' }];
-  const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} key={i.id} className={cx('menu__item')} style={{ textDecoration: 'none' }}>{i.item}</HashLink>);
+  const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} key={i.id} className={cx('item')}>{i.item}</HashLink>);
+
   return (
     <header className={cx('root')}>
       <div className={cx('navbar__container')}>
@@ -29,7 +30,7 @@ export default function Header() {
         <h1 className={cx('content__title')}>Идеальные путешествия существуют</h1>
         <p className={cx('content__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
         <div className={cx('content__button')}>
-          <Button text="Найти тур" btnClass={cx('find-tour-btn')} />
+          <Button text="Найти тур" className={cx('find-tour-btn')} />
         </div>
       </div>
     </header>

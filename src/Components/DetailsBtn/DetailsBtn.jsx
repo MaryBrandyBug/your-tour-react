@@ -1,28 +1,28 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { string } from 'prop-types';
 import classNames from 'classnames/bind';
 import styles from './DetailsBtn.module.scss';
 
 import Arrow from '../Arrow';
 
-export default function DetailsBtn({ additionalClass }) {
+export default function DetailsBtn({ additionalClass, link }) {
   const cx = classNames.bind(styles);
 
+  function redirect() {
+    window.location.href = link;
+  }
+
   return (
-    <div className={cx('root', additionalClass)}>
-      <Link className={cx('root__text')} to="/">Подробнее</Link>
-      <div className={cx('root__arrow')}>
+    <button type="button" className={cx('root', additionalClass)} onClick={redirect}>
+      <p className={cx('text')}>Подробнее</p>
+      <div className={cx('arrow')}>
         <Arrow />
       </div>
-    </div>
+    </button>
   );
 }
 
-DetailsBtn.defaultProps = {
-  additionalClass: null,
-};
-
 DetailsBtn.propTypes = {
-  additionalClass: PropTypes.string,
+  additionalClass: string,
+  link: string,
 };
