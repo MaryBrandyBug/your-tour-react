@@ -31,57 +31,11 @@
 
 .container {
   display: flex;
-  max-width: 1170px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  // max-width: 1170px;
   min-width: inherit;
   gap: 30px;
-}
-
-.root__input-comment-container {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  min-width: 100%;
-  max-height: 188px;
-  gap: 8px;
-
-  .input-name {
-    color: $blackColor;
-  }
-
-  .input-comment {
-    min-width: inherit;
-
-    resize: none;
-  }
-
-  @include minWidth361 {
-    .root__input-field-comment:focus {
-      border: 1px solid $greyColor;
-      background: $lightBeigeColor;
-    }
-
-    .root__input-field-comment:hover {
-      background: $lightBeigeColor;
-    }
-  }
-
-  .root__input-field-comment {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    min-height: 152px;
-    box-sizing: border-box;
-    padding: 20px;
-    gap: 10px;
-
-    font-size: 20px;
-
-    background: $beigeColor;
-    border: 1px solid $lightBeigeColor;
-    border-radius: 10px;
-
-    cursor: pointer;
-  }
 }
 
 .age-check {
@@ -98,6 +52,7 @@
     gap: 12px;
 
     .input-name {
+      font-size: 20px;
       color: $blackColor;
     }
 
@@ -115,39 +70,6 @@
 
         .age-check__radio-button {
           display: none;
-        }
-
-        .radio__border {
-          position: relative;
-
-          min-width: 21px;
-          min-height: 21px;
-
-          border: 2px solid $blackColor;
-          border-radius: 50%;
-        }
-
-        .radio__border::before {
-          position: absolute;
-          top: 48%;
-          left: 48%;
-          z-index: -1;
-
-          display: block;
-          min-width: 12px;
-          min-height: 12px;
-
-          background-color: $blackColor;
-          border-radius: 50%;
-
-          transform: translate(-50%, -50%);
-          transition: 0.2s;
-
-          content: "";
-        }
-
-        .age-check__radio-button:checked + .radio__border::before {
-          z-index: 1;
         }
       }
     }
@@ -277,130 +199,63 @@
   }
 }
 
-.side-container {
+.input-field-container {
+  position: relative;
+
   display: flex;
   flex-direction: column;
-  gap: 33px;
+  align-items: flex-start;
+  min-width: 47%;
+  max-height: 104px;
+  gap: 8px;
 
   .input-name {
-    color: $blackColor;
-  }
-}
-
-.input-fields-container {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  min-width: 100%;
-  max-height: 104px;
-  gap: 30px;
-
-  .input-field-container {
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-width: inherit;
-    max-height: 104px;
-    gap: 8px;
-
-    .select-wrapper {
-      min-width: inherit;
-    }
-
-    .select-wrapper::before {
-      position: absolute;
-      top: 55%;
-      right: 25px;
-
-      display: block;
-      width: 20px;
-      height: 100%;
-
-      content: url("../../../public/images/Rectangle.png");
-      pointer-events: none;
-    }
-
-    .select-field {
-      min-width: 500px;
-      min-height: 68px;
-      padding: 20px;
-      gap: 10px;
-
-      background: $beigeColor;
-      border: 1px solid $lightBeigeColor;
-      border-radius: 10px;
-
-      cursor: pointer;
-
-      -webkit-appearance: none;
-      appearance: none;
-    }
-
-    @include minWidth361 {
-      .select-field:hover {
-        background: $lightBeigeColor;
-      }
-    }
-
-    .first-date-field {
-      color: $beigeColor;
-    }
-
-    .second-date-field::-webkit-calendar-picker-indicator {
-      opacity: 0;
-    }
-
-    .root__input-field {
-      display: flex;
-      flex-direction: row;
-      align-items: center;
-      box-sizing: border-box;
-      padding: 20px;
-      min-width: 500px;
-      min-height: 68px;
-      gap: 10px;
-
-      font-size: 20px;
-
-      background: $beigeColor;
-      border: 1px solid $lightBeigeColor;
-      border-radius: 10px;
-
-      cursor: pointer;
-      -webkit-appearance: none;
-    }
-
-    .root__input-field::placeholder {
-      color: $greyColor;
-    }
-
-    input[type="date"]:not(.has-value):before {
-      color: $greyColor;
-
-      content: attr(placeholder);
-    }
-  }
-}
-
-// min-width 361
-@include minWidth361 {
-  .root__input-field:focus {
-    border: 1px solid $greyColor;
-    background: $lightBeigeColor;
+    font-size: 20px;
   }
 
-  .first-date-field:hover {
-    color: $lightBeigeColor;
+  .select-wrapper {
+    min-width: 100%;
   }
 
-  .first-date-field:focus {
-    color: $lightBeigeColor;
+  .select-wrapper::before {
+    position: absolute;
+    top: 55%;
+    right: 25px;
+
+    display: block;
+    width: 20px;
+    height: 100%;
+
+    content: url("../../../public/images/Rectangle.png");
+    pointer-events: none;
   }
 
-  .root__input-field:hover {
-    background: $lightBeigeColor;
+  .select-field {
+    min-width: 500px;
+    min-height: 68px;
+    padding: 20px;
+    gap: 10px;
+
+    background: $beigeColor;
+    border: 1px solid $lightBeigeColor;
+    border-radius: 10px;
+
+    cursor: pointer;
+
+    -webkit-appearance: none;
+    appearance: none;
+  }
+
+  @include minWidth361 {
+    .select-field:hover {
+      background: $lightBeigeColor;
+    }
+  }
+
+  input[type="date"]:not(.has-value):before {
+    color: $greyColor;
+
+    content: attr(placeholder);
   }
 }
 
@@ -410,15 +265,9 @@
     min-width: percentage(918 / 1300);
   }
 
-  .input-fields-container {
-    .input-field-container {
-      .select-field {
-        min-width: 400px;
-      }
-
-      .root__input-field {
-        min-width: 400px;
-      }
+  .input-field-container {
+    .select-field {
+      min-width: 400px;
     }
   }
 }
@@ -443,21 +292,13 @@
     max-height: 183.4px;
   }
 
-  .input-fields-container {
+  .input-field-container {
     max-height: 102px;
-    gap: 20px;
+    max-width: 389px;
 
-    .input-field-container {
+    .select-field {
       max-width: 389px;
-
-      .select-field {
-        max-width: 389px;
-        min-width: 389px;
-      }
-
-      .root__input-field {
-        min-width: 389px;
-      }
+      min-width: 100%;
     }
   }
 }
@@ -468,24 +309,8 @@
     gap: 50px;
   }
 
-  .side-container {
-    min-width: 47.5%;
-  }
-
-  .input-fields-container {
+  .select-field {
     min-width: 100%;
-
-    .input-field-container {
-      min-width: inherit;
-
-      .select-field {
-        min-width: inherit;
-      }
-
-      .root__input-field {
-        min-width: inherit;
-      }
-    }
   }
 }
 
@@ -510,18 +335,8 @@
     gap: 32px;
   }
 
-  .root__input-comment-container {
-    .input-name {
-      font-size: 16px;
-    }
-
-    .root__input-field-comment {
-      font-size: 16px;
-    }
-  }
-
   .age-check {
-    .age-check__input-container {
+    &__input-container {
       gap: 8px;
 
       .input-name {
@@ -545,7 +360,6 @@
       }
     }
   }
-
   .agreement-container {
     .agreement-text {
       margin-left: 12px;
@@ -589,59 +403,39 @@
     }
   }
 
-  .side-container {
+  .input-field-container {
+    max-width: none;
+    max-height: 74px;
+    font-size: 16px;
+
     .input-name {
       font-size: 16px;
     }
-  }
 
-  .input-fields-container {
-    max-height: 74px;
+    input[type="date"]::-webkit-datetime-edit {
+      font-size: 20px;
+      font-weight: 300;
+      color: $greyColor;
+    }
 
-    .input-field-container {
-      max-width: 250px;
-      max-height: 74px;
+    .select-wrapper::before {
+      position: absolute;
+      top: 70%;
 
-      input[type="date"]::-webkit-datetime-edit {
-        font-size: 20px;
-        font-weight: 300;
-        color: $greyColor;
-      }
+      display: block;
+      width: 10px;
+      height: 70%;
 
-      .select-wrapper::before {
-        position: absolute;
-        top: 70%;
+      pointer-events: none;
+      content: url("../../../public/images/Rectangle.png");
+    }
 
-        display: block;
-        width: 10px;
-        height: 70%;
+    .select-field {
+      min-height: 60px;
+      padding: 10px;
 
-        pointer-events: none;
-        content: url("../../../public/images/Rectangle.png");
-      }
-
-      .root__input-field {
-        padding: 8px;
-
-        font-size: 16px;
-      }
-
-      .select-field {
-        min-height: 60px;
-        padding: 10px;
-
-        font-size: 15px;
-        letter-spacing: 0.4px;
-      }
-
-      .root__input-field {
-        max-width: 278px;
-        min-height: 60px;
-      }
-
-      .root__input-field::placeholder {
-        font-size: 16px;
-      }
+      font-size: 15px;
+      letter-spacing: 0.4px;
     }
   }
 }
@@ -657,6 +451,10 @@
     padding: 20px;
   }
 
+  .container {
+    min-width: 100%;
+  }
+
   .root__input-comment-container {
     max-height: 163px;
   }
@@ -670,16 +468,14 @@
     }
   }
 
-  .select-field {
-    min-height: 43px;
-  }
+  .input-field-container {
+    .select-field {
+      min-height: 43px;
+    }
 
-  .root__input-field {
-    min-height: 43px;
-  }
-
-  .select-wrapper::before {
-    top: 59%;
+    .select-wrapper::before {
+      top: 59%;
+    }
   }
 }
 
@@ -693,21 +489,19 @@
   .sectionSubtitle {
     white-space: nowrap;
   }
-  
+
   .content {
     min-width: 100%;
     padding: 20px 20px 40px;
   }
 
-  .input-fields-container {
-    .input-field-container {
-      .select-field {
-        min-height: 43px;
-      }
+  .input-field-container {
+    .select-field {
+      min-height: 43px;
+    }
 
-      .select-wrapper::before {
-        top: 60%;
-      }
+    .select-wrapper::before {
+      top: 60%;
     }
   }
 }
