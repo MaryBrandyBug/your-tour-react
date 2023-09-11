@@ -19,7 +19,8 @@ export default function ChooseTour() {
 
   return (
     <div className={cx('root')} id="chooseTour">
-      <Title menu={<Menu items={menuItems} activeItem={activeItem} changeActiveItem={changeActiveItem} />} title="Выбери свой тур" headerClassName={cx('sectionHeader')} titleClassName={cx('sectionTitle')} />
+      <Title title="Выбери свой тур" headerClassName={cx('sectionHeader')} titleClassName={cx('sectionTitle')} />
+      <Menu items={menuItems} className={cx('menu')} activeItem={activeItem} changeActiveItem={changeActiveItem} />
       <div className={cx('content')}>
         {tourCards}
       </div>
