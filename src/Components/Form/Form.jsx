@@ -1,4 +1,6 @@
-import React, { useCallback, useState } from 'react';
+import React, {
+  useCallback, useEffect, useRef, useState,
+} from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import validationSchema from './validation';
@@ -13,6 +15,7 @@ import Title from '../Title';
 
 export default function Form() {
   const cx = classNames.bind(styles);
+  const myElementRef = useRef(null);
 
   const [checked, setChecked] = useState(false);
   const [radio, setRadio] = useState('');
@@ -47,6 +50,15 @@ export default function Form() {
     setRadio('');
   }, []);
 
+  useEffect(() => {
+    const element = myElementRef.current;
+    if (yourTourForm.direction === '') {
+      element.style.color = '#A6A6A6';
+    } else {
+      element.style.color = '#1B1F2B';
+    }
+  }, [yourTourForm.direction]);
+
   return (
     <div className={cx('root')} id="createTour">
       <Title
@@ -69,7 +81,7 @@ export default function Form() {
           <div className={cx('input-field-container')}>
             <p className={cx('input-name')}>Направление</p>
             <div className={cx('select-wrapper')}>
-              <select className={cx('select-field')} value={yourTourForm.direction} name="direction" onChange={handleChange}>
+              <select ref={myElementRef} className={cx('select-field')} id="select" value={yourTourForm.direction} name="direction" onChange={handleChange}>
                 <option value="">Куда хотите ехать</option>
                 <option value="place">Едем сюда!</option>
               </select>
