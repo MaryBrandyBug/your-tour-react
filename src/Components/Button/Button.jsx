@@ -2,10 +2,16 @@ import React from 'react';
 import { string, func } from 'prop-types';
 
 export default function Button({
-  text, type, className, onClick,
+  text, type, className, onClick, cbData,
 }) {
+  const handleClick = () => {
+    if (cbData) {
+      onClick(cbData);
+    }
+  };
+
   return (
-    <button type={type} className={className} onClick={onClick}>{text}</button>
+    <button type={type} className={className} onClick={handleClick || onClick}>{text}</button>
   );
 }
 
@@ -18,4 +24,5 @@ Button.propTypes = {
   type: string,
   className: string,
   onClick: func,
+  cbData: string,
 };

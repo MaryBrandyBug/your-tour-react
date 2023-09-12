@@ -6,17 +6,14 @@ import classNames from 'classnames/bind';
 import styles from './Title.module.scss';
 
 export default function Title({
-  menu, title, subtitle, headerClassName, titleClassName, subtitleClassName,
+  title, subtitle, headerClassName, titleClassName, subtitleClassName,
 }) {
   const cx = classNames.bind(styles);
 
   return (
     <div className={cx('root', headerClassName)}>
       <h2 className={cx('title', titleClassName)}>{title}</h2>
-      {subtitle
-        ? <p className={cx('subtitle', subtitleClassName)}>{subtitle}</p>
-        : null}
-      {menu}
+      {subtitle && <p className={cx('subtitle', subtitleClassName)}>{subtitle}</p>}
     </div>
   );
 }
@@ -24,7 +21,6 @@ export default function Title({
 Title.propTypes = {
   title: string,
   subtitle: oneOfType([string, element]),
-  menu: element,
   headerClassName: string,
   titleClassName: string,
   subtitleClassName: string,
