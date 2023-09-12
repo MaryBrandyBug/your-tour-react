@@ -5,13 +5,13 @@ export default function Button({
   text, type, className, onClick, cbData,
 }) {
   const handleClick = () => {
-    if (cbData) {
+    if (onClick) {
       onClick(cbData);
     }
   };
 
   return (
-    <button type={type} className={className} onClick={handleClick || onClick}>{text}</button>
+    <button type={type} className={className} onClick={handleClick}>{text}</button>
   );
 }
 

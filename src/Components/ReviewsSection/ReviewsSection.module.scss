@@ -1,5 +1,5 @@
-@import '../../styles/colors.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
 
 // main root
 .root {
@@ -11,17 +11,13 @@
   align-items: center;
 }
 
-.sectionHeader {
-  gap: 30px;
+.sectionTitle {
+  max-width: 529px;
+}
 
-  .sectionTitle {
-    max-width: 529px;
-  }
-
-  .sectionSubtitle {
-    max-width: 418px;
-    max-height: 56px;
-  }
+.sectionSubtitle {
+  max-width: 418px;
+  max-height: 56px;
 }
 
 .content {
@@ -61,16 +57,12 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
+  .sectionTitle {
+    letter-spacing: 0.7px;
+  }
 
-    .sectionTitle {
-      letter-spacing: 0.7px;
-    }
-
-    .sectionSubtitle {
-      max-width: 400px;
-    }
+  .sectionSubtitle {
+    max-width: 400px;
   }
 
   .content {
@@ -88,12 +80,8 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
-
-    .sectionSubtitle {
-      max-width: 318px;
-    }
+  .sectionSubtitle {
+    max-width: 318px;
   }
 
   .content {
