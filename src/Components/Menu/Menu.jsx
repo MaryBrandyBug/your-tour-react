@@ -1,7 +1,7 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import {
-  string, arrayOf, oneOfType, func, object,
+  string, arrayOf, func, shape,
 } from 'prop-types';
 import styles from './Menu.module.scss';
 
@@ -30,7 +30,7 @@ export default function Menu({
 }
 
 Menu.propTypes = {
-  items: arrayOf(oneOfType([object])),
+  items: arrayOf(shape({ name: string, id: string, link: string })),
   activeItem: string,
   changeActiveItem: func,
   className: string,

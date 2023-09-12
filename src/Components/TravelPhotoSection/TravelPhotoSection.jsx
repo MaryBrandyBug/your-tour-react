@@ -12,7 +12,7 @@ export default function TravelPhoto() {
 
   return (
     <div className={cx('root')}>
-      <Title title="Фотографии путешествий" subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров" headerClassName={cx('sectionHeader')} subtitleClassName={cx('sectionSubtitle')} />
+      <Title title="Фотографии путешествий" subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров" subtitleClassName={cx('sectionSubtitle')} />
       <div className={cx('content')}>
         {photos}
       </div>

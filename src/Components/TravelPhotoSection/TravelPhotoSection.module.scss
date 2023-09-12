@@ -9,12 +9,8 @@
   gap: 100px;
 }
 
-.sectionHeader {
-  gap: 30px;
-
-  .sectionSubtitle {
-    max-width: 418px;
-  }
+.sectionSubtitle {
+  max-width: 418px;
 }
 
 .content {
@@ -75,10 +71,6 @@
     margin: 0 auto;
   }
 
-  .sectionHeader {
-    gap: 25px;
-  }
-
   .content {
     max-width: 1024px;
     max-height: 963px;
@@ -102,12 +94,8 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
-
-    .sectionSubtitle {
-      max-width: 400px;
-    }
+  .sectionSubtitle {
+    max-width: 400px;
   }
 
   .content {
@@ -144,10 +132,6 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
-  }
-
   .content {
     gap: 11px;
   }
@@ -177,12 +161,8 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
-
-    .sectionSubtitle {
-      max-width: 318px;
-    }
+  .sectionSubtitle {
+    max-width: 318px;
   }
 
   .content {

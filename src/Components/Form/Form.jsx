@@ -73,7 +73,6 @@ export default function Form() {
           </>
 )}
         subtitleClassName={cx('sectionSubtitle')}
-        headerClassName={cx('sectionHeader')}
       />
       <form onSubmit={handleSubmit} className={cx('content')}>
         <div className={cx('container')}>

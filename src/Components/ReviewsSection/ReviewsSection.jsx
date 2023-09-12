@@ -16,7 +16,6 @@ export default function Reviews() {
       <Title
         title="Отзывы наших путешественников"
         subtitle="Идейные соображения высшего порядка, а также рамки и место обучения кадров"
-        headerClassName={cx('sectionHeader')}
         titleClassName={cx('sectionTitle')}
         subtitleClassName={cx('sectionSubtitle')}
       />
