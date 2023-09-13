@@ -12,10 +12,6 @@
   composes: main-font-style from "../../styles/global.scss";
 }
 
-.sectionHeader {
-  gap: 30px;
-}
-
 .content {
   display: flex;
   flex-direction: column;
@@ -318,9 +314,6 @@
 @include _780 {
   .root {
     gap: 40px;
-  }
-  .sectionHeader {
-    gap: 20px;
   }
 
   .content {
