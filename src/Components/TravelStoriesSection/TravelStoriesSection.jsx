@@ -23,7 +23,6 @@ export default function TravelStories() {
             также рамки и место обучения кадров
           </>
 )}
-        headerClassName={cx('sectionHeader')}
         titleClassName={cx('sectionTitle')}
         subtitleClassName={cx('sectionSubtitle')}
       />

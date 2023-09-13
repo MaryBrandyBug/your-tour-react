@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
 import data from './data';
@@ -9,8 +8,10 @@ export default function Footer() {
 
   const networks = data.map((item) => (
     <div key={item.id} className={cx('linkBlock')}>
-      <div className={cx('link-icon')}><img src={item.img} alt={item.alt} /></div>
-      <Link className={cx('social-network')} to={item.link}>{item.text}</Link>
+      <a className={cx('social-network')} href={item.link}>
+        <div className={cx('link-icon')}><img src={item.img} alt={item.alt} /></div>
+        {item.text}
+      </a>
     </div>
   ));
 

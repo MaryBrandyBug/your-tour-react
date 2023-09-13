@@ -9,12 +9,8 @@
   gap: 100px;
 }
 
-.sectionHeader {
-  gap: 30px;
-
-  .sectionSubtitle {
-    max-width: 418px;
-  }
+.sectionSubtitle {
+  max-width: 418px;
 }
 
 .content {
@@ -27,14 +23,14 @@
   gap: 30px;
 }
 
-.big-photo {
+.bigPhoto {
   max-width: 23%;
   object-fit: cover;
 
   border-radius: 50px;
 }
 
-.small-photo {
+.smallPhoto {
   max-width: 18%;
   min-height: 301px;
   object-fit: cover;
@@ -44,26 +40,26 @@
 
 // 1630
 @include _1630 {
-  .big-photo {
+  .bigPhoto {
     min-height: 300px;
     max-width: 26.7%;
   }
 
-  .max-size {
+  .disappearFirst {
     display: none;
   }
 
-  .small-photo {
+  .smallPhoto {
     max-width: 22.5%;
   }
 }
 
 // 1175
 @include _1175 {
-  .big-photo {
+  .bigPhoto {
     min-height: 300px;
   }
-  .max-size {
+  .disappearFirst {
     display: none;
   }
 }
@@ -75,22 +71,18 @@
     margin: 0 auto;
   }
 
-  .sectionHeader {
-    gap: 25px;
-  }
-
   .content {
     max-width: 1024px;
     max-height: 963px;
     padding: 0px 20px;
   }
 
-  .big-photo {
+  .bigPhoto {
     max-width: 30%;
     min-height: 300px;
   }
 
-  .max-size {
+  .disappearFirst {
     display: none;
   }
 }
@@ -102,12 +94,8 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
-
-    .sectionSubtitle {
-      max-width: 400px;
-    }
+  .sectionSubtitle {
+    max-width: 400px;
   }
 
   .content {
@@ -117,18 +105,18 @@
     max-height: auto;
   }
 
-  .big-photo {
+  .bigPhoto {
     max-width: 40%;
     max-height: 110px;
 
     border-radius: 20px;
   }
 
-  .max-middle-size {
+  .disappearSecond {
     display: none;
   }
 
-  .small-photo {
+  .smallPhoto {
     max-width: 33%;
     max-height: 110px;
     margin-left: -8px;
@@ -144,25 +132,21 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
-  }
-
   .content {
     gap: 11px;
   }
 
-  .big-photo {
+  .bigPhoto {
     max-height: 110px;
 
     border-radius: 20px;
   }
 
-  .max-middle-size {
+  .disappearSecond {
     display: none;
   }
 
-  .small-photo {
+  .smallPhoto {
     max-height: 70px;
 
     border-radius: 20px;
@@ -177,30 +161,26 @@
     gap: 50px;
   }
 
-  .sectionHeader {
-    gap: 20px;
-
-    .sectionSubtitle {
-      max-width: 318px;
-    }
+  .sectionSubtitle {
+    max-width: 318px;
   }
 
   .content {
     gap: 12px;
   }
 
-  .big-photo {
+  .bigPhoto {
     max-width: 43%;
     min-height: 150px;
     max-height: 110px;
     border-radius: 20px;
   }
 
-  .max-middle-size {
+  .disappearSecond {
     display: none;
   }
 
-  .small-photo {
+  .smallPhoto {
     min-height: 130px;
     border-radius: 20px;
   }
