@@ -31,10 +31,6 @@
   .root {
     max-width: 1024px;
   }
-
-  .content {
-    max-width: 100%;
-  }
 }
 
 // 992
@@ -58,10 +54,8 @@
 // 435
 @include _435 {
   .root {
-    max-width: 360px;
     min-height: 1597px;
     margin-left: -3px;
-    gap: 50px;
   }
 
   .sectionTitle {
@@ -76,7 +70,6 @@
 
   .content {
     max-width: 318px;
-    padding: 0px;
     gap: 20px;
   }
 }

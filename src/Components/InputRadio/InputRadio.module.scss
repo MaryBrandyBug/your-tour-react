@@ -50,11 +50,6 @@
 @include _780 {
   .root {
 
-    .radio__border {
-      min-width: 21px;
-      min-height: 21px;
-    }
-
     .radio__border::before {
       min-width: 10px;
       min-height: 9px;

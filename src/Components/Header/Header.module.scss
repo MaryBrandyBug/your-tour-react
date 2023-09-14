@@ -199,7 +199,6 @@
       max-width: 540px;
 
       font-size: 80px;
-      text-align: center;
     }
   }
 
@@ -252,6 +251,10 @@
     max-height: 486px;
   }
 
+  .navbar__container {
+    padding: 20px;
+  }
+
   .content {
     gap: 40px;
 
@@ -271,6 +274,7 @@
 
   .navbar {
     justify-content: space-between;
+    min-width: 100%;
 
     &__logo {
       min-width: 133px;

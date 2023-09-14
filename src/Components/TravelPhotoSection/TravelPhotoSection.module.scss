@@ -56,19 +56,6 @@
   }
 }
 
-// 1175
-@include _1175 {
-  .content {
-
-    .bigPhoto {
-      min-height: 300px;
-    }
-  }
-  .disappearFirst {
-    display: none;
-  }
-}
-
 // 1024
 @include _1024 {
   .root {
@@ -83,13 +70,7 @@
 
     .bigPhoto {
       max-width: 30%;
-      min-height: 300px;
     }
-  }
-
-
-  .disappearFirst {
-    display: none;
   }
 }
 
@@ -106,7 +87,6 @@
 
   .content {
     gap: 13px;
-    justify-content: center;
     max-width: 90%;
     max-height: auto;
 
@@ -117,7 +97,6 @@
       border-radius: 20px;
     }
   }
-
 
   .disappearSecond {
     display: none;
@@ -134,30 +113,13 @@
 
 // 790
 @include _790 {
-  .root {
-    max-width: 90%;
-    gap: 50px;
-  }
 
   .content {
     gap: 11px;
-
-    .bigPhoto {
-      max-height: 110px; 
-  
-      border-radius: 20px;
-    }
   }
 
   .smallPhoto {
     max-height: 70px;
-
-    border-radius: 20px;
-  }
-
-
-  .disappearSecond {
-    display: none;
   }
 }
 
@@ -166,7 +128,6 @@
   .root {
     max-width: 360px;
     min-height: auto;
-    gap: 50px;
   }
 
   .sectionSubtitle {
@@ -179,18 +140,27 @@
     .bigPhoto {
       max-width: 43%;
       min-height: 150px;
-      max-height: 110px;
-      border-radius: 20px;
     }
-  }
-
-
-  .disappearSecond {
-    display: none;
   }
 
   .smallPhoto {
     min-height: 130px;
-    border-radius: 20px;
+  }
+}
+
+// 360 
+@include _360 {
+  .content {
+    gap: 18px;
+    
+    .bigPhoto {
+      max-width: 46%;
+      min-height: 110px;
+    }
+  }
+
+  .smallPhoto {
+    min-height: 110px;
+    max-width: 30%;
   }
 }
