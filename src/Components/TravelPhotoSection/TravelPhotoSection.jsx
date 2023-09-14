@@ -8,7 +8,7 @@ import data from './data';
 export default function TravelPhoto() {
   const cx = classNames.bind(styles);
 
-  const photos = data.map((el) => <img key={el.id} src={el.path} alt="travel memories" className={cx({ bigPhoto: el.bigSize, smallPhoto: el.bigSize === false }, { disappearFirst: el.isDisappearFirst }, { disappearSecond: el.isDisappearSecond })} />);
+  const photos = data.map((el) => <img key={el.id} src={el.path} alt="travel memories" className={cx('smallPhoto', { bigPhoto: el.bigSize, disappearFirst: el.isDisappearFirst, disappearSecond: el.isDisappearSecond })} />);
 
   return (
     <div className={cx('root')}>
