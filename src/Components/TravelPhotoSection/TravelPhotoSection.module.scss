@@ -21,13 +21,13 @@
   min-width: 100%;
   padding: 0px;
   gap: 30px;
-}
 
-.bigPhoto {
-  max-width: 23%;
-  object-fit: cover;
-
-  border-radius: 50px;
+  .bigPhoto {
+    max-width: 23%;
+    object-fit: cover;
+  
+    border-radius: 50px;
+  }
 }
 
 .smallPhoto {
@@ -40,10 +40,12 @@
 
 // 1630
 @include _1630 {
+  .content {
   .bigPhoto {
     min-height: 300px;
     max-width: 26.7%;
   }
+}
 
   .disappearFirst {
     display: none;
@@ -56,8 +58,11 @@
 
 // 1175
 @include _1175 {
-  .bigPhoto {
-    min-height: 300px;
+  .content {
+
+    .bigPhoto {
+      min-height: 300px;
+    }
   }
   .disappearFirst {
     display: none;
@@ -75,12 +80,13 @@
     max-width: 1024px;
     max-height: 963px;
     padding: 0px 20px;
+
+    .bigPhoto {
+      max-width: 30%;
+      min-height: 300px;
+    }
   }
 
-  .bigPhoto {
-    max-width: 30%;
-    min-height: 300px;
-  }
 
   .disappearFirst {
     display: none;
@@ -103,14 +109,15 @@
     justify-content: center;
     max-width: 90%;
     max-height: auto;
+
+    .bigPhoto {
+      max-width: 40%;
+      max-height: 110px;
+  
+      border-radius: 20px;
+    }
   }
 
-  .bigPhoto {
-    max-width: 40%;
-    max-height: 110px;
-
-    border-radius: 20px;
-  }
 
   .disappearSecond {
     display: none;
@@ -134,22 +141,23 @@
 
   .content {
     gap: 11px;
-  }
 
-  .bigPhoto {
-    max-height: 110px;
-
-    border-radius: 20px;
-  }
-
-  .disappearSecond {
-    display: none;
+    .bigPhoto {
+      max-height: 110px; 
+  
+      border-radius: 20px;
+    }
   }
 
   .smallPhoto {
     max-height: 70px;
 
     border-radius: 20px;
+  }
+
+
+  .disappearSecond {
+    display: none;
   }
 }
 
@@ -167,14 +175,15 @@
 
   .content {
     gap: 12px;
+    
+    .bigPhoto {
+      max-width: 43%;
+      min-height: 150px;
+      max-height: 110px;
+      border-radius: 20px;
+    }
   }
 
-  .bigPhoto {
-    max-width: 43%;
-    min-height: 150px;
-    max-height: 110px;
-    border-radius: 20px;
-  }
 
   .disappearSecond {
     display: none;

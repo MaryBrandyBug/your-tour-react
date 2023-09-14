@@ -36,16 +36,20 @@
     flex-direction: row;
     align-items: center;
     padding: 0px;
-    gap: 10px;
 
     .social-network {
       display: flex;
+      gap: 10px;
 
       color: $blackColor;
 
       cursor: pointer;
     }
   }
+}
+
+.link-icon img {
+  height: 100%;
 }
 
 // min-width 361
@@ -80,14 +84,9 @@
   }
 
   .linkBlock {
-    gap: 1px;
 
-    .img-logo {
-      max-width: 20px;
-    }
-    .inst-icon {
-      max-width: 20px;
-      max-height: 20px;
+    .social-network {
+      gap: 1px;
     }
   }
 }
@@ -99,12 +98,28 @@
   }
 }
 
+// 435
+@include _435 {
+  .networks {
+
+    .linkBlock {
+
+      .social-network {
+        gap: 5px;
+      }
+    }
+  }
+}
+
 // mobile _360
 @include _360 {
   .networks {
 
     .linkBlock {
-      gap: 2px;
+
+      .social-network {
+        gap: 2px;
+      }
     }
   }
 }
