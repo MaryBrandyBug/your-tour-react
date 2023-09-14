@@ -293,7 +293,7 @@
   }
 
   .footer-details-link {
-    transform: translate(-72px, 10px);
+    transform: translate(-69px, 23px);
 
     p {
       font-size: 16px;
@@ -310,10 +310,17 @@
 @include _360 {
   .root {
     .content {
+      gap: 25px;
+
       &__title {
         font-weight: 700;
-        line-height: 120%;
+        line-height: 126%;
         letter-spacing: 0.04em;
+      }
+
+      &__list {
+        margin-top: 0px;
+        margin-left: 3px;
       }
     }
   }

@@ -143,7 +143,7 @@
 // 780
 @include _780 {
   .root {
-    min-width: 318px;
+    // min-width: 318px;
     @include minWidthСalculation(270px, 719);
     min-height: 318px;
 
@@ -184,6 +184,7 @@
 // 576
 @include _576 {
   .root {
+    min-width: 318px;
 
     &__background {
       min-width: 318px;

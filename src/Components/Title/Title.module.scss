@@ -32,6 +32,8 @@
 
 @include _576 {
   .root {
+    gap: 27px;
+
     .title {
       font-size: 34px;
       line-height: 112%;
@@ -40,5 +42,11 @@
     .subtitle {
       font-size: 16px;
     }
+  }
+}
+
+@include _360 {
+  .root {
+    gap: 21px;
   }
 }
