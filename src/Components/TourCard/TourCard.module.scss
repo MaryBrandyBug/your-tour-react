@@ -184,37 +184,10 @@
 // 576
 @include _576 {
   .root {
-    min-width: 318px;
-    min-height: 318px;
-
-    border-radius: 20px;
 
     &__background {
       min-width: 318px;
-
-      border-radius: 20px;
     }
-  }
-
-  .content {
-    left: -2px;
-    top: 2px;
-
-    padding: 25px;
-  }
-
-  .text-container {
-    max-width: 268px;
-    gap: 13px;
-
-    .subtitle {
-      font-size: 16px;
-    }
-  }
-
-  .choose-tour__link {
-    top: 269px;
-    left: 26px;
   }
 }
 
@@ -227,7 +200,6 @@
   .text-container {
     .info-cards__header {
       font-weight: 700;
-      font-size: 23px;
       line-height: 120%;
       letter-spacing: 0.04em;
     }

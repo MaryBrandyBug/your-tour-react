@@ -180,10 +180,6 @@
     min-width: 918px;
     min-height: 567px;
 
-    &__footer {
-      height: 33px;
-    }
-
     .content {
       gap: 37px;
 
@@ -191,10 +187,6 @@
         margin-top: -12px;
         margin-left: 5px;
       }
-    }
-
-    &__background {
-      min-height: 100%;
     }
   }
 
@@ -267,20 +259,13 @@
     min-width: 318px;
     min-height: 455px;
 
-    border-radius: 20px;
-
     .content {
-      padding: 30px;
-      gap: 20px;
 
       &__title {
         max-width: 150px;
-
-        font-size: 22.5px;
       }
 
       &__text {
-        max-width: 263px;
         margin-left: -3px;
 
         font-size: 16px;
@@ -327,7 +312,6 @@
     .content {
       &__title {
         font-weight: 700;
-        font-size: 23px;
         line-height: 120%;
         letter-spacing: 0.04em;
       }

@@ -29,7 +29,6 @@
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-between;
-  // max-width: 1170px;
   min-width: inherit;
   gap: 30px;
 }
@@ -57,17 +56,6 @@
       flex-direction: row;
       align-items: center;
       gap: 31px;
-
-      .age-check__radio-button-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        gap: 11px;
-
-        .age-check__radio-button {
-          display: none;
-        }
-      }
     }
   }
 }
@@ -96,7 +84,6 @@
     .agreement-text-link {
       margin-left: 1px;
 
-      font-size: 17px;
       text-decoration: none;
       color: $blackColor;
 
@@ -205,10 +192,6 @@
   max-height: 104px;
   gap: 8px;
 
-  .input-name {
-    font-size: 20px;
-  }
-
   .select-wrapper {
     min-width: 100%;
   }
@@ -247,12 +230,6 @@
       background: $lightBeigeColor;
     }
   }
-
-  input[type="date"]:not(.has-value):before {
-    color: $greyColor;
-
-    content: attr(placeholder);
-  }
 }
 
 // 1300
@@ -272,41 +249,32 @@
 @include _1024 {
   .root {
     min-width: percentage(918 / 1024);
-    gap: 100px;
   }
 
   .content {
     padding: 60px;
-    gap: 33px;
   }
 
   .container {
     gap: 28px;
   }
 
-  .root__input-comment-container {
-    max-height: 183.4px;
-  }
-
   .input-field-container {
     max-height: 102px;
     max-width: 389px;
-
+    
     .select-field {
       max-width: 389px;
       min-width: 100%;
     }
   }
+
 }
 
 // 992
 @include _992 {
   .root {
     gap: 50px;
-  }
-
-  .select-field {
-    min-width: 100%;
   }
 }
 
@@ -338,31 +306,16 @@
 
       .age-check__radio-buttons-container {
         gap: 27px;
-
-        .age-check__radio-button-container {
-          .radio__border {
-            min-width: 21px;
-            min-height: 21px;
-          }
-
-          .radio__border::before {
-            min-width: 10px;
-            min-height: 9px;
-          }
-        }
       }
     }
   }
+
   .agreement-container {
     .agreement-text {
       margin-left: 12px;
       max-width: 260px;
 
       font-size: 16px;
-
-      .agreement-text-link {
-        font-size: 16px;
-      }
     }
   }
 
@@ -401,26 +354,12 @@
     max-height: 74px;
     font-size: 16px;
 
-    .input-name {
-      font-size: 16px;
-    }
-
-    input[type="date"]::-webkit-datetime-edit {
-      font-size: 20px;
-      font-weight: 300;
-      color: $greyColor;
-    }
-
     .select-wrapper::before {
-      position: absolute;
       top: 70%;
 
       display: block;
       width: 10px;
       height: 70%;
-
-      pointer-events: none;
-      content: url("../../../public/images/Rectangle.png");
     }
 
     .select-field {
@@ -448,16 +387,9 @@
     min-width: 100%;
   }
 
-  .root__input-comment-container {
-    max-height: 163px;
-  }
-
   .agreement-container {
     .agreement-text {
       max-width: 248px;
-      margin-left: 12px;
-
-      font-size: 16px;
     }
   }
 
@@ -489,9 +421,6 @@
   }
 
   .input-field-container {
-    .select-field {
-      min-height: 43px;
-    }
 
     .select-wrapper::before {
       top: 60%;
