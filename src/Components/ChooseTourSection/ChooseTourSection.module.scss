@@ -1,5 +1,5 @@
-@import '../../styles/colors.scss';
-@import '../../styles/mixins.scss';
+@import "../../styles/colors.scss";
+@import "../../styles/mixins.scss";
 
 // main root
 .root {
@@ -18,7 +18,7 @@
   align-items: flex-start;
   gap: 30px;
   margin-top: 35px;
-}  
+}
 
 .content {
   display: flex;
@@ -36,13 +36,13 @@
   gap: 6px;
 
   .active {
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
     font-size: 23px;
     line-height: 122%;
     color: $orangeColor;
-    
+
     cursor: pointer;
 
     text-decoration-line: underline;
@@ -51,7 +51,7 @@
   }
 
   &__name {
-    font-family: 'Roboto';
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 700;
     font-size: 23px;
@@ -89,11 +89,11 @@
 }
 
 // 992-780
-@include customMediaQuery(992px,780px) {
+@include customMediaQuery(992px, 780px) {
   .content {
     max-width: 100%;
   }
-};
+}
 
 // 780
 @include _780 {
@@ -105,7 +105,7 @@
     max-width: 360px;
     min-width: 360px;
   }
-  
+
   .sectionTitle {
     letter-spacing: 0.65px;
   }
@@ -125,12 +125,11 @@
   }
 
   .item {
-
     &__name {
       font-size: 20px;
       line-height: 142%;
     }
-  
+
     .active {
       font-size: 20px;
       line-height: 142%;
@@ -148,82 +147,32 @@
 
 // 576
 @include _576 {
-  .root {
-    min-height: auto;
-    min-height: 2172px;
-  }
-
   .content {
     max-width: 318px;
     gap: 18px;
     margin-top: 35px;
 
-
     letter-spacing: 0.04em;
-  }
-
-  .sectionHeader {
-    max-width: 360px;
-    min-width: 360px;
-  }
-
-  .sectionTitle {
-    letter-spacing: 0.65px;
-  }
-
-  .menu {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .item {
-
-    &-name {
-      font-size: 20px;
-      line-height: 142%;
-    }
   }
 }
 
 // 360
 @include _360 {
-  .root {
-    min-height: 2172px;
-    min-height: auto;
-  }
-
   .content {
-    max-width: 318px;
-    gap: 18px;
-
-    letter-spacing: 0.04em;
-}
-
-  .sectionHeader {
-    max-width: 360px;
-    min-width: 360px;
-  }
-
-  .sectionTitle {
-    letter-spacing: 0.65px;
+    margin-top: 50px;
   }
 
   .menu {
     max-width: 300px;
-    gap: 10px;
   }
 
   .item {
-
     &__name {
-        font-size: 16px;
-        line-height: 142%;
+      font-size: 16px;
     }
 
     .active {
-        font-size: 16px;
-        line-height: 142%;
+      font-size: 16px;
     }
   }
 }

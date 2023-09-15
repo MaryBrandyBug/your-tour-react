@@ -85,10 +85,12 @@
 
 // mobile
 @include _360 {
+  .root {
+    gap: 33px;
+  }
+
   .photo {
     max-width: 130px;
-
-    border-radius: 20px;
   }
 
   .content {
