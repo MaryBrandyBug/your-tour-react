@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import classNames from 'classnames/bind';
-import styles from './Header.module.scss';
+import s from './Header.module.scss';
 
 import Button from '../Button';
 
 export default function Header() {
-  const cx = classNames.bind(styles);
+  const cx = classNames.bind(s);
+
   const [fixedMenu, setFixedMenu] = useState({ fixed: false, hidden: false });
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [scrollingUp, setScrollingUp] = useState(false);
@@ -27,7 +28,7 @@ export default function Header() {
   };
 
   const menuItems = [{ item: 'Туры', id: 'chooseTour' }, { item: 'Создать тур', id: 'createTour' }, { item: 'Отзывы', id: 'reviews' }, { item: 'Истории', id: 'travelStories' }];
-  const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} key={i.id} className={cx('item')}>{i.item}</HashLink>);
+  const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} key={i.id} className={s.item}>{i.item}</HashLink>);
 
   useEffect(() => {
     const scrollEvent = () => {
@@ -41,20 +42,20 @@ export default function Header() {
   }, [window.scrollY]);
 
   return (
-    <header className={cx('root')}>
+    <header className={s.root}>
       <div className={cx('navbar__container', { fixed: fixedMenu.fixed, hidden: fixedMenu.hidden })}>
-        <div className={cx('navbar')}>
+        <div className={s.navbar}>
           <div className={cx('navbar__logo')}>
-            <img src={prevScrollPos > 90 ? '/your-tour-react/images/YourTourBlack.svg' : '/your-tour-react/images/YourTour.png'} alt="logo" className={cx('YourTourLogo')} />
+            <img src={prevScrollPos > 90 ? '/your-tour-react/images/YourTourBlack.svg' : '/your-tour-react/images/YourTour.png'} alt="logo" className={s.YourTourLogo} />
             {/* извините за тернарку :( */}
           </div>
           <div className={cx('navbar__menu')}>
             {menu}
           </div>
-          <Link to="tel:+79999999999" className={cx('telephone')}>+7 999 999 99 99</Link>
+          <Link to="tel:+79999999999" className={s.telephone}>+7 999 999 99 99</Link>
         </div>
       </div>
-      <div className={cx('content')}>
+      <div className={s.content}>
         <h1 className={cx('content__title')}>Идеальные путешествия существуют</h1>
         <p className={cx('content__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
         <div className={cx('content__button')}>

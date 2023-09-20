@@ -1,5 +1,5 @@
-import classNames from 'classnames/bind';
-import styles from './App.scss';
+// import classNames from 'classnames';
+import './App.scss';
 
 import Header from '../Header';
 import ChooseTourSection from '../ChooseTourSection';
@@ -11,10 +11,10 @@ import MailSection from '../MailSection';
 import Footer from '../Footer';
 
 function App() {
-  const cx = classNames.bind(styles);
+  // const cx = classNames.s;
 
   return (
-    <div className={cx('wrapper')}>
+    <div className="wrapper">
       <Header />
       <ChooseTourSection />
       <Form />

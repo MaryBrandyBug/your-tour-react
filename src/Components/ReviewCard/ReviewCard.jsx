@@ -1,12 +1,12 @@
 import React from 'react';
 import { string, arrayOf, oneOfType } from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './ReviewCard.module.scss';
+import s from './ReviewCard.module.scss';
 
 export default function ReviewCard({
   text, name, tour, img,
 }) {
-  const cx = classNames.bind(styles);
+  const cx = classNames.bind(s);
 
   const cardText = text.map((item, i) => (i === 0
     ? <span key={new Date().getTime() * Math.random()}>{item}</span>
@@ -21,8 +21,8 @@ export default function ReviewCard({
   ));
 
   return (
-    <div className={cx('root')}>
-      <p className={cx('content')}>
+    <div className={s.root}>
+      <p className={s.content}>
         {cardText}
       </p>
       <div className={cx('root__footer')}>
