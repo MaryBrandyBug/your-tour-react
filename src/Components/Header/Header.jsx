@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import classNames from 'classnames/bind';
@@ -8,14 +8,21 @@ import Button from '../Button';
 
 export default function Header() {
   const cx = classNames.bind(styles);
-  const [fixedMenu, setFixedMenu] = useState({ fixed: false, offset: 0 });
-  const headerRef = useRef(null);
+  const [fixedMenu, setFixedMenu] = useState({ fixed: false, hidden: false });
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+  const [scrollingUp, setScrollingUp] = useState(false);
 
-  const handleScroll = (currentOffset) => {
-    if (window.scrollY > (450)) {
-      setFixedMenu({ fixed: true, offset: currentOffset });
+  const handleScroll = () => {
+    const currentScrollPos = window.scrollY;
+    setScrollingUp(prevScrollPos > currentScrollPos);
+    setPrevScrollPos(currentScrollPos);
+
+    if (scrollingUp && window.scrollY < 550 && window.scrollY > 100) {
+      setFixedMenu({ fixed: false, hidden: true });
+    } else if (window.scrollY > (460)) {
+      setFixedMenu({ fixed: true, hidden: false });
     } else {
-      setFixedMenu({ fixed: false, offset: 0 });
+      setFixedMenu({ fixed: false, hidden: false });
     }
   };
 
@@ -23,23 +30,22 @@ export default function Header() {
   const menu = menuItems.map((i) => <HashLink to={`#${i.id}`} key={i.id} className={cx('item')}>{i.item}</HashLink>);
 
   useEffect(() => {
-    const header = headerRef.current.getBoundingClientRect();
     const scrollEvent = () => {
-      handleScroll(header.top);
+      handleScroll();
     };
 
     window.addEventListener('scroll', scrollEvent);
     return () => {
       window.removeEventListener('scroll', scrollEvent);
     };
-  }, []);
+  }, [window.scrollY]);
 
   return (
     <header className={cx('root')}>
-      <div ref={headerRef} className={cx('navbar__container', { fixed: fixedMenu.fixed })}>
+      <div className={cx('navbar__container', { fixed: fixedMenu.fixed, hidden: fixedMenu.hidden })}>
         <div className={cx('navbar')}>
           <div className={cx('navbar__logo')}>
-            <img src={fixedMenu.fixed ? '/your-tour-react/images/YourTourBlack.svg' : '/your-tour-react/images/YourTour.png'} alt="logo" className={cx('YourTourLogo')} />
+            <img src={prevScrollPos > 90 ? '/your-tour-react/images/YourTourBlack.svg' : '/your-tour-react/images/YourTour.png'} alt="logo" className={cx('YourTourLogo')} />
             {/* извините за тернарку :( */}
           </div>
           <div className={cx('navbar__menu')}>
