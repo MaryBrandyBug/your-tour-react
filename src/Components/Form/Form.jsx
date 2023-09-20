@@ -4,7 +4,7 @@ import React, {
 import { Link } from 'react-router-dom';
 import classNames from 'classnames/bind';
 import validationSchema from './validation';
-import styles from './Form.module.scss';
+import s from './Form.module.scss';
 
 import Button from '../Button';
 import InputField from '../InputField';
@@ -14,7 +14,8 @@ import InputCheckbox from '../InputCheckbox';
 import Title from '../Title';
 
 export default function Form() {
-  const cx = classNames.bind(styles);
+  const cx = classNames.bind(s);
+
   const myElementRef = useRef(null);
 
   const [checked, setChecked] = useState(false);
@@ -60,7 +61,7 @@ export default function Form() {
   }, [yourTourForm.direction]);
 
   return (
-    <div className={cx('root')} id="createTour">
+    <div className={s.root} id="createTour">
       <Title
         title="Собери свой тур"
         subtitle={(
@@ -72,10 +73,10 @@ export default function Form() {
             а также рамки и место обучения кадров
           </>
 )}
-        subtitleClassName={cx('sectionSubtitle')}
+        subtitleClassName={s.sectionSubtitle}
       />
-      <form onSubmit={handleSubmit} className={cx('content')}>
-        <div className={cx('container')}>
+      <form onSubmit={handleSubmit} className={s.content}>
+        <div className={s.container}>
           <InputField type="text" name="name" value={yourTourForm.name} placeholder="Введите Ваше имя" onChange={handleChange} inputFieldName="Имя" />
           <div className={cx('input-field-container')}>
             <p className={cx('input-name')}>Направление</p>
@@ -87,11 +88,11 @@ export default function Form() {
             </div>
           </div>
         </div>
-        <div className={cx('container')}>
+        <div className={s.container}>
           <InputField type="email" name="email" value={yourTourForm.email} placeholder="example@mail.com" onChange={handleChange} inputFieldName="Email" />
           <InputField type="tel" name="phoneNumber" value={yourTourForm.phoneNumber} placeholder="+ 7 ( _ _ _ ) _ _ _ - _ _ - _ _" onChange={handleChange} maxLength="11" inputFieldName="Телефон" />
         </div>
-        <div className={cx('container')}>
+        <div className={s.container}>
           <InputField type="date" name="dateSince" value={yourTourForm.dateSince} placeholder="" onChange={handleChange} inputFieldName="Дата от" />
           <InputField type="date" name="dateUntil" value={yourTourForm.dateUntil} placeholder="" onChange={handleChange} inputFieldName="Дата до" />
         </div>

@@ -1,18 +1,18 @@
 import React from 'react';
 import { string } from 'prop-types';
 import classNames from 'classnames/bind';
-import styles from './TourCard.module.scss';
+import s from './TourCard.module.scss';
 
 import DetailsBtn from '../DetailsBtn';
 
 export default function TourCard({
   img, title, price, link,
 }) {
-  const cx = classNames.bind(styles);
+  const cx = classNames.bind(s);
 
   return (
-    <div className={cx('root')}>
-      <div className={cx('content')}>
+    <div className={s.root}>
+      <div className={s.content}>
         <div className={cx('text-container')}>
           <h3 className={cx('info-cards__header')}>{title}</h3>
           <p className={cx('subtitle')}>{price}</p>

@@ -1,17 +1,14 @@
 import React from 'react';
 import { string, func, bool } from 'prop-types';
-import classNames from 'classnames/bind';
-import styles from './InputCheckbox.module.scss';
+import s from './InputCheckbox.module.scss';
 
 export default function InputCheckbox({
   name, id, onChange, checked,
 }) {
-  const cx = classNames.bind(styles);
-
   return (
-    <label className={cx('root')} htmlFor={id}>
-      <input type="checkbox" name={name} checked={checked} className={cx('button')} id={id} onChange={onChange} />
-      <span className={cx('border')} />
+    <label className={s.root} htmlFor={id}>
+      <input type="checkbox" name={name} checked={checked} className={s.button} id={id} onChange={onChange} />
+      <span className={s.border} />
     </label>
   );
 }
