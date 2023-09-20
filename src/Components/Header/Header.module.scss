@@ -273,6 +273,10 @@
 
 // 780
 @include _780 {
+  .hidden {
+    top: 50%
+  }
+
   .content {
 
     &__title {
@@ -285,6 +289,10 @@
 
 // 576
 @include _576 {
+  .hidden {
+    top: 45%;
+  }
+
   .content {
 
     &__title {
@@ -325,6 +333,13 @@
 
   .navbar__container {
     padding: 20px;
+  }
+
+  .hidden {
+    top: 35%;
+
+    background-color: transparent;
+    box-shadow: none;
   }
 
   .content {
