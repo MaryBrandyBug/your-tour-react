@@ -141,7 +141,7 @@
 .hidden {
   position: absolute;
   opacity: 0;
-  top: 55%;
+  top: 604px;
   
   width: 100%;
   background-color: $lightBeigeColor;
@@ -274,7 +274,7 @@
 // 780
 @include _780 {
   .hidden {
-    top: 50%
+    top: 550px;
   }
 
   .content {
@@ -290,7 +290,7 @@
 // 576
 @include _576 {
   .hidden {
-    top: 45%;
+    top: 500px;
   }
 
   .content {
@@ -336,7 +336,7 @@
   }
 
   .hidden {
-    top: 35%;
+    top: 380px;
 
     background-color: transparent;
     box-shadow: none;
