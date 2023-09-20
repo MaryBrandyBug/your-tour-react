@@ -2,18 +2,16 @@ import React from 'react';
 import {
   string, element, oneOfType,
 } from 'prop-types';
-import classNames from 'classnames/bind';
-import styles from './Title.module.scss';
+import cx from 'classnames';
+import s from './Title.module.scss';
 
 export default function Title({
   title, subtitle, headerClassName, titleClassName, subtitleClassName,
 }) {
-  const cx = classNames.bind(styles);
-
   return (
-    <div className={cx('root', headerClassName)}>
-      <h2 className={cx('title', titleClassName)}>{title}</h2>
-      {subtitle && <p className={cx('subtitle', subtitleClassName)}>{subtitle}</p>}
+    <div className={cx(s.root, headerClassName)}>
+      <h2 className={cx(s.title, titleClassName)}>{title}</h2>
+      {subtitle && <p className={cx(s.subtitle, subtitleClassName)}>{subtitle}</p>}
     </div>
   );
 }
