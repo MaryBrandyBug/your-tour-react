@@ -21,38 +21,36 @@
   min-width: 100%;
   padding: 0px;
   gap: 30px;
-
-  .bigPhoto {
-    max-width: 23%;
-    object-fit: cover;
-  
-    border-radius: 50px;
-  }
 }
+
 
 .smallPhoto {
   max-width: 18%;
   min-height: 301px;
   object-fit: cover;
+  
+  border-radius: 50px;
+}
+
+.bigPhoto {
+  max-width: 23%;
 
   border-radius: 50px;
 }
 
 // 1630
 @include _1630 {
-  .content {
-  .bigPhoto {
-    min-height: 300px;
-    max-width: 26.7%;
-  }
-}
-
   .disappearFirst {
     display: none;
   }
-
+  
   .smallPhoto {
     max-width: 22.5%;
+  }
+
+  .bigPhoto {
+    min-height: 300px;
+    max-width: 26.7%;
   }
 }
 
@@ -67,10 +65,10 @@
     max-width: 1024px;
     max-height: 963px;
     padding: 0px 20px;
+  }
 
-    .bigPhoto {
-      max-width: 30%;
-    }
+  .bigPhoto {
+    max-width: 30%;
   }
 }
 
@@ -89,24 +87,23 @@
     gap: 13px;
     max-width: 90%;
     max-height: auto;
-
-    .bigPhoto {
-      max-width: 40%;
-      max-height: 110px;
-  
-      border-radius: 20px;
-    }
   }
 
   .disappearSecond {
     display: none;
   }
-
+  
   .smallPhoto {
     max-width: 33%;
     max-height: 110px;
     margin-left: -8px;
-
+    
+    border-radius: 20px;
+  }
+  
+  .bigPhoto {
+    max-width: 40%;
+  
     border-radius: 20px;
   }
 }
@@ -136,11 +133,11 @@
 
   .content {
     gap: 12px;
-    
-    .bigPhoto {
-      max-width: 43%;
-      min-height: 150px;
-    }
+  }
+
+  .bigPhoto {
+    max-width: 43%;
+    min-height: 150px;
   }
 
   .smallPhoto {
@@ -152,15 +149,14 @@
 @include _360 {
   .content {
     gap: 18px;
-    
-    .bigPhoto {
-      max-width: 46%;
-      min-height: 110px;
-    }
   }
 
   .smallPhoto {
     min-height: 110px;
     max-width: 30%;
+  }
+
+  .bigPhoto {
+    max-width: 46%;
   }
 }
