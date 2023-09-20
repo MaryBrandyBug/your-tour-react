@@ -20,7 +20,9 @@ export default function Header() {
 
     if (scrollingUp && window.scrollY < 550 && window.scrollY > 100) {
       setFixedMenu({ fixed: false, hidden: true });
-    } else if (window.scrollY > (460)) {
+    } else if (window.scrollY > (460) && window.innerWidth > 360) {
+      setFixedMenu({ fixed: true, hidden: false });
+    } else if (window.innerWidth < 361 && window.scrollY > (365)) {
       setFixedMenu({ fixed: true, hidden: false });
     } else {
       setFixedMenu({ fixed: false, hidden: false });
