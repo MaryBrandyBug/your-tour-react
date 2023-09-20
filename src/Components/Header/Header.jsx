@@ -9,23 +9,13 @@ import Button from '../Button';
 export default function Header() {
   const cx = classNames.bind(s);
 
-  const [fixedMenu, setFixedMenu] = useState({ fixed: false, hidden: false });
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [scrollingUp, setScrollingUp] = useState(false);
+  const [fixedMenu, setFixedMenu] = useState(false);
 
   const handleScroll = () => {
-    const currentScrollPos = window.scrollY;
-    setScrollingUp(prevScrollPos > currentScrollPos);
-    setPrevScrollPos(currentScrollPos);
-
-    if (scrollingUp && window.scrollY < 550 && window.scrollY > 100) {
-      setFixedMenu({ fixed: false, hidden: true });
-    } else if (window.scrollY > (460) && window.innerWidth > 360) {
-      setFixedMenu({ fixed: true, hidden: false });
-    } else if (window.innerWidth < 361 && window.scrollY > (365)) {
-      setFixedMenu({ fixed: true, hidden: false });
+    if (window.scrollY > (90)) {
+      setFixedMenu(true);
     } else {
-      setFixedMenu({ fixed: false, hidden: false });
+      setFixedMenu(false);
     }
   };
 
@@ -44,11 +34,11 @@ export default function Header() {
   }, [window.scrollY]);
 
   return (
-    <header className={s.root}>
-      <div className={cx('navbar__container', { fixed: fixedMenu.fixed, hidden: fixedMenu.hidden })}>
+    <div className={s.root}>
+      <div className={cx('navbar__container', { fixed: fixedMenu })}>
         <div className={s.navbar}>
           <div className={cx('navbar__logo')}>
-            <img src={prevScrollPos > 90 ? '/your-tour-react/images/YourTourBlack.svg' : '/your-tour-react/images/YourTour.png'} alt="logo" className={s.YourTourLogo} />
+            <img src={fixedMenu ? '/your-tour-react/images/YourTourBlack.svg' : '/your-tour-react/images/YourTour.png'} alt="logo" className={s.YourTourLogo} />
             {/* извините за тернарку :( */}
           </div>
           <div className={cx('navbar__menu')}>
@@ -57,13 +47,15 @@ export default function Header() {
           <Link to="tel:+79999999999" className={s.telephone}>+7 999 999 99 99</Link>
         </div>
       </div>
-      <div className={s.content}>
-        <h1 className={cx('content__title')}>Идеальные путешествия существуют</h1>
-        <p className={cx('content__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
-        <div className={cx('content__button')}>
-          <Button text="Найти тур" className={cx('find-tour-btn')} />
+      <header className={s.header}>
+        <div className={s.content}>
+          <h1 className={cx('content__title')}>Идеальные путешествия существуют</h1>
+          <p className={cx('content__subtitle')}>Идейные соображения высшего порядка, а также рамки и место обучения кадров</p>
+          <div className={cx('content__button')}>
+            <Button text="Найти тур" className={cx('find-tour-btn')} />
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </div>
   );
 }
